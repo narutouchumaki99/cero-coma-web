@@ -2,7 +2,7 @@
 
 Web corporativa estática de Cero Coma. La versión actual está preparada como **vista previa no indexable** para GitHub Pages.
 
-Staging previsto: <https://narutouchumaki99.github.io/cero-coma-web/>
+Staging activo: <https://narutouchumaki99.github.io/cero-coma-web/>
 
 ## Alcance
 

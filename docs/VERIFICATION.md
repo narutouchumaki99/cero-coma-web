@@ -32,15 +32,26 @@
 | Rendimiento | Lighthouse y observación de tareas largas | Superado |
 | Móvil físico | Recorrido en dispositivo real | Bloqueo de producción |
 
-## Lighthouse de staging
+## Lighthouse del staging publicado
 
 | Página | Rendimiento | Accesibilidad | Buenas prácticas | SEO | LCP | CLS | TBT |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Inicio | 100 | 100 | 100 | 66 | 1.729 ms | 0 | 0 ms |
-| Proyectos | 100 | 100 | 100 | 66 | 1.732 ms | 0,034 | 0 ms |
-| Tu carta | 99 | 100 | 100 | 66 | 1.739 ms | 0 | 0 ms |
+| Inicio | 100 | 100 | 100 | 63 | 1.203 ms | 0 | 0 ms |
+| Proyectos | 100 | 100 | 100 | 63 | 1.186 ms | 0 | 0 ms |
+| Tu carta | 100 | 100 | 100 | 63 | 1.055 ms | 0 | 0 ms |
 
-El 66 de SEO responde al bloqueo intencional de rastreo de esta vista previa. No se retirará `noindex` para mejorar una puntuación de staging. LCP y CLS cumplen los objetivos; INP necesita datos de campo después del lanzamiento. Tras estabilizar la carga, las interacciones probadas no generaron tareas superiores a 50 ms.
+El 63 de SEO responde al bloqueo intencional de rastreo de esta vista previa. No se retirará `noindex` para mejorar una puntuación de staging. LCP y CLS cumplen los objetivos; INP necesita datos de campo después del lanzamiento. Tras estabilizar la carga, las interacciones probadas no generaron tareas superiores a 50 ms.
+
+## Comprobación remota
+
+- URL: `https://narutouchumaki99.github.io/cero-coma-web/`.
+- HTTPS activo y sin dominio personalizado.
+- Inicio, proyectos y producto responden correctamente bajo el subdirectorio del repositorio.
+- Ruta desconocida: código 404 y documento personalizado.
+- `robots.txt`: bloqueo completo de staging.
+- Configuración servida: entorno `staging`, dos proyectos públicos y cero contactos.
+- axe-core 4.12.1: cero incidencias en las tres páginas publicadas.
+- Consola del navegador: cero errores durante navegación e interacciones.
 
 ## Alcance pendiente
 

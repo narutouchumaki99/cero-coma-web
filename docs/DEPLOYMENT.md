@@ -2,7 +2,7 @@
 
 ## Estado actual
 
-La rama `main` está configurada para publicar una vista previa mediante GitHub Pages y GitHub Actions. La entrega actual tiene estas protecciones:
+La rama `main` publica una vista previa verificada mediante GitHub Pages y GitHub Actions. La entrega actual tiene estas protecciones:
 
 - URL estándar: `https://narutouchumaki99.github.io/cero-coma-web/`;
 
@@ -12,6 +12,8 @@ La rama `main` está configurada para publicar una vista previa mediante GitHub 
 - ningún archivo `CNAME`;
 - contactos vacíos y sin enlaces simulados;
 - dominio y DNS fuera del alcance del despliegue.
+
+El workflow inicial terminó correctamente el 1 de agosto de 2026 y la URL estándar respondió con HTTPS, las tres rutas públicas y la página 404 personalizada.
 
 ## Publicar la vista previa
 
