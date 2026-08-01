@@ -26,11 +26,30 @@
 | Historial y hash | Apertura directa, limpieza al cerrar y botón Atrás | Superado |
 | Zoom 200 % | Reflujo equivalente a 720 px sin desbordamiento | Superado |
 | Reduced motion | Duración efectiva de 0,01 ms | Superado |
+| CERO sin JavaScript | Figura neutral, mensaje y fases legibles | Superado |
+| API de CERO | Cinco estados, estado desconocido seguro y eventos sin duplicados | Superado |
+| Mirada de CERO | Un `requestAnimationFrame`, reinicio al salir y al quedar fuera de vista | Superado |
+| Colores forzados | Contorno de fase y geometría visibles con colores del sistema | Superado |
 | Lector de pantalla | NVDA manual | Bloqueo de producción |
 | Objetivos táctiles | Controles interactivos de al menos 44 × 44 px | Superado |
 | Accesibilidad automática | axe-core 4.12.1, seis vistas y diálogo | Cero incidencias |
 | Rendimiento | Lighthouse y observación de tareas largas | Superado |
 | Móvil físico | Recorrido en dispositivo real | Bloqueo de producción |
+
+## Candidato CERO — validación local
+
+- Los ocho tamaños entre 320 × 568 y 1920 × 1080 mantienen el ancho del documento igual al viewport, sin solapamiento entre mascota, estado, vía de fases y controles.
+- En móvil el orden visual comprobado es mascota, estado, rango, fases y ayuda.
+- Los botones del compresor miden 44 × 44 px y el rango mantiene 44 px de altura.
+- `file://`, servidor local, JavaScript desactivado y `features.mascotDemo: false` conservan el estado neutral esperado.
+- Teclado, `Escape`, restauración de foco y anuncio de las cinco fases funcionan sin mover el foco.
+- Movimiento reducido y puntero táctil no alteran la mirada; al salir o quedar fuera de pantalla vuelve a `0px, 0px`.
+- axe-core 4.12.1: cero infracciones en 320 px, 768 px, 1440 px y menú móvil abierto.
+- Lighthouse local: rendimiento 99, accesibilidad 100, buenas prácticas 100; LCP 1.803 ms, CLS 0,00013 y TBT 0 ms.
+- Cuatro transiciones consecutivas no registraron tareas largas; veinte eventos de puntero en un mismo frame solicitaron una sola actualización visual.
+- El incremento servido atribuible a la integración es de 22.233 bytes sin comprimir, frente al límite de 100 KB.
+
+Las capturas de los ocho tamaños se generan en `output/playwright/` y se excluyen del repositorio. La aprobación visual, la revisión de originalidad y derechos, NVDA y el móvil físico siguen siendo comprobaciones humanas obligatorias antes de producción.
 
 ## Lighthouse del staging publicado
 

@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "name": "CERO",
+  "status": "staging-candidate",
+  "provenance": "Especificación interna del personaje CERO y sistema visual Cero Coma 1.0",
+  "authorization": "staging-only",
+  "originalityReview": "pending",
+  "productionApproved": false,
+  "master": {
+    "path": "candidate/cero-web-v1.svg",
+    "width": 480,
+    "height": 440,
+    "viewBox": "0 0 480 440",
+    "alternativeText": "CERO, figura digital flotante de carcasa negra, visor horizontal y ojos verdes.",
+    "format": "image/svg+xml",
+    "provenance": "Diseño vectorial propio derivado de la especificación de CERO",
+    "authorization": "staging-only",
+    "status": "staging-candidate"
+  },
+  "interactiveVersion": {
+    "path": "../../../index.html#compresor-conceptual",
+    "width": 480,
+    "height": 440,
+    "viewBox": "0 0 480 440",
+    "alternativeText": "",
+    "decorative": true,
+    "meaningCommunicatedBy": "aria-live",
+    "provenance": "Adaptación interactiva propia del maestro CERO",
+    "authorization": "staging-only",
+    "status": "staging-candidate"
+  },
+  "states": ["idle", "focus", "think", "build", "ready"]
+}

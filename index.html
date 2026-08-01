@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/mascot.css">
   </head>
   <body data-site-root="./">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -71,27 +72,110 @@
             </div>
           </div>
 
-          <section class="compressor" aria-labelledby="compressor-title" data-compressor data-level="0">
+          <section class="compressor" id="compresor-conceptual" aria-labelledby="compressor-title" data-compressor data-level="0">
             <div class="compressor__head">
               <p class="compressor__label" id="compressor-title">Compresor conceptual</p>
               <span class="compressor__count" aria-hidden="true">00—04</span>
             </div>
-            <div class="compressor__visual" aria-hidden="true">
-              <div class="compressor__step" data-compressor-step data-active="true"><span class="compressor__step-index">01</span><span>Información</span></div>
-              <div class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">02</span><span>Criterio</span></div>
-              <div class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">03</span><span>Flujo</span></div>
-              <div class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">04</span><span>Interfaz</span></div>
-              <div class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">05</span><span>Resultado</span></div>
+            <div class="compressor__experience">
+              <figure class="cero-mascot" aria-hidden="true" data-cero-mascot data-state="idle">
+                <svg class="cero-mascot__svg" viewBox="0 0 480 440" aria-hidden="true" focusable="false" data-cero-svg>
+                  <g class="cero-mascot__arms">
+                    <g class="cero-mascot__arm cero-mascot__arm--left" data-cero-arm-left>
+                      <path d="M155 244 116 255 87 301 105 324 139 291 171 277Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                      <path d="M99 284 72 309 88 344 111 323Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                      <path d="m72 309-18 21 17 26 17-12Z" fill="#0D0E0F" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                    </g>
+                    <g class="cero-mascot__arm cero-mascot__arm--right" data-cero-arm-right>
+                      <path d="m325 244 39 11 29 46-18 23-34-33-32-14Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                      <path d="m381 284 27 25-16 35-23-21Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                      <path d="m408 309 18 21-17 26-17-12Z" fill="#0D0E0F" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                    </g>
+                  </g>
+
+                  <g class="cero-mascot__body" data-cero-body>
+                    <path d="m164 230-24 39 10 92 31 31h118l31-31 10-92-24-39Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="m164 230 26 31h100l26-31Z" fill="#303438"/>
+                    <path d="m150 269 31-8v131l-31-31Z" fill="#202326"/>
+                    <path d="m330 269-31-8v131l31-31Z" fill="#0D0E0F"/>
+                    <path d="M199 327h82l18 65H181Z" fill="#0D0E0F"/>
+                    <path d="m219 363 21 15 21-15-7-19h-28Z" fill="#202326" stroke="#303438" stroke-width="3" stroke-linejoin="round"/>
+                    <path d="M201 397h78l-12 18h-54Z" fill="#303438"/>
+                    <path d="M219 401h42" fill="none" stroke="#45F2AE" stroke-width="4" stroke-linecap="round"/>
+                  </g>
+
+                  <g class="cero-mascot__collar" data-cero-collar>
+                    <path d="m156 218 27-18h114l27 18-19 35H175Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M183 200h114l-12 21h-90Z" fill="#0D0E0F"/>
+                    <path d="M210 232h60" fill="none" stroke="#B69A61" stroke-width="4" stroke-linecap="square"/>
+                  </g>
+
+                  <g class="cero-mascot__head" data-cero-head>
+                    <path d="m160 57-34 39v105l35 29h158l35-29V96l-34-39Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="m160 57-34 39 25 16 31-31Z" fill="#202326"/>
+                    <path d="m320 57 34 39-25 16-31-31Z" fill="#0D0E0F"/>
+                    <path d="M151 112h178l15 19v51l-22 23H158l-22-23v-51Z" fill="#070909" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+                    <path d="M161 126h158" fill="none" stroke="#063D31" stroke-width="3"/>
+                    <path d="M161 190h158" fill="none" stroke="#063D31" stroke-width="3"/>
+
+                    <g class="cero-mascot__gaze" data-cero-gaze>
+                      <g class="cero-mascot__eye cero-mascot__eye--left">
+                        <circle cx="201" cy="158" r="27" fill="#063D31" stroke="#45F2AE" stroke-width="3"/>
+                        <circle cx="201" cy="158" r="17" fill="#0D0E0F" stroke="#C9FFE9" stroke-width="2"/>
+                        <rect x="195" y="152" width="12" height="12" rx="3" fill="#45F2AE"/>
+                        <circle class="cero-mascot__eye-glint" cx="205" cy="154" r="3" fill="#C9FFE9"/>
+                      </g>
+                      <g class="cero-mascot__eye cero-mascot__eye--right">
+                        <circle cx="279" cy="158" r="27" fill="#063D31" stroke="#45F2AE" stroke-width="3"/>
+                        <circle cx="279" cy="158" r="17" fill="#0D0E0F" stroke="#C9FFE9" stroke-width="2"/>
+                        <rect x="273" y="152" width="12" height="12" rx="3" fill="#45F2AE"/>
+                        <circle class="cero-mascot__eye-glint" cx="283" cy="154" r="3" fill="#C9FFE9"/>
+                      </g>
+                    </g>
+
+                    <g class="cero-mascot__expression cero-mascot__expression--idle" data-cero-expression="idle">
+                      <path d="M178 158h-10m66 0h12m56 0h10" fill="none" stroke="#45F2AE" stroke-width="3" stroke-linecap="square"/>
+                    </g>
+                    <g class="cero-mascot__expression cero-mascot__expression--focus" data-cero-expression="focus">
+                      <path d="m174 136-9-7m9 51-9 7m141-51 9-7m-9 51 9 7" fill="none" stroke="#C9FFE9" stroke-width="3" stroke-linecap="square"/>
+                    </g>
+                    <g class="cero-mascot__expression cero-mascot__expression--think" data-cero-expression="think">
+                      <path d="M220 139h40m-40 38h40" fill="none" stroke="#45F2AE" stroke-width="3" stroke-dasharray="5 5"/>
+                      <rect x="235" y="153" width="10" height="10" rx="2" fill="#C9FFE9"/>
+                    </g>
+                    <g class="cero-mascot__expression cero-mascot__expression--build" data-cero-expression="build">
+                      <path d="M155 145h13v-10h8m149 10h-13v-10h-8M155 173h13v10h8m149-10h-13v10h-8" fill="none" stroke="#45F2AE" stroke-width="3"/>
+                    </g>
+                    <g class="cero-mascot__expression cero-mascot__expression--ready" data-cero-expression="ready">
+                      <path d="m181 158 8 8 16-19m70 11 8 8 16-19" fill="none" stroke="#C9FFE9" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
+                    </g>
+                  </g>
+                </svg>
+              </figure>
+
+              <div class="compressor__status" aria-hidden="true">
+                <span class="compressor__state-label" data-mascot-state-label>00 / En espera</span>
+                <p class="compressor__result" data-compressor-result>CERO espera contigo.</p>
+              </div>
+
+              <div class="compressor__control">
+                <button class="icon-button" type="button" aria-label="Reducir compresión" data-compressor-decrease>−</button>
+                <label class="sr-only" for="compression-range">Nivel del compresor conceptual</label>
+                <input id="compression-range" type="range" min="0" max="4" step="1" value="0" aria-describedby="compressor-help">
+                <button class="icon-button" type="button" aria-label="Aumentar compresión" data-compressor-increase>+</button>
+              </div>
+
+              <ol class="compressor__visual" aria-label="Fases del compresor">
+                <li class="compressor__step" data-compressor-step data-active="true" aria-current="step"><span class="compressor__step-index">00</span><span>Información</span></li>
+                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">01</span><span>Criterio</span></li>
+                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">02</span><span>Flujo</span></li>
+                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">03</span><span>Interfaz</span></li>
+                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">04</span><span>Resultado</span></li>
+              </ol>
+
+              <p class="compressor__hint" id="compressor-help">Mueve el rango o usa los botones. CERO responderá a cada fase.</p>
             </div>
-            <p class="compressor__result" data-compressor-result>Cinco partes todavía separadas.</p>
-            <div class="compressor__control">
-              <button class="icon-button" type="button" aria-label="Reducir compresión" data-compressor-decrease>−</button>
-              <label class="sr-only" for="compression-range">Nivel de compresión conceptual</label>
-              <input id="compression-range" type="range" min="0" max="4" step="1" value="0">
-              <button class="icon-button" type="button" aria-label="Aumentar compresión" data-compressor-increase>+</button>
-            </div>
-            <p class="compressor__hint">Mueve el control o usa los botones.</p>
-            <p class="sr-only" role="status" aria-live="polite" data-compressor-status></p>
+            <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-compressor-status data-mascot-status>CERO espera contigo.</p>
           </section>
         </div>
       </section>
@@ -261,5 +345,6 @@
     <noscript><p class="noscript-note">La información principal permanece disponible. Las demostraciones interactivas requieren JavaScript.</p></noscript>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/site.js"></script>
+    <script src="assets/js/mascot.js"></script>
   </body>
 </html>

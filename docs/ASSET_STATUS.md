@@ -40,3 +40,12 @@ Los iconos de `assets/icons/` proceden del paquete de recursos visuales v0.3. Se
 - Tu carta se representa con composiciones HTML y CSS, no con capturas que puedan mostrar datos de prueba.
 - Studio omite por completo el medio hasta disponer de permiso y una versión sin datos identificables.
 
+## Mascota CERO
+
+| Archivo | Uso | Procedencia | Estado | Autorización |
+| --- | --- | --- | --- | --- |
+| `assets/media/mascot/candidate/cero-web-v1.svg` | Maestro vectorial reutilizable | Especificación propia del personaje CERO y sistema visual Cero Coma 1.0 | `staging-candidate` | Solo staging |
+| SVG embebido en `index.html` | Reacciones por estado dentro del Compresor conceptual | Adaptación interactiva del maestro | `staging-candidate` | Solo staging |
+| `assets/media/mascot/manifest.json` | Registro público de versión, dimensiones, procedencia y revisión | Documentación de esta entrega | Vigente | Público en staging |
+
+El candidato usa únicamente geometría vectorial y colores planos. No incorpora renders previos, fotografía, vídeo, filtros, gradientes ni recursos de terceros. La comprobación formal de originalidad y derechos sigue pendiente y bloquea su paso a producción.

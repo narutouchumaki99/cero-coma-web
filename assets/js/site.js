@@ -80,43 +80,47 @@
     const result = compressor.querySelector("[data-compressor-result]");
     const steps = Array.from(compressor.querySelectorAll("[data-compressor-step]"));
     const messages = [
-      "Cinco partes todavía separadas.",
-      "La información empieza a ordenarse.",
-      "Las piezas comparten una misma lógica.",
-      "El recorrido queda listo para activarse.",
-      "Listo para funcionar."
+      "CERO espera contigo.",
+      "CERO está encontrando el criterio.",
+      "CERO está ordenando el flujo.",
+      "CERO está dando forma a la interfaz.",
+      "CERO muestra el resultado listo."
     ];
 
     if (!range || !decrease || !increase || !status || !result || steps.length !== messages.length) return;
 
-    function render(announce) {
+    function render(announce, source) {
       const level = Number(range.value);
       compressor.dataset.level = String(level);
       steps.forEach((step, index) => {
         const active = index <= level;
         step.dataset.active = String(active);
-        step.setAttribute("aria-hidden", String(!active));
+        if (index === level) step.setAttribute("aria-current", "step");
+        else step.removeAttribute("aria-current");
       });
       decrease.disabled = level === Number(range.min);
       increase.disabled = level === Number(range.max);
       range.setAttribute("aria-valuetext", messages[level]);
       result.textContent = messages[level];
       if (announce) status.textContent = messages[level];
+      window.dispatchEvent(new CustomEvent("cerocoma:compressor-change", {
+        detail: Object.freeze({ level, message: messages[level], source: source || "initial" })
+      }));
     }
 
-    range.addEventListener("input", () => render(true));
+    range.addEventListener("input", () => render(true, "range"));
     decrease.addEventListener("click", () => {
       range.value = String(Math.max(Number(range.min), Number(range.value) - 1));
-      render(true);
+      render(true, "decrease");
       range.focus();
     });
     increase.addEventListener("click", () => {
       range.value = String(Math.min(Number(range.max), Number(range.value) + 1));
-      render(true);
+      render(true, "increase");
       range.focus();
     });
 
-    render(false);
+    render(false, "initial");
   }
 
   setupYear();
@@ -124,4 +128,3 @@
   setupContactLinks();
   setupCompressor();
 })();
-

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" width="480" height="440" role="img" aria-labelledby="title desc">
+  <title id="title">CERO, mascota digital de Cero Coma</title>
+  <desc id="desc">Figura flotante de carcasa negra, visor horizontal, ojos verdes de circuitos, collar facetado y brazos segmentados.</desc>
+  <g>
+    <path d="M155 244 116 255 87 301 105 324 139 291 171 277Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M99 284 72 309 88 344 111 323Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m72 309-18 21 17 26 17-12Z" fill="#0D0E0F" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m325 244 39 11 29 46-18 23-34-33-32-14Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m381 284 27 25-16 35-23-21Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m408 309 18 21-17 26-17-12Z" fill="#0D0E0F" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <path d="m164 230-24 39 10 92 31 31h118l31-31 10-92-24-39Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m164 230 26 31h100l26-31Z" fill="#303438"/>
+    <path d="m150 269 31-8v131l-31-31Z" fill="#202326"/>
+    <path d="m330 269-31-8v131l31-31Z" fill="#0D0E0F"/>
+    <path d="M199 327h82l18 65H181Z" fill="#0D0E0F"/>
+    <path d="m219 363 21 15 21-15-7-19h-28Z" fill="#202326" stroke="#303438" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M201 397h78l-12 18h-54Z" fill="#303438"/>
+    <path d="M219 401h42" fill="none" stroke="#45F2AE" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g>
+    <path d="m156 218 27-18h114l27 18-19 35H175Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M183 200h114l-12 21h-90Z" fill="#0D0E0F"/>
+    <path d="M210 232h60" fill="none" stroke="#B69A61" stroke-width="4"/>
+  </g>
+  <g>
+    <path d="m160 57-34 39v105l35 29h158l35-29V96l-34-39Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="m160 57-34 39 25 16 31-31Z" fill="#202326"/>
+    <path d="m320 57 34 39-25 16-31-31Z" fill="#0D0E0F"/>
+    <path d="M151 112h178l15 19v51l-22 23H158l-22-23v-51Z" fill="#070909" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M161 126h158M161 190h158" fill="none" stroke="#063D31" stroke-width="3"/>
+    <g>
+      <circle cx="201" cy="158" r="27" fill="#063D31" stroke="#45F2AE" stroke-width="3"/>
+      <circle cx="201" cy="158" r="17" fill="#0D0E0F" stroke="#C9FFE9" stroke-width="2"/>
+      <rect x="195" y="152" width="12" height="12" rx="3" fill="#45F2AE"/>
+      <circle cx="205" cy="154" r="3" fill="#C9FFE9"/>
+      <circle cx="279" cy="158" r="27" fill="#063D31" stroke="#45F2AE" stroke-width="3"/>
+      <circle cx="279" cy="158" r="17" fill="#0D0E0F" stroke="#C9FFE9" stroke-width="2"/>
+      <rect x="273" y="152" width="12" height="12" rx="3" fill="#45F2AE"/>
+      <circle cx="283" cy="154" r="3" fill="#C9FFE9"/>
+      <path d="M178 158h-10m66 0h12m56 0h10" fill="none" stroke="#45F2AE" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

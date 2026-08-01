@@ -1,0 +1,410 @@
+.compressor {
+  position: relative;
+  min-height: 42rem;
+  overflow: hidden;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  color: var(--white);
+  background: var(--zero);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-md);
+  isolation: isolate;
+}
+
+.compressor::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7rem;
+  height: 0.35rem;
+  content: "";
+  background: var(--gold);
+}
+
+.compressor::after {
+  position: absolute;
+  z-index: -1;
+  right: -4rem;
+  bottom: -5rem;
+  width: 18rem;
+  height: 18rem;
+  content: "";
+  border: 1px solid var(--dark-border);
+  border-radius: 50%;
+}
+
+.compressor__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.compressor__label {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 730;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.compressor__count {
+  color: var(--dark-muted);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+
+.compressor__experience {
+  display: grid;
+  grid-template-areas:
+    "rail mascot"
+    "status status"
+    "control control"
+    "hint hint";
+  grid-template-columns: minmax(7.5rem, 0.36fr) minmax(14rem, 1fr);
+  gap: var(--space-4) clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  margin-top: var(--space-4);
+}
+
+.compressor__visual {
+  grid-area: rail;
+  display: grid;
+  gap: 0.45rem;
+  align-content: center;
+  margin: 0;
+  padding: 0 0 0 var(--space-4);
+  list-style: none;
+  border-left: 1px solid var(--dark-border);
+}
+
+.compressor__step {
+  position: relative;
+  display: grid;
+  min-height: 2.7rem;
+  align-items: center;
+  grid-template-columns: 1.45rem 1fr;
+  gap: var(--space-2);
+  padding: 0.4rem var(--space-2);
+  color: #8f9392;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  transition: color var(--motion-micro) ease, border-color var(--motion-micro) ease, background-color var(--motion-micro) ease;
+}
+
+.compressor__step::before {
+  position: absolute;
+  left: calc(-1rem - 4px);
+  width: 7px;
+  height: 7px;
+  content: "";
+  background: var(--zero);
+  border: 1px solid #6f7372;
+  border-radius: 50%;
+}
+
+.compressor__step[data-active="true"] {
+  color: var(--white);
+}
+
+.compressor__step[aria-current="step"] {
+  color: var(--white);
+  background: var(--dark-surface);
+  border-color: var(--gold);
+}
+
+.compressor__step[data-active="true"]::before {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.compressor__step-index {
+  color: var(--gold);
+  font-size: 0.66rem;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+}
+
+.compressor__status {
+  grid-area: status;
+  min-width: 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--dark-border);
+}
+
+.compressor__state-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: #5df3b7;
+  font-size: 0.7rem;
+  font-weight: 720;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.compressor__result {
+  min-height: 3.1rem;
+  margin: 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 620;
+  line-height: 1.3;
+}
+
+.compressor__control {
+  grid-area: control;
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.compressor__control .icon-button {
+  color: var(--white);
+}
+
+.compressor__control .icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.compressor input[type="range"] {
+  width: 100%;
+  min-height: 2.75rem;
+  margin: 0;
+  accent-color: #45f2ae;
+  cursor: pointer;
+}
+
+.compressor__hint {
+  grid-area: hint;
+  margin: 0;
+  color: var(--dark-muted);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.cero-mascot {
+  --gaze-x: 0px;
+  --gaze-y: 0px;
+  grid-area: mascot;
+  width: min(100%, 25rem);
+  margin: 0 auto;
+  padding: 0.25rem;
+  contain: layout paint;
+}
+
+.cero-mascot__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.cero-mascot__head,
+.cero-mascot__arm,
+.cero-mascot__body,
+.cero-mascot__collar,
+.cero-mascot__gaze,
+.cero-mascot__eye,
+.cero-mascot__expression {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cero-mascot__head,
+.cero-mascot__arm,
+.cero-mascot__body,
+.cero-mascot__collar {
+  transition: transform 420ms var(--ease-out);
+}
+
+.cero-mascot__gaze {
+  transform: translate(var(--gaze-x), var(--gaze-y));
+  transition: transform var(--motion-micro) ease-out;
+}
+
+.cero-mascot__expression {
+  opacity: 0;
+  transition: opacity var(--motion-micro) ease;
+}
+
+.cero-mascot[data-state="idle"] .cero-mascot__expression--idle,
+.cero-mascot[data-state="focus"] .cero-mascot__expression--focus,
+.cero-mascot[data-state="think"] .cero-mascot__expression--think,
+.cero-mascot[data-state="build"] .cero-mascot__expression--build,
+.cero-mascot[data-state="ready"] .cero-mascot__expression--ready {
+  opacity: 1;
+}
+
+.cero-mascot[data-state="focus"] .cero-mascot__head {
+  transform: translate(2px, -5px) rotate(1.5deg);
+}
+
+.cero-mascot[data-state="focus"] .cero-mascot__eye {
+  transform: scale(1.05);
+}
+
+.cero-mascot[data-state="think"] .cero-mascot__head {
+  transform: translateY(3px) rotate(-1.5deg);
+}
+
+.cero-mascot[data-state="think"] .cero-mascot__arm--left {
+  transform: translate(24px, -4px) rotate(9deg);
+}
+
+.cero-mascot[data-state="think"] .cero-mascot__arm--right {
+  transform: translate(-24px, -4px) rotate(-9deg);
+}
+
+.cero-mascot[data-state="build"] .cero-mascot__head {
+  transform: translateY(-7px);
+}
+
+.cero-mascot[data-state="build"] .cero-mascot__arm--left {
+  transform: translate(-8px, -14px) rotate(-12deg);
+}
+
+.cero-mascot[data-state="build"] .cero-mascot__arm--right {
+  transform: translate(8px, -14px) rotate(12deg);
+}
+
+.cero-mascot[data-state="ready"] .cero-mascot__head {
+  transform: translateY(-4px);
+}
+
+.cero-mascot[data-state="ready"] .cero-mascot__body,
+.cero-mascot[data-state="ready"] .cero-mascot__collar {
+  transform: translateY(-2px);
+}
+
+.cero-mascot[data-state="ready"] .cero-mascot__arm--left {
+  transform: translate(-6px, -20px) rotate(-16deg);
+}
+
+.cero-mascot[data-state="ready"] .cero-mascot__arm--right {
+  transform: translate(6px, -20px) rotate(16deg);
+}
+
+.cero-mascot[data-state="ready"] .cero-mascot__eye circle:first-child {
+  fill: #0b5c49;
+}
+
+@media (max-width: 62rem) {
+  .compressor {
+    min-height: 0;
+  }
+
+  .compressor__experience {
+    grid-template-columns: minmax(9rem, 0.45fr) minmax(17rem, 1fr);
+  }
+
+  .cero-mascot {
+    width: min(100%, 28rem);
+  }
+}
+
+@media (max-width: 35rem) {
+  .compressor {
+    padding: var(--space-5);
+  }
+
+  .compressor__experience {
+    grid-template-areas:
+      "mascot"
+      "status"
+      "control"
+      "rail"
+      "hint";
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+  }
+
+  .cero-mascot {
+    width: min(100%, 20rem);
+    margin-top: var(--space-2);
+  }
+
+  .compressor__status {
+    padding-top: var(--space-3);
+  }
+
+  .compressor__visual {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.25rem;
+    padding: var(--space-3) 0 0;
+    border-top: 1px solid var(--dark-border);
+    border-left: 0;
+  }
+
+  .compressor__step {
+    min-height: 2.75rem;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0.3rem 0.15rem;
+    text-align: center;
+  }
+
+  .compressor__step::before,
+  .compressor__step > span:last-child {
+    display: none;
+  }
+
+  .compressor__step-index {
+    font-size: 0.72rem;
+  }
+
+  .compressor__hint {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .cero-mascot {
+    --gaze-x: 0px;
+    --gaze-y: 0px;
+  }
+
+  .cero-mascot__gaze,
+  .cero-mascot__head,
+  .cero-mascot__arm,
+  .cero-mascot__body,
+  .cero-mascot__collar,
+  .cero-mascot__expression {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .compressor,
+  .compressor__step,
+  .compressor__status,
+  .compressor__visual {
+    border-color: CanvasText;
+  }
+
+  .compressor__step[aria-current="step"] {
+    outline: 2px solid Highlight;
+    outline-offset: 1px;
+  }
+
+  .compressor__step::before,
+  .compressor__step[data-active="true"]::before,
+  .compressor::before {
+    background: CanvasText;
+    border-color: CanvasText;
+  }
+
+  .cero-mascot__svg * {
+    fill: Canvas;
+    stroke: CanvasText;
+  }
+
+  .cero-mascot__eye rect,
+  .cero-mascot__eye-glint,
+  .cero-mascot__expression * {
+    fill: Highlight;
+    stroke: HighlightText;
+  }
+}

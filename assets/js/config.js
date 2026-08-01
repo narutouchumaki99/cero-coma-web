@@ -23,6 +23,7 @@
     }),
     features: Object.freeze({
       conceptCompressor: true,
+      mascotDemo: true,
       projectSearch: true,
       projectDialog: true,
       contactLinks: false,

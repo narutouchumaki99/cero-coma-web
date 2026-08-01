@@ -35,6 +35,7 @@ La acción publica la raíz tal cual: no compila, transforma ni inyecta configur
 - Movimiento reducido sin animaciones dependientes del tiempo.
 - Revisión automática de accesibilidad sin incidencias críticas.
 - Lighthouse y objetivos de carga documentados.
+- Los cinco estados de CERO, su API, movimiento reducido y versión estática verificados.
 - Revisión manual con lector de pantalla y móvil físico registrada.
 
 ## Puerta de producción
@@ -46,7 +47,10 @@ No continuar hasta aprobar todos estos puntos:
 3. permiso de medios y revisión de privacidad;
 4. llamadas a la acción definitivas;
 5. revisión móvil física;
-6. decisión explícita de lanzamiento.
+6. aprobación visual explícita de CERO;
+7. comprobación de originalidad y derechos de CERO;
+8. recorrido manual con NVDA;
+9. decisión explícita de lanzamiento.
 
 ## Dominio personalizado — procedimiento posterior
 
