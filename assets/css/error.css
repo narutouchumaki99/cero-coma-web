@@ -1,0 +1,39 @@
+.error-page {
+  display: grid;
+  min-height: calc(100svh - var(--header-height));
+  place-items: center;
+  padding-block: var(--space-16);
+}
+
+.error-page__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
+  gap: clamp(3rem, 10vw, 9rem);
+  align-items: center;
+}
+
+.error-page__code {
+  margin: 0;
+  color: var(--gold-ink);
+  font-size: clamp(6rem, 22vw, 14rem);
+  font-weight: 620;
+  line-height: 0.75;
+  letter-spacing: -0.08em;
+}
+
+.error-page h1 {
+  max-width: 10ch;
+}
+
+.error-page__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (max-width: 48rem) {
+  .error-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
+

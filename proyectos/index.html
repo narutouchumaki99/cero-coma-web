@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="theme-color" content="#0d0e0f">
+    <meta name="description" content="Estado, alcance y próximos hitos de los proyectos públicos de Cero Coma.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="Proyectos — Cero Coma">
+    <meta property="og:description" content="Dos líneas públicas con alcance y estado declarados con claridad.">
+    <meta property="og:url" content="https://cerocomasoluciones.com/proyectos/">
+    <title>Proyectos — Cero Coma</title>
+    <link rel="icon" href="../assets/media/brand/approved/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../assets/media/brand/approved/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/projects.css">
+  </head>
+  <body data-site-root="../">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="site-header__inner shell">
+        <a class="brand-link" href="../" aria-label="Cero Coma, inicio">
+          <img src="../assets/media/brand/approved/wordmark-horizontal-brand.svg" alt="Cero Coma" width="2200" height="500">
+        </a>
+        <nav class="desktop-nav" aria-label="Navegación principal">
+          <a href="../">Inicio</a>
+          <a href="./" aria-current="page">Proyectos</a>
+          <a href="../tu-carta-en-cero-coma/">Tu carta</a>
+        </nav>
+        <span class="environment-chip environment-chip--desktop">Vista previa</span>
+        <button class="icon-button menu-trigger" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" data-menu-open>
+          <img src="../assets/icons/web/menu.svg" alt="" aria-hidden="true" width="24" height="24">
+        </button>
+      </div>
+    </header>
+
+    <dialog class="menu-dialog" aria-label="Menú principal" data-menu-dialog>
+      <div class="menu-dialog__inner">
+        <div class="menu-dialog__top">
+          <span class="menu-dialog__brand">Cero Coma</span>
+          <button class="icon-button" type="button" aria-label="Cerrar menú" data-menu-close>
+            <img src="../assets/icons/web/close.svg" alt="" aria-hidden="true" width="24" height="24">
+          </button>
+        </div>
+        <nav aria-label="Navegación móvil">
+          <a href="../">Inicio</a>
+          <a href="./" aria-current="page">Proyectos</a>
+          <a href="../tu-carta-en-cero-coma/">Tu carta</a>
+        </nav>
+        <p class="menu-dialog__foot">De la intención a la realidad.</p>
+      </div>
+    </dialog>
+
+    <main id="contenido" tabindex="-1">
+      <header class="projects-hero">
+        <div class="projects-hero__grid shell">
+          <div>
+            <p class="eyebrow">Trabajo público</p>
+            <h1>Lo que ya existe. Lo que sigue.</h1>
+          </div>
+          <p class="projects-hero__note">Cada ficha separa funciones operativas, demostraciones conceptuales, próximos hitos y bloqueos.</p>
+        </div>
+      </header>
+
+      <section class="section--tight" aria-labelledby="project-list-title" data-project-explorer>
+        <div class="shell">
+          <h2 class="sr-only" id="project-list-title">Listado de proyectos</h2>
+
+          <div class="project-tools" data-project-tools hidden>
+            <div class="search-field">
+              <label for="project-search">Buscar proyectos</label>
+              <div class="search-field__control">
+                <img src="../assets/icons/web/search.svg" alt="" aria-hidden="true" width="24" height="24">
+                <input id="project-search" type="search" autocomplete="off" placeholder="Nombre, problema o estado" data-project-search>
+              </div>
+            </div>
+            <div>
+              <p class="sr-only" id="filter-label">Filtrar por categoría</p>
+              <div class="filter-group" role="group" aria-labelledby="filter-label" data-project-filters></div>
+            </div>
+          </div>
+
+          <div class="project-results-meta">
+            <p aria-live="polite" aria-atomic="true"><strong data-project-count>2 proyectos</strong> públicos</p>
+            <p>Actualizado el 1 de agosto de 2026</p>
+          </div>
+
+          <div class="project-grid" data-project-fallback>
+            <article class="project-card">
+              <div class="project-card__meta">
+                <span class="project-card__category">Producto</span>
+                <span class="status-pill">Desarrollo activo</span>
+              </div>
+              <h2>Tu carta en Cero Coma</h2>
+              <p>Una carta digital editable, publicable y conectada a un QR permanente. La extracción real está validada localmente con revisión humana obligatoria.</p>
+              <div class="project-card__actions"><a class="button button--light" href="../tu-carta-en-cero-coma/">Abrir proyecto</a></div>
+            </article>
+            <article class="project-card">
+              <div class="project-card__meta">
+                <span class="project-card__category">Servicio</span>
+                <span class="status-pill">Validación comercial</span>
+              </div>
+              <h2>Cero Coma Studio</h2>
+              <p>Una línea de trabajo para explicar visualmente espacios, ideas y propuestas. Sus medios siguen pendientes de permiso y revisión de privacidad.</p>
+            </article>
+          </div>
+
+          <div class="project-grid" data-project-list hidden></div>
+        </div>
+      </section>
+
+      <section class="section section--tight" aria-labelledby="contact-title" data-contact-region>
+        <div class="contact-status shell">
+          <div>
+            <p class="eyebrow">Contacto</p>
+            <h2 id="contact-title">Canales públicos en preparación.</h2>
+          </div>
+          <div>
+            <p class="contact-status__state" data-contact-state>No se muestra ningún enlace hasta disponer de un destino real.</p>
+            <div class="contact-links" data-contact-links hidden></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="project-dialog" aria-labelledby="project-dialog-title" data-project-dialog>
+      <div class="project-dialog__inner">
+        <button class="icon-button project-dialog__close" type="button" aria-label="Cerrar detalle" data-project-dialog-close>
+          <img src="../assets/icons/web/close.svg" alt="" aria-hidden="true" width="24" height="24">
+        </button>
+        <div data-project-dialog-body></div>
+      </div>
+    </dialog>
+
+    <footer class="footer">
+      <div class="shell">
+        <div class="footer__top">
+          <div>
+            <p class="eyebrow">Cero Coma</p>
+            <img class="footer__wordmark" src="../assets/media/brand/approved/wordmark-horizontal-white.svg" alt="Cero Coma" width="2200" height="500">
+          </div>
+          <nav class="footer__nav" aria-label="Navegación del pie">
+            <a href="../">Inicio</a>
+            <a href="./">Proyectos</a>
+            <a href="../tu-carta-en-cero-coma/">Tu carta</a>
+          </nav>
+        </div>
+        <div class="footer__bottom">
+          <p>De la intención a la realidad.</p>
+          <p>Vista previa · <span data-current-year>2026</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <noscript><p class="noscript-note">La búsqueda y el detalle interactivo requieren JavaScript. Las dos fichas principales siguen visibles.</p></noscript>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/projects-data.js"></script>
+    <script src="../assets/js/site.js"></script>
+    <script src="../assets/js/projects.js"></script>
+  </body>
+</html>
