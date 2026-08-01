@@ -44,8 +44,13 @@ Los iconos de `assets/icons/` proceden del paquete de recursos visuales v0.3. Se
 
 | Archivo | Uso | Procedencia | Estado | Autorización |
 | --- | --- | --- | --- | --- |
-| `assets/media/mascot/candidate/cero-web-v1.svg` | Maestro vectorial reutilizable | Especificación propia del personaje CERO y sistema visual Cero Coma 1.0 | `staging-candidate` | Solo staging |
-| SVG embebido en `index.html` | Reacciones por estado dentro del Compresor conceptual | Adaptación interactiva del maestro | `staging-candidate` | Solo staging |
+| `candidate/rendered/cero-idle.webp` | Estado neutral | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
+| `candidate/rendered/cero-focus.webp` | Estado de enfoque | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
+| `candidate/rendered/cero-think.webp` | Estado de orden | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
+| `candidate/rendered/cero-build.webp` | Estado de construcción | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
+| `candidate/rendered/cero-ready.webp` | Estado listo | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
 | `assets/media/mascot/manifest.json` | Registro público de versión, dimensiones, procedencia y revisión | Documentación de esta entrega | Vigente | Público en staging |
 
-El candidato usa únicamente geometría vectorial y colores planos. No incorpora renders previos, fotografía, vídeo, filtros, gradientes ni recursos de terceros. La comprobación formal de originalidad y derechos sigue pendiente y bloquea su paso a producción.
+El modelo fuente es un GLB de 13.389.496 bytes, 1.935.288 triángulos, 992.914 vértices, tres texturas y ninguna animación o esqueleto. Se conserva fuera del repositorio público: cargarlo directamente exigiría un visor y supondría un coste desproporcionado para el hero. Los cinco renders WebP pesan 49.046 bytes en conjunto, mantienen 512 × 512 px y se intercambian mediante la API existente.
+
+La carpeta recibida no incluye licencia. La comprobación formal de originalidad, procedencia y derechos sigue pendiente y bloquea el paso a producción tanto del modelo como de sus derivados.

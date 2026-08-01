@@ -21,7 +21,7 @@ Fecha de revisión: 1 de agosto de 2026.
 - Studio no muestra imágenes: el material disponible aún necesita permiso, recorte y revisión de privacidad.
 - No se usan fotografías de stock ni testimonios, cifras o resultados sin evidencia.
 - Los contactos están vacíos en la configuración y no se generan enlaces sin destino.
-- CERO comunica cinco estados visuales y textuales. La ilustración es decorativa para lectores de pantalla y el cambio relevante se anuncia en una región de estado.
+- CERO comunica cinco estados visuales y textuales mediante renders derivados del modelo 3D aportado. La imagen es decorativa para lectores de pantalla y el cambio relevante se anuncia en una región de estado.
 
 ## Bloqueos de producción
 

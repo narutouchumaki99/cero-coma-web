@@ -6,11 +6,11 @@ Staging activo: <https://narutouchumaki99.github.io/cero-coma-web/>
 
 ## Alcance
 
-- HTML5 semántico, CSS, JavaScript vanilla y SVG.
+- HTML5 semántico, CSS, JavaScript vanilla, SVG y WebP.
 - Sin backend, framework, dependencias de ejecución ni proceso de build.
 - Páginas públicas: inicio, proyectos, Tu carta en Cero Coma y error 404.
 - Datos públicos centralizados en `window.CEROCOMA_CONFIG` y `window.CEROCOMA_PROJECTS`.
-- CERO integrado en el Compresor conceptual mediante SVG, CSS y JavaScript vanilla.
+- CERO integrado en el Compresor conceptual mediante cinco renders WebP derivados del modelo 3D aportado.
 - API de demostración disponible en `window.CEROCOMA_MASCOT`, limitada al staging.
 - Solo se incluyen los dos proyectos autorizados para esta vista previa.
 - No existe `CNAME` y no se modifica el dominio ni su DNS.
@@ -42,7 +42,7 @@ assets/
   icons/                  Iconos auxiliares
   js/                     Configuración, datos e interacción
   media/brand/approved/   Maestros de marca 1.0
-  media/mascot/           Maestro y manifiesto del candidato CERO
+  media/mascot/           Renders por estado y manifiesto del candidato CERO
 docs/                     Estado de contenido, activos y despliegue
 proyectos/                Explorador público
 tu-carta-en-cero-coma/    Página del producto

@@ -188,6 +188,10 @@
 .cero-mascot {
   --gaze-x: 0px;
   --gaze-y: 0px;
+  --state-x: 0px;
+  --state-y: 0px;
+  --state-rotate: 0deg;
+  --state-scale: 1.15;
   grid-area: mascot;
   width: min(100%, 25rem);
   margin: 0 auto;
@@ -196,10 +200,18 @@
 }
 
 .cero-mascot__svg {
+  display: none;
+}
+
+.cero-mascot__render {
   display: block;
   width: 100%;
   height: auto;
-  overflow: visible;
+  background: var(--zero);
+  object-fit: contain;
+  transform: translate(calc(var(--gaze-x) + var(--state-x)), calc(var(--gaze-y) + var(--state-y))) rotate(var(--state-rotate)) scale(var(--state-scale));
+  transform-origin: center;
+  transition: transform 420ms var(--ease-out), opacity var(--motion-micro) ease;
 }
 
 .cero-mascot__head,
@@ -242,12 +254,24 @@
   transform: translate(2px, -5px) rotate(1.5deg);
 }
 
+.cero-mascot[data-state="focus"] {
+  --state-x: 2px;
+  --state-y: -4px;
+  --state-rotate: 0.8deg;
+}
+
 .cero-mascot[data-state="focus"] .cero-mascot__eye {
   transform: scale(1.05);
 }
 
 .cero-mascot[data-state="think"] .cero-mascot__head {
   transform: translateY(3px) rotate(-1.5deg);
+}
+
+.cero-mascot[data-state="think"] {
+  --state-x: -2px;
+  --state-y: 2px;
+  --state-rotate: -0.8deg;
 }
 
 .cero-mascot[data-state="think"] .cero-mascot__arm--left {
@@ -262,6 +286,11 @@
   transform: translateY(-7px);
 }
 
+.cero-mascot[data-state="build"] {
+  --state-y: -5px;
+  --state-scale: 1.18;
+}
+
 .cero-mascot[data-state="build"] .cero-mascot__arm--left {
   transform: translate(-8px, -14px) rotate(-12deg);
 }
@@ -272,6 +301,11 @@
 
 .cero-mascot[data-state="ready"] .cero-mascot__head {
   transform: translateY(-4px);
+}
+
+.cero-mascot[data-state="ready"] {
+  --state-y: -4px;
+  --state-scale: 1.1;
 }
 
 .cero-mascot[data-state="ready"] .cero-mascot__body,
@@ -367,6 +401,7 @@
   }
 
   .cero-mascot__gaze,
+  .cero-mascot__render,
   .cero-mascot__head,
   .cero-mascot__arm,
   .cero-mascot__body,
@@ -396,15 +431,12 @@
     border-color: CanvasText;
   }
 
-  .cero-mascot__svg * {
-    fill: Canvas;
-    stroke: CanvasText;
+  .cero-mascot {
+    outline: 1px solid CanvasText;
+    outline-offset: -1px;
   }
 
-  .cero-mascot__eye rect,
-  .cero-mascot__eye-glint,
-  .cero-mascot__expression * {
-    fill: Highlight;
-    stroke: HighlightText;
+  .cero-mascot__render {
+    forced-color-adjust: none;
   }
 }

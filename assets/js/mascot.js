@@ -1,19 +1,21 @@
 (function () {
   "use strict";
 
-  const VERSION = "1.0.0";
+  const VERSION = "2.0.0";
+  const RENDER_ROOT = "assets/media/mascot/candidate/rendered/";
   const STATES = Object.freeze([
-    Object.freeze({ id: "idle", level: 0, label: "00 / En espera", message: "CERO espera contigo." }),
-    Object.freeze({ id: "focus", level: 1, label: "01 / Enfoque", message: "CERO está encontrando el criterio." }),
-    Object.freeze({ id: "think", level: 2, label: "02 / Orden", message: "CERO está ordenando el flujo." }),
-    Object.freeze({ id: "build", level: 3, label: "03 / Construcción", message: "CERO está dando forma a la interfaz." }),
-    Object.freeze({ id: "ready", level: 4, label: "04 / Listo", message: "CERO muestra el resultado listo." })
+    Object.freeze({ id: "idle", level: 0, label: "00 / En espera", message: "CERO espera contigo.", render: `${RENDER_ROOT}cero-idle.webp` }),
+    Object.freeze({ id: "focus", level: 1, label: "01 / Enfoque", message: "CERO está encontrando el criterio.", render: `${RENDER_ROOT}cero-focus.webp` }),
+    Object.freeze({ id: "think", level: 2, label: "02 / Orden", message: "CERO está ordenando el flujo.", render: `${RENDER_ROOT}cero-think.webp` }),
+    Object.freeze({ id: "build", level: 3, label: "03 / Construcción", message: "CERO está dando forma a la interfaz.", render: `${RENDER_ROOT}cero-build.webp` }),
+    Object.freeze({ id: "ready", level: 4, label: "04 / Listo", message: "CERO muestra el resultado listo.", render: `${RENDER_ROOT}cero-ready.webp` })
   ]);
   const stateById = new Map(STATES.map((state) => [state.id, state]));
   const stateByLevel = new Map(STATES.map((state) => [state.level, state]));
   const config = window.CEROCOMA_CONFIG || {};
   const enabled = Boolean(config.features && config.features.mascotDemo);
   const mascot = document.querySelector("[data-cero-mascot]");
+  const render = mascot && mascot.querySelector("[data-cero-render]");
   const stateLabel = document.querySelector("[data-mascot-state-label]");
   const visibleMessage = document.querySelector("[data-compressor-result]");
   const liveStatus = document.querySelector("[data-mascot-status]");
@@ -27,6 +29,10 @@
     const changed = currentId !== next.id;
 
     mascot.dataset.state = next.id;
+    if (render && render.dataset.renderState !== next.id) {
+      render.src = next.render;
+      render.dataset.renderState = next.id;
+    }
     if (stateLabel) stateLabel.textContent = next.label;
 
     if (settings.syncMessage === true) {
@@ -72,6 +78,19 @@
   const initialState = stateByLevel.get(range ? Number(range.value) : 0) || STATES[0];
   setState(initialState.id, { announce: false, source: "initial" });
 
+  function preloadRenders() {
+    STATES.filter((state) => state.id !== currentId).forEach((state) => {
+      const image = new Image();
+      image.decoding = "async";
+      image.src = state.render;
+    });
+  }
+
+  window.addEventListener("load", () => {
+    if ("requestIdleCallback" in window) window.requestIdleCallback(preloadRenders, { timeout: 1600 });
+    else window.setTimeout(preloadRenders, 250);
+  }, { once: true });
+
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = window.matchMedia("(pointer: fine)");
   let componentVisible = true;
@@ -93,8 +112,8 @@
     const bounds = mascot.getBoundingClientRect();
     const normalizedX = ((pointerPosition.x - bounds.left) / bounds.width) * 2 - 1;
     const normalizedY = ((pointerPosition.y - bounds.top) / bounds.height) * 2 - 1;
-    const gazeX = Math.max(-1, Math.min(1, normalizedX)) * 7;
-    const gazeY = Math.max(-1, Math.min(1, normalizedY)) * 5;
+    const gazeX = Math.max(-1, Math.min(1, normalizedX)) * 4;
+    const gazeY = Math.max(-1, Math.min(1, normalizedY)) * 3;
     mascot.style.setProperty("--gaze-x", `${gazeX.toFixed(2)}px`);
     mascot.style.setProperty("--gaze-y", `${gazeY.toFixed(2)}px`);
   }

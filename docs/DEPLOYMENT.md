@@ -36,6 +36,7 @@ La acción publica la raíz tal cual: no compila, transforma ni inyecta configur
 - Revisión automática de accesibilidad sin incidencias críticas.
 - Lighthouse y objetivos de carga documentados.
 - Los cinco estados de CERO, su API, movimiento reducido y versión estática verificados.
+- El GLB fuente permanece fuera del artefacto público; solo se despliegan sus cinco derivados WebP registrados.
 - Revisión manual con lector de pantalla y móvil físico registrada.
 
 ## Puerta de producción

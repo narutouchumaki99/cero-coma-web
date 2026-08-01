@@ -38,6 +38,8 @@
 
 ## Candidato CERO — validación local
 
+- El modelo 3D aportado se representa mediante cinco renders WebP de 512 × 512 px; el `.glb` de 13.389.496 bytes no forma parte de los archivos públicos.
+- Los cinco estados cargan su imagen correcta y el conjunto visual pesa 49.046 bytes.
 - Los ocho tamaños entre 320 × 568 y 1920 × 1080 mantienen el ancho del documento igual al viewport, sin solapamiento entre mascota, estado, vía de fases y controles.
 - En móvil el orden visual comprobado es mascota, estado, rango, fases y ayuda.
 - Los botones del compresor miden 44 × 44 px y el rango mantiene 44 px de altura.
@@ -45,11 +47,11 @@
 - Teclado, `Escape`, restauración de foco y anuncio de las cinco fases funcionan sin mover el foco.
 - Movimiento reducido y puntero táctil no alteran la mirada; al salir o quedar fuera de pantalla vuelve a `0px, 0px`.
 - axe-core 4.12.1: cero infracciones en 320 px, 768 px, 1440 px y menú móvil abierto.
-- Lighthouse local: rendimiento 99, accesibilidad 100, buenas prácticas 100; LCP 1.803 ms, CLS 0,00013 y TBT 0 ms.
+- Lighthouse local: rendimiento 99, accesibilidad 100, buenas prácticas 100; LCP 1.954 ms, CLS 0,00013 y TBT 0 ms.
 - Cuatro transiciones consecutivas no registraron tareas largas; veinte eventos de puntero en un mismo frame solicitaron una sola actualización visual.
-- El incremento servido atribuible a la integración es de 22.233 bytes sin comprimir, frente al límite de 100 KB.
+- El incremento servido atribuible a esta sustitución es de 49.732 bytes sin comprimir, frente al límite de 100 KB.
 
-Las capturas de los ocho tamaños se generan en `output/playwright/` y se excluyen del repositorio. La aprobación visual, la revisión de originalidad y derechos, NVDA y el móvil físico siguen siendo comprobaciones humanas obligatorias antes de producción.
+Las capturas de los ocho tamaños se generan en `output/playwright/` y se excluyen del repositorio. No se recibió licencia ni documentación de procedencia junto al modelo; la aprobación visual, la revisión de originalidad y derechos, NVDA y el móvil físico siguen siendo comprobaciones humanas obligatorias antes de producción.
 
 ## Lighthouse del staging publicado
 

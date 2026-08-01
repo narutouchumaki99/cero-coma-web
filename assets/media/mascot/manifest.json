@@ -1,33 +1,95 @@
 {
-  "version": "1.0.0",
+  "version": "2.0.0",
   "name": "CERO",
   "status": "staging-candidate",
-  "provenance": "Especificación interna del personaje CERO y sistema visual Cero Coma 1.0",
+  "provenance": "Modelo 3D aportado por el propietario y adaptado para la web Cero Coma",
   "authorization": "staging-only",
   "originalityReview": "pending",
+  "rightsReview": "pending",
   "productionApproved": false,
-  "master": {
-    "path": "candidate/cero-web-v1.svg",
-    "width": 480,
-    "height": 440,
-    "viewBox": "0 0 480 440",
-    "alternativeText": "CERO, figura digital flotante de carcasa negra, visor horizontal y ojos verdes.",
-    "format": "image/svg+xml",
-    "provenance": "Diseño vectorial propio derivado de la especificación de CERO",
-    "authorization": "staging-only",
-    "status": "staging-candidate"
+  "sourceModel": {
+    "fileName": "3d-robot-character.glb",
+    "format": "model/gltf-binary",
+    "bytes": 13389496,
+    "sha256": "D400E9BE77986F9F9B120ECCA39D98F8B25799B997F6EF05E8AA068591FA2760",
+    "generator": "gltfpack 1.2",
+    "triangles": 1935288,
+    "vertices": 992914,
+    "animations": 0,
+    "skins": 0,
+    "licenseProvided": false,
+    "published": false,
+    "publicationReason": "El original se conserva fuera de la web por peso, complejidad y revisión de derechos pendiente."
   },
-  "interactiveVersion": {
-    "path": "../../../index.html#compresor-conceptual",
-    "width": 480,
-    "height": 440,
-    "viewBox": "0 0 480 440",
-    "alternativeText": "",
-    "decorative": true,
-    "meaningCommunicatedBy": "aria-live",
-    "provenance": "Adaptación interactiva propia del maestro CERO",
-    "authorization": "staging-only",
-    "status": "staging-candidate"
+  "delivery": {
+    "kind": "five-state-render-sequence",
+    "format": "image/webp",
+    "width": 512,
+    "height": 512,
+    "totalBytes": 49046,
+    "sourcePublished": false
   },
+  "media": [
+    {
+      "state": "idle",
+      "path": "candidate/rendered/cero-idle.webp",
+      "width": 512,
+      "height": 512,
+      "alternativeText": "",
+      "provenance": "Render derivado del modelo 3D aportado por el propietario",
+      "authorization": "staging-only",
+      "status": "staging-candidate",
+      "bytes": 9368,
+      "sha256": "4D8F0BF801664F12E261BCE59E2C77D66B79BFC1261819183845BBA5D72BC0F3"
+    },
+    {
+      "state": "focus",
+      "path": "candidate/rendered/cero-focus.webp",
+      "width": 512,
+      "height": 512,
+      "alternativeText": "",
+      "provenance": "Render derivado del modelo 3D aportado por el propietario",
+      "authorization": "staging-only",
+      "status": "staging-candidate",
+      "bytes": 9586,
+      "sha256": "4F66F713B50C0E3785DD44943D8F3D94245F5160920E8B5A5044A2C934BEBE4A"
+    },
+    {
+      "state": "think",
+      "path": "candidate/rendered/cero-think.webp",
+      "width": 512,
+      "height": 512,
+      "alternativeText": "",
+      "provenance": "Render derivado del modelo 3D aportado por el propietario",
+      "authorization": "staging-only",
+      "status": "staging-candidate",
+      "bytes": 8690,
+      "sha256": "AA510E4491D2AB265206B1C4E387A3442941CE61D16980772F65A04B6AB34657"
+    },
+    {
+      "state": "build",
+      "path": "candidate/rendered/cero-build.webp",
+      "width": 512,
+      "height": 512,
+      "alternativeText": "",
+      "provenance": "Render derivado del modelo 3D aportado por el propietario",
+      "authorization": "staging-only",
+      "status": "staging-candidate",
+      "bytes": 10160,
+      "sha256": "501EF3E03506D7852AE843B9F57E2AF52C06DEE0D04E10AF21EE49F6B4215A56"
+    },
+    {
+      "state": "ready",
+      "path": "candidate/rendered/cero-ready.webp",
+      "width": 512,
+      "height": 512,
+      "alternativeText": "",
+      "provenance": "Render derivado del modelo 3D aportado por el propietario",
+      "authorization": "staging-only",
+      "status": "staging-candidate",
+      "bytes": 11242,
+      "sha256": "333E1D603952CBE731783D02E485B8EF0A2BF39A5C8DD71088EB82946282A029"
+    }
+  ],
   "states": ["idle", "focus", "think", "build", "ready"]
 }
