@@ -1,4 +1,5 @@
 output/
+/recursos-locales/
 .playwright-cli/
 .codex-static-preview.pid
 .tmp/

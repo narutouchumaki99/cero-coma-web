@@ -4,7 +4,7 @@ import path from "node:path";
 import process from "node:process";
 
 const root = path.resolve(import.meta.dirname, "..");
-const ignoredDirectories = new Set([".git", "output", ".tmp", ".lighthouseci"]);
+const ignoredDirectories = new Set([".git", "output", "recursos-locales", ".tmp", ".lighthouseci"]);
 const servedExtensions = new Set([".html", ".css", ".js", ".json", ".svg", ".xml", ".txt"]);
 const errors = [];
 const excludedNames = new RegExp(`\\b(?:${[
