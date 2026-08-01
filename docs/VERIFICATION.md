@@ -55,7 +55,7 @@ Las capturas de los ocho tamaños se generan en `output/playwright/` y se excluy
 
 | Página | Rendimiento | Accesibilidad | Buenas prácticas | SEO | LCP | CLS | TBT |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| Inicio | 100 | 100 | 100 | 63 | 1.203 ms | 0 | 0 ms |
+| Inicio | 100 | 100 | 100 | 63 | 1.188 ms | 0 | 0 ms |
 | Proyectos | 100 | 100 | 100 | 63 | 1.186 ms | 0 | 0 ms |
 | Tu carta | 100 | 100 | 100 | 63 | 1.055 ms | 0 | 0 ms |
 
@@ -70,6 +70,10 @@ El 63 de SEO responde al bloqueo intencional de rastreo de esta vista previa. No
 - `robots.txt`: bloqueo completo de staging.
 - Configuración servida: entorno `staging`, dos proyectos públicos y cero contactos.
 - axe-core 4.12.1: cero incidencias en las tres páginas publicadas.
+- CERO 1.0.0: cinco estados, cuatro eventos para cuatro cambios reales, ancho correcto a 390 y 1440 px y manifiesto limitado a staging.
+- Maestro SVG, CSS, JavaScript y manifiesto de CERO responden con código 200 y tipos MIME correctos.
+- Lighthouse remoto de Inicio tras la integración: rendimiento 100, accesibilidad 100, buenas prácticas 100, LCP 1.188 ms, CLS 0 y TBT 0 ms.
+- GitHub Pages publicó correctamente el commit de interfaz `ed28e93` mediante la ejecución `30700508355`.
 - Consola del navegador: cero errores durante navegación e interacciones.
 
 ## Alcance pendiente
