@@ -326,7 +326,10 @@ h3 {
   top: 0;
   min-height: var(--header-height);
   background: var(--ivory);
+  background: color-mix(in srgb, var(--ivory) 86%, transparent);
   border-bottom: 1px solid var(--light-border);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
 }
 
 .site-header__inner {

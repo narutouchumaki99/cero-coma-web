@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/tokens.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/product.css">
+    <link rel="stylesheet" href="../assets/css/motion.css">
   </head>
   <body data-site-root="../">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -58,13 +59,13 @@
     <main id="contenido" tabindex="-1">
       <header class="product-hero">
         <div class="product-hero__grid shell">
-          <div>
+          <div data-reveal>
             <p class="eyebrow">Producto principal / Desarrollo activo</p>
             <h1>Tu carta, editable y siempre en el mismo QR.</h1>
             <p class="lead">Un flujo para pasar de una carta existente a una versión digital que se puede revisar, publicar y mantener.</p>
             <a class="button button--dark" href="#demostracion">Recorrer la demostración</a>
           </div>
-          <aside class="product-hero__aside" aria-label="Resumen del estado">
+          <aside class="product-hero__aside" aria-label="Resumen del estado" data-reveal style="--reveal-delay: 140ms">
             <dl>
               <div><dt>Operativo</dt><dd>Editor manual, publicación y QR.</dd></div>
               <div><dt>Validado</dt><dd>Extracción real local con revisión humana.</dd></div>
@@ -75,7 +76,7 @@
       </header>
 
       <section class="section section--dark" aria-label="Entrada, trabajo y resultado">
-        <div class="value-grid shell">
+        <div class="value-grid shell" data-reveal-stagger>
           <article class="value-card">
             <p class="value-card__label">01 / Entra</p>
             <h2>Una carta existente.</h2>
@@ -96,12 +97,12 @@
 
       <section class="section" aria-labelledby="state-title">
         <div class="state-layout shell">
-          <div class="state-layout__intro">
+          <div class="state-layout__intro" data-reveal>
             <p class="eyebrow">Estado verificable</p>
             <h2 id="state-title">Construido, validado y pendiente.</h2>
             <p class="muted">Este estado describe el producto actual. No convierte las pruebas locales en una promesa de servicio disponible.</p>
           </div>
-          <ol class="state-list">
+          <ol class="state-list" data-reveal-stagger>
             <li data-state="done">
               <span class="state-list__mark" aria-hidden="true">01</span>
               <div><h3>Editor manual</h3><p>Crear y ordenar categorías, productos, descripciones y precios.</p></div>
@@ -143,7 +144,7 @@
 
       <section class="section section--dark" id="demostracion" aria-labelledby="demo-title">
         <div class="shell">
-          <div class="demo-head">
+          <div class="demo-head" data-reveal>
             <div>
               <p class="eyebrow">Recorrido explicativo</p>
               <h2 id="demo-title">Cinco pasos, sin fingir una conexión.</h2>
@@ -230,9 +231,11 @@
 
       <section class="section" aria-labelledby="scope-title">
         <div class="shell">
-          <p class="eyebrow">Alcance de la primera versión</p>
-          <h2 id="scope-title">Una frontera explícita.</h2>
-          <div class="scope-grid">
+          <div data-reveal>
+            <p class="eyebrow">Alcance de la primera versión</p>
+            <h2 id="scope-title">Una frontera explícita.</h2>
+          </div>
+          <div class="scope-grid" data-reveal-stagger>
             <article class="scope-card">
               <h3>Incluido</h3>
               <ul>
@@ -258,7 +261,7 @@
       </section>
 
       <section class="section section--dark" aria-labelledby="pilot-title" data-contact-region>
-        <div class="pilot-note shell">
+        <div class="pilot-note shell" data-reveal>
           <div>
             <p class="eyebrow">Siguiente hito</p>
             <h2 id="pilot-title">Preparar un piloto controlado.</h2>
@@ -296,5 +299,6 @@
     <script src="../assets/js/config.js"></script>
     <script src="../assets/js/site.js"></script>
     <script src="../assets/js/product-demo.js"></script>
+    <script src="../assets/js/motion.js"></script>
   </body>
 </html>

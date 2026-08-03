@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/tokens.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/projects.css">
+    <link rel="stylesheet" href="../assets/css/motion.css">
   </head>
   <body data-site-root="../">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -58,11 +59,11 @@
     <main id="contenido" tabindex="-1">
       <header class="projects-hero">
         <div class="projects-hero__grid shell">
-          <div>
+          <div data-reveal>
             <p class="eyebrow">Trabajo público</p>
             <h1>Lo que ya existe. Lo que sigue.</h1>
           </div>
-          <p class="projects-hero__note">Cada ficha separa funciones operativas, demostraciones conceptuales, próximos hitos y bloqueos.</p>
+          <p class="projects-hero__note" data-reveal style="--reveal-delay: 120ms">Cada ficha separa funciones operativas, demostraciones conceptuales, próximos hitos y bloqueos.</p>
         </div>
       </header>
 
@@ -114,7 +115,7 @@
       </section>
 
       <section class="section section--tight" aria-labelledby="contact-title" data-contact-region>
-        <div class="contact-status shell">
+        <div class="contact-status shell" data-reveal>
           <div>
             <p class="eyebrow">Contacto</p>
             <h2 id="contact-title">Canales públicos en preparación.</h2>
@@ -161,5 +162,6 @@
     <script src="../assets/js/projects-data.js"></script>
     <script src="../assets/js/site.js"></script>
     <script src="../assets/js/projects.js"></script>
+    <script src="../assets/js/motion.js"></script>
   </body>
 </html>

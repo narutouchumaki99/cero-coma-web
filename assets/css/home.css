@@ -90,6 +90,117 @@
   font-size: 0.92rem;
 }
 
+.recorrido__head {
+  max-width: var(--measure);
+}
+
+.recorrido__head .lead {
+  margin-bottom: 0;
+}
+
+.recorrido__layout {
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.3fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 7vw, 6.5rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.recorrido__rail {
+  position: sticky;
+  top: calc(var(--header-height) + 2.5rem);
+  align-self: start;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--light-border);
+}
+
+.recorrido__counter {
+  margin: 0 0 var(--space-4);
+  font-size: clamp(3rem, 5vw, 4.4rem);
+  font-weight: 640;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.recorrido__total {
+  margin-left: 0.35em;
+  color: var(--light-muted);
+  font-size: 0.42em;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.recorrido__progress {
+  height: 2px;
+  overflow: hidden;
+  background: var(--light-border);
+  border-radius: 999px;
+}
+
+.recorrido__progress-fill {
+  display: block;
+  width: 20%;
+  height: 100%;
+  background: var(--gold-ink);
+  transition: width 480ms var(--ease-out);
+}
+
+.recorrido__rail-note {
+  margin: var(--space-4) 0 0;
+  color: var(--gold-ink);
+  font-size: 0.75rem;
+  font-weight: 730;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.recorrido__chapters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recorrido__chapter {
+  padding-block: clamp(3rem, 9vh, 5.5rem);
+  border-top: 1px solid var(--light-border);
+  transition: opacity 480ms var(--ease-out), filter 480ms var(--ease-out);
+}
+
+.recorrido__chapter:last-child {
+  border-bottom: 1px solid var(--light-border);
+}
+
+html.js-motion .recorrido__chapter {
+  opacity: 0.3;
+  filter: blur(2px);
+}
+
+html.js-motion .recorrido__chapter.is-active {
+  opacity: 1;
+  filter: none;
+}
+
+.recorrido__number {
+  display: block;
+  margin-bottom: var(--space-4);
+  color: var(--gold-ink);
+  font-size: 0.75rem;
+  font-weight: 730;
+  letter-spacing: 0.1em;
+}
+
+.recorrido__chapter h3 {
+  max-width: 18ch;
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  letter-spacing: -0.035em;
+}
+
+.recorrido__chapter p {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--light-muted);
+  font-size: 1.02rem;
+}
+
 .projects-intro {
   display: flex;
   align-items: end;
@@ -374,8 +485,17 @@
 @media (max-width: 48rem) {
   .definition-grid,
   .studio-project,
-  .principles-grid {
+  .principles-grid,
+  .recorrido__layout {
     grid-template-columns: 1fr;
+  }
+
+  .recorrido__rail {
+    display: none;
+  }
+
+  .recorrido__chapter {
+    padding-block: var(--space-10);
   }
 
   .projects-intro {

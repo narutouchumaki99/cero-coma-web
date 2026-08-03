@@ -1,0 +1,65 @@
+/* Transiciones entre páginas y apariciones al hacer scroll.
+   Todo el movimiento queda desactivado con prefers-reduced-motion. */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Difuminado entre páginas (View Transitions, navegación entre documentos). */
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root) {
+    animation: page-out 240ms ease both;
+  }
+
+  ::view-transition-new(root) {
+    animation: page-in 420ms var(--ease-out) both;
+  }
+
+  /* Alternativa para navegadores sin View Transitions: el JS añade estas clases. */
+  html.page-enter body {
+    animation: page-in 420ms var(--ease-out) both;
+  }
+
+  html.page-leave body {
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 240ms ease, filter 240ms ease;
+  }
+
+  /* Aparición de bloques al entrar en pantalla. Solo se oculta si hay JS. */
+  html.js-motion [data-reveal] {
+    opacity: 0;
+    transform: translateY(1.4rem);
+    filter: blur(9px);
+    transition:
+      opacity 680ms var(--ease-out),
+      transform 680ms var(--ease-out),
+      filter 680ms var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  html.js-motion [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
