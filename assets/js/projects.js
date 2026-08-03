@@ -1,6 +1,7 @@
 (function () {
   "use strict";
 
+  const config = window.CEROCOMA_CONFIG || {};
   const projects = Array.isArray(window.CEROCOMA_PROJECTS)
     ? window.CEROCOMA_PROJECTS.filter((project) => project.visibility === "public")
     : [];
@@ -103,6 +104,19 @@
       link.href = url;
       link.textContent = "Abrir proyecto";
       actions.append(link);
+    }
+
+    // La app desplegada solo cubre el producto principal: el resto de proyectos
+    // no debe mostrar un acceso que no les corresponde.
+    const appUrl = (config.app && config.app.url) || "";
+    if (appUrl && project.id === "tu-carta") {
+      const appLink = document.createElement("a");
+      appLink.className = "button button--ghost";
+      appLink.href = appUrl;
+      appLink.target = "_blank";
+      appLink.rel = "noreferrer";
+      appLink.textContent = "Entrar en la app ↗";
+      actions.append(appLink);
     }
 
     article.append(meta, heading, summary, actions);

@@ -213,6 +213,17 @@
   color: var(--dark-muted);
 }
 
+.product-hero__actions,
+.pilot-note__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.pilot-note__actions {
+  margin-block: var(--space-5);
+}
+
 .demo-frame {
   min-height: 22rem;
   padding: clamp(1.25rem, 4vw, 2.5rem);

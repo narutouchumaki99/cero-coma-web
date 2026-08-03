@@ -115,6 +115,27 @@ if (!/Disallow:\s*\//i.test(robots)) errors.push("robots.txt: staging debe bloqu
 
 const indexSource = await readFile(path.join(root, "index.html"), "utf8");
 const configSource = await readFile(path.join(root, "assets/js/config.js"), "utf8");
+
+// La URL de la app vive en config.js y además en enlaces estáticos (para que
+// funcionen sin JavaScript). Si divergen, los botones llevarían a un destino
+// muerto sin que nada avise: aquí se obliga a que coincidan.
+{
+  const declared = configSource.match(/url:\s*"(https:\/\/[^"]+)"/);
+  const appUrl = declared ? declared[1].replace(/\/$/, "") : "";
+  for (const htmlFile of htmlFiles) {
+    const source = await readFile(htmlFile, "utf8");
+    for (const match of source.matchAll(/<a\b[^>]*\bdata-app-link\b[^>]*>/g)) {
+      const href = match[0].match(/href="([^"]+)"/);
+      if (!href) {
+        fail(htmlFile, "un enlace data-app-link no declara href");
+      } else if (!appUrl) {
+        fail(htmlFile, "hay enlaces a la app pero config.js no declara app.url");
+      } else if (href[1].replace(/\/$/, "") !== appUrl) {
+        fail(htmlFile, `enlace a la app desincronizado con config.app.url: ${href[1]}`);
+      }
+    }
+  }
+}
 const mascotSource = await readFile(path.join(root, "assets/js/mascot.js"), "utf8");
 const manifestPath = path.join(root, "assets/media/mascot/manifest.json");
 let manifest;
