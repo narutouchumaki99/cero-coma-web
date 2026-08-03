@@ -106,6 +106,19 @@ no fingir IA conectada. El CTA final hacia la app lee
 se publican enlaces sin destino). Cuando la app tenga URL pública, rellenar ese
 campo en `assets/js/config.js` activa el botón "Continuar en la app".
 
+## Dominio propio (desde el 3 de agosto de 2026)
+
+La web ya vive en <https://www.cerocomasoluciones.com> (redirige el apex y
+sirve HTTPS por Cloudflare Pages Free, con despliegue automático desde la rama
+`main` de GitHub). El dominio y el correo siguen en Hostinger; MX, SPF, DMARC y
+DKIM verificados tras el cambio. La URL de GitHub Pages
+<https://narutouchumaki99.github.io/cero-coma-web/> queda operativa como
+respaldo y se conserva en `assets/js/config.js` (`stagingUrl`).
+
+**Sigue con `noindex`** a propósito: Google no indexará hasta cerrar contactos
+reales, textos legales, permisos de medios y CTA definitivas
+(`docs/DEPLOYMENT.md`).
+
 ## Estado y pendientes
 
 - **Los cambios de arriba están solo en local, sin commit ni push.** Para publicarlos en el staging: commit en el repo y push a `main` (el workflow `.github/workflows/pages.yml` despliega).

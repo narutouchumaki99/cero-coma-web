@@ -9,11 +9,14 @@
       version: "1.0"
     }),
     site: Object.freeze({
-      environment: "staging",
+      // La web ya vive en el dominio propio (Cloudflare Pages). Sigue con
+      // noindex hasta cerrar contacto real, textos legales y CTA definitivas.
+      environment: "production-noindex",
       publicDomain: "cerocomasoluciones.com",
+      publicUrl: "https://www.cerocomasoluciones.com/",
       stagingUrl: "https://narutouchumaki99.github.io/cero-coma-web/",
-      repositoryBase: "/cero-coma-web/",
-      lastUpdated: "2026-08-01"
+      repositoryBase: "/",
+      lastUpdated: "2026-08-03"
     }),
     app: Object.freeze({
       // URL pública de la app de Tu carta. Verificada en línea el 3-08-2026.
