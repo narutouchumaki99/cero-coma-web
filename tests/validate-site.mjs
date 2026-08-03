@@ -138,7 +138,7 @@ for (const state of expectedStates) {
 }
 
 if (manifest) {
-  if (manifest.version !== "2.1.0") fail(manifestPath, "versión de activo inesperada");
+  if (manifest.version !== "2.2.0") fail(manifestPath, "versión de activo inesperada");
   if (manifest.status !== "staging-candidate") fail(manifestPath, "el estado debe ser staging-candidate");
   if (manifest.authorization !== "staging-only") fail(manifestPath, "la autorización debe limitarse a staging");
   if (manifest.originalityReview !== "owner-confirmed-2026-08-03" || manifest.rightsReview !== "owner-confirmed-2026-08-03") fail(manifestPath, "las revisiones de originalidad y derechos deben constar como confirmadas por el propietario");
@@ -177,6 +177,7 @@ if (manifest) {
       if (data.length !== manifest.derivedModel.bytes || digest !== manifest.derivedModel.sha256) fail(derivedPath, "peso o huella del derivado distintos del manifiesto");
       if (data.length > 500000) fail(derivedPath, "el derivado 3D excede el presupuesto de 500 KB");
       if (!manifest.derivedModel.authorizationBasis) fail(manifestPath, "el derivado publicado debe registrar la base de autorización");
+      if (JSON.stringify(manifest.derivedModel.animations) !== JSON.stringify(expectedStates)) fail(manifestPath, "el derivado debe declarar los cinco clips de animación de la interfaz");
     } catch {
       fail(derivedPath, "el derivado registrado no está disponible");
     }

@@ -76,8 +76,17 @@ WebGL) se mejora a un **modelo 3D real** (`assets/media/mascot/cero.glb`,
 mostrado con `model-viewer` alojado en `assets/vendor/model-viewer/`
 (Apache-2.0). En móvil se mantienen los renders WebP. Derechos del modelo:
 confirmados por el propietario en sesión (autoría propia, generado con Tripo);
-registrado en `assets/media/mascot/manifest.json` (v2.1.0) y verificado por el
+registrado en `assets/media/mascot/manifest.json` (v2.2.0) y verificado por el
 validador (huella sha256 y presupuesto de 500 KB).
+
+Desde el 3 de agosto de 2026 el modelo está **animado**: rig
+root/body/head/arm.L/arm.R con pesos rígidos por islas, hecho en Blender 5.2
+headless (scripts conservados en el scratchpad de la sesión; .blend y GLB fuente
+animado en `recursos-locales/mascota-cero/fuente/cero-animado.glb`, no
+publicado). El derivado publicado (415 KB) trae cinco clips en loop con los
+nombres de los estados (`idle`, `focus`, `think`, `build`, `ready`); la guía
+cambia `animation-name` con crossfade al cambiar de sección. El manifiesto
+declara los clips y el validador exige que coincidan con la interfaz.
 
 ## Estado y pendientes
 

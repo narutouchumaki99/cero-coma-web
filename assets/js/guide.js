@@ -29,7 +29,9 @@
 
   // Mejora progresiva: modelo 3D real de CERO en pantallas grandes.
   // En móvil, con ahorro de datos o sin WebGL se mantienen los renders WebP.
+  // El GLB trae cinco clips con los mismos nombres que los estados.
   let modelActive = false;
+  let activeViewer = null;
   (function upgradeTo3d() {
     const wantsModel =
       window.matchMedia("(min-width: 62rem)").matches &&
@@ -62,13 +64,18 @@
       viewer.setAttribute("shadow-intensity", "0");
       viewer.className = "cero-guide__model";
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        viewer.setAttribute("auto-rotate", "");
-        viewer.setAttribute("auto-rotate-delay", "800");
-        viewer.setAttribute("rotation-per-second", "18deg");
+        viewer.setAttribute("autoplay", "");
+        viewer.setAttribute("animation-name", "idle");
+        viewer.setAttribute("animation-crossfade-duration", "350");
       }
       viewer.addEventListener("load", () => {
         avatar.replaceWith(viewer);
         modelActive = true;
+        activeViewer = viewer;
+        const current = guide.dataset.state;
+        if (current && viewer.hasAttribute("autoplay")) {
+          viewer.setAttribute("animation-name", current);
+        }
       });
       const holder = avatar.parentElement;
       if (holder) holder.append(viewer);
@@ -98,7 +105,13 @@
     if (key === currentKey) return;
     currentKey = key;
 
-    if (!modelActive) avatar.src = renderSrc(state);
+    if (modelActive && activeViewer) {
+      if (activeViewer.hasAttribute("autoplay")) {
+        activeViewer.setAttribute("animation-name", state);
+      }
+    } else {
+      avatar.src = renderSrc(state);
+    }
     if (text) bubble.textContent = text;
     guide.dataset.state = state;
 

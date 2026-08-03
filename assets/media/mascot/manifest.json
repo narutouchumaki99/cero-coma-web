@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "name": "CERO",
   "status": "staging-candidate",
   "provenance": "Modelo 3D de autoría del propietario (generado con Tripo) y adaptado para la web Cero Coma",
@@ -32,11 +32,14 @@
   "derivedModel": {
     "path": "cero.glb",
     "format": "model/gltf-binary",
-    "bytes": 322804,
-    "sha256": "41A0B4E393CDEDF5AB42F4B8D17C2918418FCC34744B822A9AE9F3E84A121741",
+    "bytes": 415776,
+    "sha256": "09FE8AFF9AEAD9D4AC2B232CFB5E65FA7DE83E33FDD93BF81BCC51F0CE0252C2",
     "published": true,
     "vertices": 8453,
     "textureMaxPx": 1024,
+    "rig": "root/body/head/arm.L/arm.R, pesos rígidos por islas (Blender 5.2 headless)",
+    "animations": ["idle", "focus", "think", "build", "ready"],
+    "animationSource": "recursos-locales/mascota-cero/fuente/cero-animado.glb (no publicado)",
     "viewer": "assets/vendor/model-viewer/model-viewer.min.js (Apache-2.0, alojado en local)",
     "authorizationBasis": "El propietario confirmó en sesión (3-ago-2026) que el modelo es de su autoría; se publica solo este derivado optimizado, nunca el GLB fuente."
   },
