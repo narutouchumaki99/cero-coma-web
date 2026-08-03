@@ -138,10 +138,10 @@ for (const state of expectedStates) {
 }
 
 if (manifest) {
-  if (manifest.version !== "2.0.0") fail(manifestPath, "versión de activo inesperada");
+  if (manifest.version !== "2.1.0") fail(manifestPath, "versión de activo inesperada");
   if (manifest.status !== "staging-candidate") fail(manifestPath, "el estado debe ser staging-candidate");
   if (manifest.authorization !== "staging-only") fail(manifestPath, "la autorización debe limitarse a staging");
-  if (manifest.originalityReview !== "pending" || manifest.rightsReview !== "pending") fail(manifestPath, "las revisiones de originalidad y derechos deben seguir pendientes");
+  if (manifest.originalityReview !== "owner-confirmed-2026-08-03" || manifest.rightsReview !== "owner-confirmed-2026-08-03") fail(manifestPath, "las revisiones de originalidad y derechos deben constar como confirmadas por el propietario");
   if (manifest.productionApproved !== false) fail(manifestPath, "el activo no puede constar como aprobado para producción");
   if (JSON.stringify(manifest.states) !== JSON.stringify(expectedStates)) fail(manifestPath, "los cinco estados no coinciden con la interfaz");
   if (manifest.sourceModel?.published !== false || manifest.sourceModel?.licenseProvided !== false) fail(manifestPath, "el GLB original no debe constar como publicado o licenciado");
@@ -166,9 +166,32 @@ if (manifest) {
     }
   }
   if (totalBytes !== manifest.delivery?.totalBytes || totalBytes > 100000) fail(manifestPath, "el conjunto de renders excede el presupuesto o no coincide con el manifiesto");
+
+  // Derivado 3D publicado: verificado contra el manifiesto y con presupuesto de peso.
+  if (manifest.derivedModel) {
+    const derivedPath = path.join(path.dirname(manifestPath), manifest.derivedModel.path || "");
+    try {
+      const data = await readFile(derivedPath);
+      const digest = createHash("sha256").update(data).digest("hex").toUpperCase();
+      if (data.subarray(0, 4).toString("ascii") !== "glTF") fail(derivedPath, "el derivado no es un GLB válido");
+      if (data.length !== manifest.derivedModel.bytes || digest !== manifest.derivedModel.sha256) fail(derivedPath, "peso o huella del derivado distintos del manifiesto");
+      if (data.length > 500000) fail(derivedPath, "el derivado 3D excede el presupuesto de 500 KB");
+      if (!manifest.derivedModel.authorizationBasis) fail(manifestPath, "el derivado publicado debe registrar la base de autorización");
+    } catch {
+      fail(derivedPath, "el derivado registrado no está disponible");
+    }
+  }
 }
 
-if (files.some((file) => path.extname(file).toLowerCase() === ".glb")) errors.push("assets: el modelo GLB fuente no debe publicarse en el repositorio");
+{
+  const allowedGlb = path.join(root, "assets", "media", "mascot", "cero.glb");
+  const glbFiles = files.filter((file) => path.extname(file).toLowerCase() === ".glb");
+  for (const file of glbFiles) {
+    if (path.resolve(file) !== allowedGlb) fail(file, "solo puede publicarse el derivado optimizado assets/media/mascot/cero.glb");
+    const details = await stat(file);
+    if (details.size === 13389496) fail(file, "el GLB fuente de 13,4 MB no debe publicarse");
+  }
+}
 
 if (errors.length) {
   console.error(`Validación fallida con ${errors.length} incidencia(s):`);

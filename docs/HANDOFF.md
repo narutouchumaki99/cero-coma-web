@@ -65,6 +65,20 @@ Convenciones al añadir contenido:
 - No añadir movimiento fuera del patrón de `motion.css`; todo debe quedar desactivado con `prefers-reduced-motion`.
 - No romper el funcionamiento sin JavaScript: los reveals solo ocultan contenido cuando `html.js-motion` existe.
 
+## Guía CERO (añadida el 3 de agosto de 2026)
+
+`assets/js/guide.js` + `assets/css/guide.css`: mascota flotante en la portada
+(esquina inferior derecha) que cambia de mensaje y estado según la sección
+visible (atributos `data-guide-state`/`data-guide-text`), con botón de cierre
+persistido en `sessionStorage`. En escritorio (≥62rem, sin ahorro de datos, con
+WebGL) se mejora a un **modelo 3D real** (`assets/media/mascot/cero.glb`,
+322 KB, derivado optimizado del GLB fuente de 13,4 MB que sigue sin publicarse)
+mostrado con `model-viewer` alojado en `assets/vendor/model-viewer/`
+(Apache-2.0). En móvil se mantienen los renders WebP. Derechos del modelo:
+confirmados por el propietario en sesión (autoría propia, generado con Tripo);
+registrado en `assets/media/mascot/manifest.json` (v2.1.0) y verificado por el
+validador (huella sha256 y presupuesto de 500 KB).
+
 ## Estado y pendientes
 
 - **Los cambios de arriba están solo en local, sin commit ni push.** Para publicarlos en el staging: commit en el repo y push a `main` (el workflow `.github/workflows/pages.yml` despliega).

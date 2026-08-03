@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/mascot.css">
     <link rel="stylesheet" href="assets/css/motion.css">
+    <link rel="stylesheet" href="assets/css/guide.css">
   </head>
   <body data-site-root="./">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -61,7 +62,7 @@
     </dialog>
 
     <main id="contenido" tabindex="-1">
-      <section class="home-hero" aria-labelledby="hero-title">
+      <section class="home-hero" aria-labelledby="hero-title" data-guide-state="idle" data-guide-text="Hola, soy CERO. Baja y te enseño qué es Cero Coma.">
         <div class="home-hero__grid shell">
           <div class="home-hero__copy" data-reveal>
             <p class="eyebrow">Producto, servicio y ejecución</p>
@@ -182,7 +183,7 @@
         </div>
       </section>
 
-      <section class="section section--dark" aria-labelledby="definition-title">
+      <section class="section section--dark" aria-labelledby="definition-title" data-guide-state="focus" data-guide-text="Partimos del problema, no de una plantilla.">
         <div class="definition-grid shell">
           <div data-reveal>
             <p class="eyebrow">Qué es Cero Coma</p>
@@ -209,27 +210,27 @@
               <p class="recorrido__rail-note" data-recorrido-label>Intención</p>
             </aside>
             <ol class="recorrido__chapters">
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Intención">
+              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Intención" data-guide-state="idle" data-guide-text="Todo empieza con ruido. Aquí entro yo.">
                 <span class="recorrido__number">00 / Intención</span>
                 <h3>Todo empieza con ruido.</h3>
                 <p>Una idea dispersa, un proceso que se ha vuelto pesado o una carta en papel que nadie puede actualizar. Esa es la materia prima con la que trabajamos.</p>
               </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Entender">
+              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Entender" data-guide-state="focus" data-guide-text="Primero, entender el trabajo real.">
                 <span class="recorrido__number">01 / Entender</span>
                 <h3>Encontrar el trabajo real.</h3>
                 <p>Separar el problema útil de las soluciones heredadas. Antes de construir nada, entendemos qué hay que resolver de verdad.</p>
               </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Reducir">
+              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Reducir" data-guide-state="think" data-guide-text="Reducimos hasta la forma mínima que funciona.">
                 <span class="recorrido__number">02 / Reducir</span>
                 <h3>Eliminar fricción.</h3>
                 <p>Quitar pasos, decisiones y dependencias que no aportan. Lo que queda es la forma mínima que puede operar de verdad.</p>
               </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Construir">
+              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Construir" data-guide-state="build" data-guide-text="Construimos algo que se puede usar de verdad.">
                 <span class="recorrido__number">03 / Construir</span>
                 <h3>Dar forma operativa.</h3>
                 <p>Convertir el criterio en una experiencia que se pueda usar: un flujo claro, una interfaz evidente y nada que estorbe.</p>
               </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Validar">
+              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Validar" data-guide-state="ready" data-guide-text="Validado. Solo se publica lo que ya funciona.">
                 <span class="recorrido__number">04 / Validar</span>
                 <h3>Contrastar con la realidad.</h3>
                 <p>Probar lo construido, declarar con precisión lo pendiente y publicar solo lo que ya funciona. La realidad antes que el discurso.</p>
@@ -239,7 +240,7 @@
         </div>
       </section>
 
-      <section class="section section--white" aria-labelledby="projects-title">
+      <section class="section section--white" aria-labelledby="projects-title" data-guide-state="build" data-guide-text="Esto ya está en marcha: Tu carta y Studio.">
         <div class="shell">
           <div class="projects-intro" data-reveal>
             <div>
@@ -295,7 +296,7 @@
         </div>
       </section>
 
-      <section class="section section--dark" aria-labelledby="workflow-title">
+      <section class="section section--dark" aria-labelledby="workflow-title" data-guide-state="think" data-guide-text="De un archivo desordenado a una carta revisable.">
         <div class="shell">
           <div data-reveal>
             <p class="eyebrow">Tu carta / Flujo actual</p>
@@ -312,7 +313,7 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="principles-title">
+      <section class="section" aria-labelledby="principles-title" data-guide-state="ready" data-guide-text="La realidad antes que el discurso.">
         <div class="principles-grid shell">
           <div data-reveal>
             <p class="eyebrow">Principios</p>
@@ -327,7 +328,7 @@
         </div>
       </section>
 
-      <section class="section section--tight" aria-labelledby="contact-title" data-contact-region>
+      <section class="section section--tight" aria-labelledby="contact-title" data-contact-region data-guide-state="idle" data-guide-text="Pronto habrá un canal claro para hablar.">
         <div class="contact-status shell" data-reveal>
           <div>
             <p class="eyebrow">Contacto</p>
@@ -361,10 +362,23 @@
       </div>
     </footer>
 
+    <aside class="cero-guide" data-cero-guide hidden aria-label="CERO, guía de la página">
+      <div aria-hidden="true">
+        <p class="cero-guide__bubble" data-guide-bubble>Hola, soy CERO.</p>
+      </div>
+      <div class="cero-guide__anchor">
+        <div class="cero-guide__avatar" aria-hidden="true">
+          <img src="assets/media/mascot/candidate/rendered/cero-idle.webp" alt="" width="512" height="512" decoding="async" loading="lazy" data-guide-avatar>
+        </div>
+        <button class="cero-guide__close" type="button" aria-label="Ocultar la guía CERO" data-guide-close>×</button>
+      </div>
+    </aside>
+
     <noscript><p class="noscript-note">La información principal permanece disponible. Las demostraciones interactivas requieren JavaScript.</p></noscript>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/site.js"></script>
     <script src="assets/js/mascot.js"></script>
     <script src="assets/js/motion.js"></script>
+    <script src="assets/js/guide.js"></script>
   </body>
 </html>

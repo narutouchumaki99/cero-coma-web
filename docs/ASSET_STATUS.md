@@ -50,7 +50,9 @@ Los iconos de `assets/icons/` proceden del paquete de recursos visuales v0.3. Se
 | `candidate/rendered/cero-build.webp` | Estado de construcción | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
 | `candidate/rendered/cero-ready.webp` | Estado listo | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
 | `assets/media/mascot/manifest.json` | Registro público de versión, dimensiones, procedencia y revisión | Documentación de esta entrega | Vigente | Público en staging |
+| `assets/media/mascot/cero.glb` | Avatar 3D de la guía CERO (solo escritorio) | Derivado optimizado del modelo del propietario | `staging-candidate` | Solo staging |
+| `assets/vendor/model-viewer/` | Visor `model-viewer` 4.3.1 alojado en local | Google, licencia Apache-2.0 incluida | Vigente | Público en staging |
 
-El modelo fuente es un GLB de 13.389.496 bytes, 1.935.288 triángulos, 992.914 vértices, tres texturas y ninguna animación o esqueleto. Se conserva fuera del repositorio público: cargarlo directamente exigiría un visor y supondría un coste desproporcionado para el hero. Los cinco renders WebP pesan 49.046 bytes en conjunto, mantienen 512 × 512 px y se intercambian mediante la API existente.
+El modelo fuente es un GLB de 13.389.496 bytes, 1.935.288 triángulos, 992.914 vértices, tres texturas y ninguna animación o esqueleto. Se conserva fuera del repositorio público por peso. Para la guía se publica un **derivado optimizado** (`cero.glb`, 322.804 bytes: ~8,5k vértices, cuantización KHR, texturas 1024/512 px) verificado por huella en el manifiesto y el validador. Los cinco renders WebP (49.046 bytes en conjunto) siguen siendo la entrega para móvil, ahorro de datos y equipos sin WebGL.
 
-La carpeta recibida no incluye licencia. La comprobación formal de originalidad, procedencia y derechos sigue pendiente y bloquea el paso a producción tanto del modelo como de sus derivados.
+Derechos (3 de agosto de 2026): el propietario confirmó en sesión que el modelo es de su autoría (generado por él con Tripo). Con esa confirmación se autoriza la publicación del derivado en staging; el GLB fuente permanece fuera del repositorio.
