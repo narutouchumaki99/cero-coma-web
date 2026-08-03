@@ -114,6 +114,10 @@
     }
     if (text) bubble.textContent = text;
     guide.dataset.state = state;
+    guide.classList.toggle(
+      "is-about-hidden",
+      Boolean(target.closest("[data-about-story]")),
+    );
 
     guide.classList.remove("is-pop");
     void guide.offsetWidth;

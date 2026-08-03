@@ -32,6 +32,7 @@
 
         <nav class="desktop-nav" aria-label="Navegación principal">
           <a href="./" aria-current="page">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
           <a href="proyectos/">Proyectos</a>
           <a href="tu-carta-en-cero-coma/">Tu carta</a>
         </nav>
@@ -54,6 +55,7 @@
         </div>
         <nav aria-label="Navegación móvil">
           <a href="./" aria-current="page">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
           <a href="proyectos/">Proyectos</a>
           <a href="tu-carta-en-cero-coma/">Tu carta</a>
         </nav>
@@ -313,18 +315,64 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="principles-title" data-guide-state="ready" data-guide-text="La realidad antes que el discurso.">
-        <div class="principles-grid shell">
-          <div data-reveal>
-            <p class="eyebrow">Principios</p>
-            <h2 id="principles-title">La realidad antes que el discurso.</h2>
-          </div>
-          <ol class="principle-list" data-reveal-stagger>
-            <li><span>01</span><p>Separar lo operativo de lo que aún está en prueba.</p></li>
-            <li><span>02</span><p>Diseñar para que el siguiente paso sea evidente.</p></li>
-            <li><span>03</span><p>Mantener control humano en decisiones sensibles.</p></li>
-            <li><span>04</span><p>Publicar solo material autorizado y verificable.</p></li>
+      <section class="about-section" id="nosotros" aria-labelledby="about-title" data-about-story>
+        <div class="about-section__intro shell" data-reveal data-guide-state="focus" data-guide-text="Aquí no empezamos por la tecnología. Empezamos por lo que te pesa.">
+          <p class="eyebrow">Sobre nosotros</p>
+          <h2 id="about-title">Nos gusta cuando la tecnología deja de notarse.</h2>
+          <p class="lead">Cero Coma nació para ese momento en que una buena idea se atasca entre hojas, mensajes y tareas repetidas. No llegamos con una caja cerrada: entramos en el problema, encontramos el hilo y tiramos de él contigo.</p>
+        </div>
+
+        <div class="about-story shell">
+          <figure class="about-cero" aria-hidden="true" data-reveal>
+            <div class="about-cero__stage">
+              <span class="about-cero__label">CERO / en el camino</span>
+              <img src="assets/media/mascot/candidate/rendered/cero-focus.webp" alt="" width="512" height="512" loading="lazy" decoding="async" data-about-avatar>
+              <figcaption data-about-caption>Primero, entender.</figcaption>
+            </div>
+            <div class="about-cero__route" data-about-route>
+              <span class="is-active"></span><span></span><span></span><span></span>
+            </div>
+          </figure>
+
+          <ol class="about-story__steps">
+            <li class="about-step is-active" data-about-step data-about-state="focus" data-about-caption="Primero, entender." data-guide-state="focus" data-guide-text="Primero desenredamos el problema. Sin prisas por enseñar herramientas.">
+              <span class="about-step__number">01</span>
+              <div>
+                <p class="about-step__kicker">Entrar sin imponer</p>
+                <h3>Primero, hacemos sitio.</h3>
+                <p>Nos sentamos con el negocio tal como es: con sus ritmos, excepciones y manías útiles. Desenredamos el proceso hasta que lo importante se entiende de un vistazo. La solución se adapta a la forma de trabajar; nunca al revés.</p>
+              </div>
+            </li>
+            <li class="about-step" data-about-step data-about-state="think" data-about-caption="Después, quitar ruido." data-guide-state="think" data-guide-text="Una buena herramienta no añade trabajo: te devuelve espacio mental.">
+              <span class="about-step__number">02</span>
+              <div>
+                <p class="about-step__kicker">Menos peso, más control</p>
+                <h3>Luego, bajamos el ruido.</h3>
+                <p>Si una herramienta añade otra pestaña, otra contraseña y otra preocupación, no ha resuelto nada. Elegimos solo la tecnología que quita pasos, evita fricción y devuelve control. El resultado debería sentirse como una mesa despejada.</p>
+              </div>
+            </li>
+            <li class="about-step" data-about-step data-about-state="build" data-about-caption="Ahora, hacerlo real." data-guide-state="build" data-guide-text="De la idea a una solución que ya puedes usar. Ahí ocurre lo importante.">
+              <span class="about-step__number">03</span>
+              <div>
+                <p class="about-step__kicker">Mover con criterio</p>
+                <h3>Después, lo hacemos real.</h3>
+                <p>Una idea no mejora un martes hasta que funciona ese martes. Convertimos el problema en una herramienta concreta, probamos lo que importa y acortamos el trayecto entre detectar y resolver. Rápido, sí; con decisiones que aguanten el día siguiente.</p>
+              </div>
+            </li>
+            <li class="about-step" data-about-step data-about-state="ready" data-about-caption="Y seguir cerca." data-guide-state="ready" data-guide-text="Entregar no es desaparecer. Seguimos cerca mientras el negocio evoluciona.">
+              <span class="about-step__number">04</span>
+              <div>
+                <p class="about-step__kicker">Confianza que continúa</p>
+                <h3>Y no desaparecemos al entregar.</h3>
+                <p>Lo que ponemos en marcha se puede revisar, entender y cuidar. Construimos sobre una base fiable y seguimos cerca cuando el negocio cambia, porque la confianza no se firma en una entrega: se demuestra después.</p>
+              </div>
+            </li>
           </ol>
+        </div>
+
+        <div class="about-coda shell" data-reveal data-guide-state="idle" data-guide-text="Si ahora parece sencillo, vamos bien. Ese era el trabajo.">
+          <p>Si al final todo parece más sencillo, no fue casualidad.</p>
+          <strong>Ese era el trabajo.</strong>
         </div>
       </section>
 
@@ -351,6 +399,7 @@
           </div>
           <nav class="footer__nav" aria-label="Navegación del pie">
             <a href="./">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
             <a href="proyectos/">Proyectos</a>
             <a href="tu-carta-en-cero-coma/">Tu carta</a>
           </nav>
@@ -379,6 +428,7 @@
     <script src="assets/js/site.js"></script>
     <script src="assets/js/mascot.js"></script>
     <script src="assets/js/motion.js"></script>
-    <script src="assets/js/guide.js"></script>
+    <script src="assets/js/guide.js?v=2"></script>
+    <script src="assets/js/about.js?v=1"></script>
   </body>
 </html>
