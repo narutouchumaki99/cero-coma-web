@@ -94,7 +94,10 @@ En `/tu-carta-en-cero-coma/#demostracion` la antigua demo de pestañas se
 sustituyó por un asistente interactivo de 5 pasos (`assets/js/demo-carta.js` +
 `assets/css/demo-carta.css`): elegir archivo de prueba → procesado simulado →
 revisión con confirmación obligatoria (incluye lecturas marcadas como dudosas)
-→ edición de nombres/precios → carta publicada de ejemplo. Es **100 %
+→ edición de nombres/precios con destacados (★) y agotados → carta publicada
+de ejemplo con opciones de visualización (4 temas: Clásico/Nocturno/Bodega/
+Oliva vía variables CSS `--pp-*`; letra Moderna/Editorial; vista Móvil/Amplia)
+y QR decorativo determinista. Es **100 %
 client-side con resultados precalculados** (dos cartas SVG en
 `assets/media/demo/`): cero llamadas a OpenRouter o a cualquier servidor, y
 está rotulada como "Simulación local · Sin IA en vivo" para cumplir la regla de

@@ -78,7 +78,27 @@
   ];
 
   const STEP_LABELS = ["Archivo", "Procesar", "Revisar", "Editar", "Publicar"];
-  const state = { step: 0, sample: null, data: null, confirmed: new Set() };
+  const THEMES = [
+    { id: "clasico", label: "Clásico" },
+    { id: "nocturno", label: "Nocturno" },
+    { id: "bodega", label: "Bodega" },
+    { id: "oliva", label: "Oliva" },
+  ];
+  const FONTS = [
+    { id: "moderna", label: "Moderna" },
+    { id: "editorial", label: "Editorial" },
+  ];
+  const SIZES = [
+    { id: "movil", label: "Móvil" },
+    { id: "amplia", label: "Amplia" },
+  ];
+  const state = {
+    step: 0,
+    sample: null,
+    data: null,
+    confirmed: new Set(),
+    view: { theme: "clasico", font: "moderna", size: "movil" },
+  };
 
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -127,7 +147,11 @@
       name: sample.name,
       categories: sample.categories.map((category) => ({
         name: category.name,
-        products: category.products.map((product) => ({ ...product })),
+        products: category.products.map((product) => ({
+          ...product,
+          featured: false,
+          soldOut: false,
+        })),
       })),
     };
   }
@@ -252,7 +276,7 @@
   function renderEdit() {
     panels.replaceChildren();
     panels.append(el("p", "carta-demo__hint",
-      "Ajusta nombres y precios como harías en el editor real. Los cambios pasan a la carta publicada del siguiente paso."));
+      "Ajusta nombres y precios, destaca platos (★) o márcalos como agotados. Todo pasa a la carta publicada del siguiente paso."));
 
     const list = el("div", "carta-demo__editor");
     state.data.categories.forEach((category) => {
@@ -272,7 +296,31 @@
         price.maxLength = 8;
         price.setAttribute("aria-label", `Precio de ${product.name}`);
         price.addEventListener("input", () => { product.price = price.value; });
-        row.append(name, price);
+
+        const featured = el("button", "carta-demo__toggle", "★");
+        featured.type = "button";
+        featured.title = "Destacar plato";
+        featured.setAttribute("aria-label", `Destacar ${product.name}`);
+        featured.setAttribute("aria-pressed", String(product.featured));
+        featured.classList.toggle("is-on", product.featured);
+        featured.addEventListener("click", () => {
+          product.featured = !product.featured;
+          featured.classList.toggle("is-on", product.featured);
+          featured.setAttribute("aria-pressed", String(product.featured));
+        });
+
+        const soldOut = el("button", "carta-demo__toggle carta-demo__toggle--out", "Agotado");
+        soldOut.type = "button";
+        soldOut.setAttribute("aria-label", `Marcar ${product.name} como agotado`);
+        soldOut.setAttribute("aria-pressed", String(product.soldOut));
+        soldOut.classList.toggle("is-on", product.soldOut);
+        soldOut.addEventListener("click", () => {
+          product.soldOut = !product.soldOut;
+          soldOut.classList.toggle("is-on", product.soldOut);
+          soldOut.setAttribute("aria-pressed", String(product.soldOut));
+        });
+
+        row.append(name, price, featured, soldOut);
         list.append(row);
       });
     });
@@ -283,13 +331,47 @@
     }));
   }
 
-  /* Paso 4 — carta publicada + siguiente paso real */
-  function renderPublish() {
-    panels.replaceChildren();
-    panels.append(el("p", "carta-demo__hint",
-      "Así queda la carta pública. En la app real recibe una URL y un QR permanentes: publicar nuevas versiones nunca cambia el código impreso."));
+  /* QR decorativo determinista: solo indica dónde iría el QR real. */
+  function makeFakeQr(seedText) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 21 21");
+    svg.setAttribute("class", "carta-demo__qr");
+    svg.setAttribute("aria-hidden", "true");
+    let seed = 0;
+    for (const char of seedText) seed = (seed * 31 + char.charCodeAt(0)) % 65521;
+    const finders = [[0, 0], [14, 0], [0, 14]];
+    const inFinder = (x, y) =>
+      finders.some(([fx, fy]) => x >= fx && x < fx + 7 && y >= fy && y < fy + 7);
+    for (let y = 0; y < 21; y += 1) {
+      for (let x = 0; x < 21; x += 1) {
+        let dark;
+        if (inFinder(x, y)) {
+          const finder = finders.find(([gx, gy]) => x >= gx && x < gx + 7 && y >= gy && y < gy + 7);
+          const ring = Math.max(Math.abs(x - finder[0] - 3), Math.abs(y - finder[1] - 3));
+          dark = ring !== 2;
+        } else {
+          seed = (seed * 75 + 74) % 65537;
+          dark = seed % 3 === 0;
+        }
+        if (dark) {
+          const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+          rect.setAttribute("x", String(x));
+          rect.setAttribute("y", String(y));
+          rect.setAttribute("width", "1");
+          rect.setAttribute("height", "1");
+          svg.append(rect);
+        }
+      }
+    }
+    return svg;
+  }
 
+  function buildPreview() {
     const preview = el("div", "public-preview");
+    preview.dataset.theme = state.view.theme;
+    preview.dataset.font = state.view.font;
+    preview.dataset.size = state.view.size;
+
     const hero = el("div", "public-preview__hero");
     hero.append(el("strong", null, state.data.name), el("span", null, "Carta actualizada · Ejemplo"));
     const body = el("div", "public-preview__body");
@@ -297,13 +379,63 @@
       body.append(el("h4", "carta-demo__preview-category", category.name));
       category.products.forEach((product) => {
         const line = el("p");
-        line.append(el("span", null, product.name || "—"),
+        if (product.soldOut) line.classList.add("is-sold-out");
+        const nameCell = el("span", "carta-demo__preview-name");
+        if (product.featured) {
+          const star = el("span", "carta-demo__preview-star", "★");
+          star.setAttribute("aria-hidden", "true");
+          nameCell.append(star, " ");
+        }
+        nameCell.append(product.name || "—");
+        if (product.soldOut) nameCell.append(el("em", "carta-demo__preview-out", " · agotado"));
+        line.append(nameCell,
           el("span", null, product.price ? `${product.price} €` : "—"));
         body.append(line);
       });
     });
-    preview.append(hero, body);
-    panels.append(preview);
+
+    const foot = el("div", "carta-demo__preview-foot");
+    foot.append(makeFakeQr(state.data.name),
+      el("span", null, "QR de ejemplo. En la app real, la URL y el QR son permanentes entre versiones."));
+    preview.append(hero, body, foot);
+    return preview;
+  }
+
+  function optionGroup(labelText, options, current, onPick) {
+    const group = el("div", "carta-demo__optgroup");
+    group.append(el("span", "carta-demo__optlabel", labelText));
+    const buttons = el("div", "carta-demo__optbuttons");
+    buttons.setAttribute("role", "group");
+    buttons.setAttribute("aria-label", labelText);
+    options.forEach((option) => {
+      const button = el("button", "carta-demo__opt", option.label);
+      button.type = "button";
+      button.setAttribute("aria-pressed", String(option.id === current));
+      button.classList.toggle("is-on", option.id === current);
+      button.addEventListener("click", () => onPick(option.id));
+      buttons.append(button);
+    });
+    group.append(buttons);
+    return group;
+  }
+
+  /* Paso 4 — carta publicada + opciones de visualización + siguiente paso */
+  function renderPublish() {
+    panels.replaceChildren();
+    panels.append(el("p", "carta-demo__hint",
+      "Así queda la carta pública. Prueba los temas y estilos: en la app real la personalización funciona igual, sin CSS libre, y publicar nuevas versiones nunca cambia el QR impreso."));
+
+    const options = el("div", "carta-demo__options");
+    const rebuild = () => {
+      renderPublish();
+      announce(`Vista actualizada: tema ${state.view.theme}, letra ${state.view.font}, tamaño ${state.view.size}.`);
+    };
+    options.append(
+      optionGroup("Tema", THEMES, state.view.theme, (id) => { state.view.theme = id; rebuild(); }),
+      optionGroup("Letra", FONTS, state.view.font, (id) => { state.view.font = id; rebuild(); }),
+      optionGroup("Vista", SIZES, state.view.size, (id) => { state.view.size = id; rebuild(); }),
+    );
+    panels.append(options, buildPreview());
 
     const cta = el("div", "carta-demo__cta");
     cta.append(el("strong", null, "¿Te encaja el flujo?"));
