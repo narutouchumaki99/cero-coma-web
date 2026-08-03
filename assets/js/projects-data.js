@@ -13,26 +13,27 @@
       summary: "Un flujo para convertir una carta existente en una versión digital editable, publicable y conectada a un QR permanente.",
       problem: "Publicar y mantener una carta digital suele repartir el trabajo entre archivos, maquetación, enlaces y códigos QR.",
       audience: "Negocios de hostelería que necesitan una carta digital clara y mantenible.",
-      currentState: "Editor manual, publicación y QR operativos. La extracción con proveedor real está validada localmente y exige revisión humana.",
+      currentState: "Aplicación desplegada y en uso: editor, publicación con QR permanente, equipo con roles e invitaciones por correo. La extracción con proveedor real exige revisión humana antes de tocar la carta.",
       workingFeatures: Object.freeze([
         "Edición manual de categorías y productos",
         "Publicación versionada con dirección permanente",
         "Generación y descarga de QR",
         "Subida y preparación de páginas",
-        "Extracción real validada con revisión humana obligatoria"
+        "Extracción real validada con revisión humana obligatoria",
+        "Aprobación de resultados revisados al borrador editable",
+        "Equipo con roles: propietario, gerente y personal",
+        "Invitaciones por correo con la identidad de Cero Coma"
       ]),
       simulatedFeatures: Object.freeze([
-        "La demostración de esta web explica el flujo, pero no está conectada al producto"
+        "La demostración de esta web explica el flujo con archivos de ejemplo, sin conexión al producto ni a la IA"
       ]),
-      nextMilestone: "Aprobar el paso de resultados extraídos a borrador editable y preparar un piloto controlado.",
+      nextMilestone: "Cerrar el procesamiento duradero y ejecutar un piloto controlado con un negocio real.",
       blockers: Object.freeze([
-        "Worker duradero",
-        "Despliegue cloud",
-        "Aprobación del borrador generado",
+        "Procesamiento duradero (cola persistente)",
         "Piloto con un negocio real"
       ]),
       publicRoute: "tu-carta-en-cero-coma/",
-      lastUpdated: "2026-08-01",
+      lastUpdated: "2026-08-03",
       media: Object.freeze([])
     }),
     Object.freeze({

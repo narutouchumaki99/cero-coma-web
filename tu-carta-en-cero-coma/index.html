@@ -70,7 +70,8 @@
             <dl>
               <div><dt>Operativo</dt><dd>Editor manual, publicación y QR.</dd></div>
               <div><dt>Validado</dt><dd>Extracción real local con revisión humana.</dd></div>
-              <div><dt>Siguiente</dt><dd>Borrador editable, worker duradero, cloud y piloto.</dd></div>
+              <div><dt>En la nube</dt><dd>Aplicación desplegada, con equipo y roles.</dd></div>
+              <div><dt>Siguiente</dt><dd>Procesamiento duradero y piloto con un negocio real.</dd></div>
             </dl>
           </aside>
         </div>
@@ -121,21 +122,31 @@
             </li>
             <li data-state="done">
               <span class="state-list__mark" aria-hidden="true">04</span>
-              <div><h3>Extracción con proveedor real</h3><p>Validada localmente con respuesta estructurada y revisión humana obligatoria.</p></div>
+              <div><h3>Extracción con proveedor real</h3><p>Respuesta estructurada del proveedor y revisión humana obligatoria antes de tocar la carta.</p></div>
               <span class="state-list__status">Validado</span>
             </li>
-            <li data-state="pending">
+            <li data-state="done">
               <span class="state-list__mark" aria-hidden="true">05</span>
-              <div><h3>Aprobación al borrador</h3><p>Convertir un resultado revisado en contenido editable requiere el cierre del flujo de aprobación.</p></div>
-              <span class="state-list__status">Pendiente</span>
+              <div><h3>Aprobación al borrador</h3><p>Los resultados revisados pasan al contenido editable con la aprobación de una persona.</p></div>
+              <span class="state-list__status">Operativo</span>
             </li>
-            <li data-state="pending">
+            <li data-state="done">
               <span class="state-list__mark" aria-hidden="true">06</span>
-              <div><h3>Worker duradero y cloud</h3><p>Mover el procesamiento a infraestructura persistente y desplegada.</p></div>
+              <div><h3>Equipo con roles</h3><p>Propietario, gerente y personal, con invitaciones por correo y permisos aplicados en la base de datos.</p></div>
+              <span class="state-list__status">Operativo</span>
+            </li>
+            <li data-state="done">
+              <span class="state-list__mark" aria-hidden="true">07</span>
+              <div><h3>Despliegue en la nube</h3><p>La aplicación funciona en servidores propios, no solo en un ordenador local.</p></div>
+              <span class="state-list__status">Operativo</span>
+            </li>
+            <li data-state="pending">
+              <span class="state-list__mark" aria-hidden="true">08</span>
+              <div><h3>Procesamiento duradero</h3><p>Sustituir el disparo actual por una cola persistente que resista caídas y reintentos.</p></div>
               <span class="state-list__status">Pendiente</span>
             </li>
             <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true">07</span>
+              <span class="state-list__mark" aria-hidden="true">09</span>
               <div><h3>Piloto controlado</h3><p>Probar el recorrido completo con un negocio real y criterios de aceptación cerrados.</p></div>
               <span class="state-list__status">Pendiente</span>
             </li>
@@ -222,10 +233,11 @@
         <div class="pilot-note shell" data-reveal>
           <div>
             <p class="eyebrow">Siguiente hito</p>
-            <h2 id="pilot-title">Preparar un piloto controlado.</h2>
+            <h2 id="pilot-title">La aplicación ya está en marcha.</h2>
           </div>
           <div class="pilot-note__state">
-            <p>Las pruebas todavía no están abiertas. Antes hay que cerrar el borrador editable, el procesamiento duradero y el despliegue.</p>
+            <p>El producto está desplegado y funcionando: un negocio puede crear su carta, publicarla con QR permanente e invitar a su equipo con roles.</p>
+            <p>Durante el piloto el acceso se abre por invitación, con acompañamiento directo. Antes de la apertura general queda cerrar el procesamiento duradero.</p>
             <p data-contact-state>Los canales de contacto públicos aún no están configurados.</p>
             <div class="contact-links" data-contact-links hidden></div>
           </div>
