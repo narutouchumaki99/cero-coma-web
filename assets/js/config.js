@@ -15,6 +15,11 @@
       repositoryBase: "/cero-coma-web/",
       lastUpdated: "2026-08-01"
     }),
+    app: Object.freeze({
+      // URL pública de la app de Tu carta. Vacía hasta que exista un despliegue
+      // accesible: la demo no muestra enlaces sin destino real.
+      url: ""
+    }),
     contacts: Object.freeze({
       email: "",
       phone: "",

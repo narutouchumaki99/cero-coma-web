@@ -88,6 +88,21 @@ nombres de los estados (`idle`, `focus`, `think`, `build`, `ready`); la guía
 cambia `animation-name` con crossfade al cambiar de sección. El manifiesto
 declara los clips y el validador exige que coincidan con la interfaz.
 
+## Demo gratuita de Tu carta (añadida el 3 de agosto de 2026)
+
+En `/tu-carta-en-cero-coma/#demostracion` la antigua demo de pestañas se
+sustituyó por un asistente interactivo de 5 pasos (`assets/js/demo-carta.js` +
+`assets/css/demo-carta.css`): elegir archivo de prueba → procesado simulado →
+revisión con confirmación obligatoria (incluye lecturas marcadas como dudosas)
+→ edición de nombres/precios → carta publicada de ejemplo. Es **100 %
+client-side con resultados precalculados** (dos cartas SVG en
+`assets/media/demo/`): cero llamadas a OpenRouter o a cualquier servidor, y
+está rotulada como "Simulación local · Sin IA en vivo" para cumplir la regla de
+no fingir IA conectada. El CTA final hacia la app lee
+`CEROCOMA_CONFIG.app.url`; mientras esté vacía muestra el aviso del piloto (no
+se publican enlaces sin destino). Cuando la app tenga URL pública, rellenar ese
+campo en `assets/js/config.js` activa el botón "Continuar en la app".
+
 ## Estado y pendientes
 
 - **Los cambios de arriba están solo en local, sin commit ni push.** Para publicarlos en el staging: commit en el repo y push a `main` (el workflow `.github/workflows/pages.yml` despliega).

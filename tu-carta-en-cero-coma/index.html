@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/tokens.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/product.css">
+    <link rel="stylesheet" href="../assets/css/demo-carta.css">
     <link rel="stylesheet" href="../assets/css/motion.css">
   </head>
   <body data-site-root="../">
@@ -63,7 +64,7 @@
             <p class="eyebrow">Producto principal / Desarrollo activo</p>
             <h1>Tu carta, editable y siempre en el mismo QR.</h1>
             <p class="lead">Un flujo para pasar de una carta existente a una versión digital que se puede revisar, publicar y mantener.</p>
-            <a class="button button--dark" href="#demostracion">Recorrer la demostración</a>
+            <a class="button button--dark" href="#demostracion">Probar la demo gratuita</a>
           </div>
           <aside class="product-hero__aside" aria-label="Resumen del estado" data-reveal style="--reveal-delay: 140ms">
             <dl>
@@ -146,86 +147,43 @@
         <div class="shell">
           <div class="demo-head" data-reveal>
             <div>
-              <p class="eyebrow">Recorrido explicativo</p>
-              <h2 id="demo-title">Cinco pasos, sin fingir una conexión.</h2>
+              <p class="eyebrow">Demo gratuita</p>
+              <h2 id="demo-title">Prueba el flujo con una carta de ejemplo.</h2>
             </div>
-            <p class="demo-label">Demostración conceptual</p>
+            <p class="demo-label">Simulación local · Sin IA en vivo</p>
+          </div>
+          <p class="lead">Elige un archivo de prueba y recorre el mismo camino que seguirá tu carta real: procesar, revisar, editar y publicar. Todo ocurre en tu navegador con resultados de ejemplo precalculados; no se envía nada a ningún servidor.</p>
+
+          <div class="demo-frame carta-demo" data-carta-demo>
+            <div class="demo-frame__bar">
+              <strong>Demo de Tu carta</strong>
+              <span class="demo-frame__status">Ejemplo</span>
+            </div>
+            <ol class="carta-demo__stepper" data-carta-stepper aria-label="Pasos de la demo">
+              <li data-active="true">Archivo</li>
+              <li>Procesar</li>
+              <li>Revisar</li>
+              <li>Editar</li>
+              <li>Publicar</li>
+            </ol>
+            <div data-carta-panels>
+              <p class="carta-demo__hint">La demo interactiva se carga con JavaScript. Los archivos de ejemplo son estos:</p>
+              <div class="carta-demo__files">
+                <div class="carta-demo__file">
+                  <img src="../assets/media/demo/carta-bar.svg" alt="Carta de ejemplo del Bar La Plana" width="200" height="280" loading="lazy">
+                  <strong>Bar La Plana</strong>
+                  <span>Carta breve de bar: tapas, raciones y bebidas.</span>
+                </div>
+                <div class="carta-demo__file">
+                  <img src="../assets/media/demo/carta-cafeteria.svg" alt="Carta de ejemplo de la Cafetería Aurora" width="200" height="280" loading="lazy">
+                  <strong>Cafetería Aurora</strong>
+                  <span>Desayunos, cafés y dulces con formato cuidado.</span>
+                </div>
+              </div>
+            </div>
+            <p class="sr-only" role="status" aria-live="polite" data-carta-status></p>
           </div>
 
-          <div class="demo-tabs" role="tablist" aria-label="Pasos de la demostración" data-demo-tabs>
-            <button class="demo-tab" id="tab-upload" type="button" role="tab" aria-selected="true" aria-controls="panel-upload">Subida</button>
-            <button class="demo-tab" id="tab-process" type="button" role="tab" aria-selected="false" aria-controls="panel-process" tabindex="-1">Procesamiento</button>
-            <button class="demo-tab" id="tab-review" type="button" role="tab" aria-selected="false" aria-controls="panel-review" tabindex="-1">Revisión</button>
-            <button class="demo-tab" id="tab-edit" type="button" role="tab" aria-selected="false" aria-controls="panel-edit" tabindex="-1">Edición</button>
-            <button class="demo-tab" id="tab-public" type="button" role="tab" aria-selected="false" aria-controls="panel-public" tabindex="-1">Vista pública</button>
-          </div>
-          <p class="sr-only" role="status" aria-live="polite" data-demo-status></p>
-
-          <section class="demo-panel" id="panel-upload" role="tabpanel" aria-labelledby="tab-upload" tabindex="0">
-            <div class="demo-panel__grid">
-              <div class="demo-panel__copy"><p class="eyebrow">Paso 01</p><h3>Recibir el material de origen.</h3><p>El producto admite la subida y prepara las páginas para que el proceso posterior pueda trabajar sobre ellas.</p></div>
-              <div class="demo-frame" aria-label="Ejemplo visual de una subida">
-                <div class="demo-frame__bar"><strong>Nueva importación</strong><span class="demo-frame__status">Ejemplo</span></div>
-                <div class="upload-zone"><div><img src="../assets/icons/flow/upload.svg" alt="" aria-hidden="true" width="24" height="24"><p>Archivo recibido y listo para preparar páginas.</p></div></div>
-              </div>
-            </div>
-          </section>
-
-          <section class="demo-panel" id="panel-process" role="tabpanel" aria-labelledby="tab-process" tabindex="0">
-            <div class="demo-panel__grid">
-              <div class="demo-panel__copy"><p class="eyebrow">Paso 02</p><h3>Preparar y extraer.</h3><p>Las páginas se organizan, se procesan con el proveedor configurado y regresan como datos estructurados para revisión.</p></div>
-              <div class="demo-frame" aria-label="Ejemplo visual del procesamiento">
-                <div class="demo-frame__bar"><strong>Estado del proceso</strong><span class="demo-frame__status">Ejemplo</span></div>
-                <div class="process-stack">
-                  <div class="process-line"><img src="../assets/icons/flow/process.svg" alt="" aria-hidden="true" width="24" height="24"><span>Preparar páginas</span><span>Listo</span></div>
-                  <div class="process-line"><img src="../assets/icons/flow/process.svg" alt="" aria-hidden="true" width="24" height="24"><span>Extraer contenido</span><span>Listo</span></div>
-                  <div class="process-line"><img src="../assets/icons/flow/check.svg" alt="" aria-hidden="true" width="24" height="24"><span>Validar estructura</span><span>Listo</span></div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="demo-panel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" tabindex="0">
-            <div class="demo-panel__grid">
-              <div class="demo-panel__copy"><p class="eyebrow">Paso 03</p><h3>Revisar antes de aceptar.</h3><p>La persona responsable comprueba categorías, productos y precios. La extracción no publica ni aprueba por sí sola.</p></div>
-              <div class="demo-frame" aria-label="Ejemplo visual de una revisión humana">
-                <div class="demo-frame__bar"><strong>Revisión obligatoria</strong><span class="demo-frame__status">Ejemplo</span></div>
-                <div class="review-grid">
-                  <div class="review-card"><img src="../assets/icons/flow/review.svg" alt="" aria-hidden="true" width="24" height="24"><p>Comprobar nombres y descripciones.</p></div>
-                  <div class="review-card"><img src="../assets/icons/flow/review.svg" alt="" aria-hidden="true" width="24" height="24"><p>Confirmar precios y categorías.</p></div>
-                  <div class="review-card"><img src="../assets/icons/flow/check.svg" alt="" aria-hidden="true" width="24" height="24"><p>Aceptar solo lo que ya está revisado.</p></div>
-                  <div class="review-card"><img src="../assets/icons/flow/edit.svg" alt="" aria-hidden="true" width="24" height="24"><p>Corregir lo que necesite contexto.</p></div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="demo-panel" id="panel-edit" role="tabpanel" aria-labelledby="tab-edit" tabindex="0">
-            <div class="demo-panel__grid">
-              <div class="demo-panel__copy"><p class="eyebrow">Paso 04</p><h3>Editar con control directo.</h3><p>El editor manual permite ajustar el contenido de la carta antes de generar una nueva versión pública.</p></div>
-              <div class="demo-frame" aria-label="Ejemplo visual del editor">
-                <div class="demo-frame__bar"><strong>Editor de carta</strong><span class="demo-frame__status">Ejemplo</span></div>
-                <div class="editor-list">
-                  <div class="editor-row"><span>Ensalada de temporada</span><span>8,50</span><img src="../assets/icons/flow/edit.svg" alt="" aria-hidden="true" width="24" height="24"></div>
-                  <div class="editor-row"><span>Croquetas de la casa</span><span>9,00</span><img src="../assets/icons/flow/edit.svg" alt="" aria-hidden="true" width="24" height="24"></div>
-                  <div class="editor-row"><span>Arroz del día</span><span>14,00</span><img src="../assets/icons/flow/edit.svg" alt="" aria-hidden="true" width="24" height="24"></div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="demo-panel" id="panel-public" role="tabpanel" aria-labelledby="tab-public" tabindex="0">
-            <div class="demo-panel__grid">
-              <div class="demo-panel__copy"><p class="eyebrow">Paso 05</p><h3>Publicar sin cambiar el QR.</h3><p>Cada publicación crea una versión del contenido, mientras la dirección pública y el código QR permanecen.</p></div>
-              <div class="demo-frame" aria-label="Ejemplo visual de la carta pública">
-                <div class="demo-frame__bar"><strong>Vista pública</strong><span class="demo-frame__status">Ejemplo</span></div>
-                <div class="public-preview">
-                  <div class="public-preview__hero"><strong>Carta del día</strong><span>Actualizada recientemente</span></div>
-                  <div class="public-preview__body"><p><span>Ensalada de temporada</span><span>8,50</span></p><p><span>Croquetas de la casa</span><span>9,00</span></p><p><span>Arroz del día</span><span>14,00</span></p></div>
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
       </section>
 
@@ -295,10 +253,10 @@
       </div>
     </footer>
 
-    <noscript><p class="noscript-note">Los cinco pasos permanecen visibles. Las pestañas interactivas requieren JavaScript.</p></noscript>
+    <noscript><p class="noscript-note">Los archivos de ejemplo permanecen visibles. La demo interactiva requiere JavaScript.</p></noscript>
     <script src="../assets/js/config.js"></script>
     <script src="../assets/js/site.js"></script>
-    <script src="../assets/js/product-demo.js"></script>
+    <script src="../assets/js/demo-carta.js"></script>
     <script src="../assets/js/motion.js"></script>
   </body>
 </html>
