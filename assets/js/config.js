@@ -16,9 +16,8 @@
       lastUpdated: "2026-08-01"
     }),
     app: Object.freeze({
-      // URL pública de la app de Tu carta. Vacía hasta que exista un despliegue
-      // accesible: la demo no muestra enlaces sin destino real.
-      url: ""
+      // URL pública de la app de Tu carta. Verificada en línea el 3-08-2026.
+      url: "https://cerocoma-menu.vercel.app"
     }),
     contacts: Object.freeze({
       email: "",
