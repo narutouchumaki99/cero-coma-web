@@ -20,18 +20,24 @@ Fecha de revisión: 1 de agosto de 2026.
 - La demostración del producto está rotulada como conceptual y no conecta con el producto real.
 - Studio no muestra imágenes: el material disponible aún necesita permiso, recorte y revisión de privacidad.
 - No se usan fotografías de stock ni testimonios, cifras o resultados sin evidencia.
-- Los contactos están vacíos en la configuración y no se generan enlaces sin destino.
+- Desde el 5 de agosto de 2026 se publica contacto real: correo, WhatsApp y teléfono. Los enlaces se sirven en el HTML (funcionan sin JavaScript) y el validador obliga a que coincidan con `config.js`.
 - CERO comunica cinco estados visuales y textuales mediante renders derivados del modelo 3D aportado. La imagen es decorativa para lectores de pantalla y el cambio relevante se anuncia en una región de estado.
 
 ## Bloqueos de producción
 
-1. Contactos reales y canal principal.
-2. Contenido legal aprobado y enlaces correspondientes.
-3. Permiso explícito y revisión de privacidad para cualquier medio de Studio.
-4. Llamadas a la acción definitivas.
-5. Revisión en dispositivos móviles físicos.
-6. Decisión de indexación, metadatos canónicos y publicación del dominio.
-7. Aprobación visual explícita de CERO y comprobación de originalidad y derechos.
-8. Recorrido manual con NVDA.
+Cerrados el 5 de agosto de 2026:
 
-Hasta cerrar estos puntos, deben mantenerse `noindex`, el bloqueo de `robots.txt` y la ausencia de `CNAME`.
+1. Contactos reales y canal principal.
+2. Llamadas a la acción definitivas.
+3. Decisión de indexación, metadatos canónicos y publicación del dominio.
+4. Comprobación de originalidad y derechos de CERO.
+
+Siguen abiertos con la web ya indexable:
+
+1. **Contenido legal aprobado y enlaces correspondientes** — el más urgente: se publica un canal de contacto sin aviso legal ni política de privacidad.
+2. Permiso explícito y revisión de privacidad para cualquier medio de Studio.
+3. Revisión en dispositivos móviles físicos.
+4. Aprobación visual explícita de CERO (el manifiesto sigue en `staging-candidate`).
+5. Recorrido manual con NVDA.
+
+La ausencia de `CNAME` debe mantenerse: el dominio lo sirve Cloudflare Pages.

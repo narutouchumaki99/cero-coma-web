@@ -62,7 +62,15 @@ for (const htmlFile of htmlFiles) {
   if (h1Count !== 1) fail(htmlFile, `se esperaba un h1 y se encontraron ${h1Count}`);
   if (!/<html\s+lang="es"/i.test(source)) fail(htmlFile, "falta lang=es");
   if (!/<main\b/i.test(source)) fail(htmlFile, "falta el landmark main");
-  if (!/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(source)) fail(htmlFile, "falta meta noindex de staging");
+  // La web es pública e indexable: las páginas de contenido declaran su URL
+  // canónica y no llevan noindex. La página de error sí debe conservarlo.
+  const hasNoindex = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(source);
+  if (path.basename(htmlFile) === "404.html") {
+    if (!hasNoindex) fail(htmlFile, "la página de error debe conservar noindex");
+  } else {
+    if (hasNoindex) fail(htmlFile, "una página pública no debe llevar noindex");
+    if (!/<link\s+rel="canonical"\s+href="https:\/\/cerocomasoluciones\.com/i.test(source)) fail(htmlFile, "falta la URL canónica");
+  }
   if (!/class="skip-link"/i.test(source)) fail(htmlFile, "falta enlace de salto");
 
   const references = [...source.matchAll(/\b(?:href|src)="([^"]+)"/gi)].map((match) => match[1]);
@@ -105,13 +113,14 @@ for (const item of required) {
 
 try {
   await stat(path.join(root, "CNAME"));
-  errors.push("CNAME: no debe existir durante staging");
+  errors.push("CNAME: el dominio lo sirve Cloudflare Pages; este archivo desviaría el dominio a GitHub Pages");
 } catch {
-  // Correcto: el dominio personalizado queda fuera de staging.
+  // Correcto: el dominio se resuelve fuera del repositorio.
 }
 
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");
-if (!/Disallow:\s*\//i.test(robots)) errors.push("robots.txt: staging debe bloquear el rastreo");
+if (/^\s*Disallow:\s*\/\s*$/im.test(robots)) errors.push("robots.txt: la web pública no debe bloquear el rastreo completo");
+if (!/^\s*Sitemap:\s*https:\/\/cerocomasoluciones\.com\/sitemap\.xml\s*$/im.test(robots)) errors.push("robots.txt: falta la referencia al sitemap");
 
 const indexSource = await readFile(path.join(root, "index.html"), "utf8");
 const configSource = await readFile(path.join(root, "assets/js/config.js"), "utf8");
@@ -136,6 +145,24 @@ const configSource = await readFile(path.join(root, "assets/js/config.js"), "utf
     }
   }
 }
+// El contacto también se sirve estático. Si el HTML publicara un correo o un
+// número distintos de los declarados, alguien escribiría a un destino que no
+// se lee: aquí se obliga a que coincidan con config.js.
+{
+  const declaredEmail = configSource.match(/email:\s*"([^"]*)"/)?.[1] || "";
+  const declaredWhatsapp = configSource.match(/whatsapp:\s*"([^"]*)"/)?.[1] || "";
+  const declaredPhone = configSource.match(/phone:\s*"([^"]*)"/)?.[1] || "";
+  for (const htmlFile of htmlFiles) {
+    const source = await readFile(htmlFile, "utf8");
+    for (const match of source.matchAll(/href="(mailto:|tel:|https:\/\/wa\.me\/)([^"]*)"/g)) {
+      const [, scheme, value] = match;
+      const expected = scheme === "mailto:" ? declaredEmail : scheme === "tel:" ? declaredPhone : declaredWhatsapp.replace("https://wa.me/", "");
+      if (!expected) fail(htmlFile, `se publica un contacto (${scheme}) que config.js no declara`);
+      else if (value !== expected) fail(htmlFile, `contacto desincronizado con config.js: ${scheme}${value}`);
+    }
+  }
+}
+
 const mascotSource = await readFile(path.join(root, "assets/js/mascot.js"), "utf8");
 const manifestPath = path.join(root, "assets/media/mascot/manifest.json");
 let manifest;

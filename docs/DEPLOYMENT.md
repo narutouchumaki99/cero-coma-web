@@ -2,18 +2,23 @@
 
 ## Estado actual
 
-La rama `main` publica una vista previa verificada mediante GitHub Pages y GitHub Actions. La entrega actual tiene estas protecciones:
+La web es **pública e indexable** en `https://cerocomasoluciones.com` desde el 5 de agosto de 2026 (Cloudflare Pages, despliegue automático desde `main`). La entrega actual declara:
 
-- URL estándar: `https://narutouchumaki99.github.io/cero-coma-web/`;
-
-- meta `noindex, nofollow, noarchive` en todos los documentos;
-- `robots.txt` con bloqueo completo;
+- URL canónica en cada página de contenido;
+- `robots.txt` abierto, con referencia al sitemap;
+- `noindex` únicamente en `404.html`;
 - `.nojekyll` para servir los archivos literalmente;
-- ningún archivo `CNAME`;
-- contactos vacíos y sin enlaces simulados;
-- dominio y DNS fuera del alcance del despliegue.
+- ningún archivo `CNAME`: el dominio lo resuelve Cloudflare, y ese archivo lo desviaría a GitHub Pages;
+- contacto público real (correo, WhatsApp y teléfono), servido en el HTML y declarado en `config.js`.
 
-El workflow inicial terminó correctamente el 1 de agosto de 2026 y la URL estándar respondió con HTTPS, las tres rutas públicas y la página 404 personalizada.
+La URL de GitHub Pages (`https://narutouchumaki99.github.io/cero-coma-web/`) se conserva como respaldo en `config.stagingUrl`.
+
+### Pendiente tras la apertura
+
+- **Aviso legal y política de privacidad**: obligatorios para una web comercial que publica un canal de contacto. No están redactados ni enlazados.
+- **Aprobación visual explícita de CERO**: el manifiesto sigue en `staging-candidate` con `productionApproved: false`, aunque la originalidad y los derechos constan confirmados por el propietario.
+- **Permiso y revisión de privacidad del material de Studio**: sigue sin publicarse.
+- **Revisión en móvil físico y recorrido con NVDA**: sin registrar.
 
 ## Publicar la vista previa
 
@@ -41,17 +46,19 @@ La acción publica la raíz tal cual: no compila, transforma ni inyecta configur
 
 ## Puerta de producción
 
-No continuar hasta aprobar todos estos puntos:
+Estado a 5 de agosto de 2026, cuando el operador decidió abrir la web a buscadores:
 
-1. contactos reales;
-2. contenido legal;
-3. permiso de medios y revisión de privacidad;
-4. llamadas a la acción definitivas;
-5. revisión móvil física;
-6. aprobación visual explícita de CERO;
-7. comprobación de originalidad y derechos de CERO;
-8. recorrido manual con NVDA;
-9. decisión explícita de lanzamiento.
+1. contactos reales — **cerrado** (correo, WhatsApp y teléfono publicados);
+2. contenido legal — **abierto**;
+3. permiso de medios y revisión de privacidad — **abierto** (Studio sigue sin imágenes);
+4. llamadas a la acción definitivas — **cerrado** (app enlazada y contacto directo);
+5. revisión móvil física — **abierto**;
+6. aprobación visual explícita de CERO — **abierto**;
+7. comprobación de originalidad y derechos de CERO — **cerrado** (confirmado por el propietario el 3 de agosto de 2026);
+8. recorrido manual con NVDA — **abierto**;
+9. decisión explícita de lanzamiento — **cerrada el 5 de agosto de 2026**.
+
+La apertura se decidió con los puntos 2, 3, 5, 6 y 8 todavía abiertos. El más urgente es el 2: publicar un canal de contacto sin aviso legal ni política de privacidad deja la web incompleta frente al RGPD y la LSSI.
 
 ## Dominio personalizado — procedimiento posterior
 
@@ -65,4 +72,4 @@ Este procedimiento no forma parte del staging actual.
 6. Esperar propagación, activar HTTPS y comprobar redirecciones.
 7. Si falla la validación, restaurar los registros documentados.
 
-Al mismo tiempo hay que retirar `noindex`, abrir `robots.txt`, añadir URL canónica, actualizar el sitemap con la fecha de lanzamiento y repetir la auditoría completa.
+La retirada de `noindex`, la apertura de `robots.txt`, la URL canónica y la fecha del sitemap se aplicaron el 5 de agosto de 2026. El validador (`node tests/validate-site.mjs`) ahora comprueba lo contrario que en staging: rechaza `noindex` en las páginas de contenido, exige la canónica, rechaza un `Disallow: /` completo y obliga a que los contactos del HTML coincidan con `config.js`.

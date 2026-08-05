@@ -9,23 +9,23 @@
       version: "1.0"
     }),
     site: Object.freeze({
-      // La web ya vive en el dominio propio (Cloudflare Pages). Sigue con
-      // noindex hasta cerrar contacto real, textos legales y CTA definitivas.
-      environment: "production-noindex",
+      // Web pública e indexable en el dominio propio (Cloudflare Pages) desde
+      // el 5 de agosto de 2026, con contacto real publicado.
+      environment: "production",
       publicDomain: "cerocomasoluciones.com",
-      publicUrl: "https://www.cerocomasoluciones.com/",
+      publicUrl: "https://cerocomasoluciones.com/",
       stagingUrl: "https://narutouchumaki99.github.io/cero-coma-web/",
       repositoryBase: "/",
-      lastUpdated: "2026-08-03"
+      lastUpdated: "2026-08-05"
     }),
     app: Object.freeze({
       // URL pública de la app de Tu carta. Verificada en línea el 3-08-2026.
       url: "https://cerocoma-menu.vercel.app"
     }),
     contacts: Object.freeze({
-      email: "",
-      phone: "",
-      whatsapp: "",
+      email: "cerocomasoluciones@gmail.com",
+      phone: "+34643403723",
+      whatsapp: "https://wa.me/34643403723",
       linkedin: ""
     }),
     features: Object.freeze({
@@ -33,9 +33,9 @@
       mascotDemo: true,
       projectSearch: true,
       projectDialog: true,
-      contactLinks: false,
+      contactLinks: true,
       studioMedia: false,
-      customDomain: false
+      customDomain: true
     })
   });
 })();

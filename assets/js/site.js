@@ -55,6 +55,12 @@
     if (!state || !list) return;
 
     state.textContent = "Elige un canal de contacto.";
+    list.hidden = false;
+
+    // Los enlaces ya se sirven en el HTML para que funcionen sin JavaScript.
+    // Aquí solo se generan si la lista viniera vacía.
+    if (list.children.length) return;
+
     values.forEach(({ label, href }) => {
       const link = document.createElement("a");
       link.className = "button button--dark";
@@ -66,7 +72,6 @@
       }
       list.append(link);
     });
-    list.hidden = false;
   }
 
   function setupCompressor() {
