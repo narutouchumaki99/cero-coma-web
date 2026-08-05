@@ -71,12 +71,16 @@ Con el `noindex` retirado, Google tardará de días a un par de semanas en index
 
 | # | Tarea | Quién | Estado |
 | --- | --- | --- | --- |
-| 2.1 | Alta en Google Search Console, verificar dominio y enviar `sitemap.xml` | **Operador** (requiere su cuenta) | **Pendiente** |
+| 2.1 | Alta en Google Search Console, verificar propiedad y enviar `sitemap.xml` | Claude, sobre la sesión del operador | **Hecho** el 5 de agosto de 2026: propiedad verificada y sitemap leído el mismo día, estado «Correcto», 5 páginas descubiertas |
 | 2.2 | `og:image` 1200×630 y metadatos sociales en las cinco páginas | Claude | **Hecho**: `assets/media/social/og-image.png` (50 KB) |
 | 2.3 | JSON-LD `Organization` con nombre, URL, logo, correo y teléfono | Claude | **Hecho** en la portada, con logo cuadrado de 512 px |
 | 2.4 | Revisar `title` y `meta description` | Claude | **Revisado**: las cinco descripciones son únicas y miden 75–109 caracteres. Ver la nota sobre los títulos |
 | 2.5 | Reglas en el validador: `og:image`, `twitter:card` y coherencia del JSON-LD con `config.js` | Claude | **Hecho**, con prueba en negativo |
 | 2.6 | Alta en Bing Webmaster Tools | Operador | **Pendiente**, opcional |
+
+**Search Console — cómo quedó.** Propiedad de tipo «prefijo de la URL» sobre `https://cerocomasoluciones.com/`, en la cuenta `otmaneabd4@gmail.com`. La de tipo «dominio» habría cubierto también `www` y `http`, pero exige un registro TXT en Cloudflare. Verificación por archivo: `googleb7de5be3ec7cd0b5.html` en la raíz del repositorio. **No borrarlo: Google retira la verificación si desaparece**, y por eso figura en la lista de archivos obligatorios del validador, exento de las comprobaciones estructurales porque no es un documento del sitio.
+
+Detalle del alojamiento: Cloudflare Pages responde **308** a `/googleb7de5be3ec7cd0b5.html` y redirige a la misma ruta sin extensión, donde sirve el contenido. Google siguió la redirección y verificó igualmente. Si en el futuro falla una verificación por archivo, la vía alternativa es la etiqueta `meta`, que no depende de la extensión.
 
 **Cómo se generaron las imágenes.** No hay ImageMagick ni Inkscape en el equipo (`convert` es el de Windows, que formatea volúmenes: no usarlo). Se rasterizaron con Edge en modo headless desde dos plantillas HTML que usan los tokens y la tipografía reales, guardadas en `recursos-locales/og/` (fuera de git, igual que el GLB de CERO):
 
