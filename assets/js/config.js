@@ -23,7 +23,7 @@
       url: "https://cerocoma-menu.vercel.app"
     }),
     contacts: Object.freeze({
-      email: "cerocomasoluciones@gmail.com",
+      email: "avancemos@cerocomasoluciones.com",
       phone: "+34643403723",
       whatsapp: "https://wa.me/34643403723",
       linkedin: ""
