@@ -54,7 +54,11 @@ async function checkReference(htmlFile, reference) {
 }
 
 const files = await walk(root);
-const htmlFiles = files.filter((file) => path.extname(file) === ".html");
+// El archivo de verificación de propiedad de Google no es un documento del
+// sitio: es una cadena que el buscador lee. No se le exige estructura, pero sí
+// sigue pasando el escaneo de contenido de más abajo.
+const esVerificacionBuscador = (file) => /^google[0-9a-f]+\.html$/i.test(path.basename(file));
+const htmlFiles = files.filter((file) => path.extname(file) === ".html" && !esVerificacionBuscador(file));
 
 for (const htmlFile of htmlFiles) {
   const source = await readFile(htmlFile, "utf8");
@@ -98,6 +102,8 @@ const required = [
   "privacidad/index.html",
   "assets/media/social/og-image.png",
   "assets/media/social/logo-512.png",
+  // Google retira la verificación de la propiedad si este archivo desaparece.
+  "googleb7de5be3ec7cd0b5.html",
   "assets/js/config.js",
   "assets/js/projects-data.js",
   "assets/css/mascot.css",
