@@ -96,6 +96,8 @@ const required = [
   "tu-carta-en-cero-coma/index.html",
   "aviso-legal/index.html",
   "privacidad/index.html",
+  "assets/media/social/og-image.png",
+  "assets/media/social/logo-512.png",
   "assets/js/config.js",
   "assets/js/projects-data.js",
   "assets/css/mascot.css",
@@ -168,6 +170,35 @@ const configSource = await readFile(path.join(root, "assets/js/config.js"), "utf
       const expected = scheme === "mailto:" ? declaredEmail : scheme === "tel:" ? declaredPhone : declaredWhatsapp.replace("https://wa.me/", "");
       if (!expected) fail(htmlFile, `se publica un contacto (${scheme}) que config.js no declara`);
       else if (value !== expected) fail(htmlFile, `contacto desincronizado con config.js: ${scheme}${value}`);
+    }
+  }
+}
+
+// Sin og:image, compartir un enlace del sitio en WhatsApp o LinkedIn muestra
+// solo texto. Se exige en las páginas de contenido, apuntando al archivo real.
+const OG_IMAGE = "https://cerocomasoluciones.com/assets/media/social/og-image.png";
+for (const htmlFile of htmlFiles) {
+  if (path.basename(htmlFile) === "404.html") continue;
+  const source = await readFile(htmlFile, "utf8");
+  if (!source.includes(`<meta property="og:image" content="${OG_IMAGE}">`)) fail(htmlFile, "falta og:image o no apunta a la imagen publicada");
+  if (!/<meta name="twitter:card" content="summary_large_image">/.test(source)) fail(htmlFile, "falta twitter:card");
+}
+
+// El marcado estructurado repite datos que ya viven en config.js. Si divergen,
+// los buscadores publicarían un contacto que nadie atiende.
+{
+  const match = indexSource.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  if (!match) {
+    fail(path.join(root, "index.html"), "falta el marcado estructurado de la organización");
+  } else {
+    try {
+      const data = JSON.parse(match[1]);
+      const email = configSource.match(/email:\s*"([^"]*)"/)?.[1] || "";
+      const phone = configSource.match(/phone:\s*"([^"]*)"/)?.[1] || "";
+      if (data.email !== email) fail(path.join(root, "index.html"), `el marcado estructurado declara otro correo: ${data.email}`);
+      if (data.telephone !== phone) fail(path.join(root, "index.html"), `el marcado estructurado declara otro teléfono: ${data.telephone}`);
+    } catch {
+      fail(path.join(root, "index.html"), "el marcado estructurado no es JSON válido");
     }
   }
 }

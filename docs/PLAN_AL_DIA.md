@@ -67,14 +67,23 @@ Hoja de estilos nueva `assets/css/legal.css`: los `h1`/`h2` de marca llegan a 5,
 
 Con el `noindex` retirado, Google tardará de días a un par de semanas en indexarla por su cuenta. Esto lo acelera y mejora cómo aparece.
 
-| # | Tarea | Quién | Comprobación |
+| # | Tarea | Quién | Estado |
 | --- | --- | --- | --- |
-| 2.1 | Alta en Google Search Console, verificar dominio y enviar `sitemap.xml` | **Operador** (requiere su cuenta) | Sitemap aceptado y páginas en "Inspección de URL" |
-| 2.2 | Generar `og:image` 1200×630 (marca sobre `--zero #0d0e0f`, wordmark ivory) y añadir `og:image`, `og:image:width/height`, `og:image:alt` y `twitter:card` en las tres páginas | Claude | Vista previa correcta al pegar el enlace en WhatsApp y LinkedIn |
-| 2.3 | Añadir JSON-LD `Organization`: nombre, URL, logo, correo, teléfono | Claude | Sin errores en la prueba de resultados enriquecidos de Google |
-| 2.4 | Revisar `title` y `meta description` de las tres páginas pensando en qué se teclea al buscar | Claude + operador | Descripciones únicas, por debajo de ~155 caracteres |
-| 2.5 | Regla en el validador: toda página de contenido declara `og:image` | Claude | Prueba en negativo |
-| 2.6 | Alta en Bing Webmaster Tools | Operador | Opcional, 10 minutos |
+| 2.1 | Alta en Google Search Console, verificar dominio y enviar `sitemap.xml` | **Operador** (requiere su cuenta) | **Pendiente** |
+| 2.2 | `og:image` 1200×630 y metadatos sociales en las cinco páginas | Claude | **Hecho**: `assets/media/social/og-image.png` (50 KB) |
+| 2.3 | JSON-LD `Organization` con nombre, URL, logo, correo y teléfono | Claude | **Hecho** en la portada, con logo cuadrado de 512 px |
+| 2.4 | Revisar `title` y `meta description` | Claude | **Revisado**: las cinco descripciones son únicas y miden 75–109 caracteres. Ver la nota sobre los títulos |
+| 2.5 | Reglas en el validador: `og:image`, `twitter:card` y coherencia del JSON-LD con `config.js` | Claude | **Hecho**, con prueba en negativo |
+| 2.6 | Alta en Bing Webmaster Tools | Operador | **Pendiente**, opcional |
+
+**Cómo se generaron las imágenes.** No hay ImageMagick ni Inkscape en el equipo (`convert` es el de Windows, que formatea volúmenes: no usarlo). Se rasterizaron con Edge en modo headless desde dos plantillas HTML que usan los tokens y la tipografía reales, guardadas en `recursos-locales/og/` (fuera de git, igual que el GLB de CERO):
+
+```
+msedge --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+  --window-size=1200,630 --screenshot=og-image.png file:///…/og-image.source.html
+```
+
+**Nota sobre los títulos.** Son decisión de marca, así que no se han tocado. Pero conviene saber el coste: ni `Cero Coma — De la intención a la realidad` ni `Tu carta en Cero Coma` contienen las palabras que alguien teclea al buscar (carta digital, QR, digitalizar procesos, Valladolid). Se encuentran buscando la marca, no el problema. Si en algún momento interesa captar a quien aún no conoce el nombre, ese es el sitio por donde empezar.
 
 **Nota sobre el correo:** Cloudflare ofusca el `mailto:` servido (`/cdn-cgi/l/email-protection`), de modo que el botón de correo necesita JavaScript. Protege de bots de spam, y WhatsApp y teléfono no están afectados. Recomendación: dejarlo activo. Si se prefiere lo contrario, se desactiva en Cloudflare → Scrape Shield → Email Address Obfuscation.
 
