@@ -16,7 +16,7 @@ La URL de GitHub Pages (`https://narutouchumaki99.github.io/cero-coma-web/`) se 
 ### Pendiente tras la apertura
 
 - ~~Aviso legal y política de privacidad~~: publicados el 5 de agosto de 2026 en `/aviso-legal/` y `/privacidad/`, enlazados desde el pie y en el sitemap. Pendiente la aprobación del titular.
-- **Aprobación visual explícita de CERO**: el manifiesto sigue en `staging-candidate` con `productionApproved: false`, aunque la originalidad y los derechos constan confirmados por el propietario.
+- ~~Aprobación visual explícita de CERO~~: aprobada el 5 de agosto de 2026. Manifiesto 2.3.0 en `production-approved` con `visualApproval` fechada.
 - **Permiso y revisión de privacidad del material de Studio**: sigue sin publicarse.
 - **Revisión en móvil físico y recorrido con NVDA**: sin registrar.
 
@@ -49,16 +49,16 @@ La acción publica la raíz tal cual: no compila, transforma ni inyecta configur
 Estado a 5 de agosto de 2026, cuando el operador decidió abrir la web a buscadores:
 
 1. contactos reales — **cerrado** (correo, WhatsApp y teléfono publicados);
-2. contenido legal — **abierto**;
+2. contenido legal — **cerrado**: publicado el 5 de agosto de 2026 y aprobado por el titular ese mismo día;
 3. permiso de medios y revisión de privacidad — **abierto** (Studio sigue sin imágenes);
 4. llamadas a la acción definitivas — **cerrado** (app enlazada y contacto directo);
-5. revisión móvil física — **abierto**;
-6. aprobación visual explícita de CERO — **abierto**;
+5. revisión móvil física — **sin registro de ejecución**;
+6. aprobación visual explícita de CERO — **cerrado el 5 de agosto de 2026**;
 7. comprobación de originalidad y derechos de CERO — **cerrado** (confirmado por el propietario el 3 de agosto de 2026);
-8. recorrido manual con NVDA — **abierto**;
+8. recorrido manual con NVDA — **sin registro de ejecución**;
 9. decisión explícita de lanzamiento — **cerrada el 5 de agosto de 2026**.
 
-La apertura se decidió con los puntos 2, 3, 5, 6 y 8 todavía abiertos. El más urgente es el 2: publicar un canal de contacto sin aviso legal ni política de privacidad deja la web incompleta frente al RGPD y la LSSI.
+El titular dio por cerrada la puerta el 5 de agosto de 2026. Quedan dos matices que conviene no perder de vista: el punto 3 sigue abierto de hecho, porque Studio no publica medios y no hay permiso que revisar mientras siga así; y los puntos 5 y 8 se dan por aprobados sin que conste registro de ejecución, porque exigen un dispositivo y un lector de pantalla reales. No son defectos conocidos: son comprobaciones que nadie ha anotado.
 
 ## Dominio personalizado — procedimiento posterior
 

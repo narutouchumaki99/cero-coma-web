@@ -1,12 +1,13 @@
 {
-  "version": "2.2.0",
+  "version": "2.3.0",
   "name": "CERO",
-  "status": "staging-candidate",
+  "status": "production-approved",
   "provenance": "Modelo 3D de autoría del propietario (generado con Tripo) y adaptado para la web Cero Coma",
-  "authorization": "staging-only",
+  "authorization": "production",
   "originalityReview": "owner-confirmed-2026-08-03",
   "rightsReview": "owner-confirmed-2026-08-03",
-  "productionApproved": false,
+  "productionApproved": true,
+  "visualApproval": "owner-confirmed-2026-08-05",
   "sourceModel": {
     "fileName": "3d-robot-character.glb",
     "format": "model/gltf-binary",
@@ -38,7 +39,13 @@
     "vertices": 8453,
     "textureMaxPx": 1024,
     "rig": "root/body/head/arm.L/arm.R, pesos rígidos por islas (Blender 5.2 headless)",
-    "animations": ["idle", "focus", "think", "build", "ready"],
+    "animations": [
+      "idle",
+      "focus",
+      "think",
+      "build",
+      "ready"
+    ],
     "animationSource": "recursos-locales/mascota-cero/fuente/cero-animado.glb (no publicado)",
     "viewer": "assets/vendor/model-viewer/model-viewer.min.js (Apache-2.0, alojado en local)",
     "authorizationBasis": "El propietario confirmó en sesión (3-ago-2026) que el modelo es de su autoría; se publica solo este derivado optimizado, nunca el GLB fuente."
@@ -51,8 +58,8 @@
       "height": 512,
       "alternativeText": "",
       "provenance": "Render derivado del modelo 3D aportado por el propietario",
-      "authorization": "staging-only",
-      "status": "staging-candidate",
+      "authorization": "production",
+      "status": "production-approved",
       "bytes": 9368,
       "sha256": "4D8F0BF801664F12E261BCE59E2C77D66B79BFC1261819183845BBA5D72BC0F3"
     },
@@ -63,8 +70,8 @@
       "height": 512,
       "alternativeText": "",
       "provenance": "Render derivado del modelo 3D aportado por el propietario",
-      "authorization": "staging-only",
-      "status": "staging-candidate",
+      "authorization": "production",
+      "status": "production-approved",
       "bytes": 9586,
       "sha256": "4F66F713B50C0E3785DD44943D8F3D94245F5160920E8B5A5044A2C934BEBE4A"
     },
@@ -75,8 +82,8 @@
       "height": 512,
       "alternativeText": "",
       "provenance": "Render derivado del modelo 3D aportado por el propietario",
-      "authorization": "staging-only",
-      "status": "staging-candidate",
+      "authorization": "production",
+      "status": "production-approved",
       "bytes": 8690,
       "sha256": "AA510E4491D2AB265206B1C4E387A3442941CE61D16980772F65A04B6AB34657"
     },
@@ -87,8 +94,8 @@
       "height": 512,
       "alternativeText": "",
       "provenance": "Render derivado del modelo 3D aportado por el propietario",
-      "authorization": "staging-only",
-      "status": "staging-candidate",
+      "authorization": "production",
+      "status": "production-approved",
       "bytes": 10160,
       "sha256": "501EF3E03506D7852AE843B9F57E2AF52C06DEE0D04E10AF21EE49F6B4215A56"
     },
@@ -99,11 +106,17 @@
       "height": 512,
       "alternativeText": "",
       "provenance": "Render derivado del modelo 3D aportado por el propietario",
-      "authorization": "staging-only",
-      "status": "staging-candidate",
+      "authorization": "production",
+      "status": "production-approved",
       "bytes": 11242,
       "sha256": "333E1D603952CBE731783D02E485B8EF0A2BF39A5C8DD71088EB82946282A029"
     }
   ],
-  "states": ["idle", "focus", "think", "build", "ready"]
+  "states": [
+    "idle",
+    "focus",
+    "think",
+    "build",
+    "ready"
+  ]
 }

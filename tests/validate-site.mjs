@@ -251,11 +251,12 @@ for (const state of expectedStates) {
 }
 
 if (manifest) {
-  if (manifest.version !== "2.2.0") fail(manifestPath, "versión de activo inesperada");
-  if (manifest.status !== "staging-candidate") fail(manifestPath, "el estado debe ser staging-candidate");
-  if (manifest.authorization !== "staging-only") fail(manifestPath, "la autorización debe limitarse a staging");
+  if (manifest.version !== "2.3.0") fail(manifestPath, "versión de activo inesperada");
+  if (manifest.status !== "production-approved") fail(manifestPath, "el estado debe ser production-approved");
+  if (manifest.authorization !== "production") fail(manifestPath, "la autorización debe ser de producción");
   if (manifest.originalityReview !== "owner-confirmed-2026-08-03" || manifest.rightsReview !== "owner-confirmed-2026-08-03") fail(manifestPath, "las revisiones de originalidad y derechos deben constar como confirmadas por el propietario");
-  if (manifest.productionApproved !== false) fail(manifestPath, "el activo no puede constar como aprobado para producción");
+  if (manifest.productionApproved !== true) fail(manifestPath, "el activo debe constar como aprobado para producción");
+  if (!/^owner-confirmed-\d{4}-\d{2}-\d{2}$/.test(manifest.visualApproval || "")) fail(manifestPath, "falta la aprobación visual fechada del propietario");
   if (JSON.stringify(manifest.states) !== JSON.stringify(expectedStates)) fail(manifestPath, "los cinco estados no coinciden con la interfaz");
   if (manifest.sourceModel?.published !== false || manifest.sourceModel?.licenseProvided !== false) fail(manifestPath, "el GLB original no debe constar como publicado o licenciado");
   if (manifest.sourceModel?.bytes !== 13389496 || manifest.sourceModel?.triangles !== 1935288 || manifest.sourceModel?.animations !== 0) fail(manifestPath, "faltan métricas verificadas del modelo fuente");
@@ -266,7 +267,7 @@ if (manifest) {
   for (const asset of manifest.media || []) {
     if (!asset?.path || asset.width !== 512 || asset.height !== 512) fail(manifestPath, "un activo no registra ruta o dimensiones completas");
     if (!expectedStates.includes(asset.state) || typeof asset.alternativeText !== "string" || !asset.provenance) fail(manifestPath, "un activo no registra estado, texto alternativo o procedencia");
-    if (asset.authorization !== "staging-only" || asset.status !== "staging-candidate") fail(manifestPath, "un activo excede la autorización de staging");
+    if (asset.authorization !== "production" || asset.status !== "production-approved") fail(manifestPath, "un activo no consta aprobado para producción");
     const assetPath = path.join(path.dirname(manifestPath), asset.path || "");
     try {
       const data = await readFile(assetPath);

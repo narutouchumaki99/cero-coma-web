@@ -44,15 +44,17 @@ Los iconos de `assets/icons/` proceden del paquete de recursos visuales v0.3. Se
 
 | Archivo | Uso | Procedencia | Estado | Autorización |
 | --- | --- | --- | --- | --- |
-| `candidate/rendered/cero-idle.webp` | Estado neutral | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
-| `candidate/rendered/cero-focus.webp` | Estado de enfoque | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
-| `candidate/rendered/cero-think.webp` | Estado de orden | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
-| `candidate/rendered/cero-build.webp` | Estado de construcción | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
-| `candidate/rendered/cero-ready.webp` | Estado listo | Render del modelo 3D aportado por el propietario | `staging-candidate` | Solo staging |
+| `candidate/rendered/cero-idle.webp` | Estado neutral | Render del modelo 3D aportado por el propietario | `production-approved` | Producción |
+| `candidate/rendered/cero-focus.webp` | Estado de enfoque | Render del modelo 3D aportado por el propietario | `production-approved` | Producción |
+| `candidate/rendered/cero-think.webp` | Estado de orden | Render del modelo 3D aportado por el propietario | `production-approved` | Producción |
+| `candidate/rendered/cero-build.webp` | Estado de construcción | Render del modelo 3D aportado por el propietario | `production-approved` | Producción |
+| `candidate/rendered/cero-ready.webp` | Estado listo | Render del modelo 3D aportado por el propietario | `production-approved` | Producción |
 | `assets/media/mascot/manifest.json` | Registro público de versión, dimensiones, procedencia y revisión | Documentación de esta entrega | Vigente | Público en staging |
-| `assets/media/mascot/cero.glb` | Avatar 3D animado de la guía CERO (5 clips: idle/focus/think/build/ready; solo escritorio) | Derivado optimizado y riggeado del modelo del propietario | `staging-candidate` | Solo staging |
+| `assets/media/mascot/cero.glb` | Avatar 3D animado de la guía CERO (5 clips: idle/focus/think/build/ready; solo escritorio) | Derivado optimizado y riggeado del modelo del propietario | `production-approved` | Producción |
 | `assets/vendor/model-viewer/` | Visor `model-viewer` 4.3.1 alojado en local | Google, licencia Apache-2.0 incluida | Vigente | Público en staging |
 
 El modelo fuente es un GLB de 13.389.496 bytes, 1.935.288 triángulos, 992.914 vértices, tres texturas y ninguna animación o esqueleto. Se conserva fuera del repositorio público por peso. Para la guía se publica un **derivado optimizado** (`cero.glb`, 322.804 bytes: ~8,5k vértices, cuantización KHR, texturas 1024/512 px) verificado por huella en el manifiesto y el validador. Los cinco renders WebP (49.046 bytes en conjunto) siguen siendo la entrega para móvil, ahorro de datos y equipos sin WebGL.
 
-Derechos (3 de agosto de 2026): el propietario confirmó en sesión que el modelo es de su autoría (generado por él con Tripo). Con esa confirmación se autoriza la publicación del derivado en staging; el GLB fuente permanece fuera del repositorio.
+Derechos (3 de agosto de 2026): el propietario confirmó en sesión que el modelo es de su autoría (generado por él con Tripo). Con esa confirmación se autorizó la publicación del derivado; el GLB fuente permanece fuera del repositorio.
+
+**Aprobación visual (5 de agosto de 2026):** el propietario aprobó CERO para producción. El manifiesto pasa a la versión 2.3.0 con `status: production-approved`, `authorization: production`, `productionApproved: true` y `visualApproval: owner-confirmed-2026-08-05`, en los cinco renders y en el derivado. El validador exige ahora esos valores y una aprobación visual fechada; comprobado en negativo que falla si se revierte alguno. Lo que no cambia: el GLB fuente sigue sin publicarse ni licenciarse, y el validador lo sigue impidiendo.

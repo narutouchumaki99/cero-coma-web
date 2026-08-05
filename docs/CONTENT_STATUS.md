@@ -34,12 +34,12 @@ Cerrados el 5 de agosto de 2026:
 
 5. Contenido legal publicado y enlazado: `/aviso-legal/` y `/privacidad/`, con los datos del titular (autónomo) y el detalle de proveedores que acceden a los datos de contacto.
 
+6. Aprobación del contenido legal por el titular (5 de agosto de 2026).
+7. Aprobación visual de CERO (5 de agosto de 2026): manifiesto 2.3.0 en `production-approved`.
+
 Siguen abiertos con la web ya indexable:
 
-1. Aprobación del contenido legal por el titular.
-2. Permiso explícito y revisión de privacidad para cualquier medio de Studio.
-3. Revisión en dispositivos móviles físicos.
-4. Aprobación visual explícita de CERO (el manifiesto sigue en `staging-candidate`).
-5. Recorrido manual con NVDA.
+1. Permiso explícito y revisión de privacidad para cualquier medio de Studio.
+2. Revisión en dispositivos móviles físicos y recorrido con NVDA. El titular dio por cerrada la puerta de producción el 5 de agosto de 2026; no consta registro de ejecución de estas dos pruebas, que requieren dispositivo y lector de pantalla reales.
 
 La ausencia de `CNAME` debe mantenerse: el dominio lo sirve Cloudflare Pages.

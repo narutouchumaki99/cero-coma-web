@@ -55,7 +55,7 @@ La web publica un canal de contacto y enlaza a una aplicación que registra usua
 | 1.3 | Enlazar ambas en el pie de las páginas que tienen pie | Claude | **Hecho** (la 404 no tiene pie; queda anotado) |
 | 1.4 | Añadirlas a `sitemap.xml` | Claude | **Hecho**: cinco URLs |
 | 1.5 | Reglas en el validador: existen, están enlazadas desde el pie y figuran en el sitemap | Claude | **Hecho**, con prueba en negativo |
-| 1.6 | Revisar el contenido y aprobarlo | Operador | **Pendiente** |
+| 1.6 | Revisar el contenido y aprobarlo | Operador | **Aprobado** el 5 de agosto de 2026 |
 
 Hoja de estilos nueva `assets/css/legal.css`: los `h1`/`h2` de marca llegan a 5,4 rem y están pensados para titulares de portada, no para un documento con apartados. La hoja reduce la escala y fija el ancho de lectura en `--measure` (68ch) manteniendo tipografía y color de marca.
 
@@ -104,7 +104,7 @@ Puntos que los propios documentos del proyecto exigían antes de producción y q
 | 3.1 | Recorrer la web en un móvil físico: menú, compresor, guía CERO, demo de Tu carta, botones de contacto | Operador | Incidencias anotadas en `docs/VERIFICATION.md` |
 | 3.2 | Corregir lo que salga de 3.1 | Claude | Nueva pasada en el mismo dispositivo |
 | 3.3 | Recorrido con NVDA (orden de foco, saltos, región de estado de CERO, diálogos) | Operador | Registro en `docs/VERIFICATION.md` |
-| 3.4 | Aprobación visual explícita de CERO y paso del manifiesto a producción (`status`, `authorization`, `productionApproved`) | Operador aprueba, Claude aplica | Validador actualizado a los valores nuevos |
+| 3.4 | Aprobación visual explícita de CERO y paso del manifiesto a producción | Operador aprueba, Claude aplica | **Hecho** el 5 de agosto de 2026: manifiesto 2.3.0, validador exigiendo los valores nuevos y aprobación fechada |
 | 3.5 | Decidir sobre los medios de Studio: permiso, recorte y revisión de privacidad, o mantenerlo sin imágenes | Operador | `docs/ASSET_STATUS.md` actualizado |
 | 3.6 | Pasada de Lighthouse y registro de objetivos de carga | Claude | **Hecho**: cinco páginas medidas, cifras en `docs/VERIFICATION.md` |
 

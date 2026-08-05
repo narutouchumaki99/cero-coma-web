@@ -120,4 +120,4 @@ Queda fuera de esta comprobación lo que exige criterio humano: lectura con NVDA
 
 ## Alcance pendiente
 
-NVDA y la revisión móvil física requieren dispositivos y operación humana. Se mantienen como puerta explícita de producción, no como defecto oculto del staging.
+NVDA y la revisión móvil física requieren dispositivos y operación humana. El titular dio por cerrada la puerta de producción el 5 de agosto de 2026, pero **este documento no registra su ejecución**: nadie ha anotado un recorrido con lector de pantalla ni en un teléfono real. No son defectos conocidos; son comprobaciones sin evidencia. Si se ejecutan, conviene anotarlas aquí con fecha y dispositivo.
