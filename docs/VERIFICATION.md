@@ -13,6 +13,8 @@
 | 1440 × 900 | Superado en las tres páginas |
 | 1920 × 1080 | Superado en las tres páginas |
 
+Esa tabla corresponde a las tres páginas de contenido originales. Las dos páginas legales publicadas el 5 de agosto de 2026 se verificaron aparte, con otro método: ver «Páginas legales» más abajo.
+
 ## Comprobaciones
 
 | Área | Evidencia esperada | Estado |
@@ -80,7 +82,26 @@ El SEO sube de 63 a 92: los 37 puntos que faltaban eran el bloqueo intencional d
 - **`robots-txt` (las cinco páginas).** Cloudflare inyecta su propio bloque antes del archivo del repositorio, con la directiva `Content-Signal: search=yes,ai-train=no,use=reference`, que no forma parte del estándar y Lighthouse marca como desconocida. El archivo del repositorio es correcto; los rastreadores ignoran las líneas que no entienden, así que `Allow`, los `Disallow` internos y `Sitemap` siguen aplicándose. Se retira desde Cloudflare (Scrape Shield / AI Crawl Control), no desde el repositorio.
 - **`color-contrast` (solo Inicio).** Los capítulos inactivos de «El recorrido» se atenúan a `opacity: 0.3` con desenfoque hasta que el scroll los activa; en reposo, su texto queda en 1,5–2,0 : 1. Es un efecto deliberado, anterior a esta apertura. No se aplica sin JavaScript ni con `prefers-reduced-motion`, y desde hoy tampoco con `prefers-contrast: more` ni con colores forzados, donde el recorrido se muestra legible de entrada. La atenuación por defecto se mantiene: cambiarla es una decisión de diseño del operador.
 
-Revisión responsive de las páginas legales: medido en el navegador, `scrollWidth` es igual a `clientWidth` a 369 px de ancho y ningún elemento sobresale del documento. Las capturas con Edge headless a 390 px daban un falso recorte, porque Windows impone un ancho mínimo de ventana y la imagen se recorta sobre un render más ancho: no sirven para juzgar el diseño móvil.
+### Páginas legales — verificación propia
+
+Medido en el navegador sobre el sitio publicado, cargando cada página en un marco del ancho indicado y comprobando el desbordamiento real.
+
+| Anchura | Aviso legal | Privacidad |
+| --- | --- | --- |
+| 320 | Sin scroll horizontal | Sin scroll horizontal |
+| 375 | `scrollWidth` = `clientWidth` | `scrollWidth` = `clientWidth` |
+| 390 | `scrollWidth` = `clientWidth` | `scrollWidth` = `clientWidth` |
+| 768 | `scrollWidth` = `clientWidth` | `scrollWidth` = `clientWidth` |
+| 1024 | `scrollWidth` = `clientWidth` | `scrollWidth` = `clientWidth` |
+| 1366 | `scrollWidth` = `clientWidth` | `scrollWidth` = `clientWidth` |
+| 1440 | `scrollWidth` = `clientWidth` | `scrollWidth` = `clientWidth` |
+| 1920 | `scrollWidth` = `clientWidth` | `scrollWidth` = `clientWidth` |
+
+Estructura y teclado en ambas: un solo `h1`, un `main`, `lang="es"`, enlace de salto presente con destino existente, y el menú abre y cierra con `Escape` sin que el foco se pierda (queda en un botón de la cabecera).
+
+Queda fuera de esta comprobación lo que exige criterio humano: lectura con NVDA y recorrido en dispositivo físico.
+
+**Dos métodos que dan falsos positivos y no deben usarse aquí.** Las capturas con Edge headless a 390 px recortan un render más ancho, porque Windows impone un ancho mínimo de ventana: aparentan un desbordamiento que no existe. Y a 320 px, comparar `scrollWidth` con `clientWidth` dentro de un marco da 320 frente a 305 por la barra de desplazamiento, en las cinco páginas por igual, incluidas las tres ya certificadas. La comprobación válida es empujar el desplazamiento horizontal y ver si se mueve: en las cinco páginas se queda en cero.
 
 ## Comprobación remota
 
