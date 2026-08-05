@@ -500,6 +500,7 @@ h3 {
 
 .footer__bottom {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-6);
@@ -511,6 +512,22 @@ h3 {
 
 .footer__bottom p {
   margin: 0;
+}
+
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer__legal a {
+  color: inherit;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.25em;
+}
+
+.footer__legal a:hover {
+  color: var(--white);
 }
 
 .contact-status {

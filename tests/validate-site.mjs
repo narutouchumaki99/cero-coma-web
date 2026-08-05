@@ -94,6 +94,8 @@ const required = [
   "index.html",
   "proyectos/index.html",
   "tu-carta-en-cero-coma/index.html",
+  "aviso-legal/index.html",
+  "privacidad/index.html",
   "assets/js/config.js",
   "assets/js/projects-data.js",
   "assets/css/mascot.css",
@@ -167,6 +169,25 @@ const configSource = await readFile(path.join(root, "assets/js/config.js"), "utf
       if (!expected) fail(htmlFile, `se publica un contacto (${scheme}) que config.js no declara`);
       else if (value !== expected) fail(htmlFile, `contacto desincronizado con config.js: ${scheme}${value}`);
     }
+  }
+}
+
+// El aviso legal debe ser accesible desde el sitio (LSSI-CE art. 10) y la
+// privacidad es donde se explica el tratamiento de los datos de contacto. Se
+// exigen en el pie de toda página que tenga pie; la 404 no lo tiene.
+for (const htmlFile of htmlFiles) {
+  const source = await readFile(htmlFile, "utf8");
+  if (!/<footer\b/i.test(source)) continue;
+  for (const target of ["aviso-legal/", "privacidad/"]) {
+    if (relative(htmlFile).startsWith(target)) continue; // se enlaza a sí misma con "./"
+    if (!new RegExp(`href="[^"]*${target}"`, "i").test(source)) fail(htmlFile, `el pie no enlaza ${target}`);
+  }
+}
+
+const sitemapSource = await readFile(path.join(root, "sitemap.xml"), "utf8");
+for (const route of ["/", "/proyectos/", "/tu-carta-en-cero-coma/", "/aviso-legal/", "/privacidad/"]) {
+  if (!sitemapSource.includes(`<loc>https://cerocomasoluciones.com${route}</loc>`)) {
+    errors.push(`sitemap.xml: falta la ruta ${route}`);
   }
 }
 

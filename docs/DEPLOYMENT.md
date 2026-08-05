@@ -15,7 +15,7 @@ La URL de GitHub Pages (`https://narutouchumaki99.github.io/cero-coma-web/`) se 
 
 ### Pendiente tras la apertura
 
-- **Aviso legal y política de privacidad**: obligatorios para una web comercial que publica un canal de contacto. No están redactados ni enlazados.
+- ~~Aviso legal y política de privacidad~~: publicados el 5 de agosto de 2026 en `/aviso-legal/` y `/privacidad/`, enlazados desde el pie y en el sitemap. Pendiente la aprobación del titular.
 - **Aprobación visual explícita de CERO**: el manifiesto sigue en `staging-candidate` con `productionApproved: false`, aunque la originalidad y los derechos constan confirmados por el propietario.
 - **Permiso y revisión de privacidad del material de Studio**: sigue sin publicarse.
 - **Revisión en móvil físico y recorrido con NVDA**: sin registrar.

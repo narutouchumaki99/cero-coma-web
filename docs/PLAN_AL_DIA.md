@@ -16,7 +16,7 @@ Cada tarea dice **quién** puede hacerla y **cómo se comprueba** que está hech
 | Indexación | Abierta: sin `noindex`, `robots.txt` permite, canónicas puestas, sitemap al día |
 | Contacto | Publicado: correo, WhatsApp y teléfono, servidos en el HTML |
 | Rutas, 404, consola, validador | Sin incidencias (115 archivos, 4 documentos) |
-| **Textos legales** | **Ausentes** |
+| Textos legales | Publicados el 5 de agosto de 2026: `/aviso-legal/` y `/privacidad/`, pendientes de que el titular los apruebe |
 | Imagen social (`og:image`) | Ausente en las tres páginas |
 | Alta en buscadores | Sin hacer |
 | Manifiesto de CERO | Sigue en `staging-candidate`, `productionApproved: false` |
@@ -30,19 +30,15 @@ Cada tarea dice **quién** puede hacerla y **cómo se comprueba** que está hech
 
 ---
 
-## Fase 0 — Datos que solo puede aportar el operador
+## Fase 0 — Datos del titular — **CERRADA** (5 de agosto de 2026)
 
-Bloquean la Fase 1. Sin ellos no se puede redactar un aviso legal válido.
-
-| # | Dato | Por qué hace falta |
+| # | Dato | Valor |
 | --- | --- | --- |
-| 0.1 | Nombre y apellidos o razón social | LSSI-CE art. 10: identificación del titular |
-| 0.2 | NIF / CIF | Ídem |
-| 0.3 | Domicilio a efectos de notificaciones | Ídem |
-| 0.4 | Condición: autónomo o sociedad | Cambia la redacción y los datos registrales |
-| 0.5 | Si hay inscripción registral (solo sociedades) | Datos del Registro Mercantil |
-
-**Comprobación:** los cinco datos por escrito antes de redactar nada.
+| 0.1 | Titular | Othmane Abdellouli Atti |
+| 0.2 | NIF | 01862734X (letra de control verificada) |
+| 0.3 | Domicilio a efectos de notificaciones | Calle Madre de Dios 21, Valladolid |
+| 0.4 | Condición | Empresario individual (autónomo) |
+| 0.5 | Inscripción registral | No aplica por ser autónomo |
 
 ---
 
@@ -50,14 +46,16 @@ Bloquean la Fase 1. Sin ellos no se puede redactar un aviso legal válido.
 
 La web publica un canal de contacto y enlaza a una aplicación que registra usuarios. Sin aviso legal ni política de privacidad, la web está incompleta frente a la LSSI-CE y el RGPD desde el momento en que es indexable.
 
-| # | Tarea | Quién | Comprobación |
+| # | Tarea | Quién | Estado |
 | --- | --- | --- | --- |
-| 1.1 | Crear `/aviso-legal/` con la plantilla de página existente (cabecera, pie, canónica, sin `noindex`) | Claude | La ruta responde 200 y pasa el validador |
-| 1.2 | Crear `/privacidad/` con responsable, finalidades, base legítima, conservación, destinatarios, derechos y el párrafo de almacenamiento técnico | Claude | Ídem |
-| 1.3 | Enlazar ambas en el pie de las **cuatro** páginas (incluida la 404) | Claude | `grep` de los enlaces en los cuatro documentos |
-| 1.4 | Añadirlas a `sitemap.xml` | Claude | Sitemap con cinco URLs |
-| 1.5 | Regla en el validador: las páginas legales existen y están enlazadas desde el pie | Claude | Prueba en negativo: borrar el enlace debe hacer fallar la validación |
-| 1.6 | Revisar el contenido y aprobarlo | Operador | Aprobación explícita por escrito |
+| 1.1 | Crear `/aviso-legal/` con la plantilla de página existente | Claude | **Hecho** |
+| 1.2 | Crear `/privacidad/` con responsable, finalidades, base legítima, conservación, destinatarios, derechos y almacenamiento técnico | Claude | **Hecho** |
+| 1.3 | Enlazar ambas en el pie de las páginas que tienen pie | Claude | **Hecho** (la 404 no tiene pie; queda anotado) |
+| 1.4 | Añadirlas a `sitemap.xml` | Claude | **Hecho**: cinco URLs |
+| 1.5 | Reglas en el validador: existen, están enlazadas desde el pie y figuran en el sitemap | Claude | **Hecho**, con prueba en negativo |
+| 1.6 | Revisar el contenido y aprobarlo | Operador | **Pendiente** |
+
+Hoja de estilos nueva `assets/css/legal.css`: los `h1`/`h2` de marca llegan a 5,4 rem y están pensados para titulares de portada, no para un documento con apartados. La hoja reduce la escala y fija el ancho de lectura en `--measure` (68ch) manteniendo tipografía y color de marca.
 
 **Alcance de lo que puedo redactar:** borradores completos y correctos en estructura, según los requisitos de la LSSI-CE art. 10 y el RGPD art. 13. No soy abogado: si en algún momento se tratan datos sensibles, se contratan encargados de tratamiento o llega un cliente con exigencias contractuales, conviene una revisión profesional. Para el caso actual (web informativa con contacto por correo y WhatsApp), un texto estándar bien hecho cubre el supuesto.
 

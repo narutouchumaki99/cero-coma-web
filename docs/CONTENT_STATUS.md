@@ -32,9 +32,11 @@ Cerrados el 5 de agosto de 2026:
 3. Decisión de indexación, metadatos canónicos y publicación del dominio.
 4. Comprobación de originalidad y derechos de CERO.
 
+5. Contenido legal publicado y enlazado: `/aviso-legal/` y `/privacidad/`, con los datos del titular (autónomo) y el detalle de proveedores que acceden a los datos de contacto.
+
 Siguen abiertos con la web ya indexable:
 
-1. **Contenido legal aprobado y enlaces correspondientes** — el más urgente: se publica un canal de contacto sin aviso legal ni política de privacidad.
+1. Aprobación del contenido legal por el titular.
 2. Permiso explícito y revisión de privacidad para cualquier medio de Studio.
 3. Revisión en dispositivos móviles físicos.
 4. Aprobación visual explícita de CERO (el manifiesto sigue en `staging-candidate`).
