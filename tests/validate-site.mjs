@@ -121,6 +121,13 @@ try {
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");
 if (/^\s*Disallow:\s*\/\s*$/im.test(robots)) errors.push("robots.txt: la web pública no debe bloquear el rastreo completo");
 if (!/^\s*Sitemap:\s*https:\/\/cerocomasoluciones\.com\/sitemap\.xml\s*$/im.test(robots)) errors.push("robots.txt: falta la referencia al sitemap");
+// El despliegue publica la raíz tal cual: docs, tests y README quedan
+// accesibles por URL directa. No son contenido público y no deben indexarse.
+for (const internal of ["/docs/", "/tests/", "/README.md"]) {
+  if (!new RegExp(`^\\s*Disallow:\\s*${internal.replace(/[/.]/g, "\\$&")}\\s*$`, "im").test(robots)) {
+    errors.push(`robots.txt: falta el bloqueo de la ruta interna ${internal}`);
+  }
+}
 
 const indexSource = await readFile(path.join(root, "index.html"), "utf8");
 const configSource = await readFile(path.join(root, "assets/js/config.js"), "utf8");

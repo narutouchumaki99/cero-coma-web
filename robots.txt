@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# El sitio se despliega tal cual, así que la documentación de trabajo y los
+# tests quedan accesibles por URL directa. No son contenido público: fuera del
+# índice.
+Disallow: /docs/
+Disallow: /tests/
+Disallow: /README.md
+
 Sitemap: https://cerocomasoluciones.com/sitemap.xml
