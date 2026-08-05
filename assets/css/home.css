@@ -179,6 +179,17 @@ html.js-motion .recorrido__chapter.is-active {
   filter: none;
 }
 
+/* La atenuación del capítulo inactivo es deliberada, pero deja su texto por
+   debajo del contraste mínimo hasta que el scroll lo activa. Quien pide más
+   contraste, o usa colores forzados, recibe el recorrido legible de entrada;
+   el efecto se mantiene para el resto. */
+@media (prefers-contrast: more), (forced-colors: active) {
+  html.js-motion .recorrido__chapter {
+    opacity: 1;
+    filter: none;
+  }
+}
+
 .recorrido__number {
   display: block;
   margin-bottom: var(--space-4);

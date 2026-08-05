@@ -100,7 +100,12 @@ Puntos que los propios documentos del proyecto exigían antes de producción y q
 | 3.3 | Recorrido con NVDA (orden de foco, saltos, región de estado de CERO, diálogos) | Operador | Registro en `docs/VERIFICATION.md` |
 | 3.4 | Aprobación visual explícita de CERO y paso del manifiesto a producción (`status`, `authorization`, `productionApproved`) | Operador aprueba, Claude aplica | Validador actualizado a los valores nuevos |
 | 3.5 | Decidir sobre los medios de Studio: permiso, recorte y revisión de privacidad, o mantenerlo sin imágenes | Operador | `docs/ASSET_STATUS.md` actualizado |
-| 3.6 | Pasada de Lighthouse y registro de objetivos de carga | Claude | Cifras en `docs/VERIFICATION.md` |
+| 3.6 | Pasada de Lighthouse y registro de objetivos de carga | Claude | **Hecho**: cinco páginas medidas, cifras en `docs/VERIFICATION.md` |
+
+De la pasada de Lighthouse salen dos asuntos que no estaban en el plan:
+
+- **`robots.txt` marcado como no válido en las cinco páginas.** Lo causa la directiva `Content-Signal` que inyecta Cloudflare, no el archivo del repositorio. Es cosmético para la puntuación —los rastreadores ignoran directivas desconocidas— y se retira desde el panel de Cloudflare. **Operador**, si quiere el 100 en SEO.
+- **Contraste de «El recorrido» en la portada.** Los capítulos inactivos quedan en 1,5–2,0 : 1 mientras están atenuados. Se ha añadido la salida por `prefers-contrast: more` y colores forzados sin tocar el efecto. Subirlo por defecto exigiría una opacidad de reposo cercana a 0,85, que prácticamente elimina el difuminado: **es una decisión de diseño del operador**, no un arreglo técnico.
 
 ---
 

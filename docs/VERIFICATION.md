@@ -63,6 +63,25 @@ Las capturas de los ocho tamaños se generan en `output/playwright/` y se excluy
 
 El 63 de SEO responde al bloqueo intencional de rastreo de esta vista previa. No se retirará `noindex` para mejorar una puntuación de staging. LCP y CLS cumplen los objetivos; INP necesita datos de campo después del lanzamiento. Tras estabilizar la carga, las interacciones probadas no generaron tareas superiores a 50 ms.
 
+## Lighthouse tras la apertura a buscadores — 5 de agosto de 2026
+
+Medido sobre el dominio público (`lighthouse@12`, Edge headless), ya sin `noindex` y con las dos páginas legales publicadas.
+
+| Página | Rend. | Acces. | B. prácticas | SEO | LCP | CLS | TBT |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Inicio | 100 | 96 | 100 | 92 | 1,1 s | 0,015 | 20 ms |
+| Proyectos | 98 | 100 | 100 | 92 | 1,1 s | 0,085 | 0 ms |
+| Tu carta | 98 | 100 | 100 | 92 | 1,2 s | 0 | 130 ms |
+| Aviso legal | 100 | 100 | 100 | 92 | 0,9 s | 0 | 0 ms |
+| Privacidad | 100 | 100 | 100 | 92 | 0,9 s | 0 | 0 ms |
+
+El SEO sube de 63 a 92: los 37 puntos que faltaban eran el bloqueo intencional de staging. Solo quedan dos auditorías sin superar en todo el sitio:
+
+- **`robots-txt` (las cinco páginas).** Cloudflare inyecta su propio bloque antes del archivo del repositorio, con la directiva `Content-Signal: search=yes,ai-train=no,use=reference`, que no forma parte del estándar y Lighthouse marca como desconocida. El archivo del repositorio es correcto; los rastreadores ignoran las líneas que no entienden, así que `Allow`, los `Disallow` internos y `Sitemap` siguen aplicándose. Se retira desde Cloudflare (Scrape Shield / AI Crawl Control), no desde el repositorio.
+- **`color-contrast` (solo Inicio).** Los capítulos inactivos de «El recorrido» se atenúan a `opacity: 0.3` con desenfoque hasta que el scroll los activa; en reposo, su texto queda en 1,5–2,0 : 1. Es un efecto deliberado, anterior a esta apertura. No se aplica sin JavaScript ni con `prefers-reduced-motion`, y desde hoy tampoco con `prefers-contrast: more` ni con colores forzados, donde el recorrido se muestra legible de entrada. La atenuación por defecto se mantiene: cambiarla es una decisión de diseño del operador.
+
+Revisión responsive de las páginas legales: medido en el navegador, `scrollWidth` es igual a `clientWidth` a 369 px de ancho y ningún elemento sobresale del documento. Las capturas con Edge headless a 390 px daban un falso recorte, porque Windows impone un ancho mínimo de ventana y la imagen se recorta sobre un render más ancho: no sirven para juzgar el diseño móvil.
+
 ## Comprobación remota
 
 - URL: `https://narutouchumaki99.github.io/cero-coma-web/`.
