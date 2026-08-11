@@ -14,6 +14,7 @@
   const filters = root.querySelector("[data-project-filters]");
   const search = root.querySelector("[data-project-search]");
   const count = root.querySelector("[data-project-count]");
+  const updated = root.querySelector("[data-project-updated]");
   const tools = root.querySelector("[data-project-tools]");
   const dialog = document.querySelector("[data-project-dialog]");
   const dialogBody = dialog && dialog.querySelector("[data-project-dialog-body]");
@@ -167,6 +168,25 @@
     count.textContent = `${matches.length} ${matches.length === 1 ? "proyecto" : "proyectos"}`;
   }
 
+  function renderUpdatedDate() {
+    if (!updated) return;
+    const latest = projects
+      .map((project) => project.lastUpdated)
+      .filter((value) => /^\d{4}-\d{2}-\d{2}$/.test(value || ""))
+      .sort()
+      .at(-1);
+    if (!latest) return;
+
+    const date = new Date(`${latest}T12:00:00Z`);
+    updated.dateTime = latest;
+    updated.textContent = new Intl.DateTimeFormat("es-ES", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC"
+    }).format(date);
+  }
+
   function listBlock(title, items) {
     if (!Array.isArray(items) || !items.length) return null;
     const section = document.createElement("section");
@@ -295,6 +315,7 @@
   window.addEventListener("hashchange", syncWithHash);
 
   renderFilters();
+  renderUpdatedDate();
   renderProjects();
   syncWithHash();
 })();

@@ -4,8 +4,8 @@
   window.CEROCOMA_PROJECTS = Object.freeze([
     Object.freeze({
       id: "tu-carta",
-      slug: "tu-carta-en-cero-coma",
-      name: "Tu carta en Cero Coma",
+      slug: "faena",
+      name: "FAENA",
       category: "Producto",
       status: "Desarrollo activo",
       featured: true,
@@ -32,8 +32,8 @@
         "Procesamiento duradero (cola persistente)",
         "Piloto con un negocio real"
       ]),
-      publicRoute: "tu-carta-en-cero-coma/",
-      lastUpdated: "2026-08-03",
+      publicRoute: "faena/",
+      lastUpdated: "2026-08-11",
       media: Object.freeze([])
     }),
     Object.freeze({

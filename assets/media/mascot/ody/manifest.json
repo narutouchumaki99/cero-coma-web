@@ -1,0 +1,100 @@
+{
+  "version": "1.0.0",
+  "name": "ODY",
+  "legacyName": "CERO",
+  "status": "production-approved",
+  "note": "Mismos bytes que candidate/rendered/cero-*.webp. Rename de producto CERO→ODY sin cambio de identidad visual. Spec: docs/ODY_ASSET_SPEC.md",
+  "provenance": "Modelo 3D de autoría del propietario (generado con Tripo) y adaptado para la web Cero Coma",
+  "authorization": "production",
+  "originalityReview": "owner-confirmed-2026-08-03",
+  "rightsReview": "owner-confirmed-2026-08-03",
+  "productionApproved": true,
+  "visualApproval": "owner-confirmed-2026-08-05",
+  "sourceManifest": "assets/media/mascot/manifest.json",
+  "sourceManifestVersion": "2.3.0",
+  "delivery": {
+    "kind": "five-state-render-sequence",
+    "format": "image/webp",
+    "width": 512,
+    "height": 512,
+    "alpha": false,
+    "background": "#000000",
+    "totalBytes": 49046,
+    "byteIdenticalToLegacy": true
+  },
+  "media": [
+    {
+      "state": "idle",
+      "path": "ody-idle.webp",
+      "legacyPath": "candidate/rendered/cero-idle.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 9368,
+      "sha256": "4D8F0BF801664F12E261BCE59E2C77D66B79BFC1261819183845BBA5D72BC0F3",
+      "authorization": "production",
+      "status": "production-approved"
+    },
+    {
+      "state": "focus",
+      "path": "ody-focus.webp",
+      "legacyPath": "candidate/rendered/cero-focus.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 9586,
+      "sha256": "4F66F713B50C0E3785DD44943D8F3D94245F5160920E8B5A5044A2C934BEBE4A",
+      "authorization": "production",
+      "status": "production-approved"
+    },
+    {
+      "state": "think",
+      "path": "ody-think.webp",
+      "legacyPath": "candidate/rendered/cero-think.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 8690,
+      "sha256": "AA510E4491D2AB265206B1C4E387A3442941CE61D16980772F65A04B6AB34657",
+      "authorization": "production",
+      "status": "production-approved"
+    },
+    {
+      "state": "build",
+      "path": "ody-build.webp",
+      "legacyPath": "candidate/rendered/cero-build.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 10160,
+      "sha256": "501EF3E03506D7852AE843B9F57E2AF52C06DEE0D04E10AF21EE49F6B4215A56",
+      "authorization": "production",
+      "status": "production-approved"
+    },
+    {
+      "state": "ready",
+      "path": "ody-ready.webp",
+      "legacyPath": "candidate/rendered/cero-ready.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 11242,
+      "sha256": "333E1D603952CBE731783D02E485B8EF0A2BF39A5C8DD71088EB82946282A029",
+      "authorization": "production",
+      "status": "production-approved"
+    }
+  ],
+  "states": ["idle", "focus", "think", "build", "ready"],
+  "gaps": [
+    {
+      "id": "G1",
+      "item": "1024px retina set",
+      "priority": "medium",
+      "blocksIris": false
+    },
+    {
+      "id": "G2",
+      "item": "512px transparent-background set",
+      "priority": "high",
+      "blocksIris": "only if ODY sits on light surfaces"
+    }
+  ],
+  "specPath": "docs/ODY_ASSET_SPEC.md",
+  "deliveredAt": "2026-08-11",
+  "deliveredBy": "Saraswati"
+}

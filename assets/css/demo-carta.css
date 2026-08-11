@@ -271,7 +271,51 @@
   color: var(--pp-ink);
   background: var(--pp-bg);
   border-color: var(--pp-hero-bg);
+  width: min(100%, 19rem);
+  margin: var(--space-5) auto 0;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 1.75rem;
   transition: width var(--motion-short) var(--ease-out);
+}
+
+.carta-demo .public-preview .public-preview__hero {
+  min-height: 6.5rem;
+  padding: var(--space-5);
+}
+
+.carta-demo .public-preview .public-preview__hero strong {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: 1.15rem;
+}
+
+.carta-demo .public-preview .public-preview__body {
+  padding: var(--space-5);
+}
+
+.carta-demo .public-preview .public-preview__body p {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-4);
+  align-items: baseline;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  font-size: 0.78rem;
+}
+
+.carta-demo__preview-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.carta-demo .public-preview .public-preview__body p > span:last-child {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 720;
 }
 
 .carta-demo .public-preview[data-theme="nocturno"] {

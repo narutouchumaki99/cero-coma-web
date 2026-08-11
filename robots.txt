@@ -6,6 +6,7 @@ Allow: /
 # índice.
 Disallow: /docs/
 Disallow: /tests/
+Disallow: /recursos-locales/
 Disallow: /README.md
 
 Sitemap: https://cerocomasoluciones.com/sitemap.xml

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://cerocomasoluciones.com/">
     <meta name="theme-color" content="#0d0e0f">
-    <meta name="description" content="Cero Coma convierte procesos complejos en productos, servicios y herramientas listos para funcionar.">
+    <meta name="description" content="Cero Coma convierte procesos complejos en productos y servicios listos para usar. Conoce FAENA, la carta digital con QR permanente.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="Cero Coma — De la intención a la realidad">
-    <meta property="og:description" content="Productos y servicios construidos para pasar de una intención a algo que ya funciona.">
+    <meta property="og:title" content="Cero Coma — Productos y herramientas que ya funcionan">
+    <meta property="og:description" content="Cero Coma convierte procesos complejos en productos y servicios listos para usar. Conoce FAENA, la carta digital con QR permanente.">
     <meta property="og:url" content="https://cerocomasoluciones.com/">
     <meta property="og:site_name" content="Cero Coma">
     <meta property="og:image" content="https://cerocomasoluciones.com/assets/media/social/og-image.png">
@@ -17,39 +17,48 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Cero Coma. Lo complicado, listo para funcionar.">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Cero Coma — De la intención a la realidad</title>
+    <title>Cero Coma — Productos y herramientas que ya funcionan</title>
     <link rel="icon" href="assets/media/brand/approved/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/media/brand/approved/favicon.ico" sizes="any">
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/css/mascot.css">
+    <link rel="stylesheet" href="assets/css/demo-carta.css">
     <link rel="stylesheet" href="assets/css/motion.css">
-    <link rel="stylesheet" href="assets/css/guide.css">
     <!--email_off--><script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Cero Coma",
-        "url": "https://cerocomasoluciones.com/",
-        "logo": "https://cerocomasoluciones.com/assets/media/social/logo-512.png",
-        "image": "https://cerocomasoluciones.com/assets/media/social/og-image.png",
-        "description": "Cero Coma convierte procesos complejos en productos, servicios y herramientas listos para funcionar.",
-        "slogan": "De la intención a la realidad.",
-        "email": "cerocomasoluciones@gmail.com",
-        "telephone": "+34643403723",
-        "founder": {
-          "@type": "Person",
-          "name": "Othmane Abdellouli Atti"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Calle Madre de Dios 21",
-          "addressLocality": "Valladolid",
-          "addressCountry": "ES"
-        },
-        "areaServed": "ES",
-        "knowsLanguage": ["es"]
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://cerocomasoluciones.com/#organization",
+            "name": "Cero Coma",
+            "url": "https://cerocomasoluciones.com/",
+            "logo": "https://cerocomasoluciones.com/assets/media/social/logo-512.png",
+            "image": "https://cerocomasoluciones.com/assets/media/social/og-image.png",
+            "description": "Cero Coma convierte procesos complejos en productos, servicios y herramientas listos para funcionar.",
+            "slogan": "De la intención a la realidad.",
+            "email": "cerocomasoluciones@gmail.com",
+            "telephone": "+34643403723",
+            "founder": { "@type": "Person", "name": "Othmane Abdellouli Atti" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Calle Madre de Dios 21",
+              "addressLocality": "Valladolid",
+              "addressCountry": "ES"
+            },
+            "areaServed": "ES",
+            "knowsLanguage": ["es"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://cerocomasoluciones.com/#website",
+            "url": "https://cerocomasoluciones.com/",
+            "name": "Cero Coma",
+            "publisher": { "@id": "https://cerocomasoluciones.com/#organization" },
+            "inLanguage": "es-ES"
+          }
+        ]
       }
     </script><!--/email_off-->
   </head>
@@ -61,12 +70,11 @@
         <a class="brand-link" href="./" aria-label="Cero Coma, inicio">
           <img src="assets/media/brand/approved/wordmark-horizontal-brand.svg" alt="Cero Coma" width="2200" height="500">
         </a>
-
         <nav class="desktop-nav" aria-label="Navegación principal">
           <a href="./" aria-current="page">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="proyectos/">Proyectos</a>
-          <a href="tu-carta-en-cero-coma/">Tu carta</a>
+          <a href="#que-hacemos">Qué hacemos</a>
+          <a href="faena/">FAENA</a>
+          <a href="#contacto">Contacto</a>
         </nav>
         <button class="icon-button menu-trigger" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" data-menu-open>
           <img src="assets/icons/web/menu.svg" alt="" aria-hidden="true" width="24" height="24">
@@ -84,341 +92,140 @@
         </div>
         <nav aria-label="Navegación móvil">
           <a href="./" aria-current="page">Inicio</a>
-          <a href="#nosotros">Nosotros</a>
-          <a href="proyectos/">Proyectos</a>
-          <a href="tu-carta-en-cero-coma/">Tu carta</a>
+          <a href="#que-hacemos">Qué hacemos</a>
+          <a href="faena/">FAENA</a>
+          <a href="#contacto">Contacto</a>
         </nav>
         <p class="menu-dialog__foot">De la intención a la realidad.</p>
       </div>
     </dialog>
 
     <main id="contenido" tabindex="-1">
-      <section class="home-hero" aria-labelledby="hero-title" data-guide-state="idle" data-guide-text="Hola, soy CERO. Baja y te enseño qué es Cero Coma.">
+      <section class="home-hero" aria-labelledby="hero-title">
         <div class="home-hero__grid shell">
           <div class="home-hero__copy" data-reveal>
-            <p class="eyebrow">Producto, servicio y ejecución</p>
-            <h1 id="hero-title">Lo complicado, listo para funcionar.</h1>
-            <p class="lead">Cero Coma convierte una intención dispersa en un recorrido claro, usable y real.</p>
+            <p class="eyebrow">Cero Coma / Valladolid</p>
+            <h1 id="hero-title">Hacemos que una buena idea empiece a funcionar.</h1>
+            <p class="lead">Reducimos la complejidad, construimos el producto y dejamos un recorrido que se entiende sin explicarlo dos veces.</p>
             <div class="home-hero__actions">
-              <a class="button button--dark" href="tu-carta-en-cero-coma/">Conocer Tu carta</a>
-              <a class="button button--ghost" href="proyectos/">Ver proyectos</a>
+              <a class="button button--light" href="#faena">Ver FAENA en acción</a>
+              <a class="button button--quiet" href="#que-hacemos">Cómo trabajamos</a>
             </div>
           </div>
-
-          <section class="compressor" id="compresor-conceptual" aria-labelledby="compressor-title" data-compressor data-level="0" data-reveal style="--reveal-delay: 140ms">
-            <div class="compressor__head">
-              <p class="compressor__label" id="compressor-title">Compresor conceptual</p>
-              <span class="compressor__count" aria-hidden="true">00—04</span>
+          <figure class="hero-ody" data-reveal style="--reveal-delay: 120ms">
+            <div class="hero-ody__frame">
+              <img src="assets/media/mascot/ody/ody-idle.webp" alt="ODY, mascota de Cero Coma" width="512" height="512" fetchpriority="high" decoding="async">
             </div>
-            <div class="compressor__experience">
-              <figure class="cero-mascot" aria-hidden="true" data-cero-mascot data-state="idle">
-                <img class="cero-mascot__render" src="assets/media/mascot/candidate/rendered/cero-idle.webp" alt="" width="512" height="512" fetchpriority="high" decoding="async" data-cero-render data-render-state="idle">
-                <svg class="cero-mascot__svg" viewBox="0 0 480 440" aria-hidden="true" focusable="false" data-cero-svg hidden>
-                  <g class="cero-mascot__arms">
-                    <g class="cero-mascot__arm cero-mascot__arm--left" data-cero-arm-left>
-                      <path d="M155 244 116 255 87 301 105 324 139 291 171 277Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                      <path d="M99 284 72 309 88 344 111 323Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                      <path d="m72 309-18 21 17 26 17-12Z" fill="#0D0E0F" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                    </g>
-                    <g class="cero-mascot__arm cero-mascot__arm--right" data-cero-arm-right>
-                      <path d="m325 244 39 11 29 46-18 23-34-33-32-14Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                      <path d="m381 284 27 25-16 35-23-21Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                      <path d="m408 309 18 21-17 26-17-12Z" fill="#0D0E0F" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                    </g>
-                  </g>
-
-                  <g class="cero-mascot__body" data-cero-body>
-                    <path d="m164 230-24 39 10 92 31 31h118l31-31 10-92-24-39Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                    <path d="m164 230 26 31h100l26-31Z" fill="#303438"/>
-                    <path d="m150 269 31-8v131l-31-31Z" fill="#202326"/>
-                    <path d="m330 269-31-8v131l31-31Z" fill="#0D0E0F"/>
-                    <path d="M199 327h82l18 65H181Z" fill="#0D0E0F"/>
-                    <path d="m219 363 21 15 21-15-7-19h-28Z" fill="#202326" stroke="#303438" stroke-width="3" stroke-linejoin="round"/>
-                    <path d="M201 397h78l-12 18h-54Z" fill="#303438"/>
-                    <path d="M219 401h42" fill="none" stroke="#45F2AE" stroke-width="4" stroke-linecap="round"/>
-                  </g>
-
-                  <g class="cero-mascot__collar" data-cero-collar>
-                    <path d="m156 218 27-18h114l27 18-19 35H175Z" fill="#202326" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                    <path d="M183 200h114l-12 21h-90Z" fill="#0D0E0F"/>
-                    <path d="M210 232h60" fill="none" stroke="#B69A61" stroke-width="4" stroke-linecap="square"/>
-                  </g>
-
-                  <g class="cero-mascot__head" data-cero-head>
-                    <path d="m160 57-34 39v105l35 29h158l35-29V96l-34-39Z" fill="#17191B" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                    <path d="m160 57-34 39 25 16 31-31Z" fill="#202326"/>
-                    <path d="m320 57 34 39-25 16-31-31Z" fill="#0D0E0F"/>
-                    <path d="M151 112h178l15 19v51l-22 23H158l-22-23v-51Z" fill="#070909" stroke="#303438" stroke-width="4" stroke-linejoin="round"/>
-                    <path d="M161 126h158" fill="none" stroke="#063D31" stroke-width="3"/>
-                    <path d="M161 190h158" fill="none" stroke="#063D31" stroke-width="3"/>
-
-                    <g class="cero-mascot__gaze" data-cero-gaze>
-                      <g class="cero-mascot__eye cero-mascot__eye--left">
-                        <circle cx="201" cy="158" r="27" fill="#063D31" stroke="#45F2AE" stroke-width="3"/>
-                        <circle cx="201" cy="158" r="17" fill="#0D0E0F" stroke="#C9FFE9" stroke-width="2"/>
-                        <rect x="195" y="152" width="12" height="12" rx="3" fill="#45F2AE"/>
-                        <circle class="cero-mascot__eye-glint" cx="205" cy="154" r="3" fill="#C9FFE9"/>
-                      </g>
-                      <g class="cero-mascot__eye cero-mascot__eye--right">
-                        <circle cx="279" cy="158" r="27" fill="#063D31" stroke="#45F2AE" stroke-width="3"/>
-                        <circle cx="279" cy="158" r="17" fill="#0D0E0F" stroke="#C9FFE9" stroke-width="2"/>
-                        <rect x="273" y="152" width="12" height="12" rx="3" fill="#45F2AE"/>
-                        <circle class="cero-mascot__eye-glint" cx="283" cy="154" r="3" fill="#C9FFE9"/>
-                      </g>
-                    </g>
-
-                    <g class="cero-mascot__expression cero-mascot__expression--idle" data-cero-expression="idle">
-                      <path d="M178 158h-10m66 0h12m56 0h10" fill="none" stroke="#45F2AE" stroke-width="3" stroke-linecap="square"/>
-                    </g>
-                    <g class="cero-mascot__expression cero-mascot__expression--focus" data-cero-expression="focus">
-                      <path d="m174 136-9-7m9 51-9 7m141-51 9-7m-9 51 9 7" fill="none" stroke="#C9FFE9" stroke-width="3" stroke-linecap="square"/>
-                    </g>
-                    <g class="cero-mascot__expression cero-mascot__expression--think" data-cero-expression="think">
-                      <path d="M220 139h40m-40 38h40" fill="none" stroke="#45F2AE" stroke-width="3" stroke-dasharray="5 5"/>
-                      <rect x="235" y="153" width="10" height="10" rx="2" fill="#C9FFE9"/>
-                    </g>
-                    <g class="cero-mascot__expression cero-mascot__expression--build" data-cero-expression="build">
-                      <path d="M155 145h13v-10h8m149 10h-13v-10h-8M155 173h13v10h8m149-10h-13v10h-8" fill="none" stroke="#45F2AE" stroke-width="3"/>
-                    </g>
-                    <g class="cero-mascot__expression cero-mascot__expression--ready" data-cero-expression="ready">
-                      <path d="m181 158 8 8 16-19m70 11 8 8 16-19" fill="none" stroke="#C9FFE9" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
-                    </g>
-                  </g>
-                </svg>
-              </figure>
-
-              <div class="compressor__status" aria-hidden="true">
-                <span class="compressor__state-label" data-mascot-state-label>00 / En espera</span>
-                <p class="compressor__result" data-compressor-result>CERO espera contigo.</p>
-              </div>
-
-              <div class="compressor__control">
-                <button class="icon-button" type="button" aria-label="Reducir compresión" data-compressor-decrease>−</button>
-                <label class="sr-only" for="compression-range">Nivel del compresor conceptual</label>
-                <input id="compression-range" type="range" min="0" max="4" step="1" value="0" aria-describedby="compressor-help">
-                <button class="icon-button" type="button" aria-label="Aumentar compresión" data-compressor-increase>+</button>
-              </div>
-
-              <ol class="compressor__visual" aria-label="Fases del compresor">
-                <li class="compressor__step" data-compressor-step data-active="true" aria-current="step"><span class="compressor__step-index">00</span><span>Información</span></li>
-                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">01</span><span>Criterio</span></li>
-                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">02</span><span>Flujo</span></li>
-                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">03</span><span>Interfaz</span></li>
-                <li class="compressor__step" data-compressor-step data-active="false"><span class="compressor__step-index">04</span><span>Resultado</span></li>
-              </ol>
-
-              <p class="compressor__hint" id="compressor-help">Mueve el rango o usa los botones. CERO responderá a cada fase.</p>
-            </div>
-            <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-compressor-status data-mascot-status>CERO espera contigo.</p>
-          </section>
+            <figcaption><span>ODY</span> Aquí para quitar ruido.</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="section section--dark" aria-labelledby="definition-title" data-guide-state="focus" data-guide-text="Partimos del problema, no de una plantilla.">
-        <div class="definition-grid shell">
-          <div data-reveal>
-            <p class="eyebrow">Qué es Cero Coma</p>
-            <h2 id="definition-title">Un núcleo capaz de crear muchas ramas.</h2>
-          </div>
-          <div class="definition-note" data-reveal style="--reveal-delay: 120ms">
-            <p>No partimos de una plantilla cerrada. Partimos del problema, retiramos fricción y construimos la forma mínima que puede operar de verdad.</p>
-            <p class="muted">La forma cambia. El criterio se mantiene: claridad, utilidad y continuidad.</p>
-          </div>
+      <section class="work-section" id="que-hacemos" aria-labelledby="work-title" data-ody-story>
+        <div class="work-section__intro shell" data-reveal>
+          <p class="eyebrow">Qué hacemos</p>
+          <h2 id="work-title">Del problema real a una herramienta que ya puedes usar.</h2>
+          <p class="lead">No empezamos por la tecnología. Empezamos por el trabajo que hoy te pesa y avanzamos hasta una salida concreta.</p>
         </div>
-      </section>
-
-      <section class="section recorrido" aria-labelledby="recorrido-title" data-recorrido>
-        <div class="shell">
-          <div class="recorrido__head" data-reveal>
-            <p class="eyebrow">El recorrido</p>
-            <h2 id="recorrido-title">Del ruido a una herramienta concreta.</h2>
-            <p class="lead">Así trabaja Cero Coma. Cada proyecto sigue el mismo camino, en el mismo orden, hasta convertirse en algo que ya funciona.</p>
-          </div>
-          <div class="recorrido__layout">
-            <aside class="recorrido__rail" aria-hidden="true">
-              <p class="recorrido__counter"><span data-recorrido-counter>00</span><span class="recorrido__total">/ 04</span></p>
-              <div class="recorrido__progress"><span class="recorrido__progress-fill" data-recorrido-progress></span></div>
-              <p class="recorrido__rail-note" data-recorrido-label>Intención</p>
-            </aside>
-            <ol class="recorrido__chapters">
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Intención" data-guide-state="idle" data-guide-text="Todo empieza con ruido. Aquí entro yo.">
-                <span class="recorrido__number">00 / Intención</span>
-                <h3>Todo empieza con ruido.</h3>
-                <p>Una idea dispersa, un proceso que se ha vuelto pesado o una carta en papel que nadie puede actualizar. Esa es la materia prima con la que trabajamos.</p>
-              </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Entender" data-guide-state="focus" data-guide-text="Primero, entender el trabajo real.">
-                <span class="recorrido__number">01 / Entender</span>
-                <h3>Encontrar el trabajo real.</h3>
-                <p>Separar el problema útil de las soluciones heredadas. Antes de construir nada, entendemos qué hay que resolver de verdad.</p>
-              </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Reducir" data-guide-state="think" data-guide-text="Reducimos hasta la forma mínima que funciona.">
-                <span class="recorrido__number">02 / Reducir</span>
-                <h3>Eliminar fricción.</h3>
-                <p>Quitar pasos, decisiones y dependencias que no aportan. Lo que queda es la forma mínima que puede operar de verdad.</p>
-              </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Construir" data-guide-state="build" data-guide-text="Construimos algo que se puede usar de verdad.">
-                <span class="recorrido__number">03 / Construir</span>
-                <h3>Dar forma operativa.</h3>
-                <p>Convertir el criterio en una experiencia que se pueda usar: un flujo claro, una interfaz evidente y nada que estorbe.</p>
-              </li>
-              <li class="recorrido__chapter" data-recorrido-chapter data-chapter-label="Validar" data-guide-state="ready" data-guide-text="Validado. Solo se publica lo que ya funciona.">
-                <span class="recorrido__number">04 / Validar</span>
-                <h3>Contrastar con la realidad.</h3>
-                <p>Probar lo construido, declarar con precisión lo pendiente y publicar solo lo que ya funciona. La realidad antes que el discurso.</p>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--white" aria-labelledby="projects-title" data-guide-state="build" data-guide-text="Esto ya está en marcha: Tu carta y Studio.">
-        <div class="shell">
-          <div class="projects-intro" data-reveal>
-            <div>
-              <p class="eyebrow">Proyectos públicos</p>
-              <h2 id="projects-title">Dos líneas, un mismo criterio.</h2>
+        <div class="work-story shell">
+          <figure class="ody-stage" aria-hidden="true" data-reveal>
+            <div class="ody-stage__window">
+              <span class="ody-stage__signal"></span>
+              <span class="ody-stage__label">ODY / En el proceso</span>
+              <img src="assets/media/mascot/ody/ody-focus.webp" alt="" width="512" height="512" loading="lazy" decoding="async" data-ody-avatar>
             </div>
-            <a class="text-link" href="proyectos/">Explorar estados y alcance</a>
-          </div>
-
-          <article class="featured-project" data-reveal>
-            <div class="featured-project__copy">
-              <span class="status-pill">Desarrollo activo</span>
-              <h3>Tu carta en Cero Coma</h3>
-              <p>Convierte una carta existente en una versión digital editable, publicable y conectada a un QR permanente.</p>
-              <div class="featured-project__links">
-                <a class="button button--light" href="tu-carta-en-cero-coma/">Ver el producto</a>
-                <a class="button button--ghost" href="https://cerocoma-menu.vercel.app" target="_blank" rel="noreferrer" data-app-link>Entrar en la app ↗</a>
-              </div>
-            </div>
-            <div class="featured-project__visual" aria-label="Representación de una carta digital publicada">
-              <div class="menu-sheet">
-                <div class="menu-sheet__top">
-                  <span class="menu-sheet__name">Carta del día</span>
-                  <span class="menu-sheet__qr"><img src="assets/icons/web/qr.svg" alt="" aria-hidden="true" width="24" height="24"></span>
-                </div>
-                <div class="menu-sheet__category">
-                  <strong>Para empezar</strong>
-                  <div class="menu-sheet__row"><span>Ensalada de temporada</span><span>8,50</span></div>
-                  <div class="menu-sheet__row"><span>Croquetas de la casa</span><span>9,00</span></div>
-                </div>
-                <div class="menu-sheet__category">
-                  <strong>Principales</strong>
-                  <div class="menu-sheet__row"><span>Arroz del día</span><span>14,00</span></div>
-                  <div class="menu-sheet__row"><span>Verduras a la brasa</span><span>12,50</span></div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="studio-project" data-reveal>
-            <div class="studio-project__identity">
-              <img class="studio-project__symbol" src="assets/media/brand/approved/symbol-primary.svg" alt="" aria-hidden="true" width="1000" height="1000">
-              <p>Servicio / En validación</p>
-            </div>
-            <div class="studio-project__copy">
-              <span class="status-pill">Validación comercial</span>
-              <h3>Cero Coma Studio</h3>
-              <p>Una línea de trabajo para explicar visualmente espacios, ideas y propuestas antes de construirlas o venderlas.</p>
-              <p class="small">El material visual disponible sigue en revisión de permiso y privacidad; por eso no se publica todavía.</p>
-              <a class="text-link" href="proyectos/#proyecto=studio">Consultar el estado</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--dark" aria-labelledby="workflow-title" data-guide-state="think" data-guide-text="De un archivo desordenado a una carta revisable.">
-        <div class="shell">
-          <div data-reveal>
-            <p class="eyebrow">Tu carta / Flujo actual</p>
-            <h2 id="workflow-title">De un archivo a una carta revisable.</h2>
-            <p class="lead">La aplicación ya está desplegada y en uso. La revisión humana sigue siendo obligatoria antes de convertir el resultado en contenido publicable.</p>
-          </div>
-          <ol class="workflow-strip" data-reveal-stagger>
-            <li><img src="assets/icons/flow/upload.svg" alt="" aria-hidden="true" width="24" height="24"><strong>Subir</strong><span>Recibir el archivo de origen.</span></li>
-            <li><img src="assets/icons/flow/process.svg" alt="" aria-hidden="true" width="24" height="24"><strong>Preparar</strong><span>Ordenar páginas y procesar contenido.</span></li>
-            <li><img src="assets/icons/flow/review.svg" alt="" aria-hidden="true" width="24" height="24"><strong>Revisar</strong><span>Comprobar cada resultado extraído.</span></li>
-            <li><img src="assets/icons/flow/edit.svg" alt="" aria-hidden="true" width="24" height="24"><strong>Editar</strong><span>Ajustar categorías, nombres y precios.</span></li>
-            <li><img src="assets/icons/flow/publish.svg" alt="" aria-hidden="true" width="24" height="24"><strong>Publicar</strong><span>Mantener una dirección y un QR permanentes.</span></li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="about-section" id="nosotros" aria-labelledby="about-title" data-about-story>
-        <div class="about-section__intro shell" data-reveal data-guide-state="focus" data-guide-text="Aquí no empezamos por la tecnología. Empezamos por lo que te pesa.">
-          <p class="eyebrow">Sobre nosotros</p>
-          <h2 id="about-title">Nos gusta cuando la tecnología deja de notarse.</h2>
-          <p class="lead">Cero Coma nació para ese momento en que una buena idea se atasca entre hojas, mensajes y tareas repetidas. No llegamos con una caja cerrada: entramos en el problema, encontramos el hilo y tiramos de él contigo.</p>
-        </div>
-
-        <div class="about-story shell">
-          <figure class="about-cero" aria-hidden="true" data-reveal>
-            <div class="about-cero__stage">
-              <span class="about-cero__label">CERO / en el camino</span>
-              <img src="assets/media/mascot/candidate/rendered/cero-focus.webp" alt="" width="512" height="512" loading="lazy" decoding="async" data-about-avatar>
-              <figcaption data-about-caption>Primero, entender.</figcaption>
-            </div>
-            <div class="about-cero__route" data-about-route>
+            <figcaption data-ody-caption>Primero, entender.</figcaption>
+            <div class="ody-stage__route" data-ody-route aria-hidden="true">
               <span class="is-active"></span><span></span><span></span><span></span>
             </div>
           </figure>
-
-          <ol class="about-story__steps">
-            <li class="about-step is-active" data-about-step data-about-state="focus" data-about-caption="Primero, entender." data-guide-state="focus" data-guide-text="Primero desenredamos el problema. Sin prisas por enseñar herramientas.">
-              <span class="about-step__number">01</span>
-              <div>
-                <p class="about-step__kicker">Entrar sin imponer</p>
-                <h3>Primero, hacemos sitio.</h3>
-                <p>Nos sentamos con el negocio tal como es: con sus ritmos, excepciones y manías útiles. Desenredamos el proceso hasta que lo importante se entiende de un vistazo. La solución se adapta a la forma de trabajar; nunca al revés.</p>
-              </div>
+          <ol class="work-steps">
+            <li class="work-step is-active" data-ody-step data-ody-state="focus" data-ody-caption="Primero, entender.">
+              <span>Entender</span>
+              <h3>Miramos el trabajo como ocurre de verdad.</h3>
+              <p>Personas, decisiones, tiempos y fricciones. Sin esconder el problema detrás de una lista de funciones.</p>
             </li>
-            <li class="about-step" data-about-step data-about-state="think" data-about-caption="Después, quitar ruido." data-guide-state="think" data-guide-text="Una buena herramienta no añade trabajo: te devuelve espacio mental.">
-              <span class="about-step__number">02</span>
-              <div>
-                <p class="about-step__kicker">Menos peso, más control</p>
-                <h3>Luego, bajamos el ruido.</h3>
-                <p>Si una herramienta añade otra pestaña, otra contraseña y otra preocupación, no ha resuelto nada. Elegimos solo la tecnología que quita pasos, evita fricción y devuelve control. El resultado debería sentirse como una mesa despejada.</p>
-              </div>
+            <li class="work-step" data-ody-step data-ody-state="think" data-ody-caption="Después, quitar ruido.">
+              <span>Reducir</span>
+              <h3>Quitamos pasos hasta encontrar la forma mínima.</h3>
+              <p>La herramienta correcta no añade trabajo: ordena el criterio y devuelve espacio mental.</p>
             </li>
-            <li class="about-step" data-about-step data-about-state="build" data-about-caption="Ahora, hacerlo real." data-guide-state="build" data-guide-text="De la idea a una solución que ya puedes usar. Ahí ocurre lo importante.">
-              <span class="about-step__number">03</span>
-              <div>
-                <p class="about-step__kicker">Mover con criterio</p>
-                <h3>Después, lo hacemos real.</h3>
-                <p>Una idea no mejora un martes hasta que funciona ese martes. Convertimos el problema en una herramienta concreta, probamos lo que importa y acortamos el trayecto entre detectar y resolver. Rápido, sí; con decisiones que aguanten el día siguiente.</p>
-              </div>
+            <li class="work-step" data-ody-step data-ody-state="build" data-ody-caption="Ahora, hacerlo real.">
+              <span>Construir</span>
+              <h3>Convertimos el recorrido en un producto usable.</h3>
+              <p>Interfaz, comportamiento e integraciones reales. Lo importante se puede tocar, probar y corregir.</p>
             </li>
-            <li class="about-step" data-about-step data-about-state="ready" data-about-caption="Y seguir cerca." data-guide-state="ready" data-guide-text="Entregar no es desaparecer. Seguimos cerca mientras el negocio evoluciona.">
-              <span class="about-step__number">04</span>
-              <div>
-                <p class="about-step__kicker">Confianza que continúa</p>
-                <h3>Y no desaparecemos al entregar.</h3>
-                <p>Lo que ponemos en marcha se puede revisar, entender y cuidar. Construimos sobre una base fiable y seguimos cerca cuando el negocio cambia, porque la confianza no se firma en una entrega: se demuestra después.</p>
-              </div>
+            <li class="work-step" data-ody-step data-ody-state="ready" data-ody-caption="Y dejarlo listo.">
+              <span>Validar</span>
+              <h3>Probamos la salida antes de llamarla terminada.</h3>
+              <p>Accesibilidad, estados, rendimiento y casos límite. Solo se presenta lo que ya funciona.</p>
             </li>
           </ol>
         </div>
+      </section>
 
-        <div class="about-coda shell" data-reveal data-guide-state="idle" data-guide-text="Si ahora parece sencillo, vamos bien. Ese era el trabajo.">
-          <p>Si al final todo parece más sencillo, no fue casualidad.</p>
-          <strong>Ese era el trabajo.</strong>
+      <section class="faena-section" id="faena" aria-labelledby="faena-title">
+        <div class="shell">
+          <div class="faena-section__head" data-reveal>
+            <div>
+              <p class="eyebrow">Producto / FAENA</p>
+              <h2 id="faena-title">De una carta en papel a una carta digital publicable.</h2>
+            </div>
+            <div class="faena-section__summary">
+              <p>FAENA convierte, revisa y publica una carta con una dirección y un QR permanentes.</p>
+              <a class="text-link" href="faena/#demostracion">Ver la página del producto</a>
+            </div>
+          </div>
+
+          <div class="demo-frame carta-demo" data-carta-demo data-reveal>
+            <div class="demo-frame__bar">
+              <strong>Demo de FAENA</strong>
+              <span class="demo-frame__status">Ejemplo local</span>
+            </div>
+            <ol class="carta-demo__stepper" data-carta-stepper aria-label="Pasos de la demo">
+              <li data-active="true">Archivo</li>
+              <li>Procesar</li>
+              <li>Revisar</li>
+              <li>Editar</li>
+              <li>Publicar</li>
+            </ol>
+            <div data-carta-panels>
+              <p class="carta-demo__hint">La demo interactiva se carga con JavaScript. Los archivos de ejemplo son estos:</p>
+              <div class="carta-demo__files">
+                <div class="carta-demo__file">
+                  <img src="assets/media/demo/carta-bar.svg" alt="Carta de ejemplo del Bar La Plana" width="200" height="280" loading="lazy">
+                  <strong>Bar La Plana</strong>
+                  <span>Carta breve de bar: tapas, raciones y bebidas.</span>
+                </div>
+                <div class="carta-demo__file">
+                  <img src="assets/media/demo/carta-cafeteria.svg" alt="Carta de ejemplo de la Cafetería Aurora" width="200" height="280" loading="lazy">
+                  <strong>Cafetería Aurora</strong>
+                  <span>Desayunos, cafés y dulces con formato cuidado.</span>
+                </div>
+              </div>
+            </div>
+            <p class="sr-only" role="status" aria-live="polite" data-carta-status></p>
+          </div>
         </div>
       </section>
 
-      <section class="section section--tight" aria-labelledby="contact-title" data-contact-region data-guide-state="ready" data-guide-text="Aquí empieza la conversación.">
-        <div class="contact-status shell" data-reveal>
-          <div>
-            <p class="eyebrow">Contacto</p>
-            <h2 id="contact-title">Cuéntanos qué se te ha atascado.</h2>
-          </div>
-          <div>
-            <p class="contact-status__state" data-contact-state>Elige un canal de contacto.</p>
+      <section class="contact-section" id="contacto" aria-labelledby="contact-title" data-contact-region>
+        <div class="contact-section__grid shell">
+          <div data-reveal>
+            <p class="eyebrow">El siguiente paso</p>
+            <h2 id="contact-title">¿Qué necesitas poner en marcha?</h2>
+            <p class="lead">Cuéntanos el trabajo que hoy se atasca. La primera conversación sirve para saber si podemos hacerlo más simple.</p>
+            <p data-contact-state>Elige un canal de contacto.</p>
             <div class="contact-links" data-contact-links>
-              <a class="button button--dark" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
-              <a class="button button--dark" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-              <a class="button button--dark" href="tel:+34643403723">Llamar</a>
+              <a class="button button--light" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
+              <a class="button button--quiet" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
+              <a class="button button--quiet" href="tel:+34643403723">Llamar</a>
             </div>
           </div>
+          <figure class="contact-ody" aria-hidden="true" data-reveal style="--reveal-delay: 120ms">
+            <img src="assets/media/mascot/ody/ody-ready.webp" alt="" width="512" height="512" loading="lazy" decoding="async">
+            <figcaption>ODY / Listo cuando tú lo estés.</figcaption>
+          </figure>
         </div>
       </section>
     </main>
@@ -432,9 +239,8 @@
           </div>
           <nav class="footer__nav" aria-label="Navegación del pie">
             <a href="./">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
+            <a href="faena/">FAENA</a>
             <a href="proyectos/">Proyectos</a>
-            <a href="tu-carta-en-cero-coma/">Tu carta</a>
           </nav>
         </div>
         <div class="footer__bottom">
@@ -448,24 +254,11 @@
       </div>
     </footer>
 
-    <aside class="cero-guide" data-cero-guide hidden aria-label="CERO, guía de la página">
-      <div aria-hidden="true">
-        <p class="cero-guide__bubble" data-guide-bubble>Hola, soy CERO.</p>
-      </div>
-      <div class="cero-guide__anchor">
-        <div class="cero-guide__avatar" aria-hidden="true">
-          <img src="assets/media/mascot/candidate/rendered/cero-idle.webp" alt="" width="512" height="512" decoding="async" loading="lazy" data-guide-avatar>
-        </div>
-        <button class="cero-guide__close" type="button" aria-label="Ocultar la guía CERO" data-guide-close>×</button>
-      </div>
-    </aside>
-
-    <noscript><p class="noscript-note">La información principal permanece disponible. Las demostraciones interactivas requieren JavaScript.</p></noscript>
+    <noscript><p class="noscript-note">La información principal sigue disponible. La demo interactiva requiere JavaScript.</p></noscript>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/site.js"></script>
-    <script src="assets/js/mascot.js"></script>
+    <script src="assets/js/about.js"></script>
+    <script src="assets/js/demo-carta.js"></script>
     <script src="assets/js/motion.js"></script>
-    <script src="assets/js/guide.js?v=2"></script>
-    <script src="assets/js/about.js?v=1"></script>
   </body>
 </html>

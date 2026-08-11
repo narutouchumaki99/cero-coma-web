@@ -19,7 +19,7 @@
       lastUpdated: "2026-08-05"
     }),
     app: Object.freeze({
-      // URL pública de la app de Tu carta. Verificada en línea el 3-08-2026.
+      // URL pública de la app FAENA. Verificada en línea el 3-08-2026.
       url: "https://cerocoma-menu.vercel.app"
     }),
     contacts: Object.freeze({

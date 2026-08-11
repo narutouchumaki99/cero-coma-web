@@ -14,13 +14,14 @@
 
   const config = window.CEROCOMA_CONFIG || {};
   const appUrl = (config.app && config.app.url) || "";
+  const siteRoot = document.body.dataset.siteRoot || "./";
 
   const SAMPLES = [
     {
       id: "bar",
       name: "Bar La Plana",
       note: "Carta breve de bar: tapas, raciones y bebidas.",
-      file: "../assets/media/demo/carta-bar.svg",
+      file: `${siteRoot}assets/media/demo/carta-bar.svg`,
       categories: [
         {
           name: "Tapas",
@@ -51,7 +52,7 @@
       id: "cafeteria",
       name: "Cafetería Aurora",
       note: "Desayunos, cafés y dulces con formato cuidado.",
-      file: "../assets/media/demo/carta-cafeteria.svg",
+      file: `${siteRoot}assets/media/demo/carta-cafeteria.svg`,
       categories: [
         {
           name: "Desayunos",
