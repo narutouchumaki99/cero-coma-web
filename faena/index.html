@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://cerocomasoluciones.com/faena/">
     <meta name="theme-color" content="#0d0e0f">
-    <meta name="description" content="FAENA convierte tu carta en papel en una carta digital editable, publicable y con QR que no cambia. Producto de Cero Coma. Prueba la demo.">
+    <meta name="description" content="FAENA: haz una foto a tu carta, edítala y publícala con un QR que no cambia. Producto de Cero Coma para hostelería.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="FAENA — Carta digital de Cero Coma">
-    <meta property="og:description" content="FAENA: carta digital editable, publicable y con QR permanente. Desarrollada por Cero Coma.">
+    <meta property="og:title" content="FAENA — Carta digital con QR permanente">
+    <meta property="og:description" content="Foto a la carta vieja, revisión, publicación. El QR se imprime una vez.">
     <meta property="og:url" content="https://cerocomasoluciones.com/faena/">
     <meta property="og:site_name" content="Cero Coma">
     <meta property="og:image" content="https://cerocomasoluciones.com/assets/media/social/og-faena.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="FAENA by Cero Coma. Carta digital lista para funcionar.">
+    <meta property="og:image:alt" content="FAENA, carta digital con QR permanente.">
     <meta name="twitter:card" content="summary_large_image">
     <title>FAENA — Carta digital con QR permanente | Cero Coma</title>
+    <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="../assets/media/brand/approved/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../assets/media/brand/approved/favicon.ico" sizes="any">
     <link rel="stylesheet" href="../assets/css/tokens.css">
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/product.css">
-    <link rel="stylesheet" href="../assets/css/demo-carta.css">
     <link rel="stylesheet" href="../assets/css/motion.css">
     <script type="application/ld+json">
       {
@@ -60,9 +60,10 @@
         </a>
         <nav class="desktop-nav" aria-label="Navegación principal">
           <a href="../">Inicio</a>
-          <a href="../proyectos/">Proyectos</a>
           <a href="./" aria-current="page">FAENA</a>
-        </nav>        <button class="icon-button menu-trigger" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" data-menu-open>
+          <a href="../#contacto">Contacto</a>
+        </nav>
+        <button class="icon-button menu-trigger" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" data-menu-open>
           <img src="../assets/icons/web/menu.svg" alt="" aria-hidden="true" width="24" height="24">
         </button>
       </div>
@@ -78,205 +79,156 @@
         </div>
         <nav aria-label="Navegación móvil">
           <a href="../">Inicio</a>
-          <a href="../proyectos/">Proyectos</a>
           <a href="./" aria-current="page">FAENA</a>
+          <a href="../#contacto">Contacto</a>
         </nav>
-        <p class="menu-dialog__foot">FAENA · Powered by Cero Coma</p>
+        <p class="menu-dialog__foot">De la intención a la realidad.</p>
       </div>
     </dialog>
 
     <main id="contenido" tabindex="-1">
-      <header class="product-hero">
+      <section class="product-hero" aria-labelledby="hero-title">
         <div class="product-hero__grid shell">
           <div data-reveal>
-            <p class="eyebrow">FAENA · Producto de Cero Coma</p>
-            <h1>Tu carta, digital y publicable. El QR no cambia nunca.</h1>
-            <p class="lead">FAENA convierte una carta en papel en una versión digital que se revisa, publica y mantiene. Desarrollada por Cero Coma.</p>
+            <p class="eyebrow">FAENA · Powered by Cero Coma</p>
+            <h1 id="hero-title">Haz una foto a tu carta. Edítala. Publícala.</h1>
+            <p class="lead">FAENA convierte la carta de papel en una carta digital que puedes cambiar cuando quieras. El QR se imprime una vez y no cambia nunca.</p>
             <div class="product-hero__actions">
-              <a class="button button--dark" href="#demostracion">Probar la demo gratuita</a>
-              <a class="button button--ghost" href="https://cerocoma-menu.vercel.app" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA ↗</a>
+              <a class="button button--light" href="https://faena-web-two.vercel.app" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
+              <a class="button button--quiet" href="#como-funciona">Cómo funciona</a>
             </div>
           </div>
-          <aside class="product-hero__aside" aria-label="Resumen del estado" data-reveal style="--reveal-delay: 140ms">
+          <aside class="product-hero__aside" data-reveal style="--reveal-delay: 120ms" aria-label="En pocas palabras">
             <dl>
-              <div><dt>Operativo</dt><dd>Editor manual, publicación y QR.</dd></div>
-              <div><dt>Validado</dt><dd>Extracción real local con revisión humana.</dd></div>
-              <div><dt>En la nube</dt><dd>Aplicación desplegada, con equipo y roles.</dd></div>
-              <div><dt>Siguiente</dt><dd>Procesamiento duradero y piloto con un negocio real.</dd></div>
+              <div>
+                <dt>Hoy</dt>
+                <dd>Foto, edición y QR permanente</dd>
+              </div>
+              <div>
+                <dt>Para quién</dt>
+                <dd>Bares, cafeterías y restaurantes</dd>
+              </div>
+              <div>
+                <dt>Sin reimprimir</dt>
+                <dd>Cambias precios sin tocar el código</dd>
+              </div>
             </dl>
           </aside>
         </div>
-      </header>
-
-      <section class="section section--dark" aria-label="Entrada, trabajo y resultado">
-        <div class="value-grid shell" data-reveal-stagger>
-          <article class="value-card">
-            <p class="value-card__label">01 / Entra</p>
-            <h2>Una carta existente.</h2>
-            <p>Archivo, imágenes o contenido que necesita orden y una salida digital.</p>
-          </article>
-          <article class="value-card">
-            <p class="value-card__label">02 / Se trabaja</p>
-            <h2>Revisión y edición.</h2>
-            <p>El contenido extraído no se publica solo: se comprueba y se ajusta.</p>
-          </article>
-          <article class="value-card">
-            <p class="value-card__label">03 / Sale</p>
-            <h2>Una URL y un QR.</h2>
-            <p>La carta publicada conserva una dirección permanente mientras el contenido cambia.</p>
-          </article>
-        </div>
       </section>
 
-      <section class="section" aria-labelledby="state-title">
-        <div class="state-layout shell">
-          <div class="state-layout__intro" data-reveal>
-            <p class="eyebrow">Estado verificable</p>
-            <h2 id="state-title">Construido, validado y pendiente.</h2>
-            <p class="muted">Este estado describe el producto actual. No convierte las pruebas locales en una promesa de servicio disponible.</p>
+      <section class="section" id="como-funciona" aria-labelledby="flow-title">
+        <div class="shell">
+          <div class="demo-head" data-reveal>
+            <p class="eyebrow">Cómo funciona</p>
+            <h2 id="flow-title">Tres pasos. Sin tecnicismos.</h2>
+            <p>El flujo es el mismo si tienes un bar de tapas o una cafetería de barrio.</p>
           </div>
-          <ol class="state-list" data-reveal-stagger>
-            <li data-state="done">
-              <span class="state-list__mark" aria-hidden="true">01</span>
-              <div><h3>Editor manual</h3><p>Crear y ordenar categorías, productos, descripciones y precios.</p></div>
-              <span class="state-list__status">Operativo</span>
+          <ol class="value-grid flow-grid">
+            <li class="value-card" data-reveal>
+              <p class="value-card__label">01 · Foto</p>
+              <h2>Fotografías la carta vieja</h2>
+              <p>Una foto o un archivo. FAENA parte de lo que ya tienes, no de una plantilla vacía.</p>
             </li>
-            <li data-state="done">
-              <span class="state-list__mark" aria-hidden="true">02</span>
-              <div><h3>Publicación y QR</h3><p>Publicar versiones manteniendo la dirección y el código QR del negocio.</p></div>
-              <span class="state-list__status">Operativo</span>
+            <li class="value-card" data-reveal style="--reveal-delay: 80ms">
+              <p class="value-card__label">02 · Editas</p>
+              <h2>Revisas platos y precios</h2>
+              <p>Corriges nombres, quitas platos, cambias el menú del día. Nada se publica solo.</p>
             </li>
-            <li data-state="done">
-              <span class="state-list__mark" aria-hidden="true">03</span>
-              <div><h3>Subida y preparación</h3><p>Recibir archivos y preparar sus páginas para el proceso de extracción.</p></div>
-              <span class="state-list__status">Operativo</span>
-            </li>
-            <li data-state="done">
-              <span class="state-list__mark" aria-hidden="true">04</span>
-              <div><h3>Extracción con proveedor real</h3><p>Respuesta estructurada del proveedor y revisión humana obligatoria antes de tocar la carta.</p></div>
-              <span class="state-list__status">Validado</span>
-            </li>
-            <li data-state="done">
-              <span class="state-list__mark" aria-hidden="true">05</span>
-              <div><h3>Aprobación al borrador</h3><p>Los resultados revisados pasan al contenido editable con la aprobación de una persona.</p></div>
-              <span class="state-list__status">Operativo</span>
-            </li>
-            <li data-state="done">
-              <span class="state-list__mark" aria-hidden="true">06</span>
-              <div><h3>Equipo con roles</h3><p>Propietario, gerente y personal, con invitaciones por correo y permisos aplicados en la base de datos.</p></div>
-              <span class="state-list__status">Operativo</span>
-            </li>
-            <li data-state="done">
-              <span class="state-list__mark" aria-hidden="true">07</span>
-              <div><h3>Despliegue en la nube</h3><p>La aplicación funciona en servidores propios, no solo en un ordenador local.</p></div>
-              <span class="state-list__status">Operativo</span>
-            </li>
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true">08</span>
-              <div><h3>Procesamiento duradero</h3><p>Sustituir el disparo actual por una cola persistente que resista caídas y reintentos.</p></div>
-              <span class="state-list__status">Pendiente</span>
-            </li>
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true">09</span>
-              <div><h3>Piloto controlado</h3><p>Probar el recorrido completo con un negocio real y criterios de aceptación cerrados.</p></div>
-              <span class="state-list__status">Pendiente</span>
+            <li class="value-card" data-reveal style="--reveal-delay: 160ms">
+              <p class="value-card__label">03 · Publicas</p>
+              <h2>URL y QR fijos</h2>
+              <p>Los clientes abren la carta en el móvil. Tú actualizas el contenido sin reimprimir el código.</p>
             </li>
           </ol>
         </div>
       </section>
 
-      <section class="section section--dark" id="demostracion" aria-labelledby="demo-title">
+      <section class="section section--dark" aria-labelledby="examples-title">
         <div class="shell">
           <div class="demo-head" data-reveal>
-            <div>
-              <p class="eyebrow">Demo gratuita</p>
-              <h2 id="demo-title">Prueba el flujo con una carta de ejemplo.</h2>
-            </div>
-            <p class="demo-label">Simulación local · Sin IA en vivo</p>
+            <p class="eyebrow">Ejemplos</p>
+            <h2 id="examples-title">Así se ve en negocios reales.</h2>
           </div>
-          <p class="lead">Elige un archivo de prueba y recorre el mismo camino que seguirá tu carta real: procesar, revisar, editar y publicar. Todo ocurre en tu navegador con resultados de ejemplo precalculados; no se envía nada a ningún servidor.</p>
-
-          <div class="demo-frame carta-demo" data-carta-demo>
-            <div class="demo-frame__bar">
-              <strong>Demo de FAENA</strong>
-              <span class="demo-frame__status">Ejemplo</span>
-            </div>
-            <ol class="carta-demo__stepper" data-carta-stepper aria-label="Pasos de la demo">
-              <li data-active="true">Archivo</li>
-              <li>Procesar</li>
-              <li>Revisar</li>
-              <li>Editar</li>
-              <li>Publicar</li>
-            </ol>
-            <div data-carta-panels>
-              <p class="carta-demo__hint">La demo interactiva se carga con JavaScript. Los archivos de ejemplo son estos:</p>
-              <div class="carta-demo__files">
-                <div class="carta-demo__file">
-                  <img src="../assets/media/demo/carta-bar.svg" alt="Carta de ejemplo del Bar La Plana" width="200" height="280" loading="lazy">
-                  <strong>Bar La Plana</strong>
-                  <span>Carta breve de bar: tapas, raciones y bebidas.</span>
-                </div>
-                <div class="carta-demo__file">
-                  <img src="../assets/media/demo/carta-cafeteria.svg" alt="Carta de ejemplo de la Cafetería Aurora" width="200" height="280" loading="lazy">
-                  <strong>Cafetería Aurora</strong>
-                  <span>Desayunos, cafés y dulces con formato cuidado.</span>
-                </div>
-              </div>
-            </div>
-            <p class="sr-only" role="status" aria-live="polite" data-carta-status></p>
+          <div class="example-grid">
+            <article class="example-card" data-reveal>
+              <p class="eyebrow">Bar</p>
+              <h3>Bar La Plana</h3>
+              <p>Tapas, raciones y bebidas. Cambias el menú del finde sin rehacer carteles.</p>
+              <ul>
+                <li>Croquetas · 8,50 €</li>
+                <li>Ensaladilla · 7,00 €</li>
+                <li>Caña · 2,20 €</li>
+              </ul>
+            </article>
+            <article class="example-card" data-reveal style="--reveal-delay: 100ms">
+              <p class="eyebrow">Cafetería</p>
+              <h3>Cafetería Aurora</h3>
+              <p>Desayunos y dulces. Actualizas el café del día y los alérgenos en un momento.</p>
+              <ul>
+                <li>Café con leche · 1,80 €</li>
+                <li>Tostada mixta · 3,50 €</li>
+                <li>Tarta de queso · 4,20 €</li>
+              </ul>
+            </article>
           </div>
-
         </div>
       </section>
 
-      <section class="section" aria-labelledby="scope-title">
+      <section class="section" id="proximamente" aria-labelledby="soon-title">
         <div class="shell">
-          <div data-reveal>
-            <p class="eyebrow">Alcance de la primera versión</p>
-            <h2 id="scope-title">Una frontera explícita.</h2>
+          <div class="demo-head" data-reveal>
+            <p class="eyebrow">Próximamente</p>
+            <h2 id="soon-title">Lo que viene después de la carta.</h2>
+            <p>Hoy FAENA publica y mantiene la carta. Esto es lo que estamos preparando. No está disponible todavía.</p>
           </div>
-          <div class="scope-grid" data-reveal-stagger>
-            <article class="scope-card">
-              <h3>Incluido</h3>
-              <ul>
-                <li>Gestión manual de la carta</li>
-                <li>Publicación por versiones</li>
-                <li>Dirección y QR permanentes</li>
-                <li>Preparación de archivos</li>
-                <li>Extracción revisable</li>
-              </ul>
-            </article>
-            <article class="scope-card scope-card--muted">
-              <h3>Aún no incluido</h3>
-              <ul>
-                <li>Publicación automática sin revisión</li>
-                <li>Procesamiento duradero en producción</li>
-                <li>Despliegue cloud validado</li>
-                <li>Apertura general de pruebas</li>
-                <li>Promesa de disponibilidad comercial</li>
-              </ul>
-            </article>
-          </div>
+          <ul class="state-list soon-list">
+            <li data-state="pending" data-reveal>
+              <span class="state-list__mark" aria-hidden="true"></span>
+              <div>
+                <h3>Camareros conectados</h3>
+                <p>El equipo ve la carta y el servicio desde el móvil, sin papeles sueltos.</p>
+                <span class="state-list__status">Pendiente</span>
+              </div>
+            </li>
+            <li data-state="pending" data-reveal style="--reveal-delay: 60ms">
+              <span class="state-list__mark" aria-hidden="true"></span>
+              <div>
+                <h3>Cocina al día</h3>
+                <p>Lo que se pide llega a cocina con claridad, para menos idas y vueltas.</p>
+                <span class="state-list__status">Pendiente</span>
+              </div>
+            </li>
+            <li data-state="pending" data-reveal style="--reveal-delay: 120ms">
+              <span class="state-list__mark" aria-hidden="true"></span>
+              <div>
+                <h3>Llamar al camarero</h3>
+                <p>El cliente avisa desde la mesa sin levantar la mano a ciegas.</p>
+                <span class="state-list__status">Pendiente</span>
+              </div>
+            </li>
+            <li data-state="pending" data-reveal style="--reveal-delay: 180ms">
+              <span class="state-list__mark" aria-hidden="true"></span>
+              <div>
+                <h3>Pagos con tarjeta</h3>
+                <p>Cobrar en mesa o al irse, sin depender solo de la caja de siempre.</p>
+                <span class="state-list__status">Pendiente</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="section section--dark" aria-labelledby="pilot-title" data-contact-region>
-        <div class="pilot-note shell" data-reveal>
-          <div>
-            <p class="eyebrow">Siguiente hito</p>
-            <h2 id="pilot-title">La aplicación ya está en marcha.</h2>
-          </div>
-          <div class="pilot-note__state">
-            <p>El producto está desplegado y funcionando: un negocio puede crear su carta, publicarla con QR permanente e invitar a su equipo con roles.</p>
-            <p>Durante el piloto el acceso se abre por invitación, con acompañamiento directo. Antes de la apertura general queda cerrar el procesamiento duradero.</p>
+      <section class="section section--dark" aria-labelledby="cta-title" data-contact-region>
+        <div class="shell pilot-note">
+          <div data-reveal>
+            <p class="eyebrow">Empezar</p>
+            <h2 id="cta-title">Entra en FAENA y monta tu carta.</h2>
+            <p>Si encaja con tu negocio, hablamos. Si quieres probar ya, abre la app.</p>
             <div class="pilot-note__actions">
-              <a class="button button--light" href="https://cerocoma-menu.vercel.app" target="_blank" rel="noreferrer" data-app-link>Entrar en la app ↗</a>
-            </div>
-            <p data-contact-state>Elige un canal de contacto.</p>
-            <div class="contact-links" data-contact-links>
-              <a class="button button--light" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
-              <a class="button button--light" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-              <a class="button button--light" href="tel:+34643403723">Llamar</a>
+              <a class="button button--light" href="https://faena-web-two.vercel.app" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
+              <a class="button button--quiet" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
+              <a class="button button--quiet" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">WhatsApp</a>
             </div>
           </div>
         </div>
@@ -293,7 +245,7 @@
           <nav class="footer__nav" aria-label="Navegación del pie">
             <a href="../">Inicio</a>
             <a href="../proyectos/">Proyectos</a>
-            <a href="./">FAENA</a>
+            <a href="./" aria-current="page">FAENA</a>
           </nav>
         </div>
         <div class="footer__bottom">
@@ -307,10 +259,8 @@
       </div>
     </footer>
 
-    <noscript><p class="noscript-note">Los archivos de ejemplo permanecen visibles. La demo interactiva requiere JavaScript.</p></noscript>
-    <script src="../assets/js/config.js"></script>
-    <script src="../assets/js/site.js"></script>
-    <script src="../assets/js/demo-carta.js"></script>
-    <script src="../assets/js/motion.js"></script>
+    <script src="../assets/js/config.js" defer></script>
+    <script src="../assets/js/site.js" defer></script>
+    <script src="../assets/js/motion.js" defer></script>
   </body>
 </html>

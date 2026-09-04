@@ -20,7 +20,7 @@
     }),
     app: Object.freeze({
       // URL pública de la app FAENA. Verificada en línea el 3-08-2026.
-      url: "https://cerocoma-menu.vercel.app"
+      url: "https://faena-web-two.vercel.app"
     }),
     contacts: Object.freeze({
       email: "cerocomasoluciones@gmail.com",
