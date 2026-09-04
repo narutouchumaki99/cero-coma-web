@@ -686,3 +686,17 @@
     grid-column: auto;
   }
 }
+
+
+.example-live {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+  margin: 1.35rem 0 0;
+}
+
+.example-live__hint {
+  color: var(--dark-muted);
+  font-size: 0.95rem;
+}
