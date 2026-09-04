@@ -616,7 +616,7 @@
 }
 
 .example-card__frame--desktop img {
-  aspect-ratio: 520 / 900;
+  aspect-ratio: 760 / 680;
   max-height: 28rem;
   object-fit: cover;
   object-position: left top;
