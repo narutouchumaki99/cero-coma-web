@@ -1,5 +1,7 @@
 # Cómo reeditar Producciones (ChatGPT u otra IA)
 
+Para que ChatGPT **publique solo**, sin pasar por otra persona: [`CHATGPT.md`](CHATGPT.md).
+
 Esta carpeta es el escaparate. **No toques** `index.html` ni `mechada-hot/` salvo que cambies la estructura.
 
 ## 1. Textos

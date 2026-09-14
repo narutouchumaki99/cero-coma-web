@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: Producciones — cero-coma-web
+  version: "1.0"
+  description: >
+    Edita solo archivos bajo producciones/ en narutouchumaki99/cero-coma-web.
+    Un PUT a un archivo crea un commit en main y Cloudflare publica en ~1 minuto.
+servers:
+  - url: https://api.github.com
+paths:
+  /repos/narutouchumaki99/cero-coma-web/contents/{path}:
+    get:
+      operationId: leerArchivo
+      summary: Leer un archivo y su SHA (obligatorio antes de guardar)
+      parameters:
+        - in: path
+          name: path
+          required: true
+          schema: { type: string }
+          description: Ruta, por ejemplo producciones/contenido.json
+        - in: query
+          name: ref
+          schema: { type: string, default: main }
+      responses:
+        "200":
+          description: Archivo
+    put:
+      operationId: guardarArchivo
+      summary: Crear o actualizar un archivo (commit en main)
+      parameters:
+        - in: path
+          name: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [message, content]
+              properties:
+                message:
+                  type: string
+                  description: Mensaje de commit, empieza por chatgpt:
+                content:
+                  type: string
+                  description: Contenido en Base64
+                sha:
+                  type: string
+                  description: SHA del GET previo si el archivo ya existe
+                branch:
+                  type: string
+                  default: main
+      responses:
+        "200":
+          description: Actualizado
+        "201":
+          description: Creado
+  /repos/narutouchumaki99/cero-coma-web/dispatches:
+    post:
+      operationId: publicarContenidoJson
+      summary: Publicar solo contenido.json (textos) vía Action
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [event_type, client_payload]
+              properties:
+                event_type:
+                  type: string
+                  enum: [chatgpt-producciones]
+                client_payload:
+                  type: object
+                  required: [contenido]
+                  properties:
+                    contenido:
+                      type: object
+                      description: Objeto entero de producciones/contenido.json
+      responses:
+        "204":
+          description: Action lanzada

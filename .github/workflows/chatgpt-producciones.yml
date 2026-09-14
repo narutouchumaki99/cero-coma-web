@@ -1,0 +1,43 @@
+name: ChatGPT actualiza Producciones
+
+on:
+  repository_dispatch:
+    types: [chatgpt-producciones]
+
+permissions:
+  contents: write
+
+jobs:
+  aplicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Escribir contenido.json
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload.contenido) }}
+        run: |
+          python - <<'PY'
+          import json, os, pathlib
+          raw = os.environ.get("PAYLOAD") or ""
+          data = json.loads(raw)
+          if isinstance(data, str):
+              data = json.loads(data)
+          if not isinstance(data, dict) or "titulo" not in data:
+              raise SystemExit("payload invalido: falta titulo")
+          if "whatsapp" in data and str(data["whatsapp"]) and not str(data["whatsapp"]).isdigit():
+              raise SystemExit("whatsapp debe ser solo digitos")
+          path = pathlib.Path("producciones/contenido.json")
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print("ok", path)
+          PY
+      - name: Publicar
+        run: |
+          git config user.name "chatgpt-producciones"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add producciones/contenido.json
+          if git diff --cached --quiet; then
+            echo "sin cambios"
+          else
+            git commit -m "chatgpt: actualiza producciones/contenido.json"
+            git push
+          fi
