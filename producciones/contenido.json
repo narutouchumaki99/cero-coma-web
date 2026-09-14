@@ -1,0 +1,47 @@
+{
+  "marca": "Producciones",
+  "rotulo": "Servicio a medida",
+  "titulo": "Tu producto, puesto en escena.",
+  "lead": "No rodamos un anuncio genérico. Cogemos lo que vendes —una hamburguesa, una tarta, el plato del día— y lo dejamos listo para redes: vídeo corto e imágenes de producto. Tú mandas el plato o fotos del móvil. Nosotros montamos la escena.",
+  "whatsapp": "34643403723",
+  "cta": "Encargar una pieza",
+  "cta_mensaje": "Hola, quiero un encargo de Producciones a medida.",
+  "series": [
+    {
+      "id": "hamburguesas",
+      "titulo": "Hamburguesas",
+      "texto": "Smash, smash doble, smash en sartén, puesto de festival. El producto manda: carne, queso, fuego. Cada local tiene la suya; no reutilizamos la de otro.",
+      "fotos": [
+        { "src": "fotos/hamburguesas/01-sarten.jpg", "alt": "Hamburguesa smash en sartén de hierro, queso fundido y brasas." },
+        { "src": "fotos/hamburguesas/02-hero.jpg", "alt": "Primer plano de hamburguesa mechada con queso." }
+      ]
+    },
+    {
+      "id": "tartas",
+      "titulo": "Tartas",
+      "texto": "Pastelería y obrador: porción, tarta entera, brillo, vapor. Misma lógica que la hamburguesa: tu receta, tu emplatado, tu luz.",
+      "fotos": [
+        { "src": "fotos/tartas/01-chocolate.jpg", "alt": "Porción de tarta de chocolate y caramelo en plato negro." },
+        { "src": "fotos/tartas/02-frutos.jpg", "alt": "Tarta de frutos rojos en bandeja de cobre, obrador de noche." }
+      ]
+    },
+    {
+      "id": "escena",
+      "titulo": "Puesta en escena",
+      "texto": "El producto no flota en un fondo blanco. Lo colocamos donde se come: parrilla, puesto, pasillo, obrador. Eso es lo que se comparte.",
+      "fotos": [
+        { "src": "fotos/escena/01-puesto.jpg", "alt": "Puesto iluminado al anochecer." },
+        { "src": "fotos/escena/02-parrilla.jpg", "alt": "Interior del puesto con fuego y plancha." },
+        { "src": "fotos/escena/03-ambiente.jpg", "alt": "Ambiente de festival, pasillo y luces." }
+      ]
+    }
+  ],
+  "rama": {
+    "nombre": "Mechada Hot",
+    "texto": "La rama de muestra. Entra tal cual: reel, mordisco, pack y pedido por WhatsApp.",
+    "href": "mechada-hot/",
+    "portada": "mechada-hot/portada.jpg",
+    "alt": "Portada de Mechada Hot, hamburguesa a la brasa."
+  },
+  "aviso": "Las fotos de esta página son de demostración, generadas para enseñar el servicio. Un encargo real se hace con tu producto. Mechada Hot no es la burger oficial de ningún local."
+}
