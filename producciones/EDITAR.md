@@ -22,11 +22,19 @@ Sustituye el archivo **manteniendo el mismo nombre**:
 | --- | --- |
 | Hamburguesa sartén | `fotos/hamburguesas/01-sarten.jpg` |
 | Hamburguesa hero | `fotos/hamburguesas/02-hero.jpg` |
-| Tarta chocolate | `fotos/tartas/01-chocolate.jpg` |
+| Hamburguesa fuego | `fotos/hamburguesas/03-fuego.jpg` |
+| Hamburguesa detalle | `fotos/hamburguesas/04-detalle.jpg` |
+| Tarta chocolate noche | `fotos/tartas/01-chocolate.jpg` |
 | Tarta frutos | `fotos/tartas/02-frutos.jpg` |
+| Cheesecake clásica | `fotos/tartas/03-clasica.jpg` |
+| Cheesecake nutella | `fotos/tartas/04-nutella.jpg` |
+| Cheesecake limón | `fotos/tartas/05-limon.jpg` |
+| Cheesecake pistacho | `fotos/tartas/06-pistacho.jpg` |
+| Cheesecake oreo | `fotos/tartas/07-oreo.jpg` |
 | Puesto | `fotos/escena/01-puesto.jpg` |
 | Parrilla | `fotos/escena/02-parrilla.jpg` |
 | Ambiente | `fotos/escena/03-ambiente.jpg` |
+| Puesto cerca | `fotos/escena/04-puesto-cerca.jpg` |
 | Portada Mechada | `mechada-hot/portada.jpg` |
 
 Para **añadir** una foto: súbela a la carpeta de la serie y añade un objeto `{ "src": "fotos/.../nuevo.jpg", "alt": "..." }` en el array `fotos` de `contenido.json`.
