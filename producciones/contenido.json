@@ -1,46 +1,36 @@
 {
   "marca": "Producciones",
   "rotulo": "Servicio a medida",
-  "titulo": "Tu producto, puesto en escena.",
-  "lead": "No rodamos un anuncio genérico. Cogemos lo que vendes —una hamburguesa, una tarta, el plato del día— y lo dejamos listo para redes: vídeo corto e imágenes de producto. Tú mandas el plato o fotos del móvil. Nosotros montamos la escena.",
+  "titulo": "Tu hamburguesa, puesta en escena.",
+  "lead": "No rodamos un anuncio genérico. Convertimos tu hamburguesa en la protagonista: producto, fuego, ambiente y una review que abre el apetito. Tú pones la receta. Nosotros construimos la escena y la dejamos lista para redes.",
   "whatsapp": "34643403723",
   "cta": "Encargar una pieza",
   "cta_mensaje": "Hola, quiero un encargo de Producciones a medida.",
   "series": [
     {
       "id": "hamburguesas",
-      "titulo": "Hamburguesas",
-      "texto": "Smash, smash doble, smash en sartén, puesto de festival. El producto manda: carne, queso, fuego. Cada local tiene la suya; no reutilizamos la de otro.",
+      "titulo": "Producto",
+      "texto": "Pan tostado, carne mechada, queso fundido y salsa. Fotografiamos lo que hace reconocible a tu hamburguesa y hacemos que se vea tan real como cuando llega a la mesa.",
       "fotos": [
-        { "src": "fotos/hamburguesas/01-sarten.jpg", "alt": "Hamburguesa smash en sartén de hierro, queso fundido y brasas." },
-        { "src": "fotos/hamburguesas/02-hero.jpg", "alt": "Primer plano de hamburguesa mechada con queso." },
-        { "src": "fotos/hamburguesas/03-fuego.jpg", "alt": "Hamburguesa sobre la parrilla con llama." },
-        { "src": "fotos/hamburguesas/04-detalle.jpg", "alt": "Detalle del queso fundido sobre la carne mechada." }
+        { "src": "fotos/hamburguesas/01-sarten.jpg", "alt": "Hamburguesa de carne mechada, queso fundido y salsa sobre una parrilla encendida." },
+        { "src": "fotos/hamburguesas/02-hero.jpg", "alt": "Primer plano hiperrealista de hamburguesa de carne mechada con queso fundido." }
       ]
     },
     {
-      "id": "tartas",
-      "titulo": "Tartas",
-      "texto": "Cheesecake, porción, tarta entera. Misma lógica que la hamburguesa: tu receta, tu emplatado, tu luz. Aquí hay línea de obrador (kraft, lino) y línea de noche (cacao, cobre).",
+      "id": "review",
+      "titulo": "Review real",
+      "texto": "Una persona, una primera impresión y tu hamburguesa en primer plano. La review pone contexto, deseo y credibilidad alrededor del producto.",
       "fotos": [
-        { "src": "fotos/tartas/03-clasica.jpg", "alt": "Cheesecake clásica tostada en molde de kraft." },
-        { "src": "fotos/tartas/04-nutella.jpg", "alt": "Cheesecake de avellana y chocolate en bandeja de kraft." },
-        { "src": "fotos/tartas/05-limon.jpg", "alt": "Cheesecake de limón." },
-        { "src": "fotos/tartas/06-pistacho.jpg", "alt": "Cheesecake de pistacho." },
-        { "src": "fotos/tartas/07-oreo.jpg", "alt": "Cheesecake de oreo." },
-        { "src": "fotos/tartas/01-chocolate.jpg", "alt": "Porción de tarta de chocolate y caramelo en plato negro." },
-        { "src": "fotos/tartas/02-frutos.jpg", "alt": "Tarta de frutos rojos en bandeja de cobre, obrador de noche." }
+        { "src": "fotos/review/01-review.jpg", "alt": "Mujer haciendo una review de una hamburguesa en un festival gastronómico." }
       ]
     },
     {
       "id": "escena",
       "titulo": "Puesta en escena",
-      "texto": "El producto no flota en un fondo blanco. Lo colocamos donde se come: parrilla, puesto, pasillo, obrador. Eso es lo que se comparte.",
+      "texto": "El producto no flota en un fondo blanco. Lo colocamos donde se come: parrilla, puesto y ambiente. La hamburguesa sigue mandando en cada plano.",
       "fotos": [
-        { "src": "fotos/escena/01-puesto.jpg", "alt": "Puesto iluminado al anochecer." },
-        { "src": "fotos/escena/04-puesto-cerca.jpg", "alt": "Puesto de cerca, luz cálida." },
-        { "src": "fotos/escena/02-parrilla.jpg", "alt": "Interior del puesto con fuego y plancha." },
-        { "src": "fotos/escena/03-ambiente.jpg", "alt": "Ambiente de festival, pasillo y luces." }
+        { "src": "fotos/escena/01-puesto.jpg", "alt": "Hamburguesa recién servida en un puesto de comida, con las manos del cocinero y el fuego al fondo." },
+        { "src": "fotos/escena/02-parrilla.jpg", "alt": "Hamburguesa protagonista en una bandeja, con un festival gastronómico iluminado al anochecer." }
       ]
     }
   ],
@@ -51,5 +41,5 @@
     "portada": "mechada-hot/portada.jpg",
     "alt": "Portada de Mechada Hot, hamburguesa a la brasa."
   },
-  "aviso": "Las fotos de esta página son de demostración, generadas para enseñar el servicio. Un encargo real se hace con tu producto. Mechada Hot no es la burger oficial de ningún local."
+  "aviso": "Las fotos de esta página son de demostración, generadas para enseñar el servicio. Un encargo real se hace con tu hamburguesa y tu identidad. Mechada Hot no es la burger oficial de ningún local."
 }
