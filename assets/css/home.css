@@ -594,6 +594,20 @@
   box-shadow: 0 18px 40px rgba(13, 14, 15, 0.18);
 }
 
+.product-card__strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  width: min(100%, 22rem);
+}
+
+.product-card__strip img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
 .product-card__phone img {
   display: block;
   width: 100%;

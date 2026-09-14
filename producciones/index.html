@@ -319,7 +319,7 @@
           rama.querySelector("h2").textContent = data.rama.nombre;
           rama.querySelector("p").textContent = data.rama.texto;
         }
-        fetch("contenido.json", { cache: "no-store" })
+        fetch("contenido.json?v=3a749a2", { cache: "no-store" })
           .then(function (r) { return r.json(); })
           .then(pintar)
           .catch(function () {
