@@ -1,45 +1,45 @@
 {
   "marca": "Producciones",
   "rotulo": "Servicio a medida",
-  "titulo": "Tu hamburguesa, puesta en escena.",
-  "lead": "No rodamos un anuncio genérico. Convertimos tu hamburguesa en la protagonista: producto, fuego, ambiente y una review que abre el apetito. Tú pones la receta. Nosotros construimos la escena y la dejamos lista para redes.",
+  "titulo": "Tu hamburguesa de carne mechada, puesta en escena.",
+  "lead": "Cogemos tu hamburguesa, respetamos lo que la hace tuya y la convertimos en imágenes que abren el apetito. Tú pones el producto y la receta; nosotros construimos la escena, el ambiente y la pieza lista para redes.",
   "whatsapp": "34643403723",
   "cta": "Encargar una pieza",
-  "cta_mensaje": "Hola, quiero un encargo de Producciones a medida.",
+  "cta_mensaje": "Hola, quiero un encargo de Producciones para Mechada Hot.",
   "series": [
     {
-      "id": "hamburguesas",
-      "titulo": "Producto",
-      "texto": "Pan tostado, carne mechada, queso fundido y salsa. Fotografiamos lo que hace reconocible a tu hamburguesa y hacemos que se vea tan real como cuando llega a la mesa.",
+      "id": "producto",
+      "titulo": "Hamburguesa de carne mechada",
+      "texto": "Pan tostado, carne mechada, queso fundido y salsa en primer plano. La foto de producto hace reconocible tu hamburguesa y deja ver la textura, el brillo y el punto de la receta.",
       "fotos": [
-        { "src": "fotos/hamburguesas/01-sarten.jpg", "alt": "Hamburguesa de carne mechada, queso fundido y salsa sobre una parrilla encendida." },
-        { "src": "fotos/hamburguesas/02-hero.jpg", "alt": "Primer plano hiperrealista de hamburguesa de carne mechada con queso fundido." }
-      ]
-    },
-    {
-      "id": "review",
-      "titulo": "Review real",
-      "texto": "Una persona, una primera impresión y tu hamburguesa en primer plano. La review pone contexto, deseo y credibilidad alrededor del producto.",
-      "fotos": [
-        { "src": "fotos/review/01-review.jpg", "alt": "Mujer haciendo una review de una hamburguesa en un festival gastronómico." }
+        { "src": "fotos/producto/01.jpg", "alt": "Hamburguesa de carne mechada, queso fundido y salsa sobre una parrilla encendida." },
+        { "src": "fotos/producto/02.jpg", "alt": "Primer plano de hamburguesa de carne mechada con queso fundido y salsa brillante." }
       ]
     },
     {
       "id": "escena",
       "titulo": "Puesta en escena",
-      "texto": "El producto no flota en un fondo blanco. Lo colocamos donde se come: parrilla, puesto y ambiente. La hamburguesa sigue mandando en cada plano.",
+      "texto": "No dejamos el producto flotando en un fondo blanco. Lo colocamos donde se come: fuego, puesto y festival, con la hamburguesa siempre como protagonista del plano.",
       "fotos": [
-        { "src": "fotos/escena/01-puesto.jpg", "alt": "Hamburguesa recién servida en un puesto de comida, con las manos del cocinero y el fuego al fondo." },
-        { "src": "fotos/escena/02-parrilla.jpg", "alt": "Hamburguesa protagonista en una bandeja, con un festival gastronómico iluminado al anochecer." }
+        { "src": "fotos/escena/01.jpg", "alt": "Hamburguesa recién servida en un puesto de comida, con las manos del cocinero y el fuego al fondo." },
+        { "src": "fotos/escena/02.jpg", "alt": "Hamburguesa protagonista en una bandeja, con un festival gastronómico iluminado al anochecer." }
+      ]
+    },
+    {
+      "id": "review",
+      "titulo": "Review",
+      "texto": "Una persona, una primera impresión y tu hamburguesa en primer plano. La review aporta contexto y credibilidad sin robarle protagonismo al producto.",
+      "fotos": [
+        { "src": "fotos/review/01.jpg", "alt": "Mujer haciendo una review de una hamburguesa en un festival gastronómico." }
       ]
     }
   ],
   "rama": {
     "nombre": "Mechada Hot",
-    "texto": "La rama de muestra. Entra tal cual: reel, mordisco, pack y pedido por WhatsApp.",
+    "texto": "La rama de este encargo. Reel, pack y pedido.",
     "href": "mechada-hot/",
     "portada": "mechada-hot/portada.jpg",
     "alt": "Portada de Mechada Hot, hamburguesa a la brasa."
   },
-  "aviso": "Las fotos de esta página son de demostración, generadas para enseñar el servicio. Un encargo real se hace con tu hamburguesa y tu identidad. Mechada Hot no es la burger oficial de ningún local."
+  "aviso": "Estas fotos son de demostración, generadas para enseñar cómo se vería el servicio. La pieza final se hace con el producto real y la identidad del local; esta página no afirma una colaboración oficial."
 }
