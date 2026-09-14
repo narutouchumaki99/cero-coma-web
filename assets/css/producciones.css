@@ -1,0 +1,207 @@
+/* Producciones — catálogo de piezas. Acordeón nativo (buscable, indexable). */
+
+.producciones-section {
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+  background: var(--ivory);
+  color: var(--zero);
+}
+
+.producciones-section .lead {
+  color: var(--light-muted);
+}
+
+.producciones__intro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: var(--space-12);
+}
+
+.producciones__intro > div {
+  max-width: var(--measure);
+}
+
+.producciones__intro .button {
+  flex: none;
+}
+
+.producciones__groups {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.prod-group {
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  overflow: hidden;
+}
+
+.prod-group > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  cursor: pointer;
+  list-style: none;
+  transition: background var(--motion-micro) var(--ease-out);
+}
+
+.prod-group > summary::-webkit-details-marker { display: none; }
+
+.prod-group > summary:hover { background: color-mix(in srgb, var(--gold) 8%, transparent); }
+
+.prod-group > summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+}
+
+.prod-group__name {
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.prod-group__count {
+  font-size: 0.85rem;
+  color: var(--light-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.prod-group__arrow {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform var(--motion-short) var(--ease-out);
+  flex: none;
+}
+
+.prod-group[open] .prod-group__arrow {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.prod-group__body {
+  padding: 0 var(--space-6) var(--space-6);
+  border-top: 1px solid var(--light-border);
+  padding-top: var(--space-6);
+}
+
+.prod-group__body > p {
+  margin: 0 0 var(--space-6);
+  max-width: var(--measure);
+  color: var(--light-muted);
+}
+
+.prod-list {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prod-item--slate {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, 11rem) minmax(0, 1fr);
+  gap: var(--space-6);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--gold) 10%, var(--zero)), var(--zero) 48%);
+  color: var(--ivory);
+}
+
+.prod-still {
+  margin: 0;
+  border-radius: calc(var(--radius-sm) - 2px);
+  overflow: hidden;
+  background: var(--zero);
+  aspect-ratio: 9 / 16;
+}
+
+.prod-still img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prod-item__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding-block: var(--space-2);
+}
+
+.prod-item__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.prod-item h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--ivory);
+}
+
+.prod-item p {
+  margin: 0;
+  color: var(--dark-muted);
+  max-width: var(--measure);
+}
+
+.prod-item p + p { margin-top: var(--space-3); }
+
+.prod-item__copy .button {
+  align-self: start;
+  margin-top: var(--space-5);
+}
+
+.prod-item--slate .status-pill {
+  color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 16%, transparent);
+}
+
+.prod-group::details-content {
+  overflow: hidden;
+  block-size: 0;
+  transition: block-size var(--motion-short) var(--ease-out), content-visibility var(--motion-short) allow-discrete;
+}
+
+.prod-group[open]::details-content {
+  block-size: auto;
+}
+
+.prod-empty {
+  margin: 0;
+  padding: var(--space-6);
+  border: 1px dashed var(--light-border);
+  border-radius: var(--radius-sm);
+  color: var(--light-muted);
+  max-width: var(--measure);
+}
+
+@media (max-width: 40rem) {
+  .prod-group > summary { padding: var(--space-5); }
+  .prod-group__body { padding-inline: var(--space-5); }
+  .prod-group__name { font-size: 1.1rem; }
+  .prod-item--slate {
+    grid-template-columns: 1fr;
+    padding: var(--space-3);
+  }
+  .prod-still { max-width: 16rem; }
+  .producciones__intro .button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prod-group__arrow,
+  .prod-group > summary,
+  .prod-group::details-content { transition: none; }
+}

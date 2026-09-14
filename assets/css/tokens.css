@@ -17,10 +17,13 @@
 }
 
 :root {
+  interpolate-size: allow-keywords;
   --zero: #0d0e0f;
   --ivory: #f5f2eb;
   --gold: #b69a61;
   --gold-ink: #705a2e;
+  --foil-hi: #f0d9a0;
+  --foil-lo: #6e5428;
   --white: #ffffff;
   --dark-surface: #17191b;
   --dark-raised: #202326;
