@@ -2,6 +2,8 @@
 
 Para que ChatGPT **publique solo**, sin pasar por otra persona: [`CHATGPT.md`](CHATGPT.md).
 
+Para que **Codex** adapte la página a un cliente (idempotente, fotos suyas, el visitante entiende el servicio): [`CODEX.md`](CODEX.md).
+
 Esta carpeta es el escaparate. **No toques** `index.html` ni `mechada-hot/` salvo que cambies la estructura.
 
 ## 1. Textos

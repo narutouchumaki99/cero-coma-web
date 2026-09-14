@@ -1,0 +1,25 @@
+{
+  "nombre": "Nombre del local",
+  "producto": "hamburguesa smash",
+  "mundo": "noche-fuego",
+  "whatsapp": "34643403723",
+  "fotos": {
+    "producto": [
+      "ruta-o-archivo-hero.jpg",
+      "ruta-o-archivo-detalle.jpg"
+    ],
+    "escena": [
+      "ruta-o-archivo-puesto.jpg",
+      "ruta-o-archivo-ambiente.jpg"
+    ],
+    "review": [
+      "ruta-o-archivo-review.jpg"
+    ]
+  },
+  "rama": {
+    "nombre": "Nombre del local",
+    "href": "mechada-hot/",
+    "portada": "mechada-hot/portada.jpg",
+    "texto": "La rama de este encargo. Reel, pack y pedido."
+  }
+}

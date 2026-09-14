@@ -9,6 +9,7 @@ Textos y lista de fotos: `producciones/contenido.json`
 Fotos: `producciones/fotos/hamburguesas|tartas|escena/`
 Landing de muestra (no hace falta tocarla): `producciones/mechada-hot/`
 Normas de contenido: `producciones/EDITAR.md`
+Playbook de cliente (idempotente): `producciones/CODEX.md`
 
 Cómo guardar un archivo:
 1. GET leerArchivo con path y ref=main. Guarda el `sha`.
