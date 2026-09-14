@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://cerocomasoluciones.com/producciones/">
+    <meta name="theme-color" content="#131010">
+    <meta name="description" content="Producciones: escaparate de Mechada Hot. Vídeo e imagen de producto para hamburgueserías.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Producciones — Mechada Hot">
+    <meta property="og:description" content="Escaparate de Mechada Hot. Vídeo vertical e imágenes de producto.">
+    <meta property="og:url" content="https://cerocomasoluciones.com/producciones/">
+    <meta property="og:image" content="https://cerocomasoluciones.com/producciones/mechada-hot/portada.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Producciones — Mechada Hot</title>
+    <link rel="icon" href="../assets/media/brand/approved/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <style>
+      :root {
+        --carbon: #131010;
+        --brasa: #1c1817;
+        --linea: #372e2a;
+        --crema: #f4d2a1;
+        --texto: #c9baab;
+        --humo: #9a8b7e;
+        --fuego: #f26a21;
+        --display: "Archivo Black", "Arial Black", system-ui, sans-serif;
+        --cuerpo: "Barlow", "Segoe UI", system-ui, sans-serif;
+        --dato: "IBM Plex Mono", ui-monospace, monospace;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        background: var(--carbon);
+        color: var(--texto);
+        font-family: var(--cuerpo);
+        font-size: 17px;
+        line-height: 1.55;
+      }
+      a { color: inherit; }
+      .tope {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--linea);
+        font-family: var(--dato);
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--humo);
+      }
+      .tope a { text-decoration: none; }
+      .tope a:hover { color: var(--crema); }
+      main {
+        width: min(72rem, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 3rem 0 5rem;
+        display: grid;
+        gap: 2.5rem;
+      }
+      .rotulo {
+        margin: 0 0 0.75rem;
+        font-family: var(--dato);
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--fuego);
+      }
+      h1 {
+        margin: 0 0 0.75rem;
+        font-family: var(--display);
+        font-size: clamp(2.4rem, 7vw, 4.4rem);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        color: var(--crema);
+        text-transform: uppercase;
+      }
+      .lead { margin: 0; max-width: 38ch; color: var(--humo); }
+      .rama {
+        display: grid;
+        grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
+        gap: 2rem;
+        align-items: center;
+        padding: 1rem;
+        border: 1px solid var(--linea);
+        background: var(--brasa);
+        text-decoration: none;
+      }
+      .rama img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+      }
+      .rama h2 {
+        margin: 0 0 0.6rem;
+        font-family: var(--display);
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        line-height: 1;
+        color: var(--crema);
+        text-transform: uppercase;
+      }
+      .rama p { margin: 0 0 1.25rem; color: var(--texto); max-width: 42ch; }
+      .entrar {
+        display: inline-block;
+        padding: 0.75rem 1.1rem;
+        background: var(--fuego);
+        color: #1a0c06;
+        font-family: var(--display);
+        font-size: 0.95rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .rama:hover .entrar { filter: brightness(1.08); }
+      .aviso {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--humo);
+        max-width: 56ch;
+      }
+      @media (max-width: 40rem) {
+        .rama { grid-template-columns: 1fr; }
+        .rama img { max-width: 16rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tope">
+      <span>Producciones</span>
+      <a href="../">Cero Coma</a>
+    </div>
+    <main>
+      <header>
+        <p class="rotulo">Escaparate</p>
+        <h1>Producciones</h1>
+        <p class="lead">Una rama. Piezas de vídeo e imagen. Ahora mismo hay una sola en el escaparate.</p>
+      </header>
+      <a class="rama" href="mechada-hot/">
+        <img src="mechada-hot/portada.jpg" alt="Mechada Hot: hamburguesa a la brasa. Imagen de muestra." width="1080" height="1920">
+        <div>
+          <p class="rotulo">Rama</p>
+          <h2>Mechada Hot</h2>
+          <p>Vídeo vertical e imágenes de producto para hamburgueserías. La página de esta rama entra tal cual.</p>
+          <span class="entrar">Entrar</span>
+        </div>
+      </a>
+      <p class="aviso">Las imágenes y el vídeo de Mechada Hot están generados con inteligencia artificial a partir de una descripción escrita. No corresponden a ningún local real.</p>
+    </main>
+  </body>
+</html>

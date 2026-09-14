@@ -1,0 +1,1449 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://cerocomasoluciones.com/producciones/mechada-hot/">
+<meta name="description" content="Mechada Hot: vídeo vertical e imágenes de producto para hamburgueserías. Pack de anuncio a partir de fotos del móvil.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mechada Hot">
+<meta property="og:description" content="Tu hamburguesa merece un anuncio de cine.">
+<meta property="og:url" content="https://cerocomasoluciones.com/producciones/mechada-hot/">
+<meta property="og:image" content="https://cerocomasoluciones.com/producciones/mechada-hot/portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Mechada Hot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  /* Dos mundos a proposito:
+     PRODUCTO  -> noche, brasa, humo. Es el espectaculo.
+     EJECUCION -> papel claro. Se apaga el fuego y se habla de trabajo. */
+  :root {
+    --carbon:   #131010;
+    --brasa:    #1C1817;
+    --linea:    #372E2A;
+    --crema:    #F4D2A1;
+    --texto:    #C9BAAB;
+    --humo:     #9A8B7E;
+    --fuego:    #F26A21;
+
+    /* mundo claro */
+    --papel:      #EFE7DB;
+    --papel-hondo:#E3D8C8;
+    --tinta:      #221C19;
+    --tinta-suave:#5E5148;
+    --fuego-tinta:#C2481A;
+
+    --display: "Archivo Black", "Arial Black", system-ui, sans-serif;
+    --cuerpo:  "Barlow", "Segoe UI", system-ui, sans-serif;
+    --dato:    "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  /* Necesario para poder animar hasta la altura natural de un desplegable */
+  :root { interpolate-size: allow-keywords; }
+
+  body {
+    margin: 0;
+    background: var(--carbon);
+    color: var(--texto);
+    font-family: var(--cuerpo);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    /* Mientras Barlow carga, la tipografía de reserva se escala a su misma
+       altura de x: el texto no da el salto típico al cambiar de fuente. */
+    font-size-adjust: from-font;
+    text-rendering: optimizeLegibility;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  /* ------------------------------------------------- FONDO: brasas y humo */
+  #brasas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* grano de ceniza sobre todo el lienzo */
+  .grano {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* rescoldo caliente en el borde inferior de la pantalla */
+  .rescoldo {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 42vh;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(90% 100% at 50% 130%, rgba(242,106,33,0.22), rgba(166,34,24,0.09) 42%, transparent 70%);
+  }
+
+  .contenido { position: relative; z-index: 2; }
+
+  /* ------------------------------------------------------------ tipografia */
+  h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(27px, 5vw, 44px);
+    line-height: 1.04;
+    letter-spacing: -0.018em;
+    color: var(--crema);
+    margin: 0 0 14px;
+    text-wrap: balance;
+    /* halo cálido: brasa detrás de la letra, no un neón */
+    text-shadow: 0 0 46px rgba(242, 106, 33, 0.20), 0 3px 26px rgba(0, 0, 0, 0.55);
+  }
+  /* en el mundo claro el halo sobra */
+  .taller h2 { text-shadow: none; }
+  .rotulo {
+    font-family: var(--dato);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--fuego);
+    margin: 0 0 12px;
+  }
+  .entradilla { max-width: 46ch; margin: 0 0 30px; font-size: 18px; }
+
+  .caja { max-width: 1060px; margin: 0 auto; padding-inline: 22px; }
+  section { padding-block: clamp(60px, 10vw, 104px); }
+  .linea-arriba { border-top: 1px solid var(--linea); }
+
+  /* ------------------------------------------------------------- MOVIMIENTO
+     Todo parte de un estado VISIBLE. Si el navegador no entiende las
+     animaciones por scroll, la pagina se ve entera igual. */
+  /* La comprobación incluye animation-range a propósito: hay navegadores con
+     soporte parcial que entienden animation-timeline pero no el rango, y se
+     quedarían a medias. Firefox no lo soporta: ahí todo se ve en reposo,
+     que está diseñado para verse terminado. */
+  @supports ((animation-timeline: view()) and (animation-range: 0% 100%)) {
+    @media (prefers-reduced-motion: no-preference) {
+      .surge {
+        animation: surgir linear both;
+        animation-timeline: view();
+        animation-range: entry 4% entry 46%;
+      }
+      @keyframes surgir {
+        from { opacity: 0.25; transform: translateY(26px); }
+        to   { opacity: 1;    transform: translateY(0); }
+      }
+
+      /* las fotos se mueven dentro de su marco mientras pasan */
+      .deriva img, .deriva .hero-fondo {
+        animation: derivar linear both;
+        animation-timeline: view();
+        animation-range: cover 0% cover 100%;
+      }
+      @keyframes derivar {
+        from { transform: scale(1.22) translateY(-4.5%); }
+        to   { transform: scale(1.22) translateY(4.5%); }
+      }
+
+      /* el pack entra creciendo un poco */
+      .acerca {
+        animation: acercar linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      @keyframes acercar {
+        from { opacity: 0.3; transform: scale(0.955); }
+        to   { opacity: 1;   transform: scale(1); }
+      }
+
+      /* el raíl se pinta de arriba abajo mientras la ruta cruza la pantalla */
+      .ruta::after {
+        animation: pintar-rail linear both;
+        animation-timeline: view();
+        animation-range: entry 22% cover 62%;
+      }
+      @keyframes pintar-rail {
+        from { transform: scaleY(0); }
+        to   { transform: scaleY(1); }
+      }
+
+      /* Cada punto se enciende por su cuenta al entrar: el escalonado sale
+         solo, porque cada uno mira su propia posición en la pantalla.
+         Solo se animan opacidad y transform. */
+      .ruta__punto {
+        animation: punto-crece linear both;
+        animation-timeline: view();
+        animation-range: entry 38% entry 86%;
+      }
+      @keyframes punto-crece {
+        from { transform: scale(0.72); }
+        to   { transform: scale(1); }
+      }
+
+      .ruta__punto::before {
+        animation: destapar linear both;
+        animation-timeline: view();
+        animation-range: entry 38% entry 82%;
+      }
+      @keyframes destapar {
+        from { opacity: 1; }
+        to   { opacity: 0; }
+      }
+
+      .ruta__punto::after {
+        animation: halo linear both;
+        animation-timeline: view();
+        animation-range: entry 46% entry 96%;
+      }
+      @keyframes halo {
+        from { opacity: 0; transform: scale(0.4); }
+        to   { opacity: 1; transform: scale(1); }
+      }
+
+      /* y el texto del paso aparece con él */
+      .ruta li {
+        animation: asomar linear both;
+        animation-timeline: view();
+        animation-range: entry 34% entry 84%;
+      }
+      @keyframes asomar {
+        from { opacity: 0.28; transform: translateY(14px); }
+        to   { opacity: 1;    transform: translateY(0); }
+      }
+
+      /* La barra de acción sube cuando la portada termina de salir.
+         Usa una línea de tiempo con nombre, declarada en la portada y
+         hecha visible a toda la página con timeline-scope, porque la
+         barra no es descendiente del <header>. */
+      .barra-fija {
+        animation: subir-barra linear both;
+        animation-timeline: --portada;
+        animation-range: exit 30% exit 95%;
+      }
+      @keyframes subir-barra {
+        from { transform: translateY(115%); }
+        to   { transform: translateY(0); }
+      }
+    }
+  }
+
+  /* ---------------------------------------------------------------- HERO */
+  /* La portada publica su propia línea de tiempo para que otros elementos
+     —la barra de acción de abajo— puedan reaccionar a su salida. */
+  html { timeline-scope: --portada; }
+
+  .hero {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding-block: 0;
+    view-timeline: --portada block;
+  }
+  .hero-marco { position: absolute; inset: 0; overflow: hidden; }
+  .hero-fondo {
+    position: absolute;
+    inset: -8%;
+    background-image: url("img/02-hero-fuego.jpg");
+    background-size: cover;
+    background-position: center 40%;
+    transform: scale(1.06);
+    animation: respirar 22s ease-in-out infinite alternate;
+  }
+  @keyframes respirar {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1.15); }
+  }
+  .hero-velo {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(19,16,16,0.90) 0%, rgba(19,16,16,0.36) 32%, rgba(19,16,16,0.88) 80%, var(--carbon) 100%);
+  }
+  .hero-contenido { position: relative; z-index: 2; width: 100%; padding-block: 60px 68px; }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(38px, 8.4vw, 74px);
+    line-height: 0.96;
+    letter-spacing: -0.028em;
+    color: var(--crema);
+    margin: 0 0 18px;
+    max-width: 14ch;
+    text-wrap: balance;
+    text-shadow: 0 4px 34px rgba(0,0,0,0.8);
+  }
+
+  /* Titular con degradado de brasa. Va dentro de @supports porque
+     color:transparent sin recorte de fondo dejaría el titular invisible. */
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .hero h1 {
+      background-image: linear-gradient(168deg, #FFEFD6 0%, var(--crema) 46%, #E79B52 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: none;
+      filter:
+        drop-shadow(0 4px 26px rgba(0, 0, 0, 0.8))
+        drop-shadow(0 0 42px rgba(242, 106, 33, 0.24));
+    }
+  }
+  .hero p {
+    max-width: 40ch;
+    font-size: clamp(17px, 2.3vw, 21px);
+    color: var(--crema);
+    margin: 0 0 8px;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.85);
+  }
+  .hero .prueba { color: var(--texto); font-size: 16px; margin-bottom: 30px; }
+
+  /* -------------------------------------------------------------- botones */
+  .acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+  .boton {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--dato); font-size: 13px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    padding: 15px 24px; border-radius: 2px; border: 1px solid transparent;
+    cursor: pointer; transition: transform 0.16s, background 0.16s, color 0.16s, box-shadow 0.16s;
+  }
+  .boton-fuego {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    color: #1B0D04;
+    background: linear-gradient(145deg, #FF9147 0%, var(--fuego) 52%, #D9541A 100%);
+    box-shadow:
+      0 6px 20px rgba(242, 106, 33, 0.28),
+      inset 0 1px 0 rgba(255, 244, 230, 0.42);
+  }
+  /* el destello que barre el botón al pasar por encima */
+  .boton-fuego::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(105deg, transparent 36%, rgba(255, 246, 232, 0.5) 50%, transparent 64%);
+    transform: translateX(-130%);
+    transition: transform 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .boton-fuego:hover::after,
+  .boton-fuego:focus-visible::after { transform: translateX(130%); }
+  .boton-fuego:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 38px rgba(242, 106, 33, 0.42),
+      inset 0 1px 0 rgba(255, 244, 230, 0.5);
+  }
+  .boton-fuego:active { transform: translateY(0) scale(0.985); }
+
+  .boton-linea {
+    background: rgba(19, 16, 16, 0.5);
+    color: var(--crema);
+    border-color: var(--linea);
+    backdrop-filter: blur(3px);
+  }
+  .boton-linea:hover {
+    border-color: var(--fuego);
+    color: var(--fuego);
+    box-shadow: 0 0 22px rgba(242, 106, 33, 0.16);
+  }
+  .boton-linea:active { transform: scale(0.985); }
+  .boton:focus-visible { outline: 2px solid var(--fuego); outline-offset: 3px; }
+  .boton svg { width: 17px; height: 17px; flex: none; }
+
+  /* ---------------------------------------------------------------- LEMAS */
+  .lemas {
+    border-block: 1px solid var(--linea);
+    background: rgba(28,24,23,0.72);
+    backdrop-filter: blur(3px);
+    padding-block: 24px;
+  }
+  .lemas ul {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: center;
+    font-family: var(--display);
+    font-size: clamp(13px, 2.1vw, 16px);
+    color: var(--crema); text-align: center;
+  }
+  .lemas li { display: flex; align-items: center; gap: 30px; }
+  .lemas li::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--fuego); }
+  .lemas li:last-child::after { display: none; }
+
+  /* -------------------------------------------------------------- EJEMPLO */
+  /* Dos pruebas, una al lado de la otra */
+  .pruebas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    gap: 26px;
+    justify-content: start;
+  }
+  .pruebas figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .pruebas figcaption {
+    font-family: var(--dato);
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--humo);
+    letter-spacing: 0.03em;
+  }
+  .pruebas figcaption b {
+    display: block;
+    color: var(--crema);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .aviso-marca {
+    margin: 18px 0 0;
+    font-family: var(--dato);
+    font-size: 12px;
+    color: var(--humo);
+    letter-spacing: 0.03em;
+  }
+
+  /* El aviso de que lo del cliente se ajusta en directo */
+  .directo {
+    margin-top: 40px;
+    max-width: 62ch;
+    border-left: 2px solid var(--fuego);
+    padding-left: 22px;
+  }
+  .directo b {
+    display: block;
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(19px, 3vw, 25px);
+    color: var(--crema);
+    margin-bottom: 10px;
+  }
+  .directo p { margin: 0; }
+
+  .entrega { margin-top: 48px; }
+  .ejemplo { display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 44px; align-items: start; }
+  .marco {
+    aspect-ratio: 9 / 16;
+    border: 1px solid var(--linea); border-radius: 4px; overflow: hidden; background: #000;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 60px rgba(242,106,33,0.07);
+  }
+  .marco video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .lista { list-style: none; margin: 0; padding: 0; }
+  .lista li {
+    display: grid; grid-template-columns: 17px 1fr; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid var(--linea);
+  }
+  .lista li:first-child { border-top: 1px solid var(--linea); }
+  .lista.dos { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 32px; }
+  .lista.dos li:nth-child(2) { border-top: 1px solid var(--linea); }
+  .lista svg { width: 15px; height: 15px; margin-top: 5px; color: var(--fuego); }
+  .lista b { color: var(--crema); font-weight: 600; }
+  .lista span { color: var(--humo); }
+
+  /* -------------------------------------------------------------- GALERIA */
+  /* Filas de alto fijo: asi el mosaico es identico siempre y las fotos
+     recortan con object-fit en vez de estirar la rejilla. */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: clamp(148px, 19vw, 216px);
+    gap: 12px;
+  }
+  .galeria figure {
+    margin: 0; position: relative; overflow: hidden;
+    border-radius: 3px; border: 1px solid var(--linea); background: var(--brasa);
+  }
+  .galeria img { width: 100%; height: 100%; object-fit: cover; }
+  .galeria .ancha { grid-column: span 2; grid-row: span 2; }
+  .galeria .doble { grid-column: span 2; }
+  .galeria figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 24px 14px 11px;
+    font-family: var(--dato); font-size: 10px; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--crema);
+    background: linear-gradient(180deg, transparent, rgba(19,16,16,0.92));
+  }
+
+  /* Pista de arrastre: solo aparece cuando la galería es un carrusel */
+  .pista-desliza {
+    display: none;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 14px;
+    font-family: var(--dato);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--humo);
+  }
+  .pista-desliza__flecha {
+    width: 22px; height: 1px;
+    background: var(--fuego);
+    position: relative;
+    animation: empujar 1.9s ease-in-out infinite;
+  }
+  .pista-desliza__flecha::after {
+    content: "";
+    position: absolute; right: 0; top: -2px;
+    width: 5px; height: 5px;
+    border-top: 1px solid var(--fuego);
+    border-right: 1px solid var(--fuego);
+    transform: rotate(45deg);
+  }
+  @keyframes empujar {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50%      { transform: translateX(6px); opacity: 1; }
+  }
+
+  /* ----------------------------------------------------------------- PACK */
+  .pack {
+    border: 1px solid var(--linea); border-top: 3px solid var(--fuego);
+    border-radius: 0 0 4px 4px;
+    background: linear-gradient(180deg, rgba(40,28,20,0.9), rgba(28,24,23,0.9));
+    padding: clamp(26px, 4vw, 42px);
+    display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: start;
+    box-shadow: 0 0 70px rgba(242,106,33,0.08);
+  }
+  .pack h3 { font-family: var(--display); font-weight: 400; font-size: 21px; color: var(--crema); margin: 0 0 14px; }
+  .pack ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .pack ul li { display: grid; grid-template-columns: 15px 1fr; gap: 11px; }
+  .pack ul li::before { content: "—"; color: var(--fuego); }
+  .precio { text-align: right; }
+  .precio .cifra {
+    font-family: var(--display); font-size: clamp(46px, 7vw, 64px); line-height: 1;
+    color: var(--crema); display: block; font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+    text-shadow: 0 0 40px rgba(242, 106, 33, 0.28);
+  }
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    .precio .cifra {
+      background-image: linear-gradient(160deg, #FFF0D9, var(--crema) 50%, #E08F46);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: none;
+      filter: drop-shadow(0 0 34px rgba(242, 106, 33, 0.3));
+    }
+  }
+  .precio small {
+    font-family: var(--dato); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--humo);
+    display: block; margin-top: 8px; max-width: 19ch; margin-left: auto;
+  }
+
+  /* la salida para quien no entra en el pack cerrado */
+  .medida {
+    margin-top: 16px;
+    border: 1px dashed var(--linea);
+    border-radius: 3px;
+    padding: 22px 26px;
+    display: flex; flex-wrap: wrap; gap: 20px;
+    align-items: center; justify-content: space-between;
+  }
+  .medida b { display: block; color: var(--crema); font-weight: 600; margin-bottom: 4px; }
+  .medida p { margin: 0; max-width: 52ch; color: var(--humo); font-size: 16px; }
+
+  /* ----------------------------------------------------------- COMPROMISO */
+  .compromiso .grande {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(25px, 4.6vw, 42px);
+    line-height: 1.1;
+    color: var(--crema);
+    margin: 0 0 20px;
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+  .compromiso .apoyo {
+    margin: 0;
+    max-width: 50ch;
+    color: var(--texto);
+    border-left: 2px solid var(--fuego);
+    padding-left: 18px;
+  }
+  .compromiso { max-width: none; }
+
+  /* --------------------------------------------------------------- DUDAS */
+  /* ------------------------------------------------------------- DUDAS
+     Acordeón de <details>. Se pliega para no alargar el móvil, pero el
+     texto sigue siendo texto: buscable, indexable y enlazable por #id. */
+  .taller .dudas { margin: 0 auto; max-width: 62ch; }
+
+  .duda { border-top: 1px solid var(--papel-hondo); }
+  .duda:last-of-type { border-bottom: 1px solid var(--papel-hondo); }
+
+  .duda summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 44px;            /* zona de toque cómoda en el pulgar */
+    padding: 18px 2px;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--tinta);
+    transition: color 0.16s var(--ease, ease);
+  }
+  .duda summary::-webkit-details-marker { display: none; }
+  .duda summary:hover { color: var(--fuego-tinta); }
+  .duda summary:focus-visible {
+    outline: 2px solid var(--fuego-tinta);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* el signo + que gira hasta convertirse en − */
+  .duda summary::after {
+    content: "";
+    flex: none;
+    width: 13px;
+    height: 13px;
+    background:
+      linear-gradient(var(--fuego-tinta), var(--fuego-tinta)) center/100% 2px no-repeat,
+      linear-gradient(var(--fuego-tinta), var(--fuego-tinta)) center/2px 100% no-repeat;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .duda[open] summary::after { transform: rotate(135deg); }
+
+  .duda__cuerpo { padding: 0 2px 20px; }
+  .duda__cuerpo p { margin: 0; color: var(--tinta-suave); }
+
+  /* Apertura suave hasta la altura natural, sin trucos de max-height */
+  .duda::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition: block-size 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+                content-visibility 0.34s allow-discrete;
+    transition-behavior: allow-discrete;
+  }
+  .duda[open]::details-content { block-size: auto; }
+
+  /* micro-linea de confianza bajo los botones */
+  .promesa {
+    font-family: var(--dato);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--texto);
+    margin: 18px 0 0;
+    display: flex; align-items: center; gap: 8px;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.9);
+  }
+  .promesa::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--fuego); flex: none;
+    box-shadow: 0 0 10px var(--fuego);
+  }
+
+  /* ======================================================================
+     MUNDO CLARO — aqui se apaga el fuego y se habla de como se trabaja
+     ====================================================================== */
+  .taller {
+    position: relative;
+    z-index: 2;
+    background: var(--papel);
+    color: var(--tinta-suave);
+  }
+  /* borde de ceniza: el humo se posa en el canto */
+  .taller::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 0; height: 90px;
+    background: linear-gradient(180deg, rgba(19,16,16,0.30), transparent);
+    pointer-events: none;
+  }
+  .taller::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
+    background: linear-gradient(0deg, rgba(19,16,16,0.30), transparent);
+    pointer-events: none;
+  }
+  .taller .rotulo { color: var(--fuego-tinta); }
+  .taller h2 { color: var(--tinta); }
+  .taller .entradilla { color: var(--tinta-suave); }
+
+  /* Cabecera centrada */
+  .taller__centro { text-align: center; }
+  .taller__centro .entradilla { margin-inline: auto; }
+
+  /* ------------------------------------------------------ RUTA DE PUNTOS
+     Cuatro pasos en columna centrada. El raíl se pinta y cada punto se
+     enciende según avanza el scroll. Sin JavaScript.
+     En reposo la ruta se ve entera y encendida: la animación solo la
+     rebobina, así que un navegador que no la entienda no pierde nada. */
+  .ruta {
+    list-style: none;
+    margin: clamp(46px, 7vw, 68px) auto 0;
+    padding: 0;
+    max-width: 440px;
+    position: relative;
+    display: grid;
+    gap: clamp(36px, 5vw, 48px);
+    text-align: center;
+  }
+
+  .ruta::before,
+  .ruta::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 9px;
+    width: 2px;
+    height: calc(100% - 18px);
+    margin-left: -1px;
+    z-index: 0;
+  }
+  .ruta::before { background: var(--papel-hondo); }
+  .ruta::after {
+    background: var(--fuego-tinta);
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+
+  .ruta li {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* El punto siempre está pintado. Lo que se anima son dos capas encima:
+     un disco de papel que lo tapa (opacidad 1 → 0) y un halo que crece.
+     Así solo se animan opacidad y transform, que van por el compositor. */
+  .ruta__punto {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: var(--fuego-tinta);
+    /* el anillo de papel tapa el raíl por detrás del punto */
+    box-shadow: 0 0 0 9px var(--papel);
+    margin-bottom: 14px;
+  }
+
+  /* Halo cálido. Es un ANILLO, con el centro transparente: así puede ir
+     por encima del anillo de papel que enmascara el raíl sin teñir el
+     punto. Si fuese un disco y lo mandásemos detrás, el papel lo taparía. */
+  .ruta__punto::after {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+      rgba(194, 72, 26, 0) 32%,
+      rgba(194, 72, 26, 0.26) 46%,
+      rgba(194, 72, 26, 0) 74%);
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: none;
+  }
+
+  /* tapa de papel: presente solo mientras el paso aún no ha llegado */
+  .ruta__punto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--papel);
+    border: 2px solid var(--papel-hondo);
+    box-sizing: border-box;
+    opacity: 0;
+  }
+
+  .ruta li { counter-increment: paso; }
+  .ruta { counter-reset: paso; }
+
+  .ruta b {
+    color: var(--tinta);
+    font-weight: 600;
+    font-size: clamp(17px, 2.4vw, 19px);
+    letter-spacing: -0.005em;
+  }
+
+  /* el número del paso, encima del título */
+  .ruta b::before {
+    content: counter(paso, decimal-leading-zero);
+    display: block;
+    font-family: var(--dato);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    color: var(--fuego-tinta);
+    opacity: 0.8;
+    margin-bottom: 7px;
+  }
+  .ruta li > span:last-child {
+    color: var(--tinta-suave);
+    max-width: 34ch;
+    font-size: 16px;
+  }
+
+  .taller .dudas { margin-top: clamp(54px, 8vw, 84px); }
+
+  /* ------------------------------------------------------------- PEDIDO */
+  .pedido { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 700px; }
+  .campo { display: flex; flex-direction: column; gap: 6px; }
+  .campo.ancho { grid-column: 1 / -1; }
+  .campo label {
+    font-family: var(--dato); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--humo);
+  }
+  .campo input, .campo textarea {
+    font-family: var(--cuerpo); font-size: 16px; color: var(--crema);
+    background: rgba(28,24,23,0.9); border: 1px solid var(--linea);
+    border-radius: 2px; padding: 12px 14px; width: 100%;
+  }
+  .campo textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
+  .campo input:focus, .campo textarea:focus {
+    outline: none; border-color: var(--fuego);
+    box-shadow: 0 0 0 3px rgba(242,106,33,0.15);
+  }
+  .campo input::placeholder, .campo textarea::placeholder { color: #6B5F56; }
+  .envio { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 4px; }
+  .nota-envio { grid-column: 1 / -1; font-family: var(--dato); font-size: 12px; color: var(--humo); margin: 0; }
+  #copiado { color: var(--fuego); font-family: var(--dato); font-size: 12px; }
+
+  /* ---------------------------------------------------------- BARRA FIJA */
+  .barra-fija {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    display: none; gap: 10px; align-items: center; justify-content: space-between;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: rgba(19,16,16,0.95);
+    border-top: 1px solid var(--linea);
+    backdrop-filter: blur(10px);
+  }
+  .barra-fija span { font-family: var(--dato); font-size: 12px; color: var(--humo); }
+  .barra-fija span b { color: var(--crema); font-size: 16px; }
+
+  /* ------------------------------------------------------------------ PIE */
+  footer { border-top: 1px solid var(--linea); padding-block: 40px 56px; }
+  .legal { font-size: 14px; color: var(--humo); max-width: 62ch; margin: 0 0 12px; }
+  .legal strong { color: var(--texto); font-weight: 600; }
+  .firma { font-family: var(--dato); font-size: 12px; color: var(--humo); }
+  .firma a { color: var(--fuego); text-decoration: none; }
+  .firma a:hover { text-decoration: underline; }
+
+  /* ----------------------------------------------------------- RESPONSIVE */
+  @media (max-width: 860px) {
+    .ejemplo { grid-template-columns: 1fr; gap: 28px; }
+    .marco { max-width: 320px; }
+    /* los dos vídeos siguen lado a lado en el móvil: se ve de un vistazo
+       que son dos pruebas distintas y el scroll no se hace eterno */
+    .pruebas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .pruebas .marco { max-width: none; }
+    .lista.dos { grid-template-columns: 1fr; }
+    .lista.dos li:nth-child(2) { border-top: none; }
+    /* GALERÍA DESLIZABLE
+       En móvil el mosaico se convierte en un carrusel que se arrastra con
+       el dedo y ancla cada tarjeta. Se sangra hasta el borde de la pantalla
+       y la siguiente asoma, que es lo que hace evidente que se desliza. */
+    .galeria {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      gap: 12px;
+      margin-inline: -22px;
+      padding-inline: 22px;
+      padding-bottom: 12px;
+      scroll-padding-inline: 22px;
+      scrollbar-width: none;
+    }
+    .galeria::-webkit-scrollbar { display: none; }
+    .galeria figure {
+      flex: 0 0 76%;
+      scroll-snap-align: start;
+      aspect-ratio: 3 / 4;
+      height: auto;
+    }
+    .galeria figcaption { padding: 26px 14px 13px; font-size: 11px; }
+    .pista-desliza { display: flex; }
+    .pack { grid-template-columns: 1fr; gap: 22px; }
+    .precio { text-align: left; }
+    .precio small { margin-left: 0; }
+  }
+  @media (max-width: 560px) {
+    .pedido { grid-template-columns: 1fr; }
+    .barra-fija { display: flex; }
+    body { padding-bottom: 74px; }
+    .hero { min-height: 520px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .hero-fondo { transform: scale(1.06); }
+  }
+</style>
+</head>
+<body>
+
+
+<canvas id="brasas" aria-hidden="true"></canvas>
+<div class="rescoldo" aria-hidden="true"></div>
+<div class="grano" aria-hidden="true"></div>
+
+<div class="contenido">
+
+  <!-- ======================================================== HERO -->
+  <header class="hero deriva">
+    <div class="hero-marco">
+      <div class="hero-fondo" role="img" aria-label="Hamburguesa con carne mechada y queso fundido sobre la parrilla"></div>
+    </div>
+    <div class="hero-velo"></div>
+
+    <div class="caja hero-contenido">
+      <p class="rotulo">Mechada Hot</p>
+      <h1>Tu hamburguesa merece un anuncio de cine</h1>
+      <p>Vídeo vertical e imágenes en 4K. Con las fotos de tu móvil basta.</p>
+      <p class="prueba">Todo lo de esta página está hecho así.</p>
+
+      <div class="acciones">
+        <a class="boton boton-fuego" target="_blank" rel="noopener"
+           href="https://wa.me/34643403723?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20pack%20de%20Mechada%20Hot.">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.23 8.23 0 018.23 8.24c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
+          Pídelo por WhatsApp
+        </a>
+        <a class="boton boton-linea" href="#ejemplo">Ver el ejemplo</a>
+      </div>
+
+      <p class="promesa">Ves una referencia de tu plato antes de pagar nada</p>
+    </div>
+  </header>
+
+  <!-- ======================================================= LEMAS -->
+  <div class="lemas">
+    <div class="caja">
+      <ul>
+        <li>No viene a gustarte. Viene a obsesionarte.</li>
+        <li>Extra de carne. Extra de actitud.</li>
+        <li>¿La compartes? Ni de broma.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================================================== EJEMPLO -->
+  <section id="ejemplo">
+    <div class="caja">
+      <p class="rotulo surge">Las pruebas</p>
+      <h2 class="surge">Dos pruebas, ningún cliente</h2>
+      <p class="entradilla surge">
+        Ninguno de estos vídeos es un encargo. Son pruebas que me hago a mí mismo
+        con una hamburguesa que no existe, para enseñar hasta dónde llega esto.
+      </p>
+
+      <div class="pruebas surge">
+        <figure>
+          <div class="marco">
+            <video controls playsinline preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture poster="portada.jpg" src="reel.mp4"></video>
+          </div>
+          <figcaption><b>El ambiente</b>El recorrido por el festival hasta el puesto</figcaption>
+        </figure>
+        <figure>
+          <div class="marco">
+            <video controls playsinline preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture poster="portada-mordisco.jpg" src="mordisco.mp4"></video>
+          </div>
+          <figcaption><b>El producto</b>La preparación, la salsa y el mordisco</figcaption>
+        </figure>
+      </div>
+
+      <p class="aviso-marca surge">Los vídeos llevan marca de agua porque son muestras. El tuyo se entrega limpio.</p>
+
+      <div class="directo surge">
+        <b>El tuyo no sale así.</b>
+        <p>
+          Sale contigo delante. Vemos juntos la referencia, y a partir de ahí se
+          ajusta sobre la marcha: el plano, el ritmo, el texto, cuánta salsa cae.
+          Cambiar algo son minutos, no días, así que lo movemos hasta que digas
+          «ese es».
+        </p>
+      </div>
+
+      <div class="entrega surge">
+        <p class="rotulo" style="margin-bottom:16px">Lo que se entrega</p>
+        <div>
+          <ul class="lista dos">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><b>1 vídeo vertical de 8–10 s</b> <span>· con versión sin texto</span></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><b>6 imágenes en 4K</b> <span>· con recortes para grid y feed</span></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><b>Portada del reel</b> <span>· el fotograma de tu perfil</span></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>
+              <span><b>Textos y etiquetas</b> <span>· listos para copiar</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== GALERIA -->
+  <section class="linea-arriba">
+    <div class="caja">
+      <p class="rotulo surge">Las imágenes</p>
+      <h2 class="surge">Ninguna está fotografiada</h2>
+      <p class="entradilla surge">
+        Producto, puesto, ambiente y detalle. Material para semanas sin repetir foto.
+      </p>
+
+      <p class="pista-desliza" aria-hidden="true">Desliza para ver más
+        <span class="pista-desliza__flecha"></span>
+      </p>
+
+      <div class="galeria">
+        <figure class="ancha deriva">
+          <img src="img/01-hero-mechada.jpg" alt="Primer plano de la hamburguesa con queso fundido y carne mechada" loading="lazy" width="1000" height="1778">
+          <figcaption>Producto</figcaption>
+        </figure>
+        <figure class="deriva">
+          <img src="img/07-detalle-mechada.jpg" alt="Detalle del queso fundido sobre la carne mechada" loading="lazy" width="1000" height="704">
+          <figcaption>Detalle</figcaption>
+        </figure>
+        <figure class="deriva">
+          <img src="img/02-hero-fuego.jpg" alt="La hamburguesa sobre la parrilla con llama" loading="lazy" width="1000" height="1778">
+          <figcaption>Parrilla</figcaption>
+        </figure>
+        <figure class="doble deriva">
+          <img src="img/03-puesto.jpg" alt="El puesto iluminado al anochecer" loading="lazy" width="1000" height="1778">
+          <figcaption>El puesto</figcaption>
+        </figure>
+        <figure class="deriva">
+          <img src="img/05-parrilla.jpg" alt="Interior del puesto con fuego y plancha" loading="lazy" width="1000" height="1778">
+          <figcaption>Cocina</figcaption>
+        </figure>
+        <figure class="deriva">
+          <img src="img/04-ambiente.jpg" alt="El pasillo del festival con gente y luces" loading="lazy" width="1000" height="1778">
+          <figcaption>Ambiente</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== PACK -->
+  <section class="linea-arriba">
+    <div class="caja">
+      <p class="rotulo surge">El pack</p>
+      <h2 class="surge">Un precio, todo dentro</h2>
+
+      <div class="pack acerca" style="margin-top:24px">
+        <div>
+          <h3>Burger Reel</h3>
+          <ul>
+            <li>1 vídeo vertical, con versión sin texto</li>
+            <li>6 imágenes en 4K y recortes para redes</li>
+            <li>Portada y textos para publicar</li>
+            <li>1 ronda de cambios</li>
+            <li>Uso en tus redes durante 90 días</li>
+          </ul>
+        </div>
+        <div class="precio">
+          <span class="cifra">75 €</span>
+          <small>Entrega en 72 horas</small>
+        </div>
+      </div>
+
+      <div class="medida surge">
+        <div>
+          <b>¿No te encaja este pack?</b>
+          <p>
+            Cuéntame qué necesitas —otra duración, más piezas, varios platos,
+            el local entero— y lo hacemos a tu medida. Suele salir por menos
+            de lo que la gente se imagina.
+          </p>
+        </div>
+        <a class="boton boton-linea" target="_blank" rel="noopener"
+           href="https://wa.me/34643403723?text=Hola%2C%20el%20pack%20no%20me%20encaja%20del%20todo.%20Quiero%20contarte%20qu%C3%A9%20necesito%20y%20ver%20un%20presupuesto%20a%20medida.">
+          Consúltame sin compromiso
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== COMPROMISO -->
+  <section class="linea-arriba">
+    <div class="caja">
+      <div class="compromiso surge">
+        <p class="rotulo">El trato</p>
+        <p class="grande">
+          Primero la referencia.<br>
+          Si no reconoces tu hamburguesa, ahí se queda.
+        </p>
+        <p class="apoyo">
+          No produzco nada hasta que veas una imagen del plato y me digas que sí.
+          Si no te convence, no seguimos y no pagas. Sin discusión y sin quedarnos
+          a medias.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       AQUI SE APAGA EL FUEGO: como se trabaja
+       ================================================================== -->
+  <div class="taller">
+    <section>
+      <div class="caja">
+
+        <div class="taller__centro">
+          <p class="rotulo surge">Cómo se hace</p>
+          <h2 class="surge">Tú solo mandas fotos</h2>
+          <p class="entradilla surge">
+            Unas fotos normales de tu hamburguesa —las del móvil valen— y me
+            cuentas los ingredientes, dónde se come y para cuándo.
+          </p>
+        </div>
+
+        <ol class="ruta">
+          <li>
+            <span class="ruta__punto" aria-hidden="true"></span>
+            <b>Me mandas las fotos</b>
+            <span>Del móvil, con luz normal. Quince minutos por WhatsApp.</span>
+          </li>
+          <li>
+            <span class="ruta__punto" aria-hidden="true"></span>
+            <b>Te enseño una referencia</b>
+            <span>Si no reconoces tu hamburguesa, se cambia aquí.</span>
+          </li>
+          <li>
+            <span class="ruta__punto" aria-hidden="true"></span>
+            <b>Produzco y monto</b>
+            <span>Vídeo, imágenes y textos.</span>
+          </li>
+          <li>
+            <span class="ruta__punto" aria-hidden="true"></span>
+            <b>Lo revisas y es tuyo</b>
+            <span>Una ronda de cambios incluida. 72 horas en total.</span>
+          </li>
+        </ol>
+
+        <!-- Acordeón nativo con name compartido: solo uno abierto a la vez.
+             Al ser <details>, el buscador del navegador (Ctrl+F) sigue
+             encontrando el texto aunque esté plegado, y Google lo indexa. -->
+        <div class="dudas surge">
+          <details class="duda" name="dudas" id="duda-fotos">
+            <summary>¿Qué fotos necesitas?</summary>
+            <div class="duda__cuerpo">
+              <p>De la hamburguesa, sobre todo. Con el móvil basta: varias desde
+                distintos ángulos y con la luz que tengas. No hace falta que
+                salgan bonitas, hacen falta para que la mía se parezca a la tuya.</p>
+            </div>
+          </details>
+
+          <details class="duda" name="dudas" id="duda-parecido">
+            <summary>¿Y si no se parece?</summary>
+            <div class="duda__cuerpo">
+              <p>Para eso está la referencia. No avanzo sin tu sí.</p>
+            </div>
+          </details>
+
+          <details class="duda" name="dudas" id="duda-honestidad">
+            <summary>¿Esto no es engañar al cliente?</summary>
+            <div class="duda__cuerpo">
+              <p>Es publicidad, como la foto de cualquier carta. La diferencia
+                es que aquí se dice en voz alta y se parte de tu producto real.</p>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ====================================================== PEDIDO -->
+  <section id="pedido">
+    <div class="caja">
+      <p class="rotulo surge">Pedido</p>
+      <h2 class="surge">Cuéntame tu hamburguesa</h2>
+      <p class="entradilla surge">
+        Rellena lo que sepas. Se abre WhatsApp con el mensaje escrito y solo
+        tienes que enviarlo.
+      </p>
+
+      <form class="pedido surge" id="formulario" novalidate>
+        <div class="campo">
+          <label for="f-nombre">Tu nombre</label>
+          <input id="f-nombre" type="text" autocomplete="name" placeholder="Cómo te llamas">
+        </div>
+        <div class="campo">
+          <label for="f-local">Local</label>
+          <input id="f-local" type="text" autocomplete="organization" placeholder="El nombre de tu sitio">
+        </div>
+        <div class="campo">
+          <label for="f-ciudad">Ciudad</label>
+          <input id="f-ciudad" type="text" placeholder="Dónde estáis">
+        </div>
+        <div class="campo">
+          <label for="f-instagram">Instagram</label>
+          <input id="f-instagram" type="text" placeholder="@tulocal">
+        </div>
+        <div class="campo ancho">
+          <label for="f-producto">Qué hamburguesa</label>
+          <input id="f-producto" type="text" placeholder="El nombre que le dais en la carta">
+        </div>
+        <div class="campo ancho">
+          <label for="f-ingredientes">Ingredientes</label>
+          <textarea id="f-ingredientes" placeholder="Pan, carne, queso, salsas, extras"></textarea>
+        </div>
+        <div class="campo ancho">
+          <label for="f-fecha">Para cuándo</label>
+          <input id="f-fecha" type="text" placeholder="Una fecha, un festival, o cuanto antes">
+        </div>
+
+        <div class="envio">
+          <a class="boton boton-fuego" id="wa-enviar" target="_blank" rel="noopener" href="https://wa.me/34643403723">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.23 8.23 0 018.23 8.24c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
+            Enviar por WhatsApp
+          </a>
+          <button class="boton boton-linea" type="button" id="copiar">Copiar el mensaje</button>
+          <span id="copiado" role="status" aria-live="polite"></span>
+        </div>
+
+        <p class="nota-envio">Adjunta un par de fotos de la hamburguesa en el mismo mensaje. También puedes escribir directo al 643 40 37 23.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========================================================= PIE -->
+  <footer>
+    <div class="caja">
+      <p class="legal">
+        <strong>Sin letra pequeña.</strong> Las imágenes y los vídeos se generan
+        con inteligencia artificial a partir de la descripción de tu producto:
+        son publicidad, no una fotografía del plato. Por eso verás la referencia
+        antes de pagar.
+      </p>
+      <p class="legal">
+        Mechada Hot es una marca de demostración propia. No es la hamburguesa
+        oficial de ningún festival ni está asociada a ninguna organización.
+      </p>
+      <p class="firma">
+        Mechada Hot · WhatsApp
+        <a href="https://wa.me/34643403723" target="_blank" rel="noopener">643 40 37 23</a>
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+<div class="barra-fija">
+  <span>Burger Reel <b>75 €</b></span>
+  <a class="boton boton-fuego" style="padding:14px 22px;min-height:46px" target="_blank" rel="noopener"
+     href="https://wa.me/34643403723?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20pack%20de%20Mechada%20Hot.">
+    Pedir
+  </a>
+</div>
+
+<script>
+/* ---------------------------------------------------------------- BRASAS
+   Pavesas subiendo y bocanadas de humo, dibujadas en canvas.
+   Se para sola si la pestana no se ve o si el usuario pide menos movimiento. */
+(function () {
+  var lienzo = document.getElementById("brasas");
+  if (!lienzo || !lienzo.getContext) return;
+
+  var quieto = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (quieto) { lienzo.style.display = "none"; return; }
+
+  var ctx = lienzo.getContext("2d");
+  var an = 0, al = 0, dpr = 1;
+  var pavesas = [], humos = [];
+  var corriendo = true, ultimo = 0;
+
+  function medir() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    an = lienzo.clientWidth;
+    al = lienzo.clientHeight;
+    lienzo.width = Math.floor(an * dpr);
+    lienzo.height = Math.floor(al * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    poblar();
+  }
+
+  function azar(a, b) { return a + Math.random() * (b - a); }
+
+  function nuevaPavesa(alto) {
+    return {
+      x: azar(0, an),
+      y: alto === undefined ? azar(0, al) : al + azar(0, 60),
+      r: azar(0.7, 2.2),
+      vy: azar(10, 34),          // px por segundo, hacia arriba
+      vx: azar(-7, 7),
+      fase: azar(0, Math.PI * 2),
+      onda: azar(0.25, 0.9),
+      vida: azar(0, 1)
+    };
+  }
+
+  function nuevoHumo(alto) {
+    return {
+      x: azar(-40, an + 40),
+      y: alto === undefined ? azar(0, al) : al + azar(20, 140),
+      r: azar(90, 230),
+      vy: azar(5, 14),
+      vx: azar(-5, 5),
+      op: azar(0.020, 0.055)
+    };
+  }
+
+  function poblar() {
+    var area = an * al;
+    var nP = Math.round(Math.min(90, Math.max(22, area / 16000)));
+    var nH = Math.round(Math.min(11, Math.max(4, area / 150000)));
+    pavesas = []; humos = [];
+    for (var i = 0; i < nP; i++) pavesas.push(nuevaPavesa());
+    for (var j = 0; j < nH; j++) humos.push(nuevoHumo());
+  }
+
+  function pinta(t) {
+    if (!corriendo) return;
+    var dt = ultimo ? Math.min((t - ultimo) / 1000, 0.05) : 0.016;
+    ultimo = t;
+
+    ctx.clearRect(0, 0, an, al);
+
+    // humo primero, detras de todo
+    for (var h = 0; h < humos.length; h++) {
+      var s = humos[h];
+      s.y -= s.vy * dt;
+      s.x += s.vx * dt;
+      if (s.y + s.r < -60) { humos[h] = nuevoHumo(true); continue; }
+      var g = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r);
+      g.addColorStop(0, "rgba(174,158,146," + s.op + ")");
+      g.addColorStop(1, "rgba(174,158,146,0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // pavesas, con mezcla aditiva para que brillen
+    ctx.globalCompositeOperation = "lighter";
+    for (var p = 0; p < pavesas.length; p++) {
+      var e = pavesas[p];
+      e.y -= e.vy * dt;
+      e.fase += e.onda * dt;
+      e.x += (e.vx + Math.sin(e.fase) * 12) * dt;
+      if (e.y < -20) { pavesas[p] = nuevaPavesa(true); continue; }
+
+      var alturaRel = 1 - (e.y / al);          // 0 abajo, 1 arriba
+      var brillo = Math.max(0, 1 - alturaRel * 0.85) * (0.55 + 0.45 * Math.sin(e.fase * 2.4));
+      if (brillo <= 0.02) continue;
+
+      var gg = ctx.createRadialGradient(e.x, e.y, 0, e.x, e.y, e.r * 4.5);
+      gg.addColorStop(0, "rgba(255,196,120," + (0.85 * brillo) + ")");
+      gg.addColorStop(0.35, "rgba(242,106,33," + (0.45 * brillo) + ")");
+      gg.addColorStop(1, "rgba(166,34,24,0)");
+      ctx.fillStyle = gg;
+      ctx.beginPath();
+      ctx.arc(e.x, e.y, e.r * 4.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalCompositeOperation = "source-over";
+
+    requestAnimationFrame(pinta);
+  }
+
+  function arranca() {
+    if (corriendo) return;
+    corriendo = true; ultimo = 0;
+    requestAnimationFrame(pinta);
+  }
+  function para() { corriendo = false; }
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) para(); else arranca();
+  });
+
+  var remedir;
+  window.addEventListener("resize", function () {
+    clearTimeout(remedir);
+    remedir = setTimeout(medir, 180);
+  });
+
+  medir();
+  requestAnimationFrame(pinta);
+})();
+
+/* Menu contextual desactivado sobre los videos: no frena a quien sepa mirar
+   la red, pero evita el "guardar vídeo como" de un clic. La proteccion de
+   verdad es la marca de agua quemada en la imagen. */
+(function () {
+  var vids = document.querySelectorAll("video");
+  for (var i = 0; i < vids.length; i++) {
+    vids[i].addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  }
+})();
+
+/* -------------------------------------------------------------- PEDIDO */
+(function () {
+  var TEL = "34643403723";
+  var form = document.getElementById("formulario");
+  var enlace = document.getElementById("wa-enviar");
+  var copiar = document.getElementById("copiar");
+  var aviso = document.getElementById("copiado");
+  if (!form || !enlace) return;
+
+  var campos = [
+    ["f-nombre", "Nombre"], ["f-local", "Local"], ["f-ciudad", "Ciudad"],
+    ["f-instagram", "Instagram"], ["f-producto", "Hamburguesa"],
+    ["f-ingredientes", "Ingredientes"], ["f-fecha", "Para cuándo"]
+  ];
+
+  function mensaje() {
+    var l = ["Hola, quiero un pack de Mechada Hot.", ""], algo = false;
+    campos.forEach(function (c) {
+      var el = document.getElementById(c[0]);
+      var v = el && el.value ? el.value.trim() : "";
+      if (v) { l.push(c[1] + ": " + v); algo = true; }
+    });
+    if (!algo) l.push("(Te cuento los detalles por aquí.)");
+    return l.join("\n");
+  }
+
+  function actualiza() {
+    enlace.href = "https://wa.me/" + TEL + "?text=" + encodeURIComponent(mensaje());
+  }
+
+  form.addEventListener("input", actualiza);
+  form.addEventListener("submit", function (e) { e.preventDefault(); });
+  actualiza();
+
+  copiar.addEventListener("click", function () {
+    var texto = mensaje();
+    function hecho() {
+      aviso.textContent = "Copiado";
+      setTimeout(function () { aviso.textContent = ""; }, 2600);
+    }
+    function respaldo() {
+      var ta = document.createElement("textarea");
+      ta.value = texto;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); hecho(); }
+      catch (err) { aviso.textContent = "Cópialo a mano"; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(hecho, respaldo);
+    } else { respaldo(); }
+  });
+})();
+</script>
+
+</body>
+</html>

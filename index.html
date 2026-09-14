@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="assets/css/producciones.css">
     <link rel="stylesheet" href="assets/css/motion.css">
     <!--email_off--><script type="application/ld+json">
       {
@@ -74,7 +73,6 @@
         <nav class="desktop-nav" aria-label="Navegación principal">
           <a href="./" aria-current="page">Inicio</a>
           <a href="#productos">Productos</a>
-          <a href="#producciones">Producciones</a>
           <a href="#contacto">Contacto</a>
         </nav>
         <button class="icon-button menu-trigger" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" data-menu-open>
@@ -94,7 +92,6 @@
         <nav aria-label="Navegación móvil">
           <a href="./" aria-current="page">Inicio</a>
           <a href="#productos">Productos</a>
-          <a href="#producciones">Producciones</a>
           <a href="#contacto">Contacto</a>
         </nav>
         <p class="menu-dialog__foot">De la intención a la realidad.</p>
@@ -110,7 +107,7 @@
             <p class="lead">Reducimos la complejidad, construimos el producto y dejamos un recorrido que se entiende sin explicarlo dos veces.</p>
             <div class="home-hero__actions">
               <a class="button button--light" href="#productos">Nuestros productos</a>
-              <a class="button button--quiet" href="#producciones">Ver producciones</a>
+              <a class="button button--quiet" href="#contacto">Contacto</a>
             </div>
           </div>
           <aside class="home-hero__panel" data-reveal style="--reveal-delay: 120ms" aria-label="Resumen">
@@ -129,8 +126,9 @@
           <div class="products-section__head" data-reveal>
             <p class="eyebrow">Nuestros productos</p>
             <h2 id="products-title">Herramientas listas para usar.</h2>
-            <p class="lead">Empezamos por el producto que ya está en marcha.</p>
+            <p class="lead">Dos ramas. Cada una con su propio sitio.</p>
           </div>
+          <div class="products-stack">
           <article class="product-card" data-reveal>
             <div class="product-card__copy">
               <p class="eyebrow">Hostelería</p>
@@ -150,61 +148,25 @@
               </div>
             </div>
           </article>
-        </div>
-      </section>
-
-      <section class="producciones-section" id="producciones" aria-labelledby="producciones-title">
-        <div class="shell">
-          <div class="producciones__intro" data-reveal>
-            <div>
-              <p class="eyebrow">Producciones</p>
-              <h2 id="producciones-title">Vídeo e imagen para marcas que se comen.</h2>
-              <p class="lead">Piezas cortas y verticales, pensadas para redes: producto, local y ambiente. Esta lista irá creciendo.</p>
+          <article class="product-card" data-reveal>
+            <div class="product-card__copy">
+              <p class="eyebrow">Audiovisual</p>
+              <h3>Producciones</h3>
+              <p>Escaparate de piezas. La rama que está ahora: Mechada Hot.</p>
+              <a class="button button--dark" href="producciones/">Ir a Producciones</a>
             </div>
-            <a class="button button--dark" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">Encargar una pieza</a>
-          </div>
-
-          <div class="producciones__groups" data-reveal>
-            <details class="prod-group" name="producciones">
-              <summary>
-                <span class="prod-group__name">Alimentación</span>
-                <span class="prod-group__count">En preparación</span>
-                <span class="prod-group__arrow" aria-hidden="true"></span>
-              </summary>
-              <div class="prod-group__body">
-                <p>Producto, sala y equipo para marcas de alimentación: conservas, obradores, distribución y tiendas.</p>
-                <p class="prod-empty">Las primeras piezas están en preparación. Si quieres que la tuya sea una de ellas, escríbenos.</p>
+            <div class="product-card__visual">
+              <div class="product-card__phone">
+                <img
+                  src="producciones/mechada-hot/portada.jpg"
+                  alt="Mechada Hot, muestra de producto a la brasa"
+                  width="1080"
+                  height="1920"
+                  loading="lazy"
+                >
               </div>
-            </details>
-
-            <details class="prod-group" name="producciones" open>
-              <summary>
-                <span class="prod-group__name">Hamburguesas</span>
-                <span class="prod-group__count">1 pieza</span>
-                <span class="prod-group__arrow" aria-hidden="true"></span>
-              </summary>
-              <div class="prod-group__body">
-                <p>Anuncios verticales de producto para hamburgueserías, food trucks y festivales gastronómicos.</p>
-                <ul class="prod-list">
-                  <li>
-                    <article class="prod-item prod-item--slate">
-                      <figure class="prod-still">
-                        <img src="assets/media/producciones/mechada-hot.jpg" alt="Fotograma de muestra: hamburguesa a la brasa, rotulada 9:16 take 01. Imagen generada, no es un local real." width="1080" height="1920" loading="lazy" decoding="async">
-                      </figure>
-                      <div class="prod-item__copy">
-                        <div class="prod-item__head">
-                          <h4>Mechada Hot</h4>
-                          <span class="status-pill">Muestra propia</span>
-                        </div>
-                        <p>Marca de demostración creada para enseñar el formato: vídeo vertical de producto, imágenes en alta resolución y textos de campaña.</p>
-                        <p class="small">Las imágenes y el vídeo están generados con inteligencia artificial a partir de una descripción escrita. No corresponden a ningún local real.</p>
-                        <a class="button button--light" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">Pedir una pieza así</a>
-                      </div>
-                    </article>
-                  </li>
-                </ul>
-              </div>
-            </details>
+            </div>
+          </article>
           </div>
         </div>
       </section>
@@ -239,8 +201,8 @@
           </div>
           <nav class="footer__nav" aria-label="Navegación del pie">
             <a href="./">Inicio</a>
-            <a href="#producciones">Producciones</a>
             <a href="faena/">FAENA</a>
+            <a href="producciones/">Producciones</a>
             <a href="proyectos/">Proyectos</a>
           </nav>
         </div>
