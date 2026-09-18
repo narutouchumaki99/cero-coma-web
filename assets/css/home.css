@@ -29,10 +29,10 @@
 }
 
 .home-hero__copy h1 {
-  max-width: 11ch;
-  font-size: clamp(3rem, 7.6vw, 6.6rem);
+  max-width: 16ch;
+  font-size: clamp(2.6rem, 5.6vw, 4.6rem);
   font-weight: 580;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
 }
 
 .hero-word {
@@ -428,7 +428,7 @@
   }
 
   .home-hero__copy h1 {
-    font-size: clamp(2.8rem, 13vw, 4.6rem);
+    font-size: clamp(2.2rem, 9.5vw, 3.4rem);
   }
 
   .hero-ody {
@@ -629,5 +629,111 @@
 @media (max-width: 800px) {
   .product-card {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Portada — sección principal: composición editorial y línea de prueba */
+.home-hero__proof {
+  margin-top: var(--space-6);
+  color: var(--dark-muted);
+  font-size: 0.95rem;
+}
+
+.home-hero__proof a {
+  color: var(--foil-hi);
+  text-underline-offset: 0.25em;
+}
+
+.home-hero__stack {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: end;
+}
+
+.home-hero__shot {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.home-hero__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.home-hero__shot--main {
+  grid-area: 1 / 1 / 2 / 7;
+  max-height: 32rem;
+  border: 1px solid rgb(240 217 160 / 22%);
+}
+
+
+.home-hero__credit {
+  grid-area: 2 / 1 / 3 / 5;
+  margin: var(--space-6) 0 0;
+  color: var(--dark-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.home-hero__credit span {
+  margin-right: var(--space-2);
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 48rem) {
+  .home-hero__grid {
+    padding-block: 1.5rem 3rem;
+    gap: var(--space-6);
+  }
+
+  .home-hero__stack {
+    order: -1;
+  }
+
+  .home-hero__shot--main {
+    grid-column: 1 / 7;
+    max-height: 27svh;
+  }
+
+
+  .home-hero__credit {
+    grid-column: 1 / 7;
+    margin-top: var(--space-4);
+  }
+
+  .home-hero__proof {
+    margin-top: var(--space-4);
+  }
+}
+
+/* FAENA presentada como marca aparte dentro de la portada */
+.product-card--marca {
+  color: var(--white);
+  background: var(--zero);
+  border-color: rgb(240 217 160 / 20%);
+}
+
+.product-card--marca .eyebrow {
+  color: var(--foil-hi);
+}
+
+.product-card--marca .product-card__copy p {
+  color: var(--dark-muted);
+}
+
+.product-card__wordmark {
+  font-weight: 620;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 48rem) {
+  .home-hero__shot--main img {
+    height: 100%;
+    object-position: 50% 42%;
   }
 }

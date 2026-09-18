@@ -8,5 +8,6 @@ Disallow: /docs/
 Disallow: /tests/
 Disallow: /recursos-locales/
 Disallow: /README.md
+Disallow: /CLAUDE.md
 
 Sitemap: https://cerocomasoluciones.com/sitemap.xml
