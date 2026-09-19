@@ -288,7 +288,7 @@
   padding-block: clamp(3rem, 8vw, 6rem);
   border-bottom: 1px solid var(--light-border);
   opacity: 1;
-  transition: border-color 360ms var(--ease-out);
+  transition: border-color var(--motion-short) var(--ease-out);
 }
 
 .work-step.is-active {

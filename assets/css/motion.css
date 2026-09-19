@@ -1,65 +1,52 @@
-/* Transiciones entre páginas y apariciones al hacer scroll.
-   Todo el movimiento queda desactivado con prefers-reduced-motion. */
+/* Movimiento del sitio.
+   Regla: el movimiento confirma, no adorna. Solo se animan opacidad y
+   posición o escala — nunca desenfoques, anchos ni sombras, que obligan al
+   móvil a repintar en cada fotograma. Nada dura más de 400 ms.
+   Todo queda desactivado con prefers-reduced-motion. */
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Difuminado entre páginas (View Transitions, navegación entre documentos). */
+  /* Cambio de página: fundido corto, sin desenfoque. */
   @view-transition {
     navigation: auto;
   }
 
   ::view-transition-old(root) {
-    animation: page-out 240ms ease both;
+    animation: pagina-sale 120ms ease both;
   }
 
   ::view-transition-new(root) {
-    animation: page-in 420ms var(--ease-out) both;
+    animation: pagina-entra 240ms var(--ease-out) both;
   }
 
-  /* Alternativa para navegadores sin View Transitions: el JS añade estas clases. */
+  /* Respaldo para navegadores sin transiciones de vista: solo la entrada.
+     La salida no se anima a propósito — esperar antes de navegar se nota
+     como lentitud, y el corte limpio no. */
   html.page-enter body {
-    animation: page-in 420ms var(--ease-out) both;
+    animation: pagina-entra 240ms var(--ease-out) both;
   }
 
-  html.page-leave body {
-    opacity: 0;
-    filter: blur(10px);
-    transition: opacity 240ms ease, filter 240ms ease;
-  }
-
-  /* Aparición de bloques al entrar en pantalla. Solo se oculta si hay JS. */
+  /* Entrada de bloques al aparecer en pantalla. Solo se oculta si hay JS,
+     y una sola vez por bloque. */
   html.js-motion [data-reveal] {
     opacity: 0;
-    transform: translateY(1.4rem);
-    filter: blur(9px);
+    transform: translateY(12px);
     transition:
-      opacity 680ms var(--ease-out),
-      transform 680ms var(--ease-out),
-      filter 680ms var(--ease-out);
+      opacity var(--motion-enter) var(--ease-out),
+      transform var(--motion-enter) var(--ease-out);
     transition-delay: var(--reveal-delay, 0ms);
   }
 
   html.js-motion [data-reveal].is-revealed {
     opacity: 1;
     transform: none;
-    filter: none;
   }
 }
 
-@keyframes page-out {
-  to {
-    opacity: 0;
-    filter: blur(10px);
-  }
+@keyframes pagina-sale {
+  to { opacity: 0; }
 }
 
-@keyframes page-in {
-  from {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
-  to {
-    opacity: 1;
-    filter: none;
-  }
+@keyframes pagina-entra {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

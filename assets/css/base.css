@@ -272,7 +272,7 @@ h3 {
 .button:hover::after {
   translate: 140% 0;
   opacity: 1;
-  transition: translate 0.62s var(--ease-out), opacity 0.16s linear;
+  transition: translate var(--motion-short) var(--ease-out), opacity 0.12s linear;
 }
 
 .button:active {

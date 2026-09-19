@@ -4,26 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://cerocomasoluciones.com/">
-    <meta name="theme-color" content="#0d0e0f">
-    <meta name="description" content="Cero Coma, en Valladolid: productos y herramientas que ya funcionan. Conoce FAENA, la carta digital con QR permanente.">
+    <meta name="theme-color" content="#08080a">
+    <meta name="description" content="CeroComa construye soluciones prácticas con inteligencia artificial. El primer producto es FAENA: la carta digital para bares y restaurantes, montada y entregada en dos o tres días.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="Cero Coma — Productos que ya funcionan">
-    <meta property="og:description" content="Reducimos la complejidad y dejamos herramientas listas para usar. FAENA es nuestro producto para hostelería.">
+    <meta property="og:title" content="CeroComa — Soluciones prácticas con IA">
+    <meta property="og:description" content="La IA no viene a quitarte el trabajo. Viene a quitarte el marrón. Soluciones prácticas con inteligencia artificial, por y para humanos.">
     <meta property="og:url" content="https://cerocomasoluciones.com/">
-    <meta property="og:site_name" content="Cero Coma">
+    <meta property="og:site_name" content="CeroComa">
     <meta property="og:image" content="https://cerocomasoluciones.com/assets/media/social/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Cero Coma. Lo complicado, listo para funcionar.">
+    <meta property="og:image:alt" content="CeroComa. Soluciones prácticas con inteligencia artificial.">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Cero Coma — Productos que ya funcionan</title>
+    <title>CeroComa — Soluciones prácticas con IA</title>
     <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="assets/media/brand/approved/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/media/brand/approved/favicon.ico" sizes="any">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="assets/css/tokens.css">
     <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/portada.css?v=2">
     <link rel="stylesheet" href="assets/css/motion.css">
     <!--email_off--><script type="application/ld+json">
       {
@@ -32,12 +35,12 @@
           {
             "@type": "Organization",
             "@id": "https://cerocomasoluciones.com/#organization",
-            "name": "Cero Coma",
+            "name": "CeroComa",
             "url": "https://cerocomasoluciones.com/",
             "logo": "https://cerocomasoluciones.com/assets/media/social/logo-512.png",
             "image": "https://cerocomasoluciones.com/assets/media/social/og-image.png",
-            "description": "Cero Coma convierte procesos complejos en productos y herramientas listos para funcionar.",
-            "slogan": "De la intención a la realidad.",
+            "description": "CeroComa crea soluciones prácticas utilizando inteligencia artificial, por y para humanos.",
+            "slogan": "Soluciones prácticas con inteligencia artificial.",
             "email": "cerocomasoluciones@gmail.com",
             "telephone": "+34643403723",
             "founder": { "@type": "Person", "name": "Othmane Abdellouli Atti" },
@@ -54,7 +57,7 @@
             "@type": "WebSite",
             "@id": "https://cerocomasoluciones.com/#website",
             "url": "https://cerocomasoluciones.com/",
-            "name": "Cero Coma",
+            "name": "CeroComa",
             "publisher": { "@id": "https://cerocomasoluciones.com/#organization" },
             "inLanguage": "es-ES"
           }
@@ -62,18 +65,17 @@
       }
     </script><!--/email_off-->
   </head>
-  <body data-site-root="./">
+  <body class="portada" data-site-root="./">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="site-header">
       <div class="site-header__inner shell">
-        <a class="brand-link" href="./" aria-label="Cero Coma, inicio">
-          <img src="assets/media/brand/approved/wordmark-horizontal-brand.svg" alt="Cero Coma" width="2200" height="500">
+        <a class="brand-link" href="./" aria-label="CeroComa, inicio">
+          <img src="assets/media/brand/approved/wordmark-horizontal-white.svg" alt="CeroComa" width="2200" height="500">
         </a>
         <nav class="desktop-nav" aria-label="Navegación principal">
-          <a href="./" aria-current="page">Inicio</a>
-          <a href="#productos">Productos</a>
-          <a href="producciones/">Producciones</a>
+          <a href="#faena">FAENA</a>
+          <a href="producciones/">Trabajo</a>
           <a href="#contacto">Contacto</a>
         </nav>
         <button class="icon-button menu-trigger" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-expanded="false" data-menu-open>
@@ -85,106 +87,149 @@
     <dialog class="menu-dialog" aria-label="Menú principal" data-menu-dialog>
       <div class="menu-dialog__inner">
         <div class="menu-dialog__top">
-          <span class="menu-dialog__brand">Cero Coma</span>
+          <span class="menu-dialog__brand">CeroComa</span>
           <button class="icon-button" type="button" aria-label="Cerrar menú" data-menu-close>
             <img src="assets/icons/web/close.svg" alt="" aria-hidden="true" width="24" height="24">
           </button>
         </div>
         <nav aria-label="Navegación móvil">
           <a href="./" aria-current="page">Inicio</a>
-          <a href="#productos">Productos</a>
-          <a href="producciones/">Producciones</a>
+          <a href="#faena">FAENA</a>
+          <a href="producciones/">Trabajo</a>
           <a href="#contacto">Contacto</a>
         </nav>
-        <p class="menu-dialog__foot">De la intención a la realidad.</p>
+        <p class="menu-dialog__foot">Soluciones prácticas con inteligencia artificial.</p>
       </div>
     </dialog>
 
     <main id="contenido" tabindex="-1">
-      <section class="home-hero" aria-labelledby="hero-title">
-        <div class="home-hero__grid shell">
-          <div class="home-hero__copy" data-reveal>
-            <p class="eyebrow">Estudio · Valladolid</p>
-            <h1 id="hero-title">Construimos lo que enseñamos.</h1>
-            <p class="lead">Fotografía que da hambre y productos digitales que se usan de verdad. Todo lo de esta web está funcionando ya.</p>
-            <div class="home-hero__actions">
-              <a class="button button--light" href="producciones/">Ver el trabajo</a>
-              <a class="button button--quiet" href="https://wa.me/34643403723?text=Hola%203tmen%2C%20te%20escribo%20desde%20la%20web.">Hablar con 3tmen</a>
-            </div>
-            <p class="home-hero__proof">3tmen · Valladolid · <a href="tel:+34643403723">643 40 37 23</a></p>
+      <section class="apertura" aria-labelledby="apertura-titulo">
+        <div class="apertura__contenido shell">
+          <p class="marca-tecnica">CeroComa · Soluciones con IA</p>
+          <h1 id="apertura-titulo">La IA no viene a quitarte el trabajo. Viene a quitarte <em>el marrón</em>.</h1>
+          <p class="apertura__bajada">Construimos soluciones prácticas con inteligencia artificial. Por y para humanos.</p>
+          <div class="acciones">
+            <a class="boton-solido" href="https://wa.me/34643403723?text=Hola%203tmen%2C%20te%20escribo%20desde%20la%20web.">Escríbeme por WhatsApp</a>
+            <a class="boton-linea" href="#faena">Ver FAENA</a>
           </div>
-          <div class="home-hero__stack" data-reveal style="--reveal-delay: 140ms">
-            <figure class="home-hero__shot home-hero__shot--main">
-              <img src="assets/media/home/hero-escena.webp" alt="Una hamburguesa recién montada, servida en bandeja junto a la parrilla" width="1000" height="1334" fetchpriority="high" decoding="async">
-            </figure>
-            <p class="home-hero__credit"><span>01</span> Producciones · pieza hecha para un cliente</p>
-          </div>
+          <p class="apertura__pie">
+            <span>Castilla y León</span>
+            <span>Y online, donde haga falta</span>
+            <span>Hablas conmigo, 3tmen</span>
+          </p>
         </div>
       </section>
 
-      <section class="products-section" id="productos" aria-labelledby="products-title">
+      <section class="seccion declaracion" aria-labelledby="declaracion-titulo">
         <div class="shell">
-          <div class="products-section__head" data-reveal>
-            <p class="eyebrow">El estudio y su marca</p>
-            <h2 id="products-title">Un servicio y un producto. No son lo mismo.</h2>
-            <p class="lead">Cero Coma trabaja por encargo. FAENA es una marca propia, con su sitio y su vida aparte.</p>
+          <h2 class="marca-tecnica" id="declaracion-titulo">Qué es esto</h2>
+          <p>CeroComa es una organización que nace <strong>por y para los humanos</strong>. Aquí la inteligencia artificial no es el discurso: es la herramienta.</p>
+        </div>
+      </section>
+
+      <section class="seccion producto" id="faena" aria-labelledby="faena-titulo">
+        <div class="shell producto__reja">
+          <div>
+            <p class="marca-tecnica">Producto 01 · En producción</p>
+            <h2 class="producto__nombre" id="faena-titulo">FAENA</h2>
+            <p class="frase">La carta digital para bares y restaurantes. Nos mandas tu carta, te la montamos y te entregamos la aplicación y los códigos QR funcionando. Tú no configuras nada.</p>
+            <ul class="ficha">
+              <li><b>Alta</b><span>Dos o tres días</span></li>
+              <li><b>Incluye</b><span>Configuración, aplicación y códigos QR</span></li>
+              <li><b>Cambios</b><span>La carta se edita cuando quieras; el QR no se reimprime</span></li>
+              <li><b>Soporte</b><span>Hablas conmigo, no con una centralita</span></li>
+            </ul>
+            <div class="acciones">
+              <a class="boton-solido" href="faena/">Ver FAENA</a>
+              <a class="boton-linea" href="https://faena-web-two.vercel.app/menu/klk" target="_blank" rel="noreferrer">Abrir una carta de ejemplo</a>
+            </div>
           </div>
-          <div class="products-stack">
-          <article class="product-card" data-reveal>
-            <div class="product-card__copy">
-              <p class="eyebrow">Servicio de Cero Coma</p>
-              <h3>Producciones</h3>
-              <p>Fotografía y vídeo de tu producto puesto en escena: el plato de cerca, el local en marcha y la pieza lista para publicar.</p>
-              <a class="button button--dark" href="producciones/">Ver el trabajo</a>
-            </div>
-            <div class="product-card__visual">
-              <div class="product-card__strip" aria-hidden="true">
-                <img src="assets/media/home/tira/producto-01.webp" alt="" width="520" height="693" loading="lazy" decoding="async">
-                <img src="assets/media/home/tira/escena-01.webp" alt="" width="520" height="693" loading="lazy" decoding="async">
-                <img src="assets/media/home/tira/escena-02.webp" alt="" width="520" height="693" loading="lazy" decoding="async">
-              </div>
-            </div>
-          </article>
-          <article class="product-card product-card--marca" data-reveal>
-            <div class="product-card__copy">
-              <p class="eyebrow">Marca propia · hostelería</p>
-              <h3 class="product-card__wordmark">FAENA</h3>
-              <p>La carta digital para bares y restaurantes: se edita en un minuto y el QR no hay que reimprimirlo nunca. Va por libre, con su propia web.</p>
-              <a class="button button--light" href="faena/">Entrar en FAENA</a>
-            </div>
-            <div class="product-card__visual">
-              <div class="product-card__phone">
-                <img
-                  src="https://res.cloudinary.com/g8akd3eg/image/upload/v1788543587/faena/skin/home-phone.png"
-                  alt="FAENA en el móvil: Todo listo para abrir"
-                  width="390"
-                  height="844"
-                  loading="lazy"
-                >
-              </div>
-            </div>
-          </article>
+          <div class="producto__pantalla">
+            <img
+              src="assets/media/home/faena-movil.webp"
+              alt="FAENA abierta en un móvil, con la carta lista para publicar"
+              width="390"
+              height="844"
+              loading="lazy"
+            >
           </div>
         </div>
       </section>
 
-      <section class="contact-section" id="contacto" aria-labelledby="contact-title" data-contact-region>
-        <div class="contact-section__grid shell">
-          <div data-reveal>
-            <p class="eyebrow">El siguiente paso</p>
-            <h2 id="contact-title">¿Qué necesitas poner en marcha?</h2>
-            <p class="lead">Cuéntanos el trabajo que hoy se atasca. La primera conversación sirve para saber si podemos hacerlo más simple.</p>
-            <p data-contact-state>Elige un canal de contacto.</p>
-            <div class="contact-links" data-contact-links>
-              <a class="button button--light" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
-              <a class="button button--quiet" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">Abrir WhatsApp</a>
-              <a class="button button--quiet" href="tel:+34643403723">Llamar</a>
+      <section class="seccion muestras" aria-labelledby="muestras-titulo">
+        <div class="shell">
+          <p class="marca-tecnica">Muestra · Imagen de producto</p>
+          <h2 class="seccion__titulo" id="muestras-titulo">Tu producto, como se merece.</h2>
+          <p class="frase">Estas piezas son demostraciones propias: están hechas para enseñar el nivel, no son encargos de un cliente. Las tuyas se hacen con tu producto.</p>
+          <div class="muestras__tira">
+            <figure>
+              <img src="assets/media/home/tira/producto-01.webp" alt="Hamburguesa con carne mechada y queso fundido sobre la parrilla" width="520" height="693" loading="lazy" decoding="async">
+              <figcaption class="muestras__sello">Demostración</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/media/home/tira/escena-01.webp" alt="La hamburguesa servida en bandeja, junto a la parrilla" width="520" height="693" loading="lazy" decoding="async">
+              <figcaption class="muestras__sello">Demostración</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/media/home/tira/escena-02.webp" alt="El puesto de comida iluminado al anochecer" width="520" height="693" loading="lazy" decoding="async">
+              <figcaption class="muestras__sello">Demostración</figcaption>
+            </figure>
+          </div>
+          <div class="acciones">
+            <a class="boton-linea" href="producciones/">Ver el trabajo completo</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion" aria-labelledby="razones-titulo">
+        <div class="shell">
+          <p class="marca-tecnica">Por qué aquí</p>
+          <h2 class="seccion__titulo" id="razones-titulo">Rápido, directo y con criterio.</h2>
+          <div class="razones">
+            <div>
+              <span class="razones__num">01</span>
+              <h3>Rápido</h3>
+              <p>Dos o tres días desde que me lo cuentas hasta que lo tienes funcionando. No hay cadena de mando que consultar.</p>
+            </div>
+            <div>
+              <span class="razones__num">02</span>
+              <h3>Directo</h3>
+              <p>Hablas conmigo de principio a fin. La misma persona que responde el WhatsApp es la que monta tu carta.</p>
+            </div>
+            <div>
+              <span class="razones__num">03</span>
+              <h3>Con criterio</h3>
+              <p>Formación de verdad detrás de cada decisión. Esto está estudiado, no copiado de una plantilla.</p>
             </div>
           </div>
-          <aside class="contact-aside" data-reveal style="--reveal-delay: 120ms">
-            <p class="eyebrow">Valladolid</p>
-            <p>Trabajamos desde Castilla y León con negocios que necesitan una salida concreta, no un discurso.</p>
-          </aside>
+        </div>
+      </section>
+
+      <section class="seccion" id="contacto" aria-labelledby="contacto-titulo" data-contact-region>
+        <div class="shell contacto__reja">
+          <div>
+            <p class="marca-tecnica">Siguiente paso</p>
+            <h2 class="seccion__titulo" id="contacto-titulo">Cuéntame qué te quita tiempo.</h2>
+            <form class="formulario" data-form-whatsapp>
+              <label for="campo-negocio">Tu negocio
+                <input id="campo-negocio" name="negocio" type="text" autocomplete="organization" placeholder="Bar El Ejemplo">
+              </label>
+              <label for="campo-mensaje">Qué necesitas
+                <textarea id="campo-mensaje" name="mensaje" placeholder="Tengo la carta en papel y quiero pasarla a QR"></textarea>
+              </label>
+              <button class="boton-solido" type="submit">Enviar por WhatsApp</button>
+              <p class="formulario__nota">Se abre WhatsApp con el mensaje escrito. No se guarda nada en la web.</p>
+            </form>
+          </div>
+          <div>
+            <p class="marca-tecnica">O directamente</p>
+            <ul class="canales" data-contact-links>
+              <li><a href="https://wa.me/34643403723?text=Hola%203tmen%2C%20te%20escribo%20desde%20la%20web." target="_blank" rel="noreferrer"><span>WhatsApp</span><b>643 40 37 23</b></a></li>
+              <li><a href="tel:+34643403723"><span>Llamada</span><b>643 40 37 23</b></a></li>
+              <li><a href="mailto:cerocomasoluciones@gmail.com"><span>Correo</span><b>cerocomasoluciones@gmail.com</b></a></li>
+            </ul>
+            <p class="formulario__nota" data-contact-state>Respondo yo, 3tmen. Castilla y León y online.</p>
+          </div>
         </div>
       </section>
     </main>
@@ -193,29 +238,30 @@
       <div class="shell">
         <div class="footer__top">
           <div>
-            <p class="eyebrow">Cero Coma</p>
-            <img class="footer__wordmark" src="assets/media/brand/approved/wordmark-horizontal-white.svg" alt="Cero Coma" width="2200" height="500">
+            <p class="eyebrow">CeroComa</p>
+            <img class="footer__wordmark" src="assets/media/brand/approved/wordmark-horizontal-white.svg" alt="CeroComa" width="2200" height="500">
           </div>
           <nav class="footer__nav" aria-label="Navegación del pie">
             <a href="./">Inicio</a>
             <a href="faena/">FAENA</a>
-            <a href="producciones/">Producciones</a>
+            <a href="producciones/">Trabajo</a>
             <a href="proyectos/">Proyectos</a>
           </nav>
         </div>
         <div class="footer__bottom">
-          <p>De la intención a la realidad.</p>
+          <p>Soluciones prácticas con inteligencia artificial.</p>
           <nav class="footer__legal" aria-label="Información legal">
             <a href="aviso-legal/">Aviso legal</a>
             <a href="privacidad/">Privacidad</a>
           </nav>
-          <p>© <span data-current-year>2026</span> Cero Coma</p>
+          <p>© <span data-current-year>2026</span> CeroComa</p>
         </div>
       </div>
     </footer>
 
     <script src="assets/js/config.js" defer></script>
     <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/portada.js?v=1" defer></script>
     <script src="assets/js/motion.js" defer></script>
   </body>
 </html>

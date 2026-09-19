@@ -54,6 +54,7 @@
   --header-height: 5rem;
   --motion-micro: 160ms;
   --motion-short: 240ms;
+  --motion-enter: 320ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 

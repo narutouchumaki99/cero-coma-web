@@ -277,7 +277,7 @@
   border-width: 1px;
   border-style: solid;
   border-radius: 1.75rem;
-  transition: width var(--motion-short) var(--ease-out);
+  /* Sin transición: animar el ancho obliga a recalcular la página. */
 }
 
 .carta-demo .public-preview .public-preview__hero {

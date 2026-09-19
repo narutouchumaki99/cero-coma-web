@@ -1,0 +1,480 @@
+/* Portada CeroComa — tratamiento oscuro, técnico y con poco texto.
+   Dirección fijada por el operador (18-sep-2026): referencias Anduril Arsenal
+   e Immersive Garden. Fondo negro, titulares grandes, etiquetas monoespaciadas,
+   ninguna tarjeta blanca redondeada. */
+
+:root {
+  --noche: #08080a;
+  --noche-alta: #101013;
+  --filete: #23242a;
+  --hueso: #f4f2ee;
+  --hueso-tenue: #9a978f;
+  --oro: #e3c489;
+  --menta: #45f2ae;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+body.portada {
+  background: var(--noche);
+  color: var(--hueso);
+}
+
+/* --- Cabecera ---------------------------------------------------------- */
+
+body.portada .site-header {
+  background: color-mix(in srgb, var(--noche) 88%, transparent);
+  border-bottom: 1px solid var(--filete);
+}
+
+body.portada .site-header .brand,
+body.portada .nav__link {
+  color: var(--hueso);
+}
+
+body.portada .nav__link {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body.portada .nav__link[aria-current="page"] {
+  color: var(--oro);
+}
+
+body.portada .icon-button {
+  color: var(--hueso);
+  border-color: var(--filete);
+}
+
+/* --- Piezas comunes ---------------------------------------------------- */
+
+.marca-tecnica {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 var(--space-6);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hueso-tenue);
+}
+
+.marca-tecnica::before {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: var(--oro);
+}
+
+.seccion {
+  position: relative;
+  padding-block: clamp(4.5rem, 12vw, 9rem);
+  border-top: 1px solid var(--filete);
+}
+
+.seccion__titulo {
+  margin: 0 0 var(--space-6);
+  font-size: clamp(2rem, 5.4vw, 3.6rem);
+  font-weight: 430;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.frase {
+  max-width: 34ch;
+  color: var(--hueso-tenue);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+}
+
+.ficha {
+  display: grid;
+  gap: 0.6rem;
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--hueso-tenue);
+}
+
+.ficha li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  padding-block: 0.6rem;
+  border-top: 1px solid var(--filete);
+}
+
+.ficha b {
+  color: var(--oro);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.boton-solido,
+.boton-linea {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background-color var(--motion-micro) var(--ease-out),
+              color var(--motion-micro) var(--ease-out),
+              border-color var(--motion-micro) var(--ease-out);
+}
+
+.boton-solido {
+  color: var(--noche);
+  background: var(--hueso);
+  border: 1px solid var(--hueso);
+}
+
+.boton-solido:hover { background: var(--oro); border-color: var(--oro); }
+
+.boton-linea {
+  color: var(--hueso);
+  background: transparent;
+  border: 1px solid var(--filete);
+}
+
+.boton-linea:hover { border-color: var(--oro); color: var(--oro); }
+
+.boton-solido:active,
+.boton-linea:active { scale: 0.985; }
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+/* --- Apertura ---------------------------------------------------------- */
+
+.apertura {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-height: calc(100svh - var(--header-height));
+  padding-block: clamp(3rem, 9vw, 7rem);
+  overflow: hidden;
+}
+
+.apertura::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent 0 calc(25% - 1px), rgb(255 255 255 / 4%) 25%, transparent calc(25% + 1px) calc(50% - 1px), rgb(227 196 137 / 12%) 50%, transparent calc(50% + 1px) calc(75% - 1px), rgb(255 255 255 / 4%) 75%, transparent calc(75% + 1px)),
+    radial-gradient(120% 80% at 80% 0%, rgb(227 196 137 / 8%), transparent 60%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent);
+}
+
+.apertura__contenido {
+  position: relative;
+  max-width: 56rem;
+}
+
+.apertura h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 8.2vw, 6rem);
+  font-weight: 420;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.apertura h1 em {
+  font-style: normal;
+  color: var(--oro);
+}
+
+.apertura__bajada {
+  max-width: 44ch;
+  margin: var(--space-6) 0 0;
+  color: var(--hueso-tenue);
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+}
+
+.apertura__pie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: var(--space-10) 0 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hueso-tenue);
+}
+
+.apertura__pie span::before {
+  content: "· ";
+  color: var(--oro);
+}
+
+/* --- Declaración ------------------------------------------------------- */
+
+.declaracion p {
+  max-width: 24ch;
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.declaracion strong {
+  color: var(--oro);
+  font-weight: 400;
+}
+
+/* --- Producto ---------------------------------------------------------- */
+
+.producto__reja {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.producto__nombre {
+  margin: 0;
+  font-size: clamp(3rem, 11vw, 7rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.producto__pantalla {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 17rem);
+  padding: 0.6rem;
+  border: 1px solid var(--filete);
+  border-radius: 1.6rem;
+  background: var(--noche-alta);
+}
+
+.producto__pantalla img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.15rem;
+}
+
+/* --- Muestras ---------------------------------------------------------- */
+
+.muestras__tira {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: var(--space-10);
+}
+
+.muestras__tira figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--filete);
+}
+
+.muestras__tira img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: scale var(--motion-short) var(--ease-out);
+}
+
+.muestras__tira figure:hover img { scale: 1.02; }
+
+.muestras__sello {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.2rem 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--noche);
+  background: var(--oro);
+}
+
+/* --- Razones ----------------------------------------------------------- */
+
+.razones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: var(--space-10);
+}
+
+.razones h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 560;
+  letter-spacing: -0.01em;
+}
+
+.razones p {
+  margin: 0;
+  color: var(--hueso-tenue);
+  font-size: 0.98rem;
+}
+
+.razones__num {
+  display: block;
+  margin-bottom: var(--space-4);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--oro);
+}
+
+/* --- Contacto ---------------------------------------------------------- */
+
+.contacto__reja {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.formulario {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.formulario label {
+  display: grid;
+  gap: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hueso-tenue);
+}
+
+.formulario input,
+.formulario textarea {
+  font: inherit;
+  padding: 0.85rem 1rem;
+  color: var(--hueso);
+  background: var(--noche-alta);
+  border: 1px solid var(--filete);
+  border-radius: 0.6rem;
+  transition: border-color var(--motion-micro) var(--ease-out);
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: var(--oro);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.formulario textarea { resize: vertical; min-height: 6rem; }
+
+.formulario button {
+  justify-self: start;
+  font: inherit;
+  cursor: pointer;
+}
+
+.formulario__nota {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--hueso-tenue);
+}
+
+.canales {
+  display: grid;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.canales a {
+  display: grid;
+  gap: 0.15rem;
+  padding-block: var(--space-4);
+  color: var(--hueso);
+  text-decoration: none;
+  border-top: 1px solid var(--filete);
+  transition: color var(--motion-micro) var(--ease-out);
+}
+
+.canales a:hover { color: var(--oro); }
+
+.canales span {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hueso-tenue);
+}
+
+.canales b {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* --- Pie --------------------------------------------------------------- */
+
+body.portada .site-footer {
+  color: var(--hueso-tenue);
+  background: var(--noche);
+  border-top: 1px solid var(--filete);
+}
+
+body.portada .site-footer a { color: var(--hueso-tenue); }
+body.portada .site-footer a:hover { color: var(--oro); }
+
+/* --- Ancho de móvil ---------------------------------------------------- */
+
+@media (max-width: 62rem) {
+  .producto__reja,
+  .contacto__reja {
+    grid-template-columns: 1fr;
+  }
+
+  .razones {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 40rem) {
+  .muestras__tira {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .muestras__tira figure:last-child { display: none; }
+
+  .ficha li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .acciones .boton-solido,
+  .acciones .boton-linea {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

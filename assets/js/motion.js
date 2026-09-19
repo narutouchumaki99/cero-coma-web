@@ -12,7 +12,7 @@
     document.querySelectorAll("[data-reveal-stagger]").forEach((group) => {
       Array.from(group.children).forEach((child, index) => {
         if (!child.hasAttribute("data-reveal")) child.setAttribute("data-reveal", "");
-        child.style.setProperty("--reveal-delay", `${index * 90}ms`);
+        child.style.setProperty("--reveal-delay", `${Math.min(index, 4) * 60}ms`);
       });
     });
 
@@ -44,39 +44,12 @@
   }
 
   function setupPageFade() {
-    // Con View Transitions entre documentos el navegador ya difumina la navegación.
+    // Con transiciones de vista el navegador funde la navegación por su cuenta.
     if ("onpagereveal" in window) return;
 
+    // Respaldo: solo se funde la entrada. Interceptar el clic para animar la
+    // salida obligaba a esperar antes de navegar, y esa espera se nota.
     root.classList.add("page-enter");
-
-    window.addEventListener("pageshow", (event) => {
-      if (event.persisted) root.classList.remove("page-leave");
-    });
-
-    document.addEventListener("click", (event) => {
-      if (event.defaultPrevented || event.button !== 0) return;
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-
-      const link = event.target.closest("a[href]");
-      if (!link || link.target || link.hasAttribute("download")) return;
-
-      let destination;
-      try {
-        destination = new URL(link.href, window.location.href);
-      } catch {
-        return;
-      }
-
-      if (destination.origin !== window.location.origin) return;
-      const samePage = destination.pathname === window.location.pathname && destination.search === window.location.search;
-      if (samePage && destination.hash) return;
-
-      event.preventDefault();
-      root.classList.add("page-leave");
-      window.setTimeout(() => {
-        window.location.href = destination.href;
-      }, 250);
-    });
   }
 
   function setupRecorrido() {
