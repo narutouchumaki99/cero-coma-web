@@ -123,6 +123,7 @@
 
 .hero-ody__frame {
   position: relative;
+  height: auto;
   aspect-ratio: 1;
   overflow: hidden;
   background: #000;
@@ -387,6 +388,7 @@
 
 .contact-ody img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1;
   object-fit: contain;
   background: #000;
@@ -456,6 +458,7 @@
 
   .ody-stage__window {
     grid-row: 1 / 3;
+    height: auto;
     aspect-ratio: 1;
     align-self: center;
   }
@@ -603,6 +606,7 @@
 
 .product-card__strip img {
   width: 100%;
+  height: auto;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 0.4rem;

@@ -641,6 +641,7 @@
 }
 
 .example-card__frame--phone img {
+  height: auto;
   aspect-ratio: 390 / 844;
   object-position: top center;
 }
