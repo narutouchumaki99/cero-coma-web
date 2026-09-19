@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://cerocomasoluciones.com/producciones/">
     <meta name="theme-color" content="#131010">
-    <meta name="description" content="Producciones: servicio a medida de imagen y vídeo para tu hamburguesa de carne mechada. Producto, puesta en escena y review.">
+    <meta name="description" content="Producciones de CeroComa: vídeo para redes, imágenes de producción y vídeo review para cualquier producto de comida. Tu producto merece ser el protagonista.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Producciones — Mechada Hot">
-    <meta property="og:description" content="Tu hamburguesa de carne mechada, puesta en escena. Producto, ambiente y review para redes.">
+    <meta property="og:title" content="Producciones — CeroComa">
+    <meta property="og:description" content="Tu producto merece ser el protagonista. Vídeo para redes, imágenes de producción y review, hechos con tu producto.">
     <meta property="og:url" content="https://cerocomasoluciones.com/producciones/">
     <meta property="og:image" content="https://cerocomasoluciones.com/producciones/fotos/producto/01.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <title>Producciones — Mechada Hot</title>
+    <title>Producciones — CeroComa</title>
     <link rel="icon" href="../assets/media/brand/approved/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,16 @@
         --display: "Archivo Black", "Arial Black", system-ui, sans-serif;
         --cuerpo: "Barlow", "Segoe UI", system-ui, sans-serif;
         --dato: "IBM Plex Mono", ui-monospace, monospace;
+        /* Un solo ritmo vertical para todas las secciones: es lo que faltaba
+           para que la página se lea igual en móvil, tablet y ordenador. */
+        --aire: clamp(3rem, 8vw, 6rem);
       }
+
       * { box-sizing: border-box; }
       html, body { margin: 0; }
+      /* Las chispas se salen del botón a propósito; que no arrastren la página. */
+      body { overflow-x: clip; }
+
       body {
         min-height: 100svh;
         background: var(--carbon);
@@ -41,8 +48,10 @@
         font-size: 17px;
         line-height: 1.55;
       }
+
       a { color: inherit; }
       img { display: block; max-width: 100%; }
+
       .tope {
         display: flex;
         justify-content: space-between;
@@ -55,13 +64,15 @@
         text-transform: uppercase;
         color: var(--humo);
       }
+
       .tope a { text-decoration: none; }
       .tope a:hover { color: var(--crema); }
+
       .caja {
         width: min(74rem, calc(100% - 2rem));
         margin-inline: auto;
       }
-      .hero { padding: 3.2rem 0 2.5rem; }
+
       .rotulo {
         margin: 0 0 0.7rem;
         font-family: var(--dato);
@@ -70,9 +81,36 @@
         text-transform: uppercase;
         color: var(--fuego);
       }
+
+      .bloque {
+        padding-block: var(--aire);
+        border-top: 1px solid var(--linea);
+      }
+
+      .bloque:first-of-type { border-top: 0; }
+
+      .bloque__titulo {
+        margin: 0 0 0.6rem;
+        font-family: var(--display);
+        font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+        line-height: 1.05;
+        color: var(--crema);
+        text-transform: uppercase;
+      }
+
+      .bloque__texto {
+        margin: 0;
+        max-width: 52ch;
+        color: var(--humo);
+      }
+
+      /* --- Apertura --- */
+
+      .hero { padding: var(--aire) 0; }
+
       h1 {
         margin: 0 0 1rem;
-        max-width: 14ch;
+        max-width: 15ch;
         font-family: var(--display);
         font-size: clamp(2.5rem, 8vw, 4.8rem);
         line-height: 0.94;
@@ -80,7 +118,13 @@
         color: var(--crema);
         text-transform: uppercase;
       }
-      .lead { margin: 0 0 2.6rem; max-width: 46ch; color: var(--humo); }
+
+      .lead {
+        margin: 0 0 2.6rem;
+        max-width: 46ch;
+        color: var(--humo);
+      }
+
       .cta-wrap {
         position: relative;
         display: inline-grid;
@@ -88,6 +132,7 @@
         width: min(100%, 22rem);
         height: 8.2rem;
       }
+
       #chispas {
         position: absolute;
         inset: -36px -48px 8px;
@@ -95,6 +140,7 @@
         height: calc(100% + 28px);
         pointer-events: none;
       }
+
       .boton-3d {
         position: relative;
         z-index: 1;
@@ -123,7 +169,9 @@
           0 16px 28px rgb(0 0 0 / 0.45);
         transition: translate 160ms cubic-bezier(0.16, 1, 0.3, 1), scale 160ms cubic-bezier(0.16, 1, 0.3, 1);
       }
+
       .boton-3d:hover { translate: 0 -4px; scale: 1.03; }
+
       .boton-3d:active {
         translate: 0 6px;
         scale: 0.98;
@@ -132,69 +180,254 @@
           0 1px 0 #5a1608,
           0 4px 10px rgb(0 0 0 / 0.4);
       }
-      .series { display: grid; gap: 3.2rem; padding-bottom: 3rem; }
-      .serie h2 {
-        margin: 0 0 0.45rem;
+
+      /* --- Las tres piezas --- */
+
+      .piezas {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        margin-top: 2.2rem;
+        background: var(--linea);
+        border: 1px solid var(--linea);
+      }
+
+      .pieza {
+        display: grid;
+        align-content: start;
+        gap: 0.55rem;
+        padding: clamp(1.2rem, 3vw, 1.9rem);
+        background: var(--brasa);
+      }
+
+      .pieza__num {
+        font-family: var(--dato);
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        color: var(--fuego);
+      }
+
+      .pieza h3 {
+        margin: 0;
         font-family: var(--display);
-        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+        line-height: 1.1;
         color: var(--crema);
         text-transform: uppercase;
       }
-      .serie p { margin: 0 0 1rem; max-width: 52ch; color: var(--humo); }
+
+      .pieza p { margin: 0; font-size: 0.97rem; color: var(--humo); }
+
+      /* --- Muestra en movimiento --- */
+
+      .movimiento {
+        display: grid;
+        grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+        gap: clamp(1.2rem, 3vw, 2.4rem);
+        align-items: center;
+        margin-top: 2.2rem;
+      }
+
+      .movimiento video {
+        width: 100%;
+        max-width: 15rem;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+        background: #000;
+        border: 1px solid var(--linea);
+      }
+
+      .movimiento p { margin: 0 0 0.8rem; color: var(--humo); max-width: 44ch; }
+
+      .movimiento p:last-child { margin-bottom: 0; }
+
+      /* --- Series de fotos: hoja de contactos --- */
+
+      .series { display: grid; gap: clamp(2.2rem, 5vw, 3.4rem); }
+
+      .serie {
+        display: grid;
+        grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+        gap: clamp(1.2rem, 3vw, 2.4rem);
+        align-items: start;
+        padding-top: 1.6rem;
+        border-top: 1px solid var(--linea);
+      }
+
+      .serie:first-child { padding-top: 0; border-top: 0; }
+
+      .serie h2 {
+        margin: 0 0 0.4rem;
+        font-family: var(--display);
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+        line-height: 1.15;
+        color: var(--crema);
+        text-transform: uppercase;
+      }
+
+      .serie p {
+        margin: 0;
+        font-size: 0.93rem;
+        color: var(--humo);
+      }
+
       .fotos {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-        gap: 0.7rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.5rem;
       }
-      .fotos figure { margin: 0; background: var(--brasa); overflow: hidden; }
-      .fotos img {
+
+      .foto {
+        position: relative;
+        display: block;
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--linea);
+        background: var(--brasa);
+        cursor: zoom-in;
+        overflow: hidden;
+        transition: border-color 160ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .foto:hover { border-color: var(--fuego); }
+      .foto:focus-visible { outline: 2px solid var(--fuego); outline-offset: 2px; }
+
+      .foto img {
         width: 100%;
+        height: auto;
         aspect-ratio: 3 / 4;
         object-fit: cover;
       }
+
+      /* Visor: la foto grande solo cuando se pide */
+
+      #visor {
+        width: min(92vw, 40rem);
+        max-height: 92svh;
+        padding: 0;
+        border: 1px solid var(--linea);
+        background: var(--carbon);
+        color: var(--texto);
+      }
+
+      #visor::backdrop { background: rgb(8 6 6 / 0.88); }
+
+      #visor img {
+        width: 100%;
+        max-height: 80svh;
+        object-fit: contain;
+        background: #000;
+      }
+
+      .visor__pie {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.7rem 0.9rem;
+        font-family: var(--dato);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--humo);
+      }
+
+      .visor__cerrar {
+        font: inherit;
+        padding: 0.45rem 0.9rem;
+        color: var(--crema);
+        background: transparent;
+        border: 1px solid var(--linea);
+        border-radius: 0.4rem;
+        cursor: pointer;
+      }
+
+      .visor__cerrar:hover { border-color: var(--fuego); }
+
+      /* --- La demostración completa --- */
+
       .rama {
         display: grid;
-        grid-template-columns: minmax(11rem, 16rem) minmax(0, 1fr);
-        gap: 1.6rem;
+        grid-template-columns: minmax(8rem, 11rem) minmax(0, 1fr);
+        gap: 1.4rem;
         align-items: center;
-        margin: 0 0 2.5rem;
+        margin: 0;
         padding: 0.85rem;
         border: 1px solid var(--linea);
         background: var(--brasa);
         text-decoration: none;
+        transition: border-color 160ms cubic-bezier(0.16, 1, 0.3, 1);
       }
+
+      .rama:hover { border-color: var(--fuego); }
+
       .rama img {
         width: 100%;
         aspect-ratio: 9 / 16;
         object-fit: cover;
       }
+
       .rama h2 {
-        margin: 0 0 0.5rem;
+        margin: 0 0 0.35rem;
         font-family: var(--display);
-        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        font-size: clamp(1.2rem, 2.6vw, 1.6rem);
         color: var(--crema);
         text-transform: uppercase;
       }
-      .aviso, .pie {
-        padding-bottom: 2.5rem;
+
+      .rama p { margin: 0; font-size: 0.95rem; color: var(--humo); }
+
+      .rama__pie {
+        display: block;
+        margin-top: 0.5rem;
+        font-family: var(--dato);
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--fuego);
+      }
+
+      /* --- Cierre --- */
+
+      .cierre { display: grid; gap: 1.4rem; justify-items: start; }
+
+      .aviso {
+        max-width: 60ch;
+        margin: 0;
         font-size: 0.88rem;
         color: var(--humo);
-        max-width: 60ch;
       }
+
+      .pie {
+        padding-block: 2.5rem;
+        border-top: 1px solid var(--linea);
+        font-family: var(--dato);
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--humo);
+      }
+
+      .pie a { text-decoration: none; }
+      .pie a:hover { color: var(--crema); }
+
+      /* --- Tablet --- */
+
+      @media (max-width: 58rem) {
+        .piezas { grid-template-columns: 1fr; }
+        .serie { grid-template-columns: 1fr; gap: 1rem; }
+      }
+
+      /* --- Móvil --- */
+
       @media (max-width: 40rem) {
+        #chispas { inset: -24px -16px 8px; width: calc(100% + 32px); }
         .rama { grid-template-columns: 1fr; }
-        .rama img { max-width: 16rem; }
-        .fotos {
-          display: flex;
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-        }
-        .fotos figure {
-          flex: 0 0 74%;
-          scroll-snap-align: start;
-        }
+        .rama img { max-width: 12rem; }
+
+        .fotos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.35rem; }
       }
+
       @media (prefers-reduced-motion: reduce) {
         .boton-3d, .boton-3d:hover, .boton-3d:active {
           translate: 0 0;
@@ -208,8 +441,9 @@
   <body>
     <div class="tope">
       <span>Producciones</span>
-      <a href="../">Cero Coma</a>
+      <a href="../">CeroComa</a>
     </div>
+
     <main class="caja">
       <header class="hero">
         <p class="rotulo" data-campo="rotulo"></p>
@@ -220,65 +454,138 @@
           <a class="boton-3d" data-cta href="https://wa.me/34643403723" target="_blank" rel="noreferrer"></a>
         </div>
       </header>
-      <div class="series" data-series></div>
-      <p class="rotulo">Rama de muestra</p>
-      <a class="rama" data-rama href="mechada-hot/">
-        <img alt="" width="1080" height="1920">
-        <div>
-          <h2></h2>
-          <p></p>
+
+      <section class="bloque" aria-labelledby="piezas-titulo">
+        <p class="rotulo">Qué se hace</p>
+        <h2 class="bloque__titulo" id="piezas-titulo">Tres piezas, un producto</h2>
+        <p class="bloque__texto">Se parte siempre de lo mismo: tu producto real. A partir de ahí, la pieza que necesites.</p>
+        <div class="piezas">
+          <article class="pieza">
+            <span class="pieza__num">01</span>
+            <h3>Vídeo para redes</h3>
+            <p>Vertical y corto, pensado para que alguien pare el dedo. Tu producto en movimiento, con el ritmo que pide cada red.</p>
+          </article>
+          <article class="pieza">
+            <span class="pieza__num">02</span>
+            <h3>Imágenes de producción</h3>
+            <p>El plato tratado como se trata un producto caro: luz, textura y contexto. Material para semanas sin repetir foto.</p>
+          </article>
+          <article class="pieza">
+            <span class="pieza__num">03</span>
+            <h3>Vídeo review</h3>
+            <p>Alguien probando tu producto, con el plato en primer plano. La pieza que más convence a quien todavía duda.</p>
+          </article>
         </div>
-      </a>
-      <p class="aviso" data-campo="aviso"></p>
+      </section>
+
+      <section class="bloque" aria-labelledby="movimiento-titulo">
+        <p class="rotulo">En movimiento</p>
+        <h2 class="bloque__titulo" id="movimiento-titulo">Ocho segundos, vertical, listo para publicar</h2>
+        <div class="movimiento">
+          <video controls playsinline preload="none" poster="video/pieza-redes-portada.jpg" width="1080" height="1920">
+            <source src="video/pieza-redes.mp4" type="video/mp4">
+          </video>
+          <div>
+            <p>Así se mueve una pieza para redes: el plano se acerca, el queso cae y el fuego trabaja de fondo. Sin texto encima, para que puedas poner el tuyo.</p>
+            <p>Esta es una demostración propia. La tuya se hace con tu producto y tu marca.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bloque" aria-labelledby="series-titulo">
+        <p class="rotulo">Cómo queda</p>
+        <h2 class="bloque__titulo" id="series-titulo">De cerca, en su sitio y en manos de alguien</h2>
+        <div class="series" data-series></div>
+      </section>
+
+      <section class="bloque" aria-labelledby="demo-titulo">
+        <p class="rotulo">Ejemplo completo</p>
+        <h2 class="bloque__titulo" id="demo-titulo">Una marca entera, de principio a fin</h2>
+        <p class="bloque__texto">Mechada Hot es una marca de demostración propia: sirve para enseñar cómo queda todo junto.</p>
+        <a class="rama" data-rama href="mechada-hot/" style="margin-top: 1.6rem;">
+          <img src="mechada-hot/portada.jpg" alt="" width="900" height="1600" loading="lazy">
+          <div>
+            <h2></h2>
+            <p></p>
+            <span class="rama__pie">Ver la demostración</span>
+          </div>
+        </a>
+      </section>
+
+      <section class="bloque cierre" aria-labelledby="cierre-titulo">
+        <p class="rotulo">Siguiente paso</p>
+        <h2 class="bloque__titulo" id="cierre-titulo">Cuéntame qué vendes</h2>
+        <p class="bloque__texto">Me mandas unas fotos normales de tu producto —las del móvil valen— y hablamos de qué pieza te hace falta.</p>
+        <div class="cta-wrap">
+          <a class="boton-3d" data-cta href="https://wa.me/34643403723" target="_blank" rel="noreferrer"></a>
+        </div>
+        <p class="aviso" data-campo="aviso"></p>
+      </section>
     </main>
+
+    <div class="caja">
+      <div class="pie">
+        <a href="../">CeroComa</a> · <a href="https://wa.me/34643403723" target="_blank" rel="noreferrer">WhatsApp 643 40 37 23</a>
+      </div>
+    </div>
+
+    <dialog id="visor" aria-label="Foto ampliada">
+      <img alt="" width="900" height="1200">
+      <div class="visor__pie">
+        <span data-visor-nota>Demostración propia</span>
+        <button class="visor__cerrar" type="button" data-visor-cerrar>Cerrar</button>
+      </div>
+    </dialog>
+
     <script id="contenido-local" type="application/json">
-{
-  "marca": "Producciones",
-  "rotulo": "Servicio a medida",
-  "titulo": "Tu hamburguesa de carne mechada, puesta en escena.",
-  "lead": "Cogemos tu hamburguesa, respetamos lo que la hace tuya y la convertimos en imágenes que abren el apetito. Tú pones el producto y la receta; nosotros construimos la escena, el ambiente y la pieza lista para redes.",
-  "whatsapp": "34643403723",
-  "cta": "Encargar una pieza",
-  "cta_mensaje": "Hola, quiero un encargo de Producciones para Mechada Hot.",
-  "series": [
-    {
-      "id": "producto",
-      "titulo": "Hamburguesa de carne mechada",
-      "texto": "Pan tostado, carne mechada, queso fundido y salsa en primer plano. La foto de producto hace reconocible tu hamburguesa y deja ver la textura, el brillo y el punto de la receta.",
-      "fotos": [
-        { "src": "fotos/producto/01.jpg", "alt": "Hamburguesa de carne mechada, queso fundido y salsa sobre una parrilla encendida." },
-        { "src": "fotos/producto/02.jpg", "alt": "Primer plano de hamburguesa de carne mechada con queso fundido y salsa brillante." },
-        { "src": "fotos/producto/03.jpg", "alt": "Rótulo ilustrado MECHADA HOT con volumen 3D y llamas sobre una hamburguesa de carne mechada a la brasa." }
-      ]
-    },
-    {
-      "id": "escena",
-      "titulo": "Puesta en escena",
-      "texto": "No dejamos el producto flotando en un fondo blanco. Lo colocamos donde se come: fuego, puesto y festival, con la hamburguesa siempre como protagonista del plano.",
-      "fotos": [
-        { "src": "fotos/escena/01.jpg", "alt": "Hamburguesa recién servida en un puesto de comida, con las manos del cocinero y el fuego al fondo." },
-        { "src": "fotos/escena/02.jpg", "alt": "Hamburguesa protagonista en una bandeja, con un festival gastronómico iluminado al anochecer." }
-      ]
-    },
-    {
-      "id": "review",
-      "titulo": "Review",
-      "texto": "Una persona, una primera impresión y tu hamburguesa en primer plano. La review aporta contexto y credibilidad sin robarle protagonismo al producto.",
-      "fotos": [
-        { "src": "fotos/review/01.jpg", "alt": "Mujer haciendo una review de una hamburguesa en un festival gastronómico." }
-      ]
-    }
-  ],
-  "rama": {
-    "nombre": "Mechada Hot",
-    "texto": "La rama de este encargo. Reel, pack y pedido.",
-    "href": "mechada-hot/",
-    "portada": "mechada-hot/portada.jpg",
-    "alt": "Portada de Mechada Hot, hamburguesa a la brasa."
-  },
-  "aviso": "Estas fotos son de demostración, generadas para enseñar cómo se vería el servicio. La pieza final se hace con el producto real y la identidad del local; esta página no afirma una colaboración oficial."
-}
+      {
+        "marca": "Producciones",
+        "rotulo": "CeroComa · Producciones",
+        "titulo": "Tu producto merece ser el protagonista.",
+        "lead": "Tu producto es una extensión de tu persona. Lo cogemos y le damos la presentación que se merece: imágenes y vídeo para que se vea como sabe.",
+        "whatsapp": "34643403723",
+        "cta": "Encargar una pieza",
+        "cta_mensaje": "Hola 3tmen, quiero una pieza de Producciones para mi producto.",
+        "series": [
+          {
+            "id": "producto",
+            "titulo": "El producto de cerca",
+            "texto": "Primer plano, textura y brillo. La foto que hace reconocible lo tuyo y deja ver el punto exacto de la receta.",
+            "fotos": [
+              { "src": "fotos/producto/01.jpg", "alt": "Hamburguesa doble con queso fundido cayendo por el borde, sobre tabla de madera y fondo oscuro con chispas de brasa." },
+              { "src": "fotos/producto/02.jpg", "alt": "Primer plano de hamburguesa doble con queso derretido y salsa, con las brasas encendidas al fondo." },
+              { "src": "fotos/producto/03.jpg", "alt": "Hamburguesa doble a la brasa con humo y partículas de fuego suspendidas en el aire." }
+            ]
+          },
+          {
+            "id": "escena",
+            "titulo": "Donde se come",
+            "texto": "Nada de fondo blanco. El producto va donde la gente lo prueba: fuego, barra, puesto o mesa, siempre como protagonista del plano.",
+            "fotos": [
+              { "src": "fotos/escena/01.jpg", "alt": "Un cocinero con guantes negros sirve una hamburguesa en un puesto de comida con la parrilla encendida." },
+              { "src": "fotos/escena/02.jpg", "alt": "Puesto de comida callejero de noche: el cocinero prepara hamburguesas sobre la parrilla entre humo y luces cálidas." }
+            ]
+          },
+          {
+            "id": "review",
+            "titulo": "Alguien probándolo",
+            "texto": "Una persona, una primera impresión y tu producto en primer plano. Es la pieza que más convence a quien todavía duda.",
+            "fotos": [
+              { "src": "fotos/review/01.jpg", "alt": "Mujer haciendo una review de una hamburguesa en un festival gastronómico." }
+            ]
+          }
+        ],
+        "rama": {
+          "nombre": "Mechada Hot",
+          "texto": "La demostración completa: reel, imágenes y pedido.",
+          "href": "mechada-hot/",
+          "portada": "mechada-hot/portada.jpg",
+          "alt": "Portada de Mechada Hot, hamburguesa a la brasa."
+        },
+        "aviso": "Lo que ves aquí son demostraciones propias, generadas para enseñar hasta dónde llega el servicio. La pieza final se hace con tu producto real y tu identidad; esta página no afirma ninguna colaboración."
+      }
     </script>
+
     <script>
       (function () {
         const local = document.getElementById("contenido-local");
@@ -292,16 +599,18 @@
           document.querySelector('[data-campo="titulo"]').textContent = data.titulo;
           document.querySelector('[data-campo="lead"]').textContent = data.lead;
           document.querySelector('[data-campo="aviso"]').textContent = data.aviso;
-          const cta = document.querySelector("[data-cta]");
           const msg = encodeURIComponent(data.cta_mensaje || "");
-          cta.textContent = data.cta;
-          cta.href = "https://wa.me/" + String(data.whatsapp || "").replace(/[^\d]/g, "") + (msg ? "?text=" + msg : "");
+          const destino = "https://wa.me/" + String(data.whatsapp || "").replace(/[^\d]/g, "") + (msg ? "?text=" + msg : "");
+          document.querySelectorAll("[data-cta]").forEach(function (cta) {
+            cta.textContent = data.cta;
+            cta.href = destino;
+          });
           const series = document.querySelector("[data-series]");
           series.innerHTML = data.series.map(function (s) {
             const fotos = (s.fotos || []).map(function (f) {
-              return "<figure><img src=\"" + esc(f.src) + "\" alt=\"" + esc(f.alt) + "\" loading=\"lazy\" width=\"900\" height=\"1200\"></figure>";
+              return "<button type=\"button\" class=\"foto\" data-grande=\"" + esc(f.src) + "\" aria-label=\"Ver más grande: " + esc(f.alt) + "\"><img src=\"" + esc(f.src) + "\" alt=\"" + esc(f.alt) + "\" loading=\"lazy\" width=\"900\" height=\"1200\"></button>";
             }).join("");
-            return "<section class=\"serie\" id=\"" + esc(s.id) + "\"><h2>" + esc(s.titulo) + "</h2><p>" + esc(s.texto) + "</p><div class=\"fotos\">" + fotos + "</div></section>";
+            return "<section class=\"serie\" id=\"" + esc(s.id) + "\"><div><h2>" + esc(s.titulo) + "</h2><p>" + esc(s.texto) + "</p></div><div class=\"fotos\">" + fotos + "</div></section>";
           }).join("");
           const rama = document.querySelector("[data-rama]");
           rama.href = data.rama.href;
@@ -310,7 +619,7 @@
           rama.querySelector("h2").textContent = data.rama.nombre;
           rama.querySelector("p").textContent = data.rama.texto;
         }
-        fetch("contenido.json?v=3a749a2", { cache: "no-store" })
+        fetch("contenido.json?v=" + Date.now(), { cache: "no-store" })
           .then(function (r) { return r.json(); })
           .then(pintar)
           .catch(function () {
@@ -319,6 +628,29 @@
           });
       })();
     </script>
+
+    <script>
+      (function () {
+        const visor = document.getElementById("visor");
+        if (!visor || typeof visor.showModal !== "function") return;
+        const imagen = visor.querySelector("img");
+
+        document.addEventListener("click", function (evento) {
+          const boton = evento.target.closest(".foto");
+          if (boton) {
+            imagen.src = boton.dataset.grande;
+            imagen.alt = boton.querySelector("img").alt;
+            visor.showModal();
+            return;
+          }
+          if (evento.target.closest("[data-visor-cerrar]")) { visor.close(); return; }
+          if (evento.target === visor) visor.close();
+        });
+
+        visor.addEventListener("close", function () { imagen.removeAttribute("src"); });
+      })();
+    </script>
+
     <script>
       (function () {
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
