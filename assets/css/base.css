@@ -613,6 +613,49 @@ h3 {
   text-align: center;
 }
 
+/* Aviso de cookies. Solo lo crea analytics.js cuando hay un ID de GA4. Va
+   encima del CTA fijo de móvil y aceptar y rechazar pesan lo mismo. */
+.consent {
+  position: fixed;
+  z-index: 95;
+  inset: auto var(--space-4) var(--space-4);
+  max-width: 34rem;
+  padding: var(--space-5);
+  color: var(--white);
+  background: var(--zero);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1rem 2.5rem rgba(13, 14, 15, 0.3);
+}
+
+.consent p {
+  margin: 0 0 var(--space-4);
+  color: var(--dark-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.consent a {
+  color: var(--white);
+  text-decoration-color: var(--gold);
+}
+
+.consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.consent__actions .button {
+  flex: 1;
+}
+
+.consent__reject {
+  color: var(--white);
+  background: transparent;
+  border-color: var(--dark-border);
+}
+
 @media (max-width: 48rem) {
   :root {
     --header-height: 4.5rem;

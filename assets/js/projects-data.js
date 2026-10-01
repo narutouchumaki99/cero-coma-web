@@ -22,7 +22,7 @@
         "Extracción real validada con revisión humana obligatoria",
         "Aprobación de resultados revisados al borrador editable",
         "Equipo con roles: propietario, gerente y personal",
-        "Invitaciones por correo con la identidad de Cero Coma"
+        "Invitaciones por correo con la identidad de CeroComa"
       ]),
       simulatedFeatures: Object.freeze([
         "La demostración de esta web explica el flujo con archivos de ejemplo, sin conexión al producto ni a la IA"
@@ -39,11 +39,12 @@
     Object.freeze({
       id: "studio",
       slug: "cero-coma-studio",
-      name: "Cero Coma Studio",
+      name: "CeroComa Studio",
       category: "Servicio",
       status: "Validación comercial",
       featured: false,
-      visibility: "public",
+      // Despublicado el 1-10-2026: la web se centra solo en FAENA.
+      visibility: "private",
       summary: "Una línea de trabajo para convertir espacios, ideas y propuestas comerciales en materiales visuales comprensibles.",
       problem: "Muchos negocios necesitan mostrar una transformación o propuesta antes de poder construirla o venderla.",
       audience: "Negocios y profesionales que necesitan explicar visualmente una propuesta de espacio o servicio.",

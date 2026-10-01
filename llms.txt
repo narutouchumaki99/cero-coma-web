@@ -1,0 +1,36 @@
+# CeroComa
+
+> CeroComa construye soluciones prácticas con inteligencia artificial para negocios, con sede en Valladolid (Castilla y León, España) y trabajo también en remoto. Su primer producto es FAENA, una carta digital con QR para bares y restaurantes.
+
+## FAENA
+
+FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.
+
+- El negocio hace una foto a su carta de papel o sube un archivo; la IA lee platos y precios y el propietario lo revisa antes de publicar.
+- Desde el panel del propietario se cambian precios, se añaden o quitan productos y se crean o modifican secciones, también después de publicar.
+- El enlace y el código QR son permanentes: actualizar la carta no obliga a reimprimir el QR.
+- Los clientes abren la carta en el navegador del móvil, sin instalar ninguna aplicación ni registrarse.
+- Dos formas de empezar: el propio negocio la monta en la aplicación, o CeroComa la deja montada, con la aplicación y los códigos QR, en dos o tres días.
+- Hoy FAENA publica y mantiene la carta. Pedidos a cocina, aviso al camarero y pagos en mesa están en preparación y todavía no están disponibles.
+
+- [FAENA](https://cerocomasoluciones.com/faena/): qué es, cómo funciona, comparativa con carta en papel y PDF, y preguntas frecuentes.
+- [Carta de ejemplo](https://faena.cerocomasoluciones.com/menu/klk): una carta real publicada con FAENA.
+
+## Guías
+
+- [Cómo digitalizar la carta de un restaurante](https://cerocomasoluciones.com/como-digitalizar-carta-restaurante/): opciones, pasos y errores frecuentes al pasar la carta de papel a una carta digital con QR.
+- [Cómo cambiar los precios de una carta QR sin imprimir otro código](https://cerocomasoluciones.com/cambiar-precios-carta-qr/): cuándo hay que reimprimir el QR y qué hacer en cada caso.
+
+## FAENA según el tipo de local
+
+- [Carta digital para bares](https://cerocomasoluciones.com/carta-digital-bares/): raciones, sugerencias del día y precios de bebida que cambian.
+- [Carta digital para cafeterías](https://cerocomasoluciones.com/carta-digital-cafeterias/): desayunos, bollería y precios pequeños que se ajustan a menudo.
+- [Carta digital para restaurantes](https://cerocomasoluciones.com/carta-digital-restaurantes/): carta larga, menú del día y platos de temporada.
+
+## Más
+
+- [Proyectos](https://cerocomasoluciones.com/proyectos/): estado y alcance de FAENA, el proyecto público de CeroComa.
+
+## Contacto
+
+- [Contacto](https://cerocomasoluciones.com/contacto/): WhatsApp y teléfono +34 643 40 37 23, correo cerocomasoluciones@gmail.com.

@@ -38,7 +38,7 @@ Push a `main` → despliegue automático, sin staging intermedio: lo que entra e
 
 ### 1. Sitio de marca
 
-Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `404.html`. Cada página carga, en este orden, `tokens.css` → `base.css` → su hoja (`home` / `projects` / `product` / `legal` / `error`) → `motion.css`, y `config.js` → `site.js` → (`projects-data.js` + `projects.js` donde aplique) → `motion.js`.
+Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `404.html`, más las páginas de búsqueda que cuelgan de FAENA: por tipo de local (`carta-digital-bares/`, `carta-digital-cafeterias/`, `carta-digital-restaurantes/`) y guías (`como-digitalizar-carta-restaurante/`, `cambiar-precios-carta-qr/`), todas con `legal.css`. Desde el 1-10-2026 la web se centra solo en FAENA. Cada página carga, en este orden, `tokens.css` → `base.css` → su hoja (`home` / `projects` / `product` / `legal` / `error`) → `motion.css`, y `config.js` → `site.js` → (`projects-data.js` + `projects.js` donde aplique) → `motion.js`.
 
 - **`assets/js/config.js` es la fuente de verdad** de marca, URLs y contactos (`window.CEROCOMA_CONFIG`, congelado). Los contactos se sirven además escritos en el HTML para que funcionen sin JavaScript; `site.js` solo los genera si la lista llega vacía. Un cambio de contacto se hace en los dos sitios.
 - **`assets/js/projects-data.js`** (`window.CEROCOMA_PROJECTS`) es el contenido del explorador de proyectos; `projects.js` pinta buscador, filtros, tarjetas y diálogo. Añadir un proyecto es añadir un objeto ahí, sin tocar HTML.
@@ -46,7 +46,9 @@ Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `4
 - **`site.js`** gobierna menú móvil, año del pie, enlaces de contacto y el compresor de la portada.
 - Las subpáginas declaran `data-site-root="../"` en `<body>` y la portada `"./"`. Cualquier script que construya rutas hacia `assets/` debe leer `document.body.dataset.siteRoot` en lugar de usar rutas relativas a la página: es el fallo clásico al mover contenido a una subcarpeta.
 
-### 2. Producciones
+### 2. Producciones (despublicada)
+
+**Despublicada el 1-10-2026**: sin enlaces desde el resto del sitio, fuera del sitemap y con `X-Robots-Tag: noindex` para `/producciones/*` en `_headers`. Las páginas siguen respondiendo por URL directa. CeroComa Studio también está oculto (`visibility: "private"` en `projects-data.js`). Para volver a publicarlas: quitar esas reglas de `_headers`, devolverlas al sitemap y a los menús, y restaurar la sección de muestras de la portada (sus estilos siguen en `portada.css`).
 
 `producciones/` y `producciones/mechada-hot/` son páginas **autónomas**: CSS en línea, tipografías de Google (Archivo Black, Barlow, IBM Plex Mono), sin `tokens.css` ni `site.js`. No alinearlas con el sistema de marca salvo petición explícita.
 
@@ -56,7 +58,7 @@ Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `4
 
 ## Reglas del sitio que no son evidentes
 
-- **Al añadir una página**: `<link rel="canonical">` con su URL definitiva, entrada en `sitemap.xml` y enlace desde el pie si procede. `noindex` solo en `404.html`.
+- **Al añadir una página**: `<link rel="canonical">` con su URL definitiva, entrada en `sitemap.xml` y enlace desde el pie si procede. `noindex` en el HTML solo en `404.html`; lo demás que no deba indexarse (documentación interna, `producciones/`) va por `X-Robots-Tag` en `_headers`, nunca con `Disallow` en `robots.txt`, que impediría leer la cabecera.
 - **Cloudflare ofusca los `mailto:`** y los convierte en `/cdn-cgi/l/email-protection#…`, que necesita JavaScript. Donde el correo debe leerse sin él (páginas legales, JSON-LD), envolverlo en `<!--email_off-->…<!--/email_off-->`; ya está aplicado en portada, aviso legal y privacidad.
 - **No borrar `googleb7de5be3ec7cd0b5.html`**: es la verificación de Google Search Console.
 - `_redirects` mantiene el 301 de `/tu-carta-en-cero-coma/*` → `/faena/`. Esa URL antigua está indexada: no romperla.

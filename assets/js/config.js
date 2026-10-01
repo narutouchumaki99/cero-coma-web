@@ -3,9 +3,9 @@
 
   window.CEROCOMA_CONFIG = Object.freeze({
     brand: Object.freeze({
-      name: "Cero Coma",
+      name: "CeroComa",
       tagline: "De la intención a la realidad.",
-      promise: "Cero Coma convierte lo complicado en algo listo para funcionar.",
+      promise: "CeroComa convierte lo complicado en algo listo para funcionar.",
       version: "1.0"
     }),
     site: Object.freeze({
@@ -19,8 +19,16 @@
       lastUpdated: "2026-08-05"
     }),
     app: Object.freeze({
-      // URL pública de la app FAENA. Verificada en línea el 3-08-2026.
-      url: "https://faena-web-two.vercel.app"
+      // URL pública de la app FAENA, en subdominio propio. Verificada en línea
+      // el 1-10-2026 (antes, faena-web-two.vercel.app).
+      url: "https://faena.cerocomasoluciones.com"
+    }),
+    analytics: Object.freeze({
+      // ID de medición de GA4 («G-XXXXXXXXXX»). Mientras esté vacío no se carga
+      // nada, no aparece el aviso de cookies y la política de privacidad sigue
+      // diciendo que no hay cookies. Al rellenarlo, analytics.js activa las tres
+      // cosas a la vez. No inventar un ID: se copia del panel de GA4.
+      ga4MeasurementId: ""
     }),
     contacts: Object.freeze({
       email: "cerocomasoluciones@gmail.com",

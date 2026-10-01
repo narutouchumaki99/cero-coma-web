@@ -94,7 +94,8 @@
   text-transform: uppercase;
 }
 
-.value-card h2 {
+.value-card h2,
+.value-card h3 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
 }
@@ -706,4 +707,184 @@
 .example-live__hint {
   color: var(--dark-muted);
   font-size: 0.95rem;
+}
+
+/* Nota bajo las acciones del hero: el camino «te la montamos» para quien
+   no quiere usar la app. Texto, no botón, para no competir con el CTA. */
+.product-hero__note {
+  max-width: 52ch;
+  margin: var(--space-5) 0 0;
+  color: var(--light-muted);
+  font-size: 0.95rem;
+}
+
+.product-hero__note a,
+.faq a,
+.faq__more a {
+  color: inherit;
+  font-weight: 650;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 0.2em;
+}
+
+/* Comparativa papel / PDF / FAENA. En móvil la tabla se desplaza en
+   horizontal dentro de su caja en lugar de comprimir las columnas. */
+.compare-table {
+  overflow-x: auto;
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-md);
+}
+
+.compare-table:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.compare-table table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--dark-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.compare-table thead th {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 730;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.compare-table tbody th {
+  font-weight: 650;
+}
+
+.compare-table td {
+  color: var(--dark-muted);
+}
+
+.compare-table td:last-child {
+  color: var(--white);
+  background: var(--dark-raised);
+}
+
+/* Preguntas frecuentes: details nativo, funciona sin JavaScript. */
+.faq {
+  max-width: var(--measure);
+  border-top: 1px solid var(--light-border);
+}
+
+.faq details {
+  border-bottom: 1px solid var(--light-border);
+}
+
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: 650;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  flex: none;
+  color: var(--gold-ink);
+  font-weight: 500;
+  transition: rotate var(--motion-micro) var(--ease-out);
+}
+
+.faq details[open] summary::after {
+  rotate: 45deg;
+}
+
+.faq summary:focus-visible {
+  outline: 2px solid var(--gold-ink);
+  outline-offset: 2px;
+}
+
+.faq details p {
+  margin: 0 0 var(--space-5);
+  color: var(--light-muted);
+  line-height: 1.65;
+}
+
+.faq__more {
+  max-width: var(--measure);
+  margin: var(--space-8) 0 0;
+  color: var(--light-muted);
+}
+
+/* CTA fijo en móvil. Solo aparece cuando el hero ya no se ve y se esconde al
+   llegar al cierre o al pie, para no tapar lo que ya ofrece lo mismo. */
+.sticky-cta {
+  position: fixed;
+  z-index: 90;
+  inset: auto 0 0;
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom));
+  color: var(--white);
+  background: color-mix(in srgb, var(--zero) 94%, transparent);
+  border-top: 1px solid var(--dark-border);
+  translate: 0 100%;
+  visibility: hidden;
+  transition:
+    translate var(--motion-short) var(--ease-out),
+    visibility 0s linear var(--motion-short);
+}
+
+.sticky-cta[hidden] {
+  display: none;
+}
+
+/* visibility evita que el teclado entre en los enlaces mientras está oculta. */
+.sticky-cta[data-visible="true"] {
+  translate: 0 0;
+  visibility: visible;
+  transition: translate var(--motion-short) var(--ease-out), visibility 0s;
+}
+
+.sticky-cta .button {
+  flex: 1;
+  min-height: 2.6rem;
+  font-size: 0.95rem;
+}
+
+.sticky-cta .button:not(.button--light) {
+  border-color: var(--dark-border);
+}
+
+@media (min-width: 48.01rem) {
+  .sticky-cta {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky-cta,
+  .faq summary::after {
+    transition: none;
+  }
 }

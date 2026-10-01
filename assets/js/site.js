@@ -128,8 +128,30 @@
     render(false, "initial");
   }
 
+  // CTA fijo de móvil: visible solo cuando el hero ha salido de pantalla y
+  // todavía no se ven el cierre de contacto ni el pie, que ya ofrecen lo mismo.
+  function setupStickyCta() {
+    const bar = document.querySelector("[data-sticky-cta]");
+    const hero = document.querySelector("main > section");
+    if (!bar || !hero || !("IntersectionObserver" in window)) return;
+
+    const blockers = [hero, ...document.querySelectorAll("[data-contact-region], .footer")];
+    const visible = new Set();
+
+    bar.hidden = false;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
+      });
+      bar.dataset.visible = String(visible.size === 0);
+    });
+    blockers.forEach((node) => observer.observe(node));
+  }
+
   setupYear();
   setupMobileMenu();
   setupContactLinks();
   setupCompressor();
+  setupStickyCta();
 })();

@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://cerocomasoluciones.com/faena/">
     <meta name="theme-color" content="#0d0e0f">
-    <meta name="description" content="FAENA: haz una foto a tu carta, edítala y publícala con un QR que no cambia. Producto de Cero Coma para hostelería.">
+    <meta name="description" content="FAENA pasa la carta de tu bar o restaurante a una carta digital con QR. Haz una foto, revisa platos y precios y cámbialos cuando quieras sin reimprimir el QR.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="FAENA — Carta digital con QR permanente">
-    <meta property="og:description" content="Foto a la carta vieja, revisión, publicación. El QR se imprime una vez.">
+    <meta property="og:title" content="FAENA — Carta digital con QR para bares y restaurantes">
+    <meta property="og:description" content="Foto a la carta de papel, revisión y publicación. Cambias precios y platos cuando quieras; el QR se imprime una vez.">
     <meta property="og:url" content="https://cerocomasoluciones.com/faena/">
-    <meta property="og:site_name" content="Cero Coma">
+    <meta property="og:site_name" content="CeroComa">
     <meta property="og:image" content="https://cerocomasoluciones.com/assets/media/social/og-faena.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="FAENA, carta digital con QR permanente.">
     <meta name="twitter:card" content="summary_large_image">
-    <title>FAENA — Carta digital con QR permanente | Cero Coma</title>
+    <title>Carta digital con QR para bares y restaurantes | FAENA</title>
     <link rel="preload" href="../assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="../assets/media/brand/approved/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="../assets/media/brand/approved/favicon.ico" sizes="any">
@@ -28,25 +28,53 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "@id": "https://cerocomasoluciones.com/faena/#product",
-        "name": "FAENA",
-        "alternateName": "Tu carta en Cero Coma",
-        "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "Digital menu and QR publishing",
-        "operatingSystem": "Web",
-        "inLanguage": "es-ES",
-        "url": "https://cerocomasoluciones.com/faena/",
-        "description": "FAENA convierte una carta en papel en una versión digital que se revisa, publica y mantiene con un QR permanente.",
-        "image": "https://cerocomasoluciones.com/assets/media/social/og-faena.png",
-        "provider": {
-          "@type": "Organization",
-          "@id": "https://cerocomasoluciones.com/#organization",
-          "name": "Cero Coma",
-          "url": "https://cerocomasoluciones.com/"
-        },
-        "brand": { "@type": "Brand", "name": "FAENA" },
-        "isPartOf": { "@type": "WebSite", "@id": "https://cerocomasoluciones.com/#website" }
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://cerocomasoluciones.com/faena/#webpage",
+            "url": "https://cerocomasoluciones.com/faena/",
+            "name": "Carta digital con QR para bares y restaurantes | FAENA",
+            "inLanguage": "es-ES",
+            "isPartOf": { "@id": "https://cerocomasoluciones.com/#website" },
+            "about": { "@id": "https://cerocomasoluciones.com/faena/#product" },
+            "breadcrumb": { "@id": "https://cerocomasoluciones.com/faena/#breadcrumb" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://cerocomasoluciones.com/faena/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cerocomasoluciones.com/" },
+              { "@type": "ListItem", "position": 2, "name": "FAENA", "item": "https://cerocomasoluciones.com/faena/" }
+            ]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://cerocomasoluciones.com/faena/#product",
+            "name": "FAENA",
+            "alternateName": "Tu carta en Cero Coma",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Carta digital con QR para hostelería",
+            "operatingSystem": "Web",
+            "inLanguage": "es-ES",
+            "url": "https://cerocomasoluciones.com/faena/",
+            "description": "FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.",
+            "featureList": [
+              "Lectura de la carta en papel a partir de una foto o un archivo",
+              "Edición de precios, productos y secciones",
+              "Publicación con enlace y código QR permanentes",
+              "Carta pública en el navegador del móvil, sin instalar nada"
+            ],
+            "audience": { "@type": "BusinessAudience", "audienceType": "Bares y restaurantes" },
+            "image": "https://cerocomasoluciones.com/assets/media/social/og-faena.png",
+            "provider": {
+              "@type": "Organization",
+              "@id": "https://cerocomasoluciones.com/#organization",
+              "name": "CeroComa",
+              "url": "https://cerocomasoluciones.com/"
+            },
+            "brand": { "@type": "Brand", "name": "FAENA" }
+          }
+        ]
       }
     </script>
   </head>
@@ -55,12 +83,11 @@
 
     <header class="site-header">
       <div class="site-header__inner shell">
-        <a class="brand-link" href="../" aria-label="Cero Coma, inicio">
-          <img src="../assets/media/brand/approved/wordmark-horizontal-brand.svg" alt="Cero Coma" width="2200" height="500">
+        <a class="brand-link" href="../" aria-label="CeroComa, inicio">
+          <img src="../assets/media/brand/approved/wordmark-horizontal-brand.svg" alt="CeroComa" width="2200" height="500">
         </a>
         <nav class="desktop-nav" aria-label="Navegación principal">
           <a href="../">Inicio</a>
-          <a href="../producciones/">Producciones</a>
           <a href="./" aria-current="page">FAENA</a>
           <a href="../#contacto">Contacto</a>
         </nav>
@@ -73,14 +100,13 @@
     <dialog class="menu-dialog" aria-label="Menú principal" data-menu-dialog>
       <div class="menu-dialog__inner">
         <div class="menu-dialog__top">
-          <span class="menu-dialog__brand">Cero Coma</span>
+          <span class="menu-dialog__brand">CeroComa</span>
           <button class="icon-button" type="button" aria-label="Cerrar menú" data-menu-close>
             <img src="../assets/icons/web/close.svg" alt="" aria-hidden="true" width="24" height="24">
           </button>
         </div>
         <nav aria-label="Navegación móvil">
           <a href="../">Inicio</a>
-          <a href="../producciones/">Producciones</a>
           <a href="./" aria-current="page">FAENA</a>
           <a href="../#contacto">Contacto</a>
         </nav>
@@ -92,18 +118,19 @@
       <section class="product-hero" aria-labelledby="hero-title">
         <div class="product-hero__grid shell">
           <div data-reveal>
-            <p class="eyebrow">FAENA · Powered by Cero Coma</p>
+            <p class="eyebrow">FAENA · Powered by CeroComa</p>
             <h1 id="hero-title">Haz una foto a tu carta. Edítala. Publícala.</h1>
-            <p class="lead">FAENA convierte la carta de papel en una carta digital que puedes cambiar cuando quieras. El QR se imprime una vez y no cambia nunca.</p>
+            <p class="lead">FAENA es la herramienta de CeroComa para bares y restaurantes: convierte la carta de papel en una carta digital con QR que puedes cambiar cuando quieras. El QR se imprime una vez y no cambia nunca.</p>
             <div class="product-hero__actions">
-              <a class="button button--light" href="https://faena-web-two.vercel.app" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
-              <a class="button button--quiet" href="https://faena-web-two.vercel.app/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
+              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
+              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
               <a class="button button--quiet" href="#como-funciona">Cómo funciona</a>
             </div>
+            <p class="product-hero__note">¿Prefieres no tocar nada? <a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">Mándanos la carta por WhatsApp</a> y te la dejamos montada en dos o tres días.</p>
           </div>
           <aside class="product-hero__visual">
             <div class="device-phone">
-              <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/carta-phone.png" alt="Carta FAENA en el móvil: Bar/Restaurante, RACIONES" width="390" height="844" fetchpriority="high">
+              <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/carta-phone.png" alt="Carta FAENA en el móvil: Bar/Restaurante, RACIONES" width="390" height="844" fetchpriority="high">
             </div>
           </aside>
         </div>
@@ -119,20 +146,21 @@
           <ol class="value-grid flow-grid">
             <li class="value-card">
               <p class="value-card__label">01 · Foto</p>
-              <h2>Fotografías la carta vieja</h2>
-              <p>Una foto o un archivo. FAENA parte de lo que ya tienes, no de una plantilla vacía.</p>
+              <h3>Fotografías la carta vieja</h3>
+              <p>Una foto o un archivo. La IA lee platos y precios: FAENA parte de lo que ya tienes, no de una plantilla vacía.</p>
             </li>
             <li class="value-card">
               <p class="value-card__label">02 · Editas</p>
-              <h2>Revisas platos y precios</h2>
+              <h3>Revisas platos y precios</h3>
               <p>Corriges nombres, quitas platos, cambias el menú del día. Nada se publica solo.</p>
             </li>
             <li class="value-card">
               <p class="value-card__label">03 · Publicas</p>
-              <h2>URL y QR fijos</h2>
+              <h3>URL y QR fijos</h3>
               <p>Los clientes abren la carta en el móvil. Tú actualizas el contenido sin reimprimir el código.</p>
             </li>
           </ol>
+          <p class="faq__more">Cómo se usa según el local: <a href="../carta-digital-bares/">carta digital para bares</a>, <a href="../carta-digital-cafeterias/">para cafeterías</a> y <a href="../carta-digital-restaurantes/">para restaurantes</a>.</p>
         </div>
       </section>
 
@@ -150,7 +178,7 @@
                 <h3>Lo que ve el cliente</h3>
                 <p>Categorías, buscar y platos. La carta pública en el móvil, sin login.</p>
                 <div class="example-card__frame example-card__frame--phone">
-                  <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/carta-phone.png" alt="Carta FAENA en el móvil: Bar/Restaurante, RACIONES" width="390" height="844" loading="lazy">
+                  <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/carta-phone.png" alt="Carta FAENA en el móvil: Bar/Restaurante, RACIONES" width="390" height="844" loading="lazy">
                 </div>
               </article>
               <article class="example-card example-card--skin" style="--reveal-delay: 80ms">
@@ -158,7 +186,7 @@
                 <h3>Revisas y editas</h3>
                 <p>Secciones, productos y precios desde el panel del propietario.</p>
                 <div class="example-card__frame example-card__frame--phone">
-                  <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/dashboard-menu.png" alt="Panel FAENA: editar carta, secciones y productos" width="390" height="844" loading="lazy">
+                  <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/dashboard-menu.png" alt="Panel FAENA: editar carta, secciones y productos" width="390" height="844" loading="lazy">
                 </div>
               </article>
               <article class="example-card example-card--skin" style="--reveal-delay: 160ms">
@@ -166,12 +194,12 @@
                 <h3>Publicas y el QR queda</h3>
                 <p>Una versión pública. El enlace y el QR no cambian al actualizar.</p>
                 <div class="example-card__frame example-card__frame--phone">
-                  <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/dashboard-publish.png" alt="Panel FAENA: publicar carta y QR permanente" width="390" height="844" loading="lazy">
+                  <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/dashboard-publish.png" alt="Panel FAENA: publicar carta y QR permanente" width="390" height="844" loading="lazy">
                 </div>
               </article>
             </div>
             <p class="example-live">
-              <a class="button button--light" href="https://faena-web-two.vercel.app/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
+              <a class="button button--light" href="https://faena.cerocomasoluciones.com/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
               <span class="example-live__hint">Abre la carta real de Klk. Sin fotos: en vivo.</span>
             </p>
           </div>
@@ -191,7 +219,7 @@
               <h3>Entras al panel</h3>
               <p>El dueño ve el estado de la carta, la versión publicada y el acceso a editar.</p>
               <div class="example-card__frame example-card__frame--phone">
-                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/dashboard-home.png" alt="Panel principal FAENA del propietario" width="390" height="844" loading="lazy">
+                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/dashboard-home.png" alt="Panel principal FAENA del propietario" width="390" height="844" loading="lazy">
               </div>
             </li>
             <li class="montage-step">
@@ -199,7 +227,7 @@
               <h3>Revisas y editas</h3>
               <p>Ajustas platos, precios y secciones antes de que nada salga a la calle.</p>
               <div class="example-card__frame example-card__frame--phone">
-                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/dashboard-menu.png" alt="Edición de carta en el panel FAENA" width="390" height="844" loading="lazy">
+                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/dashboard-menu.png" alt="Edición de carta en el panel FAENA" width="390" height="844" loading="lazy">
               </div>
             </li>
             <li class="montage-step">
@@ -207,7 +235,7 @@
               <h3>Publicas con QR fijo</h3>
               <p>Creas la versión pública. El código QR permanece; no hace falta reimprimir.</p>
               <div class="example-card__frame example-card__frame--phone">
-                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/dashboard-publish.png" alt="Publicación y QR permanente en FAENA" width="390" height="844" loading="lazy">
+                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/dashboard-publish.png" alt="Publicación y QR permanente en FAENA" width="390" height="844" loading="lazy">
               </div>
             </li>
             <li class="montage-step">
@@ -215,13 +243,117 @@
               <h3>El cliente la ve</h3>
               <p>Abre el enlace o escanea el QR. La carta está lista, sin login.</p>
               <div class="example-card__frame example-card__frame--phone">
-                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/faena/skin/carta-phone.png" alt="Carta pública FAENA vista por el cliente" width="390" height="844" loading="lazy">
+                <img src="https://res.cloudinary.com/g8akd3eg/image/upload/f_auto,q_auto/faena/skin/carta-phone.png" alt="Carta pública FAENA vista por el cliente" width="390" height="844" loading="lazy">
               </div>
               <p class="montage-step__cta">
-                <a class="button button--quiet" href="https://faena-web-two.vercel.app/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
+                <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
               </p>
             </li>
           </ol>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="comparativa" aria-labelledby="compare-title">
+        <div class="shell">
+          <div class="demo-head" data-reveal>
+            <p class="eyebrow">Papel, PDF o FAENA</p>
+            <h2 id="compare-title">Cambiar la carta no debería costar una imprenta.</h2>
+            <p>Lo que pasa cuando subes un precio, quitas un plato o abres una sección nueva, según dónde viva tu carta.</p>
+          </div>
+          <div class="compare-table" role="region" aria-labelledby="compare-title" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col"><span class="sr-only">Situación</span></th>
+                  <th scope="col">Carta en papel</th>
+                  <th scope="col">PDF enlazado a un QR</th>
+                  <th scope="col">FAENA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Cambiar un precio</th>
+                  <td>Reimprimir la carta</td>
+                  <td>Editar el PDF y volver a subirlo</td>
+                  <td>Lo cambias en el panel y publicas</td>
+                </tr>
+                <tr>
+                  <th scope="row">Añadir o quitar un plato</th>
+                  <td>Reimprimir la carta</td>
+                  <td>Rehacer el documento</td>
+                  <td>Desde el panel</td>
+                </tr>
+                <tr>
+                  <th scope="row">Crear o cambiar secciones</th>
+                  <td>Rediseñar la carta</td>
+                  <td>Rediseñar el documento</td>
+                  <td>Desde el panel</td>
+                </tr>
+                <tr>
+                  <th scope="row">El código QR</th>
+                  <td>No hay</td>
+                  <td>Cambia si cambia el archivo o su enlace</td>
+                  <td>Siempre el mismo</td>
+                </tr>
+                <tr>
+                  <th scope="row">Leerla en el móvil</th>
+                  <td>No aplica</td>
+                  <td>Hay que ampliar la página</td>
+                  <td>Hecha para el móvil, con categorías y buscador</td>
+                </tr>
+                <tr>
+                  <th scope="row">Punto de partida</th>
+                  <td>Diseño e imprenta</td>
+                  <td>Maquetar el documento</td>
+                  <td>Una foto de tu carta actual</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="preguntas" aria-labelledby="faq-title">
+        <div class="shell">
+          <div class="demo-head" data-reveal>
+            <p class="eyebrow">Preguntas frecuentes</p>
+            <h2 id="faq-title">Lo que suele preguntar un bar antes de empezar.</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>¿Qué es FAENA exactamente?</summary>
+              <p>Una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.</p>
+            </details>
+            <details>
+              <summary>¿Puedo usar la carta que ya tengo?</summary>
+              <p>Sí. Haces una foto o subes un archivo, la IA lee platos y precios, y tú revisas el resultado antes de publicar nada.</p>
+            </details>
+            <details>
+              <summary>¿Tengo que cambiar el QR cuando modifico un precio?</summary>
+              <p>No. Cambias el precio en el panel, publicas y el mismo QR muestra la carta actualizada. No hay que reimprimir el código.</p>
+            </details>
+            <details>
+              <summary>¿Puedo añadir o quitar productos y crear secciones nuevas?</summary>
+              <p>Sí. Platos, precios y secciones se editan desde el panel del propietario, también después de publicar.</p>
+            </details>
+            <details>
+              <summary>¿Mis clientes tienen que instalar una aplicación?</summary>
+              <p>No. Escanean el QR o abren el enlace y la carta se ve en el navegador del móvil, sin registrarse.</p>
+            </details>
+            <details>
+              <summary>¿Tengo que montarla yo?</summary>
+              <p>Como prefieras. Puedes hacerlo tú en la app, o <a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">mandarnos la carta por WhatsApp</a> y te la entregamos montada, con la aplicación y los códigos QR funcionando.</p>
+            </details>
+            <details>
+              <summary>¿Cuánto tarda en estar publicada?</summary>
+              <p>Si la montamos nosotros, dos o tres días. Si la haces tú, está publicada en cuanto terminas de revisarla y pulsas publicar.</p>
+            </details>
+            <details>
+              <summary>¿FAENA toma pedidos o cobra en mesa?</summary>
+              <p>Todavía no. Hoy FAENA publica y mantiene la carta. Los pedidos a cocina, el aviso al camarero y los pagos están en preparación: los verás <a href="#proximamente">más abajo, marcados como pendientes</a>.</p>
+            </details>
+          </div>
+          <p class="faq__more">Para ir más a fondo: <a href="../como-digitalizar-carta-restaurante/">cómo digitalizar la carta de un restaurante</a>, paso a paso, y <a href="../cambiar-precios-carta-qr/">cómo cambiar los precios de una carta QR sin imprimir otro código</a>, aunque no uses FAENA.</p>
         </div>
       </section>
 
@@ -276,8 +408,8 @@
             <h2 id="cta-title">Entra en FAENA y monta tu carta.</h2>
             <p>Si encaja con tu negocio, hablamos. Si quieres probar ya, abre la app.</p>
             <div class="pilot-note__actions">
-              <a class="button button--light" href="https://faena-web-two.vercel.app" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
-              <a class="button button--quiet" href="https://faena-web-two.vercel.app/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
+              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
+              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/klk" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
               <a class="button button--quiet" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
               <a class="button button--quiet" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">WhatsApp</a>
             </div>
@@ -286,16 +418,20 @@
       </section>
     </main>
 
+    <div class="sticky-cta" data-sticky-cta hidden>
+      <a class="button button--light" href="https://wa.me/34643403723?text=Hola%2C%20me%20interesa%20FAENA%20para%20mi%20carta." target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+      <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/klk" target="_blank" rel="noreferrer">Ver ejemplo</a>
+    </div>
+
     <footer class="footer">
       <div class="shell">
         <div class="footer__top">
           <div>
-            <p class="eyebrow">Cero Coma</p>
-            <img class="footer__wordmark" src="../assets/media/brand/approved/wordmark-horizontal-white.svg" alt="Cero Coma" width="2200" height="500">
+            <p class="eyebrow">CeroComa</p>
+            <img class="footer__wordmark" src="../assets/media/brand/approved/wordmark-horizontal-white.svg" alt="CeroComa" width="2200" height="500">
           </div>
           <nav class="footer__nav" aria-label="Navegación del pie">
             <a href="../">Inicio</a>
-            <a href="../producciones/">Producciones</a>
             <a href="../proyectos/">Proyectos</a>
             <a href="./" aria-current="page">FAENA</a>
           </nav>
@@ -306,7 +442,7 @@
             <a href="../aviso-legal/">Aviso legal</a>
             <a href="../privacidad/">Privacidad</a>
           </nav>
-          <p>© <span data-current-year>2026</span> Cero Coma</p>
+          <p>© <span data-current-year>2026</span> CeroComa</p>
         </div>
       </div>
     </footer>
@@ -314,5 +450,6 @@
     <script src="../assets/js/config.js" defer></script>
     <script src="../assets/js/site.js" defer></script>
     <script src="../assets/js/motion.js" defer></script>
+    <script src="../assets/js/analytics.js" defer></script>
   </body>
 </html>

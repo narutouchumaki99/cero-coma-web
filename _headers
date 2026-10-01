@@ -1,0 +1,27 @@
+# Cabeceras de Cloudflare Pages.
+#
+# El despliegue publica la raíz entera, así que la documentación interna y los
+# datos de trabajo de producciones/ responden con 200 en una URL pública. No
+# contienen secretos, pero no son contenido para buscadores: se sirven con
+# noindex. No se bloquean en robots.txt a propósito, porque un bloqueo impide
+# que el buscador lea esta cabecera.
+
+/CLAUDE.md
+  X-Robots-Tag: noindex
+
+/.github/*
+  X-Robots-Tag: noindex
+
+/.gitignore
+  X-Robots-Tag: noindex
+
+# Producciones (y mechada-hot) se despublicaron el 1-10-2026: la web se centra
+# en FAENA. Las páginas siguen respondiendo por URL directa, pero fuera del
+# índice y sin enlaces desde el resto del sitio. Se hace aquí y no con una meta
+# en su HTML para no tocar esas páginas autónomas ni pelear con el workflow
+# que reescribe producciones/contenido.json.
+/producciones/
+  X-Robots-Tag: noindex
+
+/producciones/*
+  X-Robots-Tag: noindex
