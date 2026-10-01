@@ -668,6 +668,34 @@
   object-position: top left;
 }
 
+/* Capturas reales recortadas: cada una conserva su proporción. */
+.example-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.example-card__frame--shot {
+  width: min(100%, 14.5rem);
+  margin-inline: auto;
+  border-radius: 1.1rem;
+}
+
+.example-card__frame--shot img {
+  height: auto;
+  aspect-ratio: auto;
+}
+
+@media (max-width: 64rem) {
+  .example-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 36rem) {
+  .example-grid--four {
+    grid-template-columns: 1fr;
+  }
+}
+
 .soon-list {
   margin-top: clamp(1.25rem, 3vw, 2rem);
 }
@@ -680,10 +708,6 @@
 
 @media (max-width: 56rem) {
   .example-grid--product {
-    grid-template-columns: 1fr;
-  }
-
-  .montage-flow {
     grid-template-columns: 1fr;
   }
 }
@@ -727,16 +751,17 @@
   text-underline-offset: 0.2em;
 }
 
-/* Comparativa papel / PDF / FAENA. En móvil la tabla se desplaza en
-   horizontal dentro de su caja en lugar de comprimir las columnas. */
+/* Comparativa papel / PDF / FAENA, sobre fondo claro. En móvil la tabla se
+   desplaza en horizontal dentro de su caja en lugar de comprimir columnas. */
 .compare-table {
   overflow-x: auto;
-  border: 1px solid var(--dark-border);
+  background: var(--white);
+  border: 1px solid var(--light-border);
   border-radius: var(--radius-md);
 }
 
 .compare-table:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--gold-ink);
   outline-offset: 3px;
 }
 
@@ -751,7 +776,7 @@
 .compare-table th,
 .compare-table td {
   padding: var(--space-4) var(--space-5);
-  border-bottom: 1px solid var(--dark-border);
+  border-bottom: 1px solid var(--light-border);
   text-align: left;
   vertical-align: top;
 }
@@ -761,7 +786,7 @@
 }
 
 .compare-table thead th {
-  color: var(--gold);
+  color: var(--gold-ink);
   font-size: 0.72rem;
   font-weight: 730;
   letter-spacing: 0.1em;
@@ -773,14 +798,19 @@
 }
 
 .compare-table td {
-  color: var(--dark-muted);
+  color: var(--light-muted);
 }
 
 .compare-table td:last-child {
   color: var(--white);
-  background: var(--dark-raised);
+  background: var(--zero);
+  font-weight: 600;
 }
 
+.compare-table thead th:last-child {
+  color: var(--gold);
+  background: var(--zero);
+}
 /* Preguntas frecuentes: details nativo, funciona sin JavaScript. */
 .faq {
   max-width: var(--measure);
@@ -836,6 +866,10 @@
   color: var(--light-muted);
 }
 
+.section--dark .faq__more {
+  color: var(--dark-muted);
+}
+
 /* CTA fijo en móvil. Solo aparece cuando el hero ya no se ve y se esconde al
    llegar al cierre o al pie, para no tapar lo que ya ofrece lo mismo. */
 .sticky-cta {
@@ -886,5 +920,171 @@
   .sticky-cta,
   .faq summary::after {
     transition: none;
+  }
+}
+
+/* Botón secundario. Se usaba en el HTML sin estar definido, así que en fondo
+   oscuro el borde negro desaparecía. */
+.button--quiet {
+  background: transparent;
+  border-color: var(--light-border);
+}
+
+.button--quiet:hover {
+  border-color: var(--gold-ink);
+}
+
+.section--dark .button--quiet {
+  color: var(--white);
+  border-color: var(--dark-border);
+}
+
+.section--dark .button--quiet:hover {
+  border-color: var(--gold);
+}
+
+/* Hero de FAENA en oscuro, con un halo dorado detrás del móvil. */
+.product-hero.section--dark {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.product-hero.section--dark::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 10% -10% auto 45%;
+  height: 80%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--gold) 26%, transparent), transparent);
+  pointer-events: none;
+}
+
+.section--dark .product-hero__note {
+  color: var(--dark-muted);
+}
+
+.section--dark .device-phone {
+  border-color: var(--dark-border);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.55), 0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent);
+}
+
+.section--dark .feature-pills li {
+  color: var(--white);
+  background: var(--dark-raised);
+  border-color: var(--dark-border);
+}
+
+/* Lo que trae FAENA, de un vistazo, bajo las acciones del hero. */
+.feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-pills li {
+  padding: 0.35rem 0.75rem;
+  color: var(--zero);
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 620;
+}
+
+.feature-pills li::before {
+  content: "";
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.45rem;
+  vertical-align: 0.12em;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* Vídeo de presentación. preload="none" y póster: no pesa hasta que se pulsa. */
+.video-block {
+  max-width: 60rem;
+}
+
+.video-frame {
+  overflow: hidden;
+  background: var(--zero);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1.5rem 3.5rem rgba(13, 14, 15, 0.16);
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--zero);
+}
+
+.video-block .faq {
+  margin-top: var(--space-6);
+}
+
+.video-block .faq ul {
+  margin: 0 0 var(--space-5);
+  padding-left: var(--space-5);
+  color: var(--light-muted);
+}
+
+.video-block .faq li + li {
+  margin-top: var(--space-2);
+}
+
+/* Funciones: rejilla de tarjetas claras sobre fondo blanco. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.feature-card {
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background: var(--ivory);
+  border: 1px solid var(--light-border);
+  border-radius: var(--radius-md);
+}
+
+.feature-card__label {
+  margin-bottom: var(--space-8);
+  color: var(--gold-ink);
+  font-size: 0.72rem;
+  font-weight: 730;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.feature-card h3 {
+  margin-bottom: var(--space-3);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+}
+
+.feature-card p:last-child {
+  margin: 0;
+  color: var(--light-muted);
+}
+
+@media (max-width: 56rem) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 36rem) {
+  .feature-grid {
+    grid-template-columns: 1fr;
   }
 }

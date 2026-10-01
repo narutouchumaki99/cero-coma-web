@@ -6,15 +6,21 @@
 
 FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.
 
-- El negocio hace una foto a su carta de papel o sube un archivo; la IA lee platos y precios y el propietario lo revisa antes de publicar.
-- Desde el panel del propietario se cambian precios, se añaden o quitan productos y se crean o modifican secciones, también después de publicar.
-- El enlace y el código QR son permanentes: actualizar la carta no obliga a reimprimir el QR.
+- El negocio sube fotos o un PDF de su carta (también de varias páginas); la IA propone platos, precios y secciones en un borrador que el propietario revisa antes de publicar.
+- Carta en español, inglés y francés: nombres y descripciones se traducen automáticamente y el cliente elige idioma.
+- Los 14 alérgenos de la normativa europea se marcan por plato y se muestran como etiquetas.
+- Desde el panel se cambian precios, fotos, productos y secciones (incluida una sección de menú del día con precio), y se marcan platos como agotados, ocultos o destacados. Hay historial de versiones con restauración.
+- El enlace y el código QR son permanentes: actualizar la carta no obliga a reimprimir el QR. Hay un QR por mesa, agrupado en sala, barra y terraza, con impresión A4 y diseño con logo y colores.
+- Croquis de mesas: el personal recibe un aviso en el móvil cuando una mesa abre la carta.
+- Cinco estilos, colores y logo propios; buscador, categorías, horarios y datos del local en la carta.
+- Equipo con roles (propietario, gerente, personal) y permisos.
 - Los clientes abren la carta en el navegador del móvil, sin instalar ninguna aplicación ni registrarse.
-- Dos formas de empezar: el propio negocio la monta en la aplicación, o CeroComa la deja montada, con la aplicación y los códigos QR, en dos o tres días.
-- Hoy FAENA publica y mantiene la carta. Pedidos a cocina, aviso al camarero y pagos en mesa están en preparación y todavía no están disponibles.
+- Dos formas de empezar: el negocio se registra y, tras activar su local por WhatsApp, la monta en la aplicación; o CeroComa la deja montada, con los códigos QR, en dos o tres días.
+- Todavía no hay pedidos a cocina, botón para llamar al camarero ni pagos en mesa: están en preparación.
+- [Vídeo de presentación](https://cerocomasoluciones.com/assets/media/faena/carti-y-faena.mp4): 2 minutos, explica FAENA con una carta animada.
 
 - [FAENA](https://cerocomasoluciones.com/faena/): qué es, cómo funciona, comparativa con carta en papel y PDF, y preguntas frecuentes.
-- [Carta de ejemplo](https://faena.cerocomasoluciones.com/menu/klk): una carta real publicada con FAENA.
+- [Carta de ejemplo](https://faena.cerocomasoluciones.com/menu/prueba-redbar): una carta de prueba publicada con FAENA, en vivo.
 
 ## Guías
 
