@@ -7,7 +7,7 @@
 FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.
 
 - El negocio sube fotos o un PDF de su carta (también de varias páginas); la IA propone platos, precios y secciones en un borrador que el propietario revisa antes de publicar.
-- Carta en español, inglés y francés: nombres y descripciones se traducen automáticamente y el cliente elige idioma.
+- Carta en español, inglés, francés, italiano y alemán: Gratis permite publicar un idioma y Pro varios; los nombres y descripciones se traducen automáticamente y el cliente elige idioma.
 - Los 14 alérgenos de la normativa europea se marcan por plato y se muestran como etiquetas.
 - Desde el panel se cambian precios, fotos, productos y secciones (incluida una sección de menú del día con precio), y se marcan platos como agotados, ocultos o destacados. Hay historial de versiones con restauración.
 - El enlace y el código QR son permanentes: actualizar la carta no obliga a reimprimir el QR. Hay un QR por mesa, agrupado en sala, barra y terraza, con impresión A4 y diseño con logo y colores.
@@ -17,9 +17,13 @@ FAENA es una herramienta de CeroComa que convierte la carta física de un bar o 
 - Los clientes abren la carta en el navegador del móvil, sin instalar ninguna aplicación ni registrarse.
 - Dos formas de empezar: el negocio se registra y, tras activar su local por WhatsApp, la monta en la aplicación; o CeroComa la deja montada, con los códigos QR, en dos o tres días.
 - Todavía no hay pedidos a cocina, botón para llamar al camarero ni pagos en mesa: están en preparación.
+- [Precios de FAENA](https://faena.cerocomasoluciones.com/precios): Gratis 0 €; Pro 9 €/mes o 90 €/año, sin IVA (21 % aparte); Grupo bajo consulta.
 - [Vídeo de presentación](https://cerocomasoluciones.com/assets/media/faena/carti-y-faena.mp4): 2 minutos, explica FAENA con una carta animada.
 
 - [FAENA](https://cerocomasoluciones.com/faena/): qué es, cómo funciona, comparativa con carta en papel y PDF, y preguntas frecuentes.
+- [Aplicación FAENA](https://faena.cerocomasoluciones.com/): acceso a la aplicación.
+- [Todas las funciones](https://faena.cerocomasoluciones.com/caracteristicas): características de la aplicación.
+- [Información de FAENA para modelos de lenguaje](https://faena.cerocomasoluciones.com/llms.txt): ficha de la aplicación.
 - [Carta de ejemplo](https://faena.cerocomasoluciones.com/menu/prueba-redbar): una carta de prueba publicada con FAENA, en vivo.
 
 ## Guías

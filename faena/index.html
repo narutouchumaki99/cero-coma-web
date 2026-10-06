@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://cerocomasoluciones.com/faena/">
     <meta name="theme-color" content="#0d0e0f">
-    <meta name="description" content="FAENA pasa la carta de tu bar o restaurante a una carta digital con QR. Haz una foto, revisa platos y precios y cámbialos cuando quieras sin reimprimir el QR.">
+    <meta name="description" content="FAENA pasa la carta de tu bar o restaurante a una carta digital con QR. Haz una foto, revisa platos y precios y cámbialos sin reimprimir el QR.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:title" content="FAENA — Carta digital con QR para bares y restaurantes">
+    <meta property="og:title" content="Carta digital con QR para bares y restaurantes | FAENA">
     <meta property="og:description" content="Foto a la carta de papel, revisión y publicación. Cambias precios y platos cuando quieras; el QR se imprime una vez.">
     <meta property="og:url" content="https://cerocomasoluciones.com/faena/">
     <meta property="og:site_name" content="CeroComa">
@@ -51,16 +51,16 @@
             "@type": "SoftwareApplication",
             "@id": "https://cerocomasoluciones.com/faena/#product",
             "name": "FAENA",
-            "alternateName": "Tu carta en Cero Coma",
             "applicationCategory": "BusinessApplication",
             "applicationSubCategory": "Carta digital con QR para hostelería",
             "operatingSystem": "Web",
             "inLanguage": "es-ES",
             "url": "https://cerocomasoluciones.com/faena/",
+            "sameAs": ["https://faena.cerocomasoluciones.com/"],
             "description": "FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.",
             "featureList": [
               "Lectura de la carta en papel con IA a partir de fotos o PDF, con revisión antes de publicar",
-              "Carta en español, inglés y francés con traducción automática",
+              "Carta en español, inglés, francés, italiano y alemán con traducción automática; un idioma en Gratis y los cinco en Pro",
               "Los 14 alérgenos de la normativa europea por plato",
               "Edición de precios, productos y secciones, con platos agotados, ocultos o destacados",
               "Sección de menú del día con precio",
@@ -73,6 +73,29 @@
             ],
             "audience": { "@type": "BusinessAudience", "audienceType": "Bares y restaurantes" },
             "image": "https://cerocomasoluciones.com/assets/media/social/og-faena.png",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Gratis",
+                "price": "0",
+                "priceCurrency": "EUR",
+                "url": "https://faena.cerocomasoluciones.com/precios"
+              },
+              {
+                "@type": "Offer",
+                "name": "Pro",
+                "price": "9",
+                "priceCurrency": "EUR",
+                "url": "https://faena.cerocomasoluciones.com/precios",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": 9,
+                  "priceCurrency": "EUR",
+                  "unitText": "MONTH",
+                  "valueAddedTaxIncluded": false
+                }
+              }
+            ],
             "provider": {
               "@type": "Organization",
               "@id": "https://cerocomasoluciones.com/#organization",
@@ -93,6 +116,100 @@
             "inLanguage": "es-ES",
             "publisher": { "@id": "https://cerocomasoluciones.com/#organization" },
             "about": { "@id": "https://cerocomasoluciones.com/faena/#product" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://cerocomasoluciones.com/faena/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué es FAENA exactamente?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo usar la carta que ya tengo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Subes fotos (JPG, PNG, WebP o HEIC) o un PDF, aunque tenga varias páginas. La IA propone platos, precios y secciones en un borrador, señala lo que conviene revisar y tú decides qué pasa a la carta antes de publicar."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿En qué idiomas la ven mis clientes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Se ven los alérgenos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Marcas en cada plato cuáles de los 14 alérgenos de la normativa europea contiene y el cliente los ve como etiquetas, en su idioma. Hay además una guía de preguntas que recomienda platos según los gustos del cliente; es orientativa y no sustituye a la información de alérgenos."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Tengo que cambiar el QR cuando modifico un precio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Cambias el precio en el panel, publicas y el mismo QR muestra la carta actualizada. No hay que reimprimir el código."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo añadir o quitar productos y crear secciones nuevas?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Platos, precios, fotos y secciones se editan desde el panel, también después de publicar. Los cambios se guardan como borrador y el cliente no los ve hasta que pulsas «Publicar cambios»."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Y si publico algo por error?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cada publicación queda en un historial de versiones. Puedes restaurar una anterior en cualquier momento."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Mis clientes tienen que instalar una aplicación?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Escanean el QR o abren el enlace y la carta se ve en el navegador del móvil, sin registrarse."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Tengo que montarla yo?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Como prefieras. Puedes hacerlo tú en la app, o mandarnos la carta por WhatsApp y te la entregamos montada, con la aplicación y los códigos QR funcionando."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto tarda en estar publicada?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Si la montamos nosotros, dos o tres días. Si la haces tú, al registrarte activamos tu local personalmente por WhatsApp; desde ahí, la carta está publicada en cuanto la revisas y pulsas publicar."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿FAENA toma pedidos o cobra en mesa?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Todavía no. El cliente puede apuntarse lo que quiere en una lista en su móvil para enseñársela al camarero, pero no se envía a cocina. Los pedidos, el botón de llamar al camarero y los pagos están en preparación: los verás más abajo, marcados como pendientes."
+                }
+              }
+            ]
           }
         ]
       }
@@ -147,7 +264,7 @@
               <a class="button button--quiet" href="#como-funciona">Cómo funciona</a>
             </div>
             <ul class="feature-pills" aria-label="Lo que incluye FAENA">
-              <li>Español · English · Français</li>
+              <li>Español · Inglés · Francés · Italiano · Alemán</li>
               <li>14 alérgenos por plato</li>
               <li>QR por mesa y zona</li>
               <li>Agotado al momento</li>
@@ -238,8 +355,8 @@
             </li>
             <li class="feature-card">
               <p class="feature-card__label">02 / Idiomas</p>
-              <h3>En español, inglés y francés</h3>
-              <p>Los nombres y descripciones se traducen solos. El cliente elige su idioma al abrir la carta y puede cambiarlo cuando quiera.</p>
+              <h3>En español, inglés, francés, italiano y alemán</h3>
+              <p>Gratis permite publicar la carta en un idioma y Pro en los cinco. Los nombres y descripciones se traducen solos, y el cliente elige el idioma al abrir la carta.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">03 / Alérgenos</p>
@@ -382,7 +499,7 @@
                   <th scope="row">Turistas</th>
                   <td>Una carta impresa por idioma</td>
                   <td>Un documento por idioma</td>
-                  <td>Español, inglés y francés, traducidos solos</td>
+                  <td>Español, inglés, francés, italiano y alemán, traducidos solos</td>
                 </tr>
                 <tr>
                   <th scope="row">Alérgenos</th>
@@ -425,7 +542,7 @@
             </details>
             <details>
               <summary>¿En qué idiomas la ven mis clientes?</summary>
-              <p>En español, inglés y francés. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
+              <p>En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
             </details>
             <details>
               <summary>¿Se ven los alérgenos?</summary>
@@ -513,7 +630,7 @@
           <div data-reveal>
             <p class="eyebrow">Empezar</p>
             <h2 id="cta-title">Entra en FAENA y monta tu carta.</h2>
-            <p>Si encaja con tu negocio, hablamos. Si quieres probar ya, abre la app.</p>
+            <p>Si encaja con tu negocio, hablamos. Si quieres probar ya, abre la app. También puedes consultar <a href="https://faena.cerocomasoluciones.com/caracteristicas">todas las funciones</a> y los <a href="https://faena.cerocomasoluciones.com/precios">precios</a>.</p>
             <div class="pilot-note__actions">
               <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
               <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
