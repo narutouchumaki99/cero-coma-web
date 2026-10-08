@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FAENA en un recorrido: de la carta de papel al QR | CeroComa</title>
+  <meta name="description" content="Desliza y recorre un día en un bar: de la carta de papel tachada a la carta digital con QR de FAENA, que cambias cuando quieras.">
+  <link rel="canonical" href="https://cerocomasoluciones.com/faena/recorrido/">
+  <meta name="theme-color" content="#0d0e0f">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="FAENA en un recorrido: de la carta de papel al QR">
+  <meta property="og:description" content="Desliza y recorre un día en un bar: de la carta de papel tachada a la carta digital con QR.">
+  <meta property="og:url" content="https://cerocomasoluciones.com/faena/recorrido/">
+  <meta property="og:site_name" content="CeroComa">
+  <meta property="og:image" content="https://cerocomasoluciones.com/assets/media/social/og-faena.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../../assets/media/brand/approved/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/media/brand/approved/favicon.ico" sizes="any">
+  <link rel="preload" href="assets/img/escena1.webp" as="image">
+  <style>
+    @font-face {
+      font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap;
+      src: url("../../assets/fonts/manrope-latin.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: "Manrope"; font-style: normal; font-weight: 200 800; font-display: swap;
+      src: url("../../assets/fonts/manrope-latin-ext.woff2") format("woff2");
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0;
+    }
+
+    /* Tokens de marca (assets/css/tokens.css). La página es autónoma porque el
+       motor de scroll pinta su propio DOM a pantalla completa. */
+    :root, .sw-root {
+      --zero: #0d0e0f;
+      --ivory: #f5f2eb;
+      --gold: #b69a61;
+      --foil-hi: #f0d9a0;
+      --sw-bg: #0d0e0f;
+      --sw-ink: #f5f2eb;
+      --sw-ink-soft: #b8bab9;
+      --sw-accent: #c9ab6c;
+      --sw-font-display: "Manrope", system-ui, sans-serif;
+      --sw-font-body: "Manrope", system-ui, sans-serif;
+    }
+    body { background: var(--zero); }
+    .visualmente-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+    /* Marca y botones sobre fondo oscuro */
+    .sw-brand__mark { display: none; }
+    .sw-brand__name { font-weight: 800; letter-spacing: .14em; font-size: .95rem; }
+    .sw-topcta { background: var(--ivory); color: var(--zero); }
+    .sw-btn--primary { background: linear-gradient(135deg, var(--foil-hi), var(--gold)); color: var(--zero); }
+    .sw-btn--ghost { color: var(--ivory); border-color: color-mix(in srgb, var(--ivory) 30%, transparent); }
+    .sw-copy__title { font-weight: 480; letter-spacing: -.02em; line-height: 1.06; }
+    .sw-copy__eyebrow { letter-spacing: .18em; }
+    .sw-nav { background: color-mix(in srgb, var(--zero) 55%, transparent); border-color: color-mix(in srgb, var(--gold) 25%, transparent); }
+    .sw-nav__item.is-active { color: var(--zero); }
+    .sw-route__label { display: none; }
+    .sw-sky__glow { background: radial-gradient(50% 45% at 72% 50%, color-mix(in srgb, var(--sw-accent) 16%, transparent), transparent 70%); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--foil-hi); outline-offset: 3px; }
+
+    /* Pantalla real de FAENA junto al texto */
+    .pantalla { margin: 22px 0 0; display: flex; align-items: center; gap: 14px; }
+    .pantalla img {
+      width: 132px; height: auto; aspect-ratio: 390 / 844; object-fit: cover; object-position: top;
+      border-radius: 18px; border: 5px solid #1b1c1e;
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent), 0 18px 40px rgba(0,0,0,.45);
+      background: #f1e4cc;
+    }
+    .pantalla figcaption { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sw-ink-soft); max-width: 12ch; }
+
+    /* Escritorio: el vídeo es vertical, va en un marco a la derecha y el texto a la izquierda */
+    @media (min-width: 861px) {
+      .sw-stage {
+        inset: auto; top: 50%; right: clamp(56px, 9vw, 180px);
+        height: min(88vh, 940px); aspect-ratio: 9 / 16; transform: translateY(-50%);
+        border-radius: 30px; overflow: hidden;
+        box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent), 0 40px 120px rgba(0,0,0,.6), 0 0 160px color-mix(in srgb, var(--gold) 18%, transparent);
+      }
+      .sw-copylayer::before { display: none; }
+      .sw-copy { width: min(40vw, 500px); left: clamp(28px, 7vw, 140px); }
+      .pantalla { position: absolute; left: calc(100% + 28px); bottom: 0; margin: 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+    @media (min-width: 861px) and (max-width: 1100px) {
+      .sw-stage { height: min(78vh, 760px); right: 48px; }
+      .sw-copy { width: min(44vw, 420px); }
+      .sw-route { display: none; }
+    }
+
+    /* Móvil: vídeo a pantalla completa y la captura flota encima del texto */
+    @media (max-width: 860px) {
+      .pantalla { position: absolute; right: 0; bottom: calc(100% + 14px); margin: 0; }
+      .pantalla img { width: 82px; border-width: 3px; border-radius: 12px; }
+      .pantalla figcaption { display: none; }
+      .sw-copy__title { font-size: clamp(1.75rem, 7.6vw, 2.5rem); }
+    }
+
+    /* Sin JavaScript: el recorrido en texto */
+    .sin-js { color: var(--ivory); font-family: "Manrope", system-ui, sans-serif; max-width: 40rem; margin: 0 auto; padding: 48px 20px; line-height: 1.6; }
+    .sin-js a { color: var(--foil-hi); }
+  </style>
+</head>
+<body>
+  <h1 class="visualmente-oculto">FAENA en un recorrido: de la carta de papel al QR</h1>
+  <div id="world"></div>
+
+  <noscript>
+    <div class="sin-js">
+      <h2>Otra vez tachando precios.</h2>
+      <p>Cada cambio en la carta de papel es reimprimir, tachar o improvisar. Hay una forma más fácil.</p>
+      <h2>Una foto a tu carta. Ya está.</h2>
+      <p>FAENA lee tu carta con IA y la convierte en carta digital. La revisas, cambias lo que quieras y la publicas.</p>
+      <h2>Un QR por mesa. Sin descargar nada.</h2>
+      <p>Tus clientes la abren en su móvil y la leen en su idioma, con los 14 alérgenos de cada plato.</p>
+      <h2>Cambias un precio y se ve al momento.</h2>
+      <p>El QR se imprime una vez y no cambia nunca. Si se acaba un plato, lo marcas agotado en un segundo.</p>
+      <p><a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA.">Quiero mi carta lista</a> · <a href="../">Ver FAENA</a></p>
+    </div>
+  </noscript>
+
+  <script src="scrub-engine.js"></script>
+  <script>
+    const WHATSAPP = 'https://wa.me/34643403723?text=' + encodeURIComponent('Hola, quiero que me montéis la carta en FAENA.');
+
+    mountScrollWorld(document.getElementById('world'), {
+      brand: { name: 'FAENA', href: '../' },
+      cta: { label: 'Quiero mi carta', href: WHATSAPP },
+      hint: 'Desliza',
+      nav: true,
+      sections: [
+        {
+          id: 'papel', label: 'La carta de papel',
+          still: 'assets/img/escena1.webp', clip: 'assets/vid/escena1.mp4', clipMobile: 'assets/vid/escena1-m.mp4',
+          accent: '#c9ab6c', scroll: 1.5, linger: 0.35,
+          eyebrow: 'FAENA · Carta digital con QR',
+          title: 'Otra vez tachando precios.',
+          body: 'Cada cambio en la carta de papel es reimprimir, tachar o improvisar. Hay una forma más fácil.',
+        },
+        {
+          id: 'foto', label: 'Una foto',
+          still: 'assets/img/escena2.webp', clip: 'assets/vid/escena2.mp4', clipMobile: 'assets/vid/escena2-m.mp4',
+          accent: '#d8bd7f', scroll: 1.4, linger: 0.3,
+          eyebrow: '01 · Haz una foto',
+          title: 'Una foto a tu carta. Ya está.',
+          body: 'FAENA lee tu carta con IA y la convierte en carta digital. La revisas, cambias lo que quieras y la publicas.',
+        },
+        {
+          id: 'qr', label: 'El QR',
+          still: 'assets/img/escena3.webp', clip: 'assets/vid/escena3.mp4', clipMobile: 'assets/vid/escena3-m.mp4',
+          accent: '#e3c489', scroll: 1.4, linger: 0.3,
+          eyebrow: '02 · El cliente escanea',
+          title: 'Un QR por mesa. Sin descargar nada.',
+          body: 'Tus clientes la abren en su móvil y la leen en su idioma, con los 14 alérgenos de cada plato.',
+        },
+        {
+          id: 'terraza', label: 'Tú a lo tuyo',
+          still: 'assets/img/escena4.webp', clip: 'assets/vid/escena4.mp4', clipMobile: 'assets/vid/escena4-m.mp4',
+          accent: '#f0d9a0', scroll: 1.7, linger: 0.4,
+          eyebrow: '03 · Tú a lo tuyo',
+          title: 'Cambias un precio y se ve al momento.',
+          body: 'El QR se imprime una vez y no cambia nunca. Si se acaba un plato, lo marcas agotado en un segundo.',
+          cta: {
+            primary: { label: 'Quiero mi carta lista', href: WHATSAPP },
+            secondary: { label: 'Ver FAENA', href: '../' },
+          },
+        },
+      ],
+      connectors: [],
+    });
+
+    // Capturas reales de la app en los capítulos 2 y 3.
+    const pantallas = {
+      1: { src: 'assets/img/pantalla-carta.webp', alt: 'Carta digital en FAENA: categorías y platos con precio' },
+      2: { src: 'assets/img/pantalla-idioma.webp', alt: 'Pantalla de FAENA para elegir el idioma de la carta' },
+    };
+    document.querySelectorAll('.sw-copy').forEach((copy, i) => {
+      const p = pantallas[i];
+      if (!p) return;
+      const fig = document.createElement('figure');
+      fig.className = 'pantalla';
+      fig.innerHTML = `<img src="${p.src}" alt="${p.alt}" loading="lazy" decoding="async" width="390" height="844"><figcaption>Captura real de FAENA</figcaption>`;
+      copy.appendChild(fig);
+    });
+  </script>
+</body>
+</html>
