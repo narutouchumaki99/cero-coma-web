@@ -225,13 +225,18 @@ function mountScrollWorld(container, config) {
     s.loading = true;
     // Serve the lighter mobile encode on phones when one was provided.
     const url = (isMobile() && s.clipM) ? s.clipM : s.clip;
-    fetch(url).then(r => r.ok ? r.blob() : Promise.reject(new Error('404')))
-      .then(blob => {
+    // CeroComa: if fetch is unavailable (page opened from disk via file://, where
+    // Chrome blocks fetch), fall back to pointing the <video> at the file directly.
+    const viaFetch = location.protocol === 'file:'
+      ? Promise.reject(new Error('file'))
+      : fetch(url).then(r => r.ok ? r.blob() : Promise.reject(new Error('404'))).then(b => URL.createObjectURL(b));
+    viaFetch.catch(() => location.protocol === 'file:' ? url : Promise.reject(new Error('fetch')))
+      .then(src => {
         const v = document.createElement('video');
         v.className = 'sw-scene__video';
         v.muted = true; v.playsInline = true; v.preload = 'auto';
         v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
-        v.src = URL.createObjectURL(blob);
+        v.src = src;
         v.addEventListener('loadedmetadata', () => { s.ready = true; read(); });
         // Reveal the video (hide the still poster) only once a real frame has
         // painted — on iOS a seeked-but-never-played muted video stays blank, so
