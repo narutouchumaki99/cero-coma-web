@@ -32,7 +32,7 @@ Push a `main` → despliegue automático, sin staging intermedio: lo que entra e
 
 - **Cloudflare Pages** sirve el dominio (es el despliegue que cuenta).
 - `.github/workflows/pages.yml` publica además en GitHub Pages como respaldo.
-- `.github/workflows/chatgpt-producciones.yml` permite que un `repository_dispatch` externo reescriba `producciones/contenido.json` y haga push a `main` por su cuenta. Al tocar `producciones/`, contar con esa carrera.
+- `.github/workflows/chatgpt-producciones.yml` es de la época en que ChatGPT editaba Producciones (escribía `producciones/contenido.json` y hacía push). **Se desactiva en GitHub el 10-10-2026**: la página ya no lee ese JSON. Sus manuales están archivados fuera del repo, en `C:\Users\otman\facturacion\archivo-producciones-chatgpt\`.
 
 ## Arquitectura: dos mundos que no se mezclan
 
@@ -46,19 +46,18 @@ Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `4
 - **`site.js`** gobierna menú móvil, año del pie, enlaces de contacto y el compresor de la portada.
 - Las subpáginas declaran `data-site-root="../"` en `<body>` y la portada `"./"`. Cualquier script que construya rutas hacia `assets/` debe leer `document.body.dataset.siteRoot` en lugar de usar rutas relativas a la página: es el fallo clásico al mover contenido a una subcarpeta.
 
-### 2. Producciones (despublicada)
+### 2. Producciones
 
-**Despublicada el 1-10-2026**: sin enlaces desde el resto del sitio, fuera del sitemap y con `X-Robots-Tag: noindex` para `/producciones/*` en `_headers`. Las páginas siguen respondiendo por URL directa. CeroComa Studio también está oculto (`visibility: "private"` en `projects-data.js`). Para volver a publicarlas: quitar esas reglas de `_headers`, devolverlas al sitemap y a los menús, y restaurar la sección de muestras de la portada (sus estilos siguen en `portada.css`).
+Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Producciones** (webs que se recorren como una película) **con la identidad de marca**: `tokens.css` → `base.css` → `producciones.css` → `motion.css`, y `config.js` → `site.js` → `motion.js` → `producciones.js` (solo el vídeo de portada). HTML fijo, sin JSON. Está en el sitemap, en el menú y en el pie; **solo el índice** se indexa. CeroComa Studio sigue oculto (`visibility: "private"` en `projects-data.js`).
 
-`producciones/` y `producciones/mechada-hot/` son páginas **autónomas**: CSS en línea, tipografías de Google (Archivo Black, Barlow, IBM Plex Mono), sin `tokens.css` ni `site.js`. No alinearlas con el sistema de marca salvo petición explícita.
-
-- `producciones/contenido.json` es la fuente de verdad de textos y fotos. `index.html` lo pinta por `fetch` y lleva una **copia de respaldo embebida** en `<script id="contenido-local">`: al cambiar el JSON hay que sincronizar esa copia, o un fallo de red mostrará la versión anterior.
-- Los playbooks `producciones/CODEX.md`, `CHATGPT.md` y `EDITAR.md` mandan sobre esa carpeta: huecos de foto con nombres fijos (`fotos/producto/01.jpg`, `fotos/escena/`, `fotos/review/`), un cliente = un `cliente.json`, reescritura completa del JSON (nunca fusionarlo con el cliente anterior) y borrado de las fotos que queden huérfanas. Leerlos antes de tocar nada ahí.
-- `mechada-hot/` es una landing cerrada de ~1.450 líneas con dos vídeos que suman 12 MB. Es, con diferencia, lo más pesado del sitio.
+- `producciones/assets/`: bucle de portada (`portada-m.mp4` vertical; `portada-h.mp4`, cuatro paneles), sus fotos fijas, las fotos 3:4 de las tarjetas y la imagen para compartir.
+- Los **ejemplos** son webs de clientes inventados con su propia marca y **no se re-tematizan**: `la-maqueta/` y `del-cafeto/` (motor `scrub-engine.js` + plantilla editorial), `mechada-hot/` (despiece en fotogramas, carta y pedido por WhatsApp en modo demo) y `duero-lento/` (3D de partículas en un solo archivo). Llevan `noindex` en el HTML y por `X-Robots-Tag` en `_headers`, y siempre la etiqueta de ejemplo con marca inventada.
+- **Sus fuentes están fuera del repo**, en `C:\Users\otman\facturacion\demos\`: `la-maqueta/web`, `del-cafeto/web`, `landing-mechada-hot/fuente` (`node construir.mjs` → `web/`) y `lab-3d/fuente/03-bodega-duero` (`node construir.mjs 03-bodega-duero`). Se edita allí, se construye y se copia aquí.
+- Los botones de WhatsApp de los ejemplos van a 3tmen con un mensaje que dice que es un ejemplo, nunca como si el negocio existiera.
 
 ## Reglas del sitio que no son evidentes
 
-- **Al añadir una página**: `<link rel="canonical">` con su URL definitiva, entrada en `sitemap.xml` y enlace desde el pie si procede. `noindex` en el HTML solo en `404.html`; lo demás que no deba indexarse (documentación interna, `producciones/`) va por `X-Robots-Tag` en `_headers`, nunca con `Disallow` en `robots.txt`, que impediría leer la cabecera.
+- **Al añadir una página**: `<link rel="canonical">` con su URL definitiva, entrada en `sitemap.xml` y enlace desde el pie si procede. `noindex` en el HTML solo en `404.html`; lo demás que no deba indexarse (documentación interna, los ejemplos de `producciones/`) va por `X-Robots-Tag` en `_headers`, nunca con `Disallow` en `robots.txt`, que impediría leer la cabecera.
 - **Cloudflare ofusca los `mailto:`** y los convierte en `/cdn-cgi/l/email-protection#…`, que necesita JavaScript. Donde el correo debe leerse sin él (páginas legales, JSON-LD), envolverlo en `<!--email_off-->…<!--/email_off-->`; ya está aplicado en portada, aviso legal y privacidad.
 - **No borrar `googleb7de5be3ec7cd0b5.html`**: es la verificación de Google Search Console.
 - `_redirects` mantiene el 301 de `/tu-carta-en-cero-coma/*` → `/faena/`. Esa URL antigua está indexada: no romperla.
