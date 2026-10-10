@@ -71,8 +71,8 @@
     return new Promise(resolve => {
       (function paso() {
         const t = performance.now() - t0;
-        if (document.querySelector('.sw-scene.has-clip')) sube(1);
-        if (t > 7000) sube(1);                       // nunca más de 7 s esperando
+        if (document.querySelector('.sw-scene.has-clip, .sw-scene.is-loaded')) sube(1);   // primer vídeo listo
+        if (t > 5000) sube(1);                       // nunca más de 5 s esperando: si no, manda la imagen fija
         mostrado += (meta - mostrado) * 0.08;
         if (meta === 1 && 1 - mostrado < 0.004) mostrado = 1;
         barra.style.transform = `scaleX(${mostrado.toFixed(3)})`;

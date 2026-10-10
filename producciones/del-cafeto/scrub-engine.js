@@ -67,7 +67,13 @@
        - keeps the still as a live poster until the clip actually paints its first frame,
          and primes each video (muted play→pause) on first touch — this is what stops iOS
          from showing a blank scene before the first seek.
+       - keeps a live <video> only for the scenes around the viewport and releases the rest
+         (rebuilt from the cached Blob on the way back): a phone has few hardware decoders,
+         and without this the scenes past the first few never paint and stay on their still.
        - drops the drifting particles and ignores URL-bar-only resizes (no scroll jump).
+     On every device the clips are prefetched in scroll order (up to PREFETCH_AHEAD
+     viewport-heights ahead, nothing extra under Save-Data), so a fast flick doesn't
+     outrun the download.
      Nothing here is required — a config with only `clip`/`connectors` still works on
      phones; the mobile variants just make it lighter and smoother.
 
@@ -166,7 +172,7 @@ function mountScrollWorld(container, config) {
     if (poster) img.src = poster;
     scene.appendChild(img); stage.appendChild(scene);
     s.el = scene; s.img = img; s.video = null; s.hasClip = false;
-    s.loading = false; s.ready = false; s.cur = 0; s.target = 0; s.visible = false;
+    s.ready = false; s.cur = 0; s.target = 0; s.visible = false;
   });
 
   // per-section copy / route / nav
@@ -218,44 +224,106 @@ function mountScrollWorld(container, config) {
     window.scrollTo({ top: seg.start + (seg.end - seg.start) * 0.5, behavior: reduce ? 'auto' : 'smooth' });
   }
 
-  function loadClip(s) {
-    // Under prefers-reduced-motion we never load the clips at all — the stills stay up
-    // and simply cross-dissolve as you scroll. No scrubbed video motion, no decode cost.
-    if (reduce || s.loading || !s.clip) return;
-    s.loading = true;
+  // ---- clips ----
+  // CeroComa: two separate things are managed here.
+  //  - The clip FILE is fetched once as a Blob and kept, so coming back to a scene never
+  //    hits the network again. Files are prefetched in scroll order in the background, so
+  //    a fast flick finds the next clip already downloaded instead of only its still.
+  //  - The <video> ELEMENT is the scarce resource on phones: each live one holds a
+  //    hardware decoder, and once a phone runs out of them the later scenes never paint
+  //    and the rest of the page is stills only. So on phones only the scenes around the
+  //    viewport keep a <video>; the others are released and rebuilt from the cached Blob.
+  // Under prefers-reduced-motion nothing is loaded at all — the stills stay up and simply
+  // cross-dissolve as you scroll. No scrubbed video motion, no decode cost.
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  const PREFETCH_AHEAD = 5;   // viewport-heights of clips downloaded ahead of the reader
+  let fetching = 0;
+
+  function fetchClip(s) {
+    if (reduce || !s.clip || s.src || s.fetching || s.failed > 2) return;
+    s.fetching = true; fetching++;
     // Serve the lighter mobile encode on phones when one was provided.
     const url = (isMobile() && s.clipM) ? s.clipM : s.clip;
-    // CeroComa: if fetch is unavailable (page opened from disk via file://, where
-    // Chrome blocks fetch), fall back to pointing the <video> at the file directly.
-    const viaFetch = location.protocol === 'file:'
-      ? Promise.reject(new Error('file'))
-      : fetch(url).then(r => r.ok ? r.blob() : Promise.reject(new Error('404'))).then(b => URL.createObjectURL(b));
-    viaFetch.catch(() => location.protocol === 'file:' ? url : Promise.reject(new Error('fetch')))
-      .then(src => {
-        const v = document.createElement('video');
-        v.className = 'sw-scene__video';
-        v.muted = true; v.playsInline = true; v.preload = 'auto';
-        v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
-        v.src = src;
-        v.addEventListener('loadedmetadata', () => { s.ready = true; read(); });
-        // Reveal the video (hide the still poster) only once a real frame has
-        // painted — on iOS a seeked-but-never-played muted video stays blank, so
-        // hiding the still on metadata alone would flash an empty scene.
-        v.addEventListener('seeked', () => { s.el.classList.add('has-clip'); }, { once: true });
-        v.addEventListener('loadeddata', () => { try { v.pause(); } catch (e) {} if (userReady) primeVideo(v); });
-        s.el.appendChild(v); s.video = v; s.hasClip = true;
-      }).catch(() => { s.loading = false; });
+    // If fetch is unavailable (page opened from disk via file://, where Chrome blocks
+    // fetch), point the <video> at the file directly.
+    const got = location.protocol === 'file:' ? Promise.resolve(url)
+      : fetch(url).then(r => r.ok ? r.blob() : Promise.reject(new Error(r.status))).then(b => URL.createObjectURL(b));
+    got.then(src => { s.src = src; }, () => { s.failed = (s.failed || 0) + 1; })
+      .then(() => { s.fetching = false; fetching--; read(); });
+  }
+
+  // Background download of the nearest clip not yet fetched, ahead of the reader first.
+  function prefetch(y) {
+    if (reduce || saveData || fetching >= (isMobile() ? 1 : 2)) return;
+    let best = null, bestD = Infinity;
+    for (let i = 0; i < NSEG; i++) {
+      const s = SEGMENTS[i];
+      if (!s.clip || s.src || s.fetching || s.failed > 2) continue;
+      const d = s.end < y ? (y - s.end) * 3 : Math.max(0, s.start - y);   // behind costs triple
+      if (d < bestD) { bestD = d; best = s; }
+    }
+    if (best && bestD < PREFETCH_AHEAD * vh) fetchClip(best);
+  }
+
+  function attach(s) {
+    if (s.video || !s.src || s.broken > 2) return;
+    const v = document.createElement('video');
+    v.className = 'sw-scene__video';
+    v.muted = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+    // Reveal the video (hide the still poster) only once a real frame has painted — on
+    // iOS a seeked-but-never-played muted video stays blank, so hiding the still on
+    // metadata alone would flash an empty scene. requestVideoFrameCallback fires only
+    // when a frame is actually presented; without it, fall back to `seeked`.
+    const reveal = () => { if (s.video === v) s.el.classList.add('has-clip'); };
+    if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(reveal);
+    if (!v.requestVideoFrameCallback || !coarse) v.addEventListener('seeked', reveal, { once: true });
+    v.addEventListener('loadedmetadata', () => {
+      if (s.video !== v) return;
+      s.ready = true;
+      // Start from where the reader already is, and force a first seek so a frame gets
+      // decoded (the raf loop skips the seek when the target is already 0).
+      s.cur = s.target;
+      try { v.currentTime = Math.max(0.001, clamp(s.cur, 0, 0.999) * (v.duration || 1)); s.seekAt = performance.now(); } catch (e) {}
+      read();
+    });
+    v.addEventListener('loadeddata', () => {
+      if (s.video !== v) return;
+      s.el.classList.add('is-loaded');
+      try { v.pause(); } catch (e) {}
+      if (userReady) primeVideo(v);
+    });
+    // A decoder the phone refused: drop the element (the still takes over) and let it be
+    // rebuilt later, a couple of times at most.
+    v.addEventListener('error', () => { if (s.video !== v) return; s.broken = (s.broken || 0) + 1; detach(s); });
+    v.src = s.src;
+    s.el.appendChild(v); s.video = v; s.hasClip = true;
+  }
+
+  function detach(s) {
+    const v = s.video;
+    if (!v) return;
+    s.video = null; s.hasClip = false; s.ready = false;
+    s.el.classList.remove('has-clip', 'is-loaded');
+    try { v.pause(); v.removeAttribute('src'); v.load(); } catch (e) {}
+    v.remove();
   }
 
   function read() {
     const y = window.scrollY || window.pageYOffset;
     const fade = CROSSFADE * vh;
+    const phone = isMobile();
     let ci = 0;
     for (let i = 0; i < NSEG; i++) if (y >= SEGMENTS[i].start) ci = i;
 
     for (let i = 0; i < NSEG; i++) {
       const s = SEGMENTS[i];
-      if (y > s.start - 1.6 * vh && y < s.end + 1.6 * vh) loadClip(s);
+      // Scenes about to be (or just) seen get a live <video>; on phones, scenes well out
+      // of reach give theirs back (with some hysteresis so a scene at the edge doesn't
+      // flap between built and released).
+      const ahead = s.start - y, behind = y - s.end;
+      if (ahead < 1.6 * vh && behind < (phone ? 0.8 : 1.6) * vh) { if (s.src) attach(s); else fetchClip(s); }
+      else if (phone && (ahead > 2.4 * vh || behind > 1.2 * vh)) detach(s);
       const local = clamp((y - s.start) / (s.end - s.start), 0, 1);
       s.target = s.linger ? lingerEase(local, s.linger) : local;
       let outside = 0;
@@ -295,6 +363,7 @@ function mountScrollWorld(container, config) {
     scrollbarFill.style.transform = `scaleX(${clamp(y / (totalW * vh))})`;
     hint.style.opacity = clamp(1 - y / (0.5 * vh));
     if (particles) particles.style.transform = `translate3d(0, ${-y * 0.05}px, 0)`;
+    prefetch(y);
     ticking = false;
   }
 
@@ -306,12 +375,14 @@ function mountScrollWorld(container, config) {
       // Never queue a seek while the decoder is still resolving the last one.
       // On phones a fast flick would otherwise pile up seeks and freeze the clip;
       // cur keeps lerping, so we snap to the latest target the moment it's free.
-      if (s.video.seeking) continue;
+      // Some phone decoders occasionally never resolve a seek; after 700 ms stop waiting
+      // for it, or the scene would stay frozen on that frame for the rest of the page.
+      if (s.video.seeking && performance.now() - (s.seekAt || 0) < 700) continue;
       if (!s.visible && Math.abs(s.cur - s.target) < 0.002) continue;
       s.cur += (s.target - s.cur) * (reduce ? 1 : 0.18);
       const dur = s.video.duration || 1;
       const t = clamp(s.cur, 0, 0.999) * dur;
-      if (Math.abs(s.video.currentTime - t) > eps) { try { s.video.currentTime = t; } catch (e) {} }
+      if (Math.abs(s.video.currentTime - t) > eps) { try { s.video.currentTime = t; s.seekAt = performance.now(); } catch (e) {} }
     }
     requestAnimationFrame(raf);
   }
@@ -319,7 +390,7 @@ function mountScrollWorld(container, config) {
   // iOS needs a user gesture before a muted video will decode/paint reliably. On the
   // first touch we prime every loaded clip (muted play→pause) so the first seek is
   // instant instead of showing a blank frame. `userReady` also makes freshly-loaded
-  // clips prime themselves (see loadClip).
+  // clips prime themselves (see attach).
   let userReady = false;
   function primeVideo(v) {
     if (!isMobile() || !v) return;
