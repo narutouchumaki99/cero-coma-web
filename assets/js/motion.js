@@ -47,9 +47,22 @@
     // Con transiciones de vista el navegador funde la navegación por su cuenta.
     if ("onpagereveal" in window) return;
 
-    // Respaldo: solo se funde la entrada. Interceptar el clic para animar la
-    // salida obligaba a esperar antes de navegar, y esa espera se nota.
     root.classList.add("page-enter");
+    let navigating = false;
+    document.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || root.dataset.storyMotion === "off") return;
+      const link = event.target instanceof Element ? event.target.closest("a[href]") : null;
+      if (!link || link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin || !/^https?:$/.test(url.protocol) || (url.pathname === location.pathname && url.search === location.search)) return;
+      if (navigating) { event.preventDefault(); return; }
+      event.preventDefault();
+      navigating = true;
+      root.classList.add("page-leave");
+      window.setTimeout(() => location.assign(url.href), 140);
+      window.setTimeout(() => { root.classList.remove("page-leave"); navigating = false; }, 1400);
+    });
+    window.addEventListener("pageshow", () => { root.classList.remove("page-leave"); navigating = false; });
   }
 
   function setupRecorrido() {

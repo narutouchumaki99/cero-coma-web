@@ -1,7 +1,7 @@
 /* Movimiento del sitio.
    Regla: el movimiento confirma, no adorna. Solo se animan opacidad y
    posición o escala — nunca desenfoques, anchos ni sombras, que obligan al
-   móvil a repintar en cada fotograma. Nada dura más de 400 ms.
+     móvil a repintar en cada fotograma. Las escenas tienen su recorrido propio.
    Todo queda desactivado con prefers-reduced-motion. */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -11,19 +11,19 @@
   }
 
   ::view-transition-old(root) {
-    animation: pagina-sale 120ms ease both;
+    animation: pagina-sale 180ms ease both;
   }
 
   ::view-transition-new(root) {
-    animation: pagina-entra 240ms var(--ease-out) both;
+    animation: pagina-entra 360ms var(--ease-out) both;
   }
 
-  /* Respaldo para navegadores sin transiciones de vista: solo la entrada.
-     La salida no se anima a propósito — esperar antes de navegar se nota
-     como lentitud, y el corte limpio no. */
+  /* Respaldo corto para entrada y salida sin transiciones entre documentos. */
   html.page-enter body {
-    animation: pagina-entra 240ms var(--ease-out) both;
+    animation: pagina-entra 360ms var(--ease-out) both;
   }
+
+  html.page-leave body { animation: pagina-sale 140ms ease both; pointer-events: none; }
 
   /* Entrada de bloques al aparecer en pantalla. Solo se oculta si hay JS,
      y una sola vez por bloque. */
@@ -43,10 +43,10 @@
 }
 
 @keyframes pagina-sale {
-  to { opacity: 0; }
+  to { opacity: 0; transform: translateY(-8px); }
 }
 
 @keyframes pagina-entra {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }

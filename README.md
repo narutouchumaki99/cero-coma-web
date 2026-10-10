@@ -9,3 +9,5 @@ Oferta de FAENA: Gratis/Básico/Pro/Red, activación manual. Contrastar importes
 Historial sustituido: [.github/archive/canon-2026-10-10](.github/archive/canon-2026-10-10/README.md), con manifiesto y SHA-256. La copia divergente del monorepo está archivada y no sirve este dominio.
 
 Cambios mediante rama y PR. La integración en main publica automáticamente; comprobar después el dominio. No ejecutar el workflow histórico de JSON ni publicar demostraciones como negocios reales.
+
+La portada y `/faena/` comparten `assets/css/story.css` y `assets/js/story.js`: titulares breves, escenas visuales y explicación en tres pasos. Reutilizan los recursos de Historia, Recorrido y las capturas de la app. Los vídeos decorativos se cargan al aparecer y se pausan fuera de pantalla; el botón de movimiento y la preferencia del sistema permiten una presentación estática. `motion.css` y `motion.js` gestionan las transiciones entre páginas.
