@@ -7,64 +7,59 @@
       slug: "faena",
       name: "FAENA",
       category: "Producto",
-      status: "Desarrollo activo",
+      status: "En producción",
       featured: true,
       visibility: "public",
-      summary: "Un flujo para convertir una carta existente en una versión digital editable, publicable y conectada a un QR permanente.",
-      problem: "Publicar y mantener una carta digital suele repartir el trabajo entre archivos, maquetación, enlaces y códigos QR.",
-      audience: "Negocios de hostelería que necesitan una carta digital clara y mantenible.",
-      currentState: "Aplicación desplegada y en uso: editor, publicación con QR permanente, equipo con roles e invitaciones por correo. La extracción con proveedor real exige revisión humana antes de tocar la carta.",
+      summary: "Carta digital editable, publicación por versiones y QR permanente para bares, cafeterías y restaurantes.",
+      problem: "Actualizar una carta no debería exigir maquetar otra web ni reimprimir el QR.",
+      audience: "Negocios de hostelería que necesitan una carta clara y mantenible.",
+      currentState: "App publicada con Gratis, Básico, Pro y Red. La importación se revisa antes de publicar; Básico y Pro se activan por contacto y Red sigue en piloto acompañado.",
       workingFeatures: Object.freeze([
-        "Edición manual de categorías y productos",
-        "Publicación versionada con dirección permanente",
-        "Generación y descarga de QR",
-        "Subida y preparación de páginas",
-        "Extracción real validada con revisión humana obligatoria",
-        "Aprobación de resultados revisados al borrador editable",
-        "Equipo con roles: propietario, gerente y personal",
-        "Invitaciones por correo con la identidad de CeroComa"
+        "Editor y publicación por versiones con QR permanente",
+        "Importación de fotos o PDF con revisión humana",
+        "Fotos, estilos, logo y filtros de dieta desde Básico",
+        "Idiomas y Decide en CeroComa en Pro y Red",
+        "Equipo, mesas y comandas en Red, con puesta en marcha acompañada"
       ]),
-      simulatedFeatures: Object.freeze([
-        "La demostración de esta web explica el flujo con archivos de ejemplo, sin conexión al producto ni a la IA"
-      ]),
-      nextMilestone: "Cerrar el procesamiento duradero y ejecutar un piloto controlado con un negocio real.",
+      simulatedFeatures: Object.freeze([]),
+      nextMilestone: "Validar la operación de Red en locales reales y medir tiempo de publicación y costes de IA.",
       blockers: Object.freeze([
-        "Procesamiento duradero (cola persistente)",
-        "Piloto con un negocio real"
+        "Cupos, zonas, precio y avisos con móvil bloqueado de Red pendientes de aceptación",
+        "Costes y topes de IA todavía provisionales",
+        "Sin pago desde la carta ni cobro automático de planes"
       ]),
       publicRoute: "faena/",
-      lastUpdated: "2026-08-11",
+      lastUpdated: "2026-10-10",
       media: Object.freeze([])
     }),
     Object.freeze({
-      id: "studio",
-      slug: "cero-coma-studio",
-      name: "CeroComa Studio",
+      id: "producciones",
+      slug: "producciones",
+      name: "CeroComa Producciones",
       category: "Servicio",
-      status: "Validación comercial",
+      status: "Por encargo",
       featured: false,
-      // Despublicado el 1-10-2026: la web se centra solo en FAENA.
-      visibility: "private",
-      summary: "Una línea de trabajo para convertir espacios, ideas y propuestas comerciales en materiales visuales comprensibles.",
-      problem: "Muchos negocios necesitan mostrar una transformación o propuesta antes de poder construirla o venderla.",
-      audience: "Negocios y profesionales que necesitan explicar visualmente una propuesta de espacio o servicio.",
-      currentState: "Propuesta en validación comercial. Los materiales públicos aún están sujetos a permiso y revisión de privacidad.",
+      visibility: "public",
+      summary: "Webs que se recorren como una película, imágenes, vídeo y 3D a partir de tu producto real.",
+      problem: "Un buen producto necesita una presentación clara que ayude a enseñarlo y venderlo.",
+      audience: "Negocios que necesitan presentar productos, espacios o servicios en su web y redes.",
+      currentState: "Servicio público por encargo, con presupuesto acordado y cuatro ejemplos de marcas inventadas identificados como demostraciones.",
       workingFeatures: Object.freeze([
-        "Definición de propuesta visual",
-        "Preparación de demostraciones y prototipos interactivos",
-        "Validación comercial directa"
+        "Guion y web de una página con escenas al bajar",
+        "Imágenes y vídeo con IA a partir del producto real",
+        "3D cuando el producto lo necesita",
+        "Adaptación móvil y material vertical para redes"
       ]),
-      simulatedFeatures: Object.freeze([]),
-      nextMilestone: "Validar el servicio con una colaboración real y autorizar una muestra publicable.",
+      simulatedFeatures: Object.freeze([
+        "La Maqueta, Del Cafeto, Mechada Hot y Duero Lento son marcas inventadas para mostrar la técnica"
+      ]),
+      nextMilestone: "Preparar cada encargo con producto, guion, alcance y presupuesto acordados.",
       blockers: Object.freeze([
-        "Permiso de publicación de medios",
-        "Recorte y eliminación de datos identificables",
-        "Primera validación comercial"
+        "Material y permisos del cliente antes de producir y publicar"
       ]),
-      publicRoute: "",
-      lastUpdated: "2026-08-01",
+      publicRoute: "producciones/",
+      lastUpdated: "2026-10-10",
       media: Object.freeze([])
     })
   ]);
 })();
-

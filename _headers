@@ -42,3 +42,6 @@
 
 /producciones/duero-lento/*
   X-Robots-Tag: noindex
+
+/README.md
+  X-Robots-Tag: noindex

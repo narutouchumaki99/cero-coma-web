@@ -23,7 +23,7 @@
     <link rel="icon" href="../assets/media/brand/approved/favicon.ico" sizes="any">
     <link rel="stylesheet" href="../assets/css/tokens.css">
     <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/product.css">
+    <link rel="stylesheet" href="../assets/css/story.css">
     <link rel="stylesheet" href="../assets/css/motion.css">
     <script type="application/ld+json">
       {
@@ -59,17 +59,15 @@
             "sameAs": ["https://faena.cerocomasoluciones.com/"],
             "description": "FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.",
             "featureList": [
-              "Lectura de la carta en papel con IA a partir de fotos o PDF, con revisión antes de publicar",
-              "Carta en español, inglés, francés, italiano y alemán con traducción automática; un idioma en Gratis y los cinco en Pro",
-              "Los 14 alérgenos de la normativa europea por plato",
-              "Edición de precios, productos y secciones, con platos agotados, ocultos o destacados",
-              "Sección de menú del día con precio",
-              "Publicación versionada con enlace y código QR permanentes",
-              "QR por mesa agrupados en sala, barra y terraza, con impresión y diseño propio",
-              "Croquis de mesas con aviso al personal cuando una mesa abre la carta",
-              "Estilos, colores y logo propios",
-              "Equipo con roles y permisos",
-              "Carta pública en el navegador del móvil, sin instalar nada"
+              "Importación desde fotos o PDF a borrador revisado; una lectura de bienvenida en Gratis",
+              "Carta y QR permanente en todos los planes",
+              "Alérgenos por nombre en Gratis y con iconos desde Básico",
+              "Fotos, logo, redes, estilos y filtros de dieta desde Básico",
+              "Español en Gratis y Básico; traducción a inglés, francés, italiano y alemán en Pro y Red",
+              "Decide en CeroComa en Pro y Red",
+              "Edición y publicación versionada con historial y restauración",
+              "Equipo, QR por mesa, croquis y comandas en Red, piloto acompañado",
+              "Carta pública en el navegador, sin instalar una app ni registrarse"
             ],
             "audience": { "@type": "BusinessAudience", "audienceType": "Bares y restaurantes" },
             "image": "https://cerocomasoluciones.com/assets/media/social/og-faena.png",
@@ -83,16 +81,58 @@
               },
               {
                 "@type": "Offer",
-                "name": "Pro",
-                "price": "9",
+                "name": "Básico mensual",
+                "price": "2.99",
                 "priceCurrency": "EUR",
                 "url": "https://faena.cerocomasoluciones.com/precios",
                 "priceSpecification": {
                   "@type": "UnitPriceSpecification",
-                  "price": 9,
+                  "price": 2.99,
                   "priceCurrency": "EUR",
                   "unitText": "MONTH",
-                  "valueAddedTaxIncluded": false
+                  "valueAddedTaxIncluded": true
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Básico anual",
+                "price": "28.70",
+                "priceCurrency": "EUR",
+                "url": "https://faena.cerocomasoluciones.com/precios",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": 28.7,
+                  "priceCurrency": "EUR",
+                  "unitText": "YEAR",
+                  "valueAddedTaxIncluded": true
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Pro mensual",
+                "price": "8.99",
+                "priceCurrency": "EUR",
+                "url": "https://faena.cerocomasoluciones.com/precios",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": 8.99,
+                  "priceCurrency": "EUR",
+                  "unitText": "MONTH",
+                  "valueAddedTaxIncluded": true
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Pro anual",
+                "price": "86.30",
+                "priceCurrency": "EUR",
+                "url": "https://faena.cerocomasoluciones.com/precios",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": 86.3,
+                  "priceCurrency": "EUR",
+                  "unitText": "YEAR",
+                  "valueAddedTaxIncluded": true
                 }
               }
             ],
@@ -142,7 +182,7 @@
                 "name": "¿En qué idiomas la ven mis clientes?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta."
+                  "text": "En español, inglés, francés, italiano y alemán. Gratis y Básico publican en español; Pro y Red permiten los cinco idiomas. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta."
                 }
               },
               {
@@ -150,7 +190,7 @@
                 "name": "¿Se ven los alérgenos?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Sí. Marcas en cada plato cuáles de los 14 alérgenos de la normativa europea contiene y el cliente los ve como etiquetas, en su idioma. Hay además una guía de preguntas que recomienda platos según los gustos del cliente; es orientativa y no sustituye a la información de alérgenos."
+                  "text": "Sí. El local confirma los alérgenos de cada plato: Gratis los muestra por nombre y Básico y superiores con iconos. Decide en CeroComa, incluido en Pro y Red, ayuda a elegir según gustos; es orientativo y no sustituye esa información."
                 }
               },
               {
@@ -198,7 +238,7 @@
                 "name": "¿Cuánto tarda en estar publicada?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Si la montamos nosotros, dos o tres días. Si la haces tú, al registrarte activamos tu local personalmente por WhatsApp; desde ahí, la carta está publicada en cuanto la revisas y pulsas publicar."
+                  "text": "Si la montamos nosotros, acordamos el plazo contigo. Si la haces tú, empiezas en Gratis al registrarte y publicas tras revisar la carta. Básico, Pro y sus pruebas se activan por WhatsApp; Red se pone en marcha contigo."
                 }
               },
               {
@@ -206,7 +246,7 @@
                 "name": "¿FAENA toma pedidos o cobra en mesa?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Todavía no. El cliente puede apuntarse lo que quiere en una lista en su móvil para enseñársela al camarero, pero no se envía a cocina. Los pedidos, el botón de llamar al camarero y los pagos están en preparación: los verás más abajo, marcados como pendientes."
+                  "text": "En todos los planes el cliente puede preparar una lista para enseñarla al camarero. Red incorpora mesas, camareros y comandas en un piloto acompañado. No hay pagos desde la carta; cocina y llamada al camarero no se ofrecen como servicio general."
                 }
               }
             ]
@@ -215,7 +255,7 @@
       }
     </script>
   </head>
-  <body data-site-root="../">
+  <body class="story-page story-faena" data-site-root="../">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="site-header">
@@ -254,283 +294,57 @@
     </dialog>
 
     <main id="contenido" tabindex="-1">
-      <section class="product-hero section--dark" aria-labelledby="hero-title">
-        <div class="product-hero__grid shell">
-          <div data-reveal>
-            <p class="eyebrow">FAENA · Powered by CeroComa</p>
-            <h1 id="hero-title">Haz una foto a tu carta. Edítala. Publícala.</h1>
-            <p class="lead">FAENA es la herramienta de CeroComa para bares y restaurantes: convierte la carta de papel en una carta digital con QR que puedes cambiar cuando quieras. El QR se imprime una vez y no cambia nunca.</p>
-            <div class="product-hero__actions">
-              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
-              <a class="button button--quiet" href="recorrido/">Míralo en movimiento</a>
-              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
-              <a class="button button--quiet" href="#como-funciona">Cómo funciona</a>
-            </div>
-            <ul class="feature-pills" aria-label="Lo que incluye FAENA">
-              <li>Español · Inglés · Francés · Italiano · Alemán</li>
-              <li>14 alérgenos por plato</li>
-              <li>QR por mesa y zona</li>
-              <li>Agotado al momento</li>
-              <li>Menú del día</li>
-            </ul>
-            <p class="product-hero__note">¿Prefieres no tocar nada? <a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">Mándanos la carta por WhatsApp</a> y te la dejamos montada en dos o tres días.</p>
-          </div>
-          <aside class="product-hero__visual">
-            <div class="device-phone">
-              <img src="../assets/media/faena/carta-cliente.webp" alt="Carta pública de FAENA abierta en un móvil, con categorías, buscador y platos con precio" width="780" height="1518" fetchpriority="high">
-            </div>
-          </aside>
+      <section class="story-hero story-faena-hero section--dark" aria-labelledby="hero-title" data-story-scene>
+        <picture class="story-media"><img src="recorrido/assets/img/escena4.webp" alt="Escena ilustrada de un cliente abriendo la carta de su mesa" width="1280" height="720" fetchpriority="high"></picture><video class="story-video" muted playsinline loop preload="none" aria-hidden="true" data-story-video data-src="recorrido/assets/vid/escena4.mp4" data-src-mobile="recorrido/assets/vid/escena4-m.mp4"></video>
+        <div class="story-veil" aria-hidden="true"></div>
+        <div class="story-hero-copy shell" data-story-copy>
+          <p class="eyebrow">FAENA · La carta digital de CeroComa</p>
+          <h1 id="hero-title">Tu carta cambia.<br><em>Tu QR, nunca.</em></h1>
+          <p>Del papel al móvil de tus clientes.<br>Sin reimprimir. Sin descargar una app.</p>
+          <div class="story-actions"><a class="button button--light" href="https://faena.cerocomasoluciones.com/register">Crear mi carta gratis <span aria-hidden="true">→</span></a><a class="story-link" href="#como-funciona">Mira cómo <span aria-hidden="true">↓</span></a></div>
+          <p class="story-caption">Gratis, sin tarjeta. Publicas cuando la has revisado.</p>
         </div>
+        <button class="story-motion-button" type="button" aria-label="Animaciones" aria-pressed="true" data-story-motion-toggle hidden><span class="story-motion-dot" aria-hidden="true"></span><span data-story-motion-label>Pausar movimiento</span></button>
       </section>
 
-      <section class="section" id="video" aria-labelledby="video-title">
-        <div class="shell">
-          <div class="demo-head" data-reveal>
-            <p class="eyebrow">En dos minutos</p>
-            <h2 id="video-title">La carta de tu bar, contada por ella misma.</h2>
-            <p>Una carta de papel harta de reimpresiones, turistas y preguntas por el gluten descubre FAENA.</p>
-          </div>
-          <div class="video-block">
-            <div class="video-frame">
-              <video controls playsinline preload="none" poster="../assets/media/faena/carti-y-faena-poster.jpg" width="1280" height="720" aria-describedby="video-resumen">
-                <source src="../assets/media/faena/carti-y-faena.mp4" type="video/mp4">
-                <a href="../assets/media/faena/carti-y-faena.mp4">Descargar el vídeo de FAENA (MP4, 6 MB)</a>
-              </video>
-            </div>
-            <div class="faq">
-              <details>
-                <summary>Qué cuenta el vídeo, en texto</summary>
-                <div id="video-resumen">
-                  <ul>
-                    <li>La carta de papel de «Bar El Ejemplo» se queja: cada subida de precio obliga a reimprimirla, los turistas no la entienden, pasa por mil manos y los camareros contestan cien veces al día si un plato lleva gluten o frutos secos.</li>
-                    <li>Con FAENA la carta vive en el móvil del cliente: los platos que se acaban se marcan como agotados, cada cliente la lee en su idioma, ve los alérgenos de cada plato y puede pedir recomendaciones según sus gustos.</li>
-                    <li>Cada mesa tiene su propio QR, así que nadie tiene que tocar una carta compartida.</li>
-                    <li>Cómo se hace: subes tu carta, eliges colores y estilo, e imprimes los QR por zona: sala, terraza o barra.</li>
-                    <li>Cierre: «Menos faena para ti. Más FAENA para tu bar».</li>
-                  </ul>
-                </div>
-              </details>
-            </div>
-          </div>
-        </div>
+      <section class="story-intro section shell" id="como-funciona" aria-labelledby="flow-title"><p class="eyebrow" data-reveal>Del papel al QR</p><h2 id="flow-title" data-reveal>Una carta nueva.<br><em>En tres pasos.</em></h2><p data-reveal>La IA hace la primera lectura. La última palabra la tienes tú.</p></section>
+
+      <section class="story-chapter" aria-labelledby="photo-title" data-story-scene>
+        <figure class="story-chapter-image"><img src="recorrido/assets/img/escena2.webp" alt="Escena ilustrada de una persona fotografiando su carta de papel" width="720" height="1280" loading="lazy" decoding="async"></figure>
+        <div class="story-chapter-copy" data-story-copy><p class="eyebrow">01 · Sube</p><h2 id="photo-title">Hazle una foto.<br><em>O sube el PDF.</em></h2><p>FAENA propone los platos, las secciones y los precios. También puedes escribir la carta a mano.</p><span class="story-caption">La lectura prepara un borrador. No publica sola.</span></div>
       </section>
 
-      <section class="section section--dark" id="como-funciona" aria-labelledby="flow-title">
-        <div class="shell">
-          <div class="demo-head" data-reveal>
-            <p class="eyebrow">Cómo funciona</p>
-            <h2 id="flow-title">Tres pasos. Sin tecnicismos.</h2>
-            <p>El flujo es el mismo si tienes un bar de tapas o una cafetería de barrio.</p>
-          </div>
-          <ol class="value-grid flow-grid">
-            <li class="value-card">
-              <p class="value-card__label">01 · Foto</p>
-              <h3>Fotografías la carta vieja</h3>
-              <p>Una foto o un archivo. La IA lee platos y precios: FAENA parte de lo que ya tienes, no de una plantilla vacía.</p>
-            </li>
-            <li class="value-card">
-              <p class="value-card__label">02 · Editas</p>
-              <h3>Revisas platos y precios</h3>
-              <p>Corriges nombres, quitas platos, cambias el menú del día. Nada se publica solo.</p>
-            </li>
-            <li class="value-card">
-              <p class="value-card__label">03 · Publicas</p>
-              <h3>URL y QR fijos</h3>
-              <p>Los clientes abren la carta en el móvil. Tú actualizas el contenido sin reimprimir el código.</p>
-            </li>
-          </ol>
-          <p class="faq__more">Cómo se usa según el local: <a href="../carta-digital-bares/">carta digital para bares</a>, <a href="../carta-digital-cafeterias/">para cafeterías</a> y <a href="../carta-digital-restaurantes/">para restaurantes</a>.</p>
-        </div>
+      <section class="story-chapter story-chapter--reverse section--dark" aria-labelledby="review-title" data-story-scene>
+        <figure class="story-chapter-image story-chapter-image--screen story-chapter-image--editor">
+          <img src="../assets/media/faena/editor-carta-20261010.jpg" alt="Editor de FAENA con la carta de RedBar en vivo y las herramientas Estilo, Secciones, Productos y Publicar" width="783" height="1280" loading="lazy" decoding="async">
+          <details class="story-screen-detail"><summary>Ordena tus secciones</summary><img src="../assets/media/faena/secciones-20261010.jpg" alt="Panel de secciones: añadir, arrastrar para reordenar y elegir cuáles se ven" width="836" height="1280" loading="lazy" decoding="async"></details>
+          <figcaption>Tu carta mientras la editas · captura real</figcaption>
+        </figure>
+        <div class="story-chapter-copy" data-story-copy><p class="eyebrow">02 · Revisa</p><h2 id="review-title">Que quede<br><em>como tú quieres.</em></h2><p>Corrige precios, ordena los platos y confirma los alérgenos. Cuando todo esté bien, pulsa publicar.</p><a class="story-link" href="https://faena.cerocomasoluciones.com/caracteristicas">Ver lo que puedes hacer <span aria-hidden="true">↗</span></a></div>
       </section>
 
-      <section class="section section--white" id="funciones" aria-labelledby="features-title">
-        <div class="shell">
-          <div class="demo-head" data-reveal>
-            <p class="eyebrow">Qué hace FAENA</p>
-            <h2 id="features-title">Todo lo que tu carta de papel no puede hacer.</h2>
-            <p>Funciones que ya están en la app hoy, no promesas.</p>
-          </div>
-          <ul class="feature-grid">
-            <li class="feature-card">
-              <p class="feature-card__label">01 / Lectura con IA</p>
-              <h3>Parte de tu carta actual</h3>
-              <p>Subes fotos o un PDF, aunque sean varias páginas. La IA propone platos, precios y secciones en un borrador, y tú eliges qué pasa a la carta.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">02 / Idiomas</p>
-              <h3>En español, inglés, francés, italiano y alemán</h3>
-              <p>Gratis permite publicar la carta en un idioma y Pro en los cinco. Los nombres y descripciones se traducen solos, y el cliente elige el idioma al abrir la carta.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">03 / Alérgenos</p>
-              <h3>Los 14 alérgenos, a la vista</h3>
-              <p>Marcas en cada plato los alérgenos de la normativa europea y el cliente los ve como etiquetas, también traducidos.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">04 / Al momento</p>
-              <h3>Agotado, oculto o destacado</h3>
-              <p>¿Se acabaron las croquetas? Las marcas como agotadas desde el móvil y publicas. Si te equivocas, el historial de versiones te deja volver atrás.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">05 / Menú del día</p>
-              <h3>Una sección con su precio</h3>
-              <p>Creas una sección de menú del día o menú cerrado con el precio en la cabecera y cambias los platos cuando toca.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">06 / QR</p>
-              <h3>Un QR por mesa, por zonas</h3>
-              <p>Mesas agrupadas en sala, barra y terraza, y un QR general. Descargas en PNG o SVG, o imprimes tarjetas A4 con tu logo y tus colores.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">07 / Sala</p>
-              <h3>Sabes qué mesa se ha sentado</h3>
-              <p>Un croquis de mesas muestra cuáles han abierto la carta, y el personal recibe un aviso en el móvil cuando una mesa escanea el QR.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">08 / Estilo</p>
-              <h3>Con la cara de tu local</h3>
-              <p>Cinco estilos, cuatro disposiciones, tus colores y tu logo. La carta tiene buscador, categorías, horarios y los datos del local.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">09 / Equipo</p>
-              <h3>Cada uno con su permiso</h3>
-              <p>Propietario, gerente y personal, con permisos para tocar la carta, el diseño o publicar. Invitas a tu equipo con un enlace.</p>
-            </li>
-          </ul>
-        </div>
+      <section class="story-chapter" aria-labelledby="publish-title" data-story-scene>
+        <figure class="story-chapter-image story-chapter-image--screen">
+          <img src="../assets/media/faena/carta-publica-20261010.jpg" alt="Carta pública de RedBar en FAENA con categorías, fotos, precios y filtros" width="590" height="1280" loading="lazy" decoding="async">
+          <details class="story-screen-detail"><summary>Ver cómo se publica</summary><img src="../assets/media/faena/publicar-20261010.jpg" alt="Panel Publicar de FAENA con el botón Publicar cambios, la carta pública y Copiar enlace" width="756" height="1280" loading="lazy" decoding="async"></details>
+          <details class="story-screen-detail"><summary>Ver un plato en detalle</summary><img src="../assets/media/faena/plato-detalle-20261010.jpg" alt="Detalle de Pasta Gratinada en la carta de RedBar: fotografía, precio, ingredientes y alérgenos" width="590" height="1280" loading="lazy" decoding="async"></details>
+          <figcaption>Así la ve tu cliente · funciones según el plan</figcaption>
+        </figure>
+        <div class="story-chapter-copy" data-story-copy><p class="eyebrow">03 · Comparte</p><h2 id="publish-title">Un QR.<br><em>Todos los cambios.</em></h2><p>Lo imprimes una vez. Cambias un precio, publicas de nuevo y el cliente ve la carta actualizada.</p><a class="button button--dark" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Abre una carta de ejemplo <span aria-hidden="true">↗</span></a></div>
       </section>
 
-      <section class="section section--dark" aria-labelledby="examples-title">
-        <div class="shell">
-          <div class="demo-head" data-reveal>
-            <p class="eyebrow">Producto real</p>
-            <h2 id="examples-title">Así se ve FAENA.</h2>
-            <p>Capturas reales de la app tal como está hoy: la carta que ve el cliente y el panel del dueño.</p>
-          </div>
-          <div class="example-block">
-            <div class="example-grid example-grid--product example-grid--four">
-              <article class="example-card example-card--skin">
-                <p class="eyebrow">Carta · cliente</p>
-                <h3>Lo que ve el cliente</h3>
-                <p>Categorías, buscador, «Decide en CeroComa» e información del local. Sin instalar nada.</p>
-                <div class="example-card__frame example-card__frame--shot">
-                  <img src="../assets/media/faena/carta-cliente.webp" alt="Carta pública de FAENA en el móvil: botones «Decide en CeroComa» y buscador, categorías y la sección Ensaladas con precios y botón Añadir" width="780" height="1518" loading="lazy" decoding="async">
-                </div>
-              </article>
-              <article class="example-card example-card--skin" style="--reveal-delay: 80ms">
-                <p class="eyebrow">Estilo · dueño</p>
-                <h3>Eliges el estilo</h3>
-                <p>Cinco estilos que se aplican al instante, antes de publicar.</p>
-                <div class="example-card__frame example-card__frame--shot">
-                  <img src="../assets/media/faena/panel-estilo.webp" alt="Panel de FAENA con los estilos de carta: Esencial, Mediterráneo, Clásico, Nocturno y Noche oro" width="780" height="826" loading="lazy" decoding="async">
-                </div>
-              </article>
-              <article class="example-card example-card--skin" style="--reveal-delay: 160ms">
-                <p class="eyebrow">Sala · dueño</p>
-                <h3>Croquis de mesas</h3>
-                <p>Mesas libres y sentadas por sala, barra y terraza, y cuáles han escaneado el QR.</p>
-                <div class="example-card__frame example-card__frame--shot">
-                  <img src="../assets/media/faena/croquis-mesas.webp" alt="Croquis de mesas de FAENA: 20 mesas repartidas en sala, barra y terraza, con su estado libre o sentada" width="780" height="1394" loading="lazy" decoding="async">
-                </div>
-              </article>
-              <article class="example-card example-card--skin" style="--reveal-delay: 240ms">
-                <p class="eyebrow">QR · dueño</p>
-                <h3>QR listos para imprimir</h3>
-                <p>Una tarjeta por mesa y zona, cuatro por hoja A4, con el nombre del local.</p>
-                <div class="example-card__frame example-card__frame--shot">
-                  <img src="../assets/media/faena/qr-imprimir.webp" alt="Hoja de impresión de FAENA con tarjetas QR de «Bar El Ejemplo» para las mesas 1 a 4 de sala" width="780" height="1394" loading="lazy" decoding="async">
-                </div>
-              </article>
-            </div>
-            <p class="example-live">
-              <a class="button button--light" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
-              <span class="example-live__hint">Abre la carta de prueba de RedBar Pza. España, montada con FAENA. En vivo, no es una captura.</span>
-            </p>
-          </div>
-        </div>
-      </section>
+      <section class="section story-faena-plans section--dark" id="funciones" aria-labelledby="plans-title"><div class="shell"><p class="eyebrow" data-reveal>A tu ritmo</p><h2 id="plans-title" data-reveal>Empieza gratis.<br><em>Crece cuando lo necesites.</em></h2><div class="story-plan-lines" data-reveal-stagger>
+        <a href="https://faena.cerocomasoluciones.com/precios"><span>Gratis</span><p>Tu carta sencilla y tu QR.</p><strong>0 € <small>para siempre</small></strong><span aria-hidden="true">↗</span></a>
+        <a href="https://faena.cerocomasoluciones.com/precios"><span>Básico</span><p>Fotos, estilo y filtros de dieta.</p><strong>2,99 € <small>/ mes</small></strong><span aria-hidden="true">↗</span></a>
+        <a href="https://faena.cerocomasoluciones.com/precios"><span>Pro</span><p>Idiomas y Decide en CeroComa.</p><strong>8,99 € <small>/ mes</small></strong><span aria-hidden="true">↗</span></a>
+        <a href="https://faena.cerocomasoluciones.com/precios"><span>Red <small>Piloto</small></span><p>Equipo, mesas y comandas.</p><strong>Hablemos</strong><span aria-hidden="true">↗</span></a>
+      </div><p class="story-plan-note">IVA incluido. Básico y Pro: prueba de 30 días a petición y activación manual por WhatsApp. Red se pone en marcha contigo. Sin cobro automático ni pagos desde la carta.</p></div></section>
 
-      <section class="section" id="comparativa" aria-labelledby="compare-title">
-        <div class="shell">
-          <div class="demo-head" data-reveal>
-            <p class="eyebrow">Papel, PDF o FAENA</p>
-            <h2 id="compare-title">Cambiar la carta no debería costar una imprenta.</h2>
-            <p>Lo que pasa cuando subes un precio, quitas un plato o abres una sección nueva, según dónde viva tu carta.</p>
-          </div>
-          <div class="compare-table" role="region" aria-labelledby="compare-title" tabindex="0">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col"><span class="sr-only">Situación</span></th>
-                  <th scope="col">Carta en papel</th>
-                  <th scope="col">PDF enlazado a un QR</th>
-                  <th scope="col">FAENA</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Cambiar un precio</th>
-                  <td>Reimprimir la carta</td>
-                  <td>Editar el PDF y volver a subirlo</td>
-                  <td>Lo cambias en el panel y publicas</td>
-                </tr>
-                <tr>
-                  <th scope="row">Añadir o quitar un plato</th>
-                  <td>Reimprimir la carta</td>
-                  <td>Rehacer el documento</td>
-                  <td>Desde el panel</td>
-                </tr>
-                <tr>
-                  <th scope="row">Crear o cambiar secciones</th>
-                  <td>Rediseñar la carta</td>
-                  <td>Rediseñar el documento</td>
-                  <td>Desde el panel</td>
-                </tr>
-                <tr>
-                  <th scope="row">El código QR</th>
-                  <td>No hay</td>
-                  <td>Cambia si cambia el archivo o su enlace</td>
-                  <td>Siempre el mismo</td>
-                </tr>
-                <tr>
-                  <th scope="row">Leerla en el móvil</th>
-                  <td>No aplica</td>
-                  <td>Hay que ampliar la página</td>
-                  <td>Hecha para el móvil, con categorías y buscador</td>
-                </tr>
-                <tr>
-                  <th scope="row">Turistas</th>
-                  <td>Una carta impresa por idioma</td>
-                  <td>Un documento por idioma</td>
-                  <td>Español, inglés, francés, italiano y alemán, traducidos solos</td>
-                </tr>
-                <tr>
-                  <th scope="row">Alérgenos</th>
-                  <td>Una hoja aparte o preguntar al camarero</td>
-                  <td>Dentro del documento, si se añaden</td>
-                  <td>Los 14 alérgenos marcados en cada plato</td>
-                </tr>
-                <tr>
-                  <th scope="row">Un plato agotado</th>
-                  <td>Avisar mesa por mesa</td>
-                  <td>Rehacer el documento</td>
-                  <td>Lo marcas como agotado y publicas</td>
-                </tr>
-                <tr>
-                  <th scope="row">Punto de partida</th>
-                  <td>Diseño e imprenta</td>
-                  <td>Maquetar el documento</td>
-                  <td>Una foto de tu carta actual</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+      <section class="section story-film" id="video" aria-labelledby="video-title"><div class="shell"><div class="story-section-head" data-reveal><p class="eyebrow">Si prefieres verlo</p><h2 id="video-title">Te lo cuenta<br><em>la propia carta.</em></h2></div><video controls playsinline preload="none" poster="../assets/media/faena/carti-y-faena-poster.jpg" width="1280" height="720" aria-describedby="video-resumen"><source src="../assets/media/faena/carti-y-faena.mp4" type="video/mp4"><a href="../assets/media/faena/carti-y-faena.mp4">Descargar vídeo</a></video><details class="story-transcript"><summary>Resumen del vídeo y funciones por plan</summary><p id="video-resumen">Una carta de papel presenta cómo revisar y publicar con un QR permanente. Las fotos y los filtros son de Básico; los idiomas y Decide, de Pro; equipo y mesas, del piloto Red. Consulta los derechos vigentes antes de elegir un plan.</p></details></div></section>
 
-      <section class="section section--white" id="preguntas" aria-labelledby="faq-title">
+      <section class="section story-faq" id="preguntas" aria-labelledby="faq-title">
         <div class="shell">
-          <div class="demo-head" data-reveal>
+          <div class="story-section-head" data-reveal>
             <p class="eyebrow">Preguntas frecuentes</p>
             <h2 id="faq-title">Lo que suele preguntar un bar antes de empezar.</h2>
           </div>
@@ -545,11 +359,11 @@
             </details>
             <details>
               <summary>¿En qué idiomas la ven mis clientes?</summary>
-              <p>En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
+              <p>En español, inglés, francés, italiano y alemán. Gratis y Básico publican en español; Pro y Red permiten los cinco idiomas. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
             </details>
             <details>
               <summary>¿Se ven los alérgenos?</summary>
-              <p>Sí. Marcas en cada plato cuáles de los 14 alérgenos de la normativa europea contiene y el cliente los ve como etiquetas, en su idioma. Hay además una guía de preguntas que recomienda platos según los gustos del cliente; es orientativa y no sustituye a la información de alérgenos.</p>
+              <p>Sí. El local confirma los alérgenos de cada plato: Gratis los muestra por nombre y Básico y superiores con iconos. Decide en CeroComa, incluido en Pro y Red, ayuda a elegir según gustos; es orientativo y no sustituye esa información.</p>
             </details>
             <details>
               <summary>¿Tengo que cambiar el QR cuando modifico un precio?</summary>
@@ -573,82 +387,20 @@
             </details>
             <details>
               <summary>¿Cuánto tarda en estar publicada?</summary>
-              <p>Si la montamos nosotros, dos o tres días. Si la haces tú, al registrarte activamos tu local personalmente por WhatsApp; desde ahí, la carta está publicada en cuanto la revisas y pulsas publicar.</p>
+              <p>Si la montamos nosotros, acordamos el plazo contigo. Si la haces tú, empiezas en Gratis al registrarte y publicas tras revisar la carta. Básico, Pro y sus pruebas se activan por WhatsApp; Red se pone en marcha contigo.</p>
             </details>
             <details>
               <summary>¿FAENA toma pedidos o cobra en mesa?</summary>
-              <p>Todavía no. El cliente puede apuntarse lo que quiere en una lista en su móvil para enseñársela al camarero, pero no se envía a cocina. Los pedidos, el botón de llamar al camarero y los pagos están en preparación: los verás <a href="#proximamente">más abajo, marcados como pendientes</a>.</p>
+              <p>En todos los planes el cliente puede preparar una lista para enseñarla al camarero. Red incorpora mesas, camareros y comandas en un piloto acompañado. No hay pagos desde la carta; cocina y llamada al camarero siguen <a href="#proximamente">pendientes como servicio general</a>.</p>
             </details>
           </div>
           <p class="faq__more">Para ir más a fondo: <a href="../como-digitalizar-carta-restaurante/">cómo digitalizar la carta de un restaurante</a>, paso a paso, y <a href="../cambiar-precios-carta-qr/">cómo cambiar los precios de una carta QR sin imprimir otro código</a>, aunque no uses FAENA.</p>
         </div>
       </section>
 
-      <section class="section" id="proximamente" aria-labelledby="soon-title">
-        <div class="shell">
-          <div class="demo-head" data-reveal>
-            <p class="eyebrow">Próximamente</p>
-            <h2 id="soon-title">Lo que viene después de la carta.</h2>
-            <p>Hoy FAENA publica y mantiene la carta. Esto es lo que estamos preparando. No está disponible todavía.</p>
-          </div>
-          <ul class="state-list soon-list">
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true"></span>
-              <div>
-                <h3>Filtros por dieta</h3>
-                <p>El cliente filtra la carta por vegano, sin gluten y otras preferencias, a partir de lo que marques en cada plato.</p>
-                <span class="state-list__status">Muy pronto</span>
-              </div>
-            </li>
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true"></span>
-              <div>
-                <h3>Cocina al día</h3>
-                <p>Lo que se pide llega a cocina con claridad, para menos idas y vueltas.</p>
-                <span class="state-list__status">Pendiente</span>
-              </div>
-            </li>
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true"></span>
-              <div>
-                <h3>Llamar al camarero</h3>
-                <p>El cliente avisa desde la mesa sin levantar la mano a ciegas.</p>
-                <span class="state-list__status">Pendiente</span>
-              </div>
-            </li>
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true"></span>
-              <div>
-                <h3>Pagos con tarjeta</h3>
-                <p>Cobrar en mesa o al irse, sin depender solo de la caja de siempre.</p>
-                <span class="state-list__status">Pendiente</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section section--dark" aria-labelledby="cta-title" data-contact-region>
-        <div class="shell pilot-note">
-          <div data-reveal>
-            <p class="eyebrow">Empezar</p>
-            <h2 id="cta-title">Entra en FAENA y monta tu carta.</h2>
-            <p>Si encaja con tu negocio, hablamos. Si quieres probar ya, abre la app. También puedes consultar <a href="https://faena.cerocomasoluciones.com/caracteristicas">todas las funciones</a> y los <a href="https://faena.cerocomasoluciones.com/precios">precios</a>.</p>
-            <div class="pilot-note__actions">
-              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
-              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
-              <a class="button button--quiet" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
-              <a class="button button--quiet" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">WhatsApp</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="story-contact section section--dark" aria-labelledby="cta-title" data-contact-region><div class="shell"><p class="eyebrow" data-reveal>Tu siguiente carta</p><h2 id="cta-title" data-reveal>Menos faena.<br><em>Más FAENA.</em></h2><div class="story-actions" data-reveal><a class="button button--light" href="https://faena.cerocomasoluciones.com/register">Crear mi carta gratis <span aria-hidden="true">→</span></a><a class="story-link" href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">Prefiero que me la montes <span aria-hidden="true">↗</span></a></div><p class="story-caption" id="proximamente">Red sigue en piloto. Cocina, llamadas al camarero y pagos desde la carta no se ofrecen como servicio general.</p></div></section>
     </main>
 
-    <div class="sticky-cta" data-sticky-cta hidden>
-      <a class="button button--light" href="https://wa.me/34643403723?text=Hola%2C%20me%20interesa%20FAENA%20para%20mi%20carta." target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
-      <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver ejemplo</a>
-    </div>
 
     <footer class="footer">
       <div class="shell">
@@ -677,6 +429,7 @@
 
     <script src="../assets/js/config.js" defer></script>
     <script src="../assets/js/site.js" defer></script>
+    <script src="../assets/js/story.js" defer></script>
     <script src="../assets/js/motion.js" defer></script>
     <script src="../assets/js/analytics.js" defer></script>
   </body>
