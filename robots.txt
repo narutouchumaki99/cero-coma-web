@@ -8,7 +8,7 @@ Disallow: /docs/
 Disallow: /tests/
 Disallow: /recursos-locales/
 Disallow: /README.md
-# /CLAUDE.md y los playbooks de producciones/ no se bloquean aquí: se sirven
+# /CLAUDE.md y los ejemplos de producciones/ no se bloquean aquí: se sirven
 # con X-Robots-Tag: noindex (ver _headers), y un Disallow impediría leerla.
 
 Sitemap: https://cerocomasoluciones.com/sitemap.xml

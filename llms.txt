@@ -37,6 +37,13 @@ FAENA es una herramienta de CeroComa que convierte la carta física de un bar o 
 - [Carta digital para cafeterías](https://cerocomasoluciones.com/carta-digital-cafeterias/): desayunos, bollería y precios pequeños que se ajustan a menudo.
 - [Carta digital para restaurantes](https://cerocomasoluciones.com/carta-digital-restaurantes/): carta larga, menú del día y platos de temporada.
 
+## Producciones
+
+CeroComa Producciones hace webs de una sola página que se recorren como una película al bajar, con el producto del negocio en el centro de cada escena: imágenes y vídeo hechos con IA a partir del producto real, o 3D en tiempo real. Plazo de una a dos semanas; precio cerrado antes de empezar, bajo consulta.
+
+- [Producciones](https://cerocomasoluciones.com/producciones/): qué hacemos, ejemplos, cómo trabajamos y packs.
+- Los ejemplos (inmobiliaria, cafetería, hamburguesería y bodega) son marcas inventadas, hechas para enseñar la técnica.
+
 ## Más
 
 - [Proyectos](https://cerocomasoluciones.com/proyectos/): estado y alcance de FAENA, el proyecto público de CeroComa.

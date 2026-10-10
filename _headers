@@ -15,13 +15,30 @@
 /.gitignore
   X-Robots-Tag: noindex
 
-# Producciones (y mechada-hot) se despublicaron el 1-10-2026: la web se centra
-# en FAENA. Las páginas siguen respondiendo por URL directa, pero fuera del
-# índice y sin enlaces desde el resto del sitio. Se hace aquí y no con una meta
-# en su HTML para no tocar esas páginas autónomas ni pelear con el workflow
-# que reescribe producciones/contenido.json.
-/producciones/
+# Producciones vuelve a ser pública el 10-10-2026, pero solo su índice
+# (/producciones/). Los ejemplos son marcas inventadas con direcciones y precios
+# de mentira: no deben salir en buscadores como si existieran. Llevan además
+# <meta name="robots" content="noindex"> en su HTML.
+/producciones/la-maqueta/
   X-Robots-Tag: noindex
 
-/producciones/*
+/producciones/la-maqueta/*
+  X-Robots-Tag: noindex
+
+/producciones/del-cafeto/
+  X-Robots-Tag: noindex
+
+/producciones/del-cafeto/*
+  X-Robots-Tag: noindex
+
+/producciones/mechada-hot/
+  X-Robots-Tag: noindex
+
+/producciones/mechada-hot/*
+  X-Robots-Tag: noindex
+
+/producciones/duero-lento/
+  X-Robots-Tag: noindex
+
+/producciones/duero-lento/*
   X-Robots-Tag: noindex
