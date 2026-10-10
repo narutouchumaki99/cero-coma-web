@@ -37,6 +37,36 @@
       media: Object.freeze([])
     }),
     Object.freeze({
+      id: "producciones",
+      slug: "producciones",
+      name: "CeroComa Producciones",
+      category: "Servicio",
+      status: "Ejemplos publicados",
+      featured: false,
+      visibility: "public",
+      summary: "Webs de una sola página que se recorren como una película al bajar, con el producto del negocio en el centro de cada escena.",
+      problem: "Un buen producto se pierde en una web plana o en una foto suelta: no se ve de dónde viene, cómo se hace ni el detalle que lo hace distinto.",
+      audience: "Negocios con un producto que luce al enseñarlo: hostelería, cafeterías, bodegas e inmobiliarias.",
+      currentState: "Cuatro ejemplos con marcas inventadas y dos piezas propias publicadas: la historia de CeroComa y el recorrido de FAENA. Las imágenes se hacen con IA, y se dice.",
+      workingFeatures: Object.freeze([
+        "Recorrido en vídeo al hacer scroll, en el móvil y en el ordenador",
+        "Escenas en 3D en tiempo real cuando el producto pide girarlo",
+        "Guion escrito y enseñado antes de producir nada",
+        "Botón de WhatsApp al final de la película",
+        "Vídeo vertical para redes con el mismo material"
+      ]),
+      simulatedFeatures: Object.freeze([
+        "Los ejemplos son marcas inventadas: sus negocios, datos y pedidos son de demostración"
+      ]),
+      nextMilestone: "Primer encargo con un negocio real y su producto de verdad.",
+      blockers: Object.freeze([
+        "Primer cliente real"
+      ]),
+      publicRoute: "producciones/",
+      lastUpdated: "2026-10-10",
+      media: Object.freeze([])
+    }),
+    Object.freeze({
       id: "studio",
       slug: "cero-coma-studio",
       name: "CeroComa Studio",

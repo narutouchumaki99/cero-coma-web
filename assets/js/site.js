@@ -54,7 +54,8 @@
     const list = region.querySelector("[data-contact-links]");
     if (!state || !list) return;
 
-    state.textContent = "Elige un canal de contacto.";
+    // La frase escrita en el HTML (p. ej. «Respondo yo, 3tmen…») manda; esta es solo de respaldo.
+    if (!state.textContent.trim()) state.textContent = "Elige un canal de contacto.";
     list.hidden = false;
 
     // Los enlaces ya se sirven en el HTML para que funcionen sin JavaScript.
