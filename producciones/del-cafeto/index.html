@@ -4,9 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Del cafeto a tu taza · Ladera</title>
-  <meta name="description" content="Demo de 3tmen: el viaje de un grano de café desde una montaña a 1.900 metros hasta tu taza. Desliza para seguirlo." />
+  <meta name="description" content="Ejemplo de Producciones CeroComa: el viaje de un grano de café desde una montaña a 1.900 metros hasta tu taza. Desliza para seguirlo." />
   <!-- Demos con noindex. Quitar solo al publicar la web definitiva y con permiso. -->
   <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://cerocomasoluciones.com/producciones/del-cafeto/" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:," />
   <meta name="theme-color" content="#120d0a" />
   <link rel="preload" href="assets/img/escena1.webp" as="image" />
   <!-- Fraunces + Inter (OFL). Para publicar una web de cliente en la UE: autoalojar (references/web-editorial.md). -->
@@ -16,6 +19,8 @@
   <link rel="stylesheet" href="assets/editorial/editorial.css" />
   <style>
     html.cargando { overflow: hidden; }
+    /* Sin JavaScript no hay recorrido: fuera la pantalla de carga para que se lea el texto */
+    html:not(.js) .cargador { display: none; }
     :root { --fondo: #120d0a; --tinta: #f6efe6; --acento: #d4683a; --oro: #e8c48f; --oro-osc: #b08a55; }
     /* El último vídeo termina en crema de leche: el fundido y el cierre van del mismo color. */
     .blanco { background: #f0e6cf; }
@@ -66,7 +71,7 @@
 
     <div class="cierre__accion">
       <a class="boton" id="wa" href="#" data-iman>Pedir café en grano <i aria-hidden="true">→</i></a>
-      <p class="cierre__nota">Te responde una persona, no un formulario.</p>
+      <p class="cierre__nota">Es un ejemplo: este botón te lleva a hablar con 3tmen. En tu web, te escribirán tus clientes.</p>
     </div>
 
     <div class="cinta" aria-hidden="true">
@@ -77,8 +82,8 @@
     </div>
 
     <div class="cierre__pie">
-      <span>Demo · 3tmen</span>
-      <span>Ladera · Valladolid</span>
+      <span>Ejemplo de Producciones CeroComa · marca inventada · imágenes y vídeo hechos con IA</span>
+      <span>Datos de ejemplo</span>
     </div>
   </section>
 
@@ -90,7 +95,7 @@
     /* ===================== EDITAR AQUÍ ===================== */
     const CONFIG = {
       marca: { nombre: 'La*dera*', url: '#' },   // *…* = segunda parte en cursiva dorada
-      whatsapp: { numero: '34643403723', mensaje: 'Hola, quiero pedir café en grano de Ladera.' },
+      whatsapp: { numero: '34643403723', mensaje: 'Hola 3tmen, he visto el ejemplo de Del cafeto a tu taza (Ladera) y quiero una web así para mi cafetería.' },
       finalEnBlanco: true,      // el último vídeo termina en crema; el color va en el <style> de arriba
       horizontal: false,        // sin versión 16:9 todavía: en ordenador va el vídeo vertical en un marco
       capitulos: [

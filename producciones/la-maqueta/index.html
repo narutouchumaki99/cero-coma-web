@@ -4,9 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>La maqueta · Residencial Vereda</title>
-  <meta name="description" content="Demo de 3tmen: entra por una ventana de la maqueta y vive un día entero en una casa que todavía no existe. Desliza para entrar." />
+  <meta name="description" content="Ejemplo de Producciones CeroComa: entra por una ventana de la maqueta y vive un día entero en una casa que todavía no existe. Desliza para entrar." />
   <!-- Demos con noindex. Quitar solo al publicar la web definitiva y con permiso. -->
   <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://cerocomasoluciones.com/producciones/la-maqueta/" />
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" href="data:," />
   <meta name="theme-color" content="#101418" />
   <link rel="preload" href="assets/img/escena1.webp" as="image" media="(max-width: 860px)" />
   <link rel="preload" href="assets/img/escena1-h.webp" as="image" media="(min-width: 861px)" />
@@ -17,6 +20,8 @@
   <link rel="stylesheet" href="assets/editorial/editorial.css" />
   <style>
     html.cargando { overflow: hidden; }
+    /* Sin JavaScript no hay recorrido: fuera la pantalla de carga para que se lea el texto */
+    html:not(.js) .cargador { display: none; }
     :root { --fondo: #101418; --tinta: #f2f0eb; --acento: #c8a97e; --oro: #e3c489; --oro-osc: #b69a61; }
   </style>
 </head>
@@ -64,7 +69,7 @@
 
     <div class="cierre__accion">
       <a class="boton" id="wa" href="#" data-iman>Quiero ver los planos <i aria-hidden="true">→</i></a>
-      <p class="cierre__nota">Te responde una persona, no un formulario.</p>
+      <p class="cierre__nota">Es un ejemplo: este botón te lleva a hablar con 3tmen. En tu web, te escribirán tus clientes.</p>
     </div>
 
     <div class="cinta" aria-hidden="true">
@@ -75,7 +80,7 @@
     </div>
 
     <div class="cierre__pie">
-      <span>Demo · 3tmen</span>
+      <span>Ejemplo de Producciones CeroComa · marca inventada · imágenes y vídeo hechos con IA</span>
       <span>Infografías orientativas, no contractuales</span>
     </div>
   </section>
@@ -88,7 +93,7 @@
     /* ===================== EDITAR AQUÍ ===================== */
     const CONFIG = {
       marca: { nombre: 'Residencial *Vereda*', url: '#' },   // *…* = segunda parte en cursiva dorada
-      whatsapp: { numero: '34643403723', mensaje: 'Hola, quiero información de Residencial Vereda y ver los planos.' },
+      whatsapp: { numero: '34643403723', mensaje: 'Hola 3tmen, he visto el ejemplo de La maqueta (Residencial Vereda) y quiero una web así para mi promoción.' },
       finalEnBlanco: true,      // el último vídeo vuelve a la maqueta y termina en blanco
       horizontal: true,         // en ordenador, vídeos 16:9 a pantalla completa (tN-h.mp4); en móvil, los verticales
       capitulos: [
