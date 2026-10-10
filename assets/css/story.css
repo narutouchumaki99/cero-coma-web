@@ -78,6 +78,11 @@
 .story-chapter-image--screen > img { width: auto; max-width: 100%; height: auto; max-height: 570px; object-fit: contain; border-radius: 1.6rem; }
 .story-chapter-image--screen > figcaption { font-size: .75rem; color: var(--light-muted); text-align: center; }
 .section--dark .story-chapter-image--screen > figcaption { color: var(--dark-muted); }
+.story-screen-detail { width: min(100%, 320px); border-top: 1px solid var(--light-border); color: var(--zero); }
+.story-screen-detail summary { min-height: 44px; padding-block: .8rem; cursor: pointer; font-size: .8rem; font-weight: 650; }
+.story-screen-detail summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.story-screen-detail img { display: block; width: min(100%, 300px); height: auto; margin: .7rem auto 1.2rem; border-radius: 1rem; }
+.section--dark .story-screen-detail { border-color: var(--dark-border); color: var(--ivory); }
 .story-plan-lines { margin-top: 3.5rem; }
 .story-plan-lines > a { display: grid; grid-template-columns: 1fr 2fr 1fr 24px; gap: 2rem; align-items: center; min-height: 110px; border-top: 1px solid var(--dark-border); text-decoration: none; padding-block: 1.5rem; transition: color var(--motion-short); }
 .story-plan-lines > a:last-child { border-bottom: 1px solid var(--dark-border); }
@@ -108,7 +113,7 @@ html[data-story-motion="off"] [data-story-copy], html[data-story-motion="off"] [
 html[data-story-motion="off"] .story-media, html[data-story-motion="off"] .story-video, html[data-story-motion="off"] .story-phone-stage img, html[data-story-motion="off"] .story-chapter-image > img { transform: none; }
 html[data-story-motion="off"], html[data-story-motion="off"] *, html[data-story-motion="off"] body { animation: none !important; scroll-behavior: auto; }
 html[data-story-motion="off"] * { transition: none !important; }
-.story-chapter-image--editor > img { width: min(90%, 400px); max-height: none; }
+.story-chapter-image--editor > img { width: min(100%, 320px); max-height: none; }
 html[data-story-motion="off"] ::view-transition-old(root), html[data-story-motion="off"] ::view-transition-new(root) { animation: none !important; }
 html.js-story [data-story-scene]:focus-within [data-story-copy] { opacity: 1; transform: none; }
 

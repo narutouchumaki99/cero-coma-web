@@ -11,3 +11,5 @@ Historial sustituido: [.github/archive/canon-2026-10-10](.github/archive/canon-2
 Cambios mediante rama y PR. La integración en main publica automáticamente; comprobar después el dominio. No ejecutar el workflow histórico de JSON ni publicar demostraciones como negocios reales.
 
 La portada y `/faena/` comparten `assets/css/story.css` y `assets/js/story.js`: titulares breves, escenas visuales y explicación en tres pasos. Reutilizan los recursos de Historia, Recorrido y las capturas de la app. Los vídeos decorativos se cargan al aparecer y se pausan fuera de pantalla; el botón de movimiento y la preferencia del sistema permiten una presentación estática. `motion.css` y `motion.js` gestionan las transiciones entre páginas.
+
+Las cinco capturas JPG aportadas por el propietario el 10-10-2026 son la referencia visual vigente de FAENA: carta, plato, editor, secciones y publicación. Se conservan completas en `assets/media/faena/`, con el sufijo `20261010`. Carta y editor aparecen a la vista; los detalles se abren con desplegables HTML, también sin JavaScript. Las funciones visibles en la carta de RedBar dependen del plan.
