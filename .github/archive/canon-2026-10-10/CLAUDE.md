@@ -8,9 +8,9 @@ El sitio, la documentación interna y los mensajes de commit están en español.
 
 ## Qué es este repositorio
 
-Web pública de CeroComa, servida en <https://cerocomasoluciones.com>. Sitio estático puro: HTML + CSS + JavaScript vanilla. **Sin build, sin dependencias, sin tests.** El repositorio se publica tal cual, así que cada archivo del árbol es una URL accesible.
+Web pública de Cero Coma, servida en <https://cerocomasoluciones.com>. Sitio estático puro: HTML + CSS + JavaScript vanilla. **Sin build, sin dependencias, sin tests.** El repositorio se publica tal cual, así que cada archivo del árbol es una URL accesible.
 
-La copia divergente del monorepo está archivada en `cerocoma/archive/canon-2026-10-10/web-monorepo`. No sirve el dominio. El contexto compartido vigente está en `cerocoma/docs/CANON.md`; este repositorio es el origen de la web publicada.
+Existe una segunda copia divergente de esta web en el monorepo `cerocoma/apps/web` (rama `feat/web-secciones-empresa`, con secciones Hostelería/Studio/Empresa y mascota animada). **No comparte historia git con este repositorio y no está publicada.** El que sirve el dominio es este.
 
 ## Comandos
 
@@ -32,13 +32,13 @@ Push a `main` → despliegue automático, sin staging intermedio: lo que entra e
 
 - **Cloudflare Pages** sirve el dominio (es el despliegue que cuenta).
 - `.github/workflows/pages.yml` publica además en GitHub Pages como respaldo.
-- El antiguo workflow que escribía `producciones/contenido.json` está archivado como `.github/archive/canon-2026-10-10/chatgpt-producciones.yml.txt`, fuera de workflows. La página actual no lee ese JSON. Sus manuales históricos están en `C:/Users/otman/facturacion/archivo-producciones-chatgpt/`.
+- `.github/workflows/chatgpt-producciones.yml` es de la época en que ChatGPT editaba Producciones (escribía `producciones/contenido.json` y hacía push). **Se desactiva en GitHub el 10-10-2026**: la página ya no lee ese JSON. Sus manuales están archivados fuera del repo, en `C:\Users\otman\facturacion\archivo-producciones-chatgpt\`.
 
 ## Arquitectura: dos mundos que no se mezclan
 
 ### 1. Sitio de marca
 
-Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `404.html`, más las páginas de búsqueda que cuelgan de FAENA: por tipo de local (`carta-digital-bares/`, `carta-digital-cafeterias/`, `carta-digital-restaurantes/`) y guías (`como-digitalizar-carta-restaurante/`, `cambiar-precios-carta-qr/`), todas con `legal.css`. Desde el 10-10-2026 las líneas públicas son FAENA y CeroComa Producciones. Cada página carga, en este orden, `tokens.css` → `base.css` → su hoja (`home` / `projects` / `product` / `legal` / `error`) → `motion.css`, y `config.js` → `site.js` → (`projects-data.js` + `projects.js` donde aplique) → `motion.js`.
+Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `404.html`, más las páginas de búsqueda que cuelgan de FAENA: por tipo de local (`carta-digital-bares/`, `carta-digital-cafeterias/`, `carta-digital-restaurantes/`) y guías (`como-digitalizar-carta-restaurante/`, `cambiar-precios-carta-qr/`), todas con `legal.css`. Desde el 1-10-2026 la web se centra solo en FAENA. Cada página carga, en este orden, `tokens.css` → `base.css` → su hoja (`home` / `projects` / `product` / `legal` / `error`) → `motion.css`, y `config.js` → `site.js` → (`projects-data.js` + `projects.js` donde aplique) → `motion.js`.
 
 - **`assets/js/config.js` es la fuente de verdad** de marca, URLs y contactos (`window.CEROCOMA_CONFIG`, congelado). Los contactos se sirven además escritos en el HTML para que funcionen sin JavaScript; `site.js` solo los genera si la lista llega vacía. Un cambio de contacto se hace en los dos sitios.
 - **`assets/js/projects-data.js`** (`window.CEROCOMA_PROJECTS`) es el contenido del explorador de proyectos; `projects.js` pinta buscador, filtros, tarjetas y diálogo. Añadir un proyecto es añadir un objeto ahí, sin tocar HTML.
@@ -48,7 +48,7 @@ Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `4
 
 ### 2. Producciones
 
-Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Producciones** (webs que se recorren como una película) **con la identidad de marca**: `tokens.css` → `base.css` → `producciones.css` → `motion.css`, y `config.js` → `site.js` → `motion.js` → `producciones.js` (solo el vídeo de portada). HTML fijo, sin JSON. Está en el sitemap, en el menú y en el pie; **solo el índice** se indexa. El objeto antiguo de Studio se conserva en el archivo; `projects-data.js` presenta FAENA y CeroComa Producciones.
+Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Producciones** (webs que se recorren como una película) **con la identidad de marca**: `tokens.css` → `base.css` → `producciones.css` → `motion.css`, y `config.js` → `site.js` → `motion.js` → `producciones.js` (solo el vídeo de portada). HTML fijo, sin JSON. Está en el sitemap, en el menú y en el pie; **solo el índice** se indexa. CeroComa Studio sigue oculto (`visibility: "private"` en `projects-data.js`).
 
 - `producciones/assets/`: bucle de portada (`portada-m.mp4` vertical; `portada-h.mp4`, cuatro paneles), sus fotos fijas, las fotos 3:4 de las tarjetas y la imagen para compartir.
 - Los **ejemplos** son webs de clientes inventados con su propia marca y **no se re-tematizan**: `la-maqueta/` y `del-cafeto/` (motor `scrub-engine.js` + plantilla editorial), `mechada-hot/` (despiece en fotogramas, carta y pedido por WhatsApp en modo demo) y `duero-lento/` (3D de partículas en un solo archivo). Llevan `noindex` en el HTML y por `X-Robots-Tag` en `_headers`, y siempre la etiqueta de ejemplo con marca inventada.
@@ -61,7 +61,7 @@ Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Produc
 - **Cloudflare ofusca los `mailto:`** y los convierte en `/cdn-cgi/l/email-protection#…`, que necesita JavaScript. Donde el correo debe leerse sin él (páginas legales, JSON-LD), envolverlo en `<!--email_off-->…<!--/email_off-->`; ya está aplicado en portada, aviso legal y privacidad.
 - **No borrar `googleb7de5be3ec7cd0b5.html`**: es la verificación de Google Search Console.
 - `_redirects` mantiene el 301 de `/tu-carta-en-cero-coma/*` → `/faena/`. Esa URL antigua está indexada: no romperla.
-- `robots.txt` conserva exclusiones de carpetas de trabajo antiguas. `README.md`, `CLAUDE.md` y `.github/` reciben `noindex` mediante `_headers`. Como el despliegue publica la raíz entera, cualquier carpeta de trabajo que se añada será una URL pública.
+- `robots.txt` excluye `/docs/`, `/tests/` y `/README.md`, que aquí ya no existen. Como el despliegue publica la raíz entera, cualquier carpeta de trabajo que se añada será una URL pública.
 - Los renders de la mascota (`assets/media/mascot/ody/ody-<estado>.webp`, consumidos por `about.js`) conservan una denominación que el validador de la otra copia prohíbe en contenido público. Si se renombran, hay que tocar archivos y manifiesto a la vez.
 - Tras un push, algunos edge sirven aún la versión anterior durante unos segundos: reintentar con cache-buster antes de dar algo por roto.
 
@@ -71,12 +71,3 @@ Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Produc
 - Estilo editorial: numeración «01 /», filetes finos, antetítulos en mayúscula con guion dorado, secciones alternando ivory / oscuro / blanco.
 - Tono del copy: sobrio y honesto. No prometer lo que no está construido ni inventar canales de contacto.
 - Accesibilidad asumida en todo el sitio: skip-link, foco visible, HTML que funciona sin JavaScript y movimiento desactivado con `prefers-reduced-motion`.
-
-## Canon comercial · revisión 2026-10-10
-
-- Precios y derechos se contrastan con `cerocoma/apps/faena/src/lib/billing/plans.ts`, `offer.ts` y la página pública `/precios` de FAENA.
-- Gratis, Básico y Pro tienen precios publicados; Red es piloto por contacto. Básico: 2,99 €/mes o 28,70 €/año; Pro: 8,99 €/mes o 86,30 €/año, IVA incluido.
-- Prueba de 30 días bajo petición y activación manual. No hay cobro automático desde esta web.
-- Equipo, mesas y comandas son Red; filtros de dieta desde Básico; idiomas y Decide en CeroComa desde Pro. No reutilizar la oferta Gratis/Pro/Grupo de agosto.
-- Actualizar juntos HTML visible, FAQ JSON-LD, ofertas, `llms.txt` y ficha de proyectos cuando cambie la oferta.
-- `.github/archive/` conserva originales históricos; no es fuente de instrucciones actuales y queda con noindex en `_headers`.

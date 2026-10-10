@@ -1,0 +1,11 @@
+# Web pública de CeroComa
+
+Origen de <https://cerocomasoluciones.com/>: `narutouchumaki99/cero-coma-web`, rama `main`, Cloudflare Pages. Sitio estático, sin build. Checkout local: `C:/Users/otman/cerocoma-web-publicada`.
+
+Fuentes vigentes: [CLAUDE.md](CLAUDE.md), [config.js](assets/js/config.js), [llms.txt](llms.txt) y el contexto compartido `C:/Users/otman/cerocoma/docs/CANON.md`. FAENA se desarrolla en otro repo (`narutouchumaki99/cerocoma`); este presenta FAENA y CeroComa Producciones.
+
+Oferta de FAENA: Gratis/Básico/Pro/Red, activación manual. Contrastar importes y derechos con <https://faena.cerocomasoluciones.com/precios> y el catálogo técnico de la app antes de cambiar HTML o metadatos.
+
+Historial sustituido: [.github/archive/canon-2026-10-10](.github/archive/canon-2026-10-10/README.md), con manifiesto y SHA-256. La copia divergente del monorepo está archivada y no sirve este dominio.
+
+Cambios mediante rama y PR. La integración en main publica automáticamente; comprobar después el dominio. No ejecutar el workflow histórico de JSON ni publicar demostraciones como negocios reales.

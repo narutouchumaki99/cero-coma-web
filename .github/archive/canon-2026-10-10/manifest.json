@@ -1,0 +1,68 @@
+[
+  {
+    "archived": ".github/archive/canon-2026-10-10/llms.txt",
+    "sha256": "6018953551201cdbfb7f487821d226aefa5c0a32ec4b20d162f27020e478b81a",
+    "action": "snapshot",
+    "original": "llms.txt"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/faena/index.html",
+    "sha256": "25d84d42bdadc8f369f774d231a49cbba9375edd402b18452d8866497708d031",
+    "action": "snapshot",
+    "original": "faena/index.html"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/faena/recorrido/index.html",
+    "sha256": "4b452dd53401437d5c5ae45796cbae41823747b92a285f52eb12480076b8d004",
+    "action": "snapshot",
+    "original": "faena/recorrido/index.html"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/assets/js/projects-data.js",
+    "sha256": "e55372c918fad736f2e50f8d84d3fe9b94c81d6174812ae28d59b7459272092a",
+    "action": "snapshot",
+    "original": "assets/js/projects-data.js"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/proyectos/index.html",
+    "sha256": "b049b7c882b710e936328a5a6d57d53b8f34c910ca4bd0128cd5e08109db7593",
+    "action": "snapshot",
+    "original": "proyectos/index.html"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/carta-digital-bares/index.html",
+    "sha256": "3104788b5020a498e88fcd20b19151ae5314a0d7e00efd8be4a436ce69bcd84c",
+    "action": "snapshot",
+    "original": "carta-digital-bares/index.html"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/carta-digital-cafeterias/index.html",
+    "sha256": "4a5f5f3e1c6514d6f408057120a530aab54ff958bcf2139b3bfc571b80412136",
+    "action": "snapshot",
+    "original": "carta-digital-cafeterias/index.html"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/carta-digital-restaurantes/index.html",
+    "sha256": "1107b146e9945e87a015505a19f61b266ac44a148f4ac5fc481452e688aa0632",
+    "action": "snapshot",
+    "original": "carta-digital-restaurantes/index.html"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/CLAUDE.md",
+    "sha256": "40166088232f11400e39dcdef1e5248280b920a7aa673d1b0d9b511664ea3549",
+    "action": "snapshot",
+    "original": "CLAUDE.md"
+  },
+  {
+    "archived": ".github/archive/canon-2026-10-10/chatgpt-producciones.yml.txt",
+    "sha256": "2b61d23fa91381c3a89a72dbfef86efc258563e35ceac660ddc5f55d0c1d165b",
+    "action": "move",
+    "original": ".github/workflows/chatgpt-producciones.yml"
+  },
+  {
+    "original": "robots.txt",
+    "archived": ".github/archive/canon-2026-10-10/robots.txt",
+    "action": "snapshot",
+    "sha256": "f390d86288d78563c46aafeb5751e060d93bbee4e978ee68a2a7b1760838c336"
+  }
+]

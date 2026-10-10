@@ -59,15 +59,17 @@
             "sameAs": ["https://faena.cerocomasoluciones.com/"],
             "description": "FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.",
             "featureList": [
-              "Importación desde fotos o PDF a borrador revisado; una lectura de bienvenida en Gratis",
-              "Carta y QR permanente en todos los planes",
-              "Alérgenos por nombre en Gratis y con iconos desde Básico",
-              "Fotos, logo, redes, estilos y filtros de dieta desde Básico",
-              "Español en Gratis y Básico; traducción a inglés, francés, italiano y alemán en Pro y Red",
-              "Decide en CeroComa en Pro y Red",
-              "Edición y publicación versionada con historial y restauración",
-              "Equipo, QR por mesa, croquis y comandas en Red, piloto acompañado",
-              "Carta pública en el navegador, sin instalar una app ni registrarse"
+              "Lectura de la carta en papel con IA a partir de fotos o PDF, con revisión antes de publicar",
+              "Carta en español, inglés, francés, italiano y alemán con traducción automática; un idioma en Gratis y los cinco en Pro",
+              "Los 14 alérgenos de la normativa europea por plato",
+              "Edición de precios, productos y secciones, con platos agotados, ocultos o destacados",
+              "Sección de menú del día con precio",
+              "Publicación versionada con enlace y código QR permanentes",
+              "QR por mesa agrupados en sala, barra y terraza, con impresión y diseño propio",
+              "Croquis de mesas con aviso al personal cuando una mesa abre la carta",
+              "Estilos, colores y logo propios",
+              "Equipo con roles y permisos",
+              "Carta pública en el navegador del móvil, sin instalar nada"
             ],
             "audience": { "@type": "BusinessAudience", "audienceType": "Bares y restaurantes" },
             "image": "https://cerocomasoluciones.com/assets/media/social/og-faena.png",
@@ -81,58 +83,16 @@
               },
               {
                 "@type": "Offer",
-                "name": "Básico mensual",
-                "price": "2.99",
+                "name": "Pro",
+                "price": "9",
                 "priceCurrency": "EUR",
                 "url": "https://faena.cerocomasoluciones.com/precios",
                 "priceSpecification": {
                   "@type": "UnitPriceSpecification",
-                  "price": 2.99,
+                  "price": 9,
                   "priceCurrency": "EUR",
                   "unitText": "MONTH",
-                  "valueAddedTaxIncluded": true
-                }
-              },
-              {
-                "@type": "Offer",
-                "name": "Básico anual",
-                "price": "28.70",
-                "priceCurrency": "EUR",
-                "url": "https://faena.cerocomasoluciones.com/precios",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": 28.7,
-                  "priceCurrency": "EUR",
-                  "unitText": "YEAR",
-                  "valueAddedTaxIncluded": true
-                }
-              },
-              {
-                "@type": "Offer",
-                "name": "Pro mensual",
-                "price": "8.99",
-                "priceCurrency": "EUR",
-                "url": "https://faena.cerocomasoluciones.com/precios",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": 8.99,
-                  "priceCurrency": "EUR",
-                  "unitText": "MONTH",
-                  "valueAddedTaxIncluded": true
-                }
-              },
-              {
-                "@type": "Offer",
-                "name": "Pro anual",
-                "price": "86.30",
-                "priceCurrency": "EUR",
-                "url": "https://faena.cerocomasoluciones.com/precios",
-                "priceSpecification": {
-                  "@type": "UnitPriceSpecification",
-                  "price": 86.3,
-                  "priceCurrency": "EUR",
-                  "unitText": "YEAR",
-                  "valueAddedTaxIncluded": true
+                  "valueAddedTaxIncluded": false
                 }
               }
             ],
@@ -182,7 +142,7 @@
                 "name": "¿En qué idiomas la ven mis clientes?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "En español, inglés, francés, italiano y alemán. Gratis y Básico publican en español; Pro y Red permiten los cinco idiomas. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta."
+                  "text": "En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta."
                 }
               },
               {
@@ -190,7 +150,7 @@
                 "name": "¿Se ven los alérgenos?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Sí. El local confirma los alérgenos de cada plato: Gratis los muestra por nombre y Básico y superiores con iconos. Decide en CeroComa, incluido en Pro y Red, ayuda a elegir según gustos; es orientativo y no sustituye esa información."
+                  "text": "Sí. Marcas en cada plato cuáles de los 14 alérgenos de la normativa europea contiene y el cliente los ve como etiquetas, en su idioma. Hay además una guía de preguntas que recomienda platos según los gustos del cliente; es orientativa y no sustituye a la información de alérgenos."
                 }
               },
               {
@@ -238,7 +198,7 @@
                 "name": "¿Cuánto tarda en estar publicada?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Si la montamos nosotros, acordamos el plazo contigo. Si la haces tú, empiezas en Gratis al registrarte y publicas tras revisar la carta. Básico, Pro y sus pruebas se activan por WhatsApp; Red se pone en marcha contigo."
+                  "text": "Si la montamos nosotros, dos o tres días. Si la haces tú, al registrarte activamos tu local personalmente por WhatsApp; desde ahí, la carta está publicada en cuanto la revisas y pulsas publicar."
                 }
               },
               {
@@ -246,7 +206,7 @@
                 "name": "¿FAENA toma pedidos o cobra en mesa?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "En todos los planes el cliente puede preparar una lista para enseñarla al camarero. Red incorpora mesas, camareros y comandas en un piloto acompañado. No hay pagos desde la carta; cocina y llamada al camarero no se ofrecen como servicio general."
+                  "text": "Todavía no. El cliente puede apuntarse lo que quiere en una lista en su móvil para enseñársela al camarero, pero no se envía a cocina. Los pedidos, el botón de llamar al camarero y los pagos están en preparación: los verás más abajo, marcados como pendientes."
                 }
               }
             ]
@@ -309,7 +269,7 @@
             <ul class="feature-pills" aria-label="Lo que incluye FAENA">
               <li>Español · Inglés · Francés · Italiano · Alemán</li>
               <li>14 alérgenos por plato</li>
-              <li>QR por mesa y zona con Red</li>
+              <li>QR por mesa y zona</li>
               <li>Agotado al momento</li>
               <li>Menú del día</li>
             </ul>
@@ -388,7 +348,7 @@
           <div class="demo-head" data-reveal>
             <p class="eyebrow">Qué hace FAENA</p>
             <h2 id="features-title">Todo lo que tu carta de papel no puede hacer.</h2>
-            <p>Funciones según tu plan: carta sencilla en Gratis, personalización desde Básico, idiomas y Decide en Pro, y sala en el piloto Red.</p>
+            <p>Funciones que ya están en la app hoy, no promesas.</p>
           </div>
           <ul class="feature-grid">
             <li class="feature-card">
@@ -399,7 +359,7 @@
             <li class="feature-card">
               <p class="feature-card__label">02 / Idiomas</p>
               <h3>En español, inglés, francés, italiano y alemán</h3>
-              <p>Gratis y Básico publican en español; Pro y Red permiten los cinco idiomas. Los nombres y descripciones se traducen solos, y el cliente elige el idioma al abrir la carta.</p>
+              <p>Gratis permite publicar la carta en un idioma y Pro en los cinco. Los nombres y descripciones se traducen solos, y el cliente elige el idioma al abrir la carta.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">03 / Alérgenos</p>
@@ -419,32 +379,22 @@
             <li class="feature-card">
               <p class="feature-card__label">06 / QR</p>
               <h3>Un QR por mesa, por zonas</h3>
-              <p>Todos los planes tienen un QR general permanente. Red añade mesas por sala, barra y terraza; descargas en PNG o SVG y tarjetas A4. La puesta en marcha es acompañada.</p>
+              <p>Mesas agrupadas en sala, barra y terraza, y un QR general. Descargas en PNG o SVG, o imprimes tarjetas A4 con tu logo y tus colores.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">07 / Sala</p>
               <h3>Sabes qué mesa se ha sentado</h3>
-              <p>En el piloto Red, el croquis muestra las mesas que abren la carta y permite avisos al personal. Validamos contigo su uso; los avisos con el móvil bloqueado siguen pendientes de aceptación.</p>
+              <p>Un croquis de mesas muestra cuáles han abierto la carta, y el personal recibe un aviso en el móvil cuando una mesa escanea el QR.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">08 / Estilo</p>
               <h3>Con la cara de tu local</h3>
-              <p>Desde Básico, fotos, estilos, colores, logo y redes del local. Gratis conserva una carta sencilla con tres fondos y color de letra propio. Todos los planes tienen buscador y categorías.</p>
+              <p>Cinco estilos, cuatro disposiciones, tus colores y tu logo. La carta tiene buscador, categorías, horarios y los datos del local.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">09 / Equipo</p>
               <h3>Cada uno con su permiso</h3>
-              <p>Red incorpora propietario, gerente y personal, con permisos para editar, diseñar o publicar. Invitas al equipo con un enlace; no está incluido en Básico ni Pro.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">10 / Dieta · desde Básico</p>
-              <h3>Filtros para encontrar tu plato</h3>
-              <p>El cliente filtra por las preferencias que el local marca en cada plato. Los filtros no sustituyen la información de alérgenos confirmada por el negocio.</p>
-            </li>
-            <li class="feature-card">
-              <p class="feature-card__label">11 / Decide · Pro y Red</p>
-              <h3>Decide en CeroComa</h3>
-              <p>Una guía de preguntas ayuda al cliente a elegir entre los platos de tu carta según sus gustos.</p>
+              <p>Propietario, gerente y personal, con permisos para tocar la carta, el diseño o publicar. Invitas a tu equipo con un enlace.</p>
             </li>
           </ul>
         </div>
@@ -595,11 +545,11 @@
             </details>
             <details>
               <summary>¿En qué idiomas la ven mis clientes?</summary>
-              <p>En español, inglés, francés, italiano y alemán. Gratis y Básico publican en español; Pro y Red permiten los cinco idiomas. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
+              <p>En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
             </details>
             <details>
               <summary>¿Se ven los alérgenos?</summary>
-              <p>Sí. El local confirma los alérgenos de cada plato: Gratis los muestra por nombre y Básico y superiores con iconos. Decide en CeroComa, incluido en Pro y Red, ayuda a elegir según gustos; es orientativo y no sustituye esa información.</p>
+              <p>Sí. Marcas en cada plato cuáles de los 14 alérgenos de la normativa europea contiene y el cliente los ve como etiquetas, en su idioma. Hay además una guía de preguntas que recomienda platos según los gustos del cliente; es orientativa y no sustituye a la información de alérgenos.</p>
             </details>
             <details>
               <summary>¿Tengo que cambiar el QR cuando modifico un precio?</summary>
@@ -623,11 +573,11 @@
             </details>
             <details>
               <summary>¿Cuánto tarda en estar publicada?</summary>
-              <p>Si la montamos nosotros, acordamos el plazo contigo. Si la haces tú, empiezas en Gratis al registrarte y publicas tras revisar la carta. Básico, Pro y sus pruebas se activan por WhatsApp; Red se pone en marcha contigo.</p>
+              <p>Si la montamos nosotros, dos o tres días. Si la haces tú, al registrarte activamos tu local personalmente por WhatsApp; desde ahí, la carta está publicada en cuanto la revisas y pulsas publicar.</p>
             </details>
             <details>
               <summary>¿FAENA toma pedidos o cobra en mesa?</summary>
-              <p>En todos los planes el cliente puede preparar una lista para enseñarla al camarero. Red incorpora mesas, camareros y comandas en un piloto acompañado. No hay pagos desde la carta; cocina y llamada al camarero siguen <a href="#proximamente">pendientes como servicio general</a>.</p>
+              <p>Todavía no. El cliente puede apuntarse lo que quiere en una lista en su móvil para enseñársela al camarero, pero no se envía a cocina. Los pedidos, el botón de llamar al camarero y los pagos están en preparación: los verás <a href="#proximamente">más abajo, marcados como pendientes</a>.</p>
             </details>
           </div>
           <p class="faq__more">Para ir más a fondo: <a href="../como-digitalizar-carta-restaurante/">cómo digitalizar la carta de un restaurante</a>, paso a paso, y <a href="../cambiar-precios-carta-qr/">cómo cambiar los precios de una carta QR sin imprimir otro código</a>, aunque no uses FAENA.</p>
@@ -639,9 +589,17 @@
           <div class="demo-head" data-reveal>
             <p class="eyebrow">Próximamente</p>
             <h2 id="soon-title">Lo que viene después de la carta.</h2>
-            <p>Red conecta carta, mesas y camareros en un piloto acompañado. Las siguientes capacidades no se ofrecen todavía como servicio general; los pagos desde la carta no están disponibles.</p>
+            <p>Hoy FAENA publica y mantiene la carta. Esto es lo que estamos preparando. No está disponible todavía.</p>
           </div>
           <ul class="state-list soon-list">
+            <li data-state="pending">
+              <span class="state-list__mark" aria-hidden="true"></span>
+              <div>
+                <h3>Filtros por dieta</h3>
+                <p>El cliente filtra la carta por vegano, sin gluten y otras preferencias, a partir de lo que marques en cada plato.</p>
+                <span class="state-list__status">Muy pronto</span>
+              </div>
+            </li>
             <li data-state="pending">
               <span class="state-list__mark" aria-hidden="true"></span>
               <div>
