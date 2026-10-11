@@ -51,8 +51,8 @@ Portada, `proyectos/`, `faena/`, `contacto/`, `aviso-legal/`, `privacidad/` y `4
 Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Producciones** (webs que se recorren como una película) **con la identidad de marca**: `tokens.css` → `base.css` → `producciones.css` → `motion.css`, y `config.js` → `site.js` → `motion.js` → `producciones.js` (solo el vídeo de portada). HTML fijo, sin JSON. Está en el sitemap, en el menú y en el pie; **solo el índice** se indexa. CeroComa Studio sigue oculto (`visibility: "private"` en `projects-data.js`).
 
 - `producciones/assets/`: bucle de portada (`portada-m.mp4` vertical; `portada-h.mp4`, cuatro paneles), sus fotos fijas, las fotos 3:4 de las tarjetas y la imagen para compartir.
-- Los **ejemplos** son webs de clientes inventados con su propia marca y **no se re-tematizan**: `la-maqueta/` y `del-cafeto/` (motor `scrub-engine.js` + plantilla editorial), `mechada-hot/` (despiece en fotogramas, carta y pedido por WhatsApp en modo demo) y `duero-lento/` (3D de partículas en un solo archivo). Llevan `noindex` en el HTML y por `X-Robots-Tag` en `_headers`, y siempre la etiqueta de ejemplo con marca inventada.
-- **Sus fuentes están fuera del repo**, en `C:\Users\otman\facturacion\demos\`: `la-maqueta/web`, `del-cafeto/web`, `landing-mechada-hot/fuente` (`node construir.mjs` → `web/`) y `lab-3d/fuente/03-bodega-duero` (`node construir.mjs 03-bodega-duero`). Se edita allí, se construye y se copia aquí.
+- Los **ejemplos** son webs de clientes inventados con su propia marca y **no se re-tematizan**: `la-maqueta/`, `del-cafeto/` y `libro-desplegable/` (motor `scrub-engine.js` + plantilla editorial), `mechada-hot/` (despiece en fotogramas, carta y pedido por WhatsApp en modo demo) y `duero-lento/` (3D de partículas en un solo archivo). Llevan `noindex` en el HTML y por `X-Robots-Tag` en `_headers`, y siempre la etiqueta de ejemplo con marca inventada.
+- **Sus fuentes están fuera del repo**, en `C:\Users\otman\facturacion\demos\`: `la-maqueta/web`, `del-cafeto/web`, `libro-desplegable/web`, `landing-mechada-hot/fuente` (`node construir.mjs` → `web/`) y `lab-3d/fuente/03-bodega-duero` (`node construir.mjs 03-bodega-duero`). Se edita allí, se construye y se copia aquí.
 - Los botones de WhatsApp de los ejemplos van a 3tmen con un mensaje que dice que es un ejemplo, nunca como si el negocio existiera.
 
 ## Reglas del sitio que no son evidentes
@@ -65,7 +65,7 @@ Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Produc
 - Los renders de la mascota (`assets/media/mascot/ody/ody-<estado>.webp`, consumidos por `about.js`) conservan una denominación que el validador de la otra copia prohíbe en contenido público. Si se renombran, hay que tocar archivos y manifiesto a la vez.
 - Tras un push, algunos edge sirven aún la versión anterior durante unos segundos: reintentar con cache-buster antes de dar algo por roto.
 - **El navegador guarda los `.js` y `.css` 4 horas** (`Cache-Control: max-age=14400` que pone Cloudflare; el HTML no se guarda). Al cambiar uno, sube su `?v=` en todas las páginas que lo cargan (p. ej. `site.js?v=20261011`, `scrub-engine.js?v=…`), o los móviles seguirán con el viejo aunque el HTML sea nuevo.
-- `scrub-engine.js` es el mismo archivo en `historia/`, `faena/recorrido/`, `producciones/la-maqueta/` y `producciones/del-cafeto/`, en las fuentes de `C:\Users\otman\facturacion\demos\` y en la plantilla del skill `web-cinematica-scroll`. Un cambio se copia a todos.
+- `scrub-engine.js` es el mismo archivo en `historia/`, `faena/recorrido/`, `producciones/la-maqueta/`, `producciones/del-cafeto/` y `producciones/libro-desplegable/`, en las fuentes de `C:\Users\otman\facturacion\demos\` y en la plantilla del skill `web-cinematica-scroll`. Un cambio se copia a todos.
 
 ## Marca
 

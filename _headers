@@ -31,6 +31,12 @@
 /producciones/del-cafeto/*
   X-Robots-Tag: noindex
 
+/producciones/libro-desplegable/
+  X-Robots-Tag: noindex
+
+/producciones/libro-desplegable/*
+  X-Robots-Tag: noindex
+
 /producciones/mechada-hot/
   X-Robots-Tag: noindex
 

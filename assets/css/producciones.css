@@ -133,14 +133,18 @@
   color: var(--light-muted);
 }
 
+/* Flex y no grid: con un número impar de ejemplos, la última fila queda centrada. */
 .prod-example-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(var(--space-6), 4vw, var(--space-12));
+  --example-gap: clamp(var(--space-6), 4vw, var(--space-12));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--example-gap);
 }
 
 .prod-example-card {
   min-width: 0;
+  flex: 0 1 calc((100% - var(--example-gap)) / 2);
 }
 
 .prod-example-card > a {
@@ -449,8 +453,11 @@
 
 @media (min-width: 72rem) {
   .prod-example-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--space-6);
+    --example-gap: var(--space-6);
+  }
+
+  .prod-example-card {
+    flex-basis: calc((100% - 2 * var(--example-gap)) / 3);
   }
 
   .prod-example-card__body {
@@ -512,6 +519,10 @@
   .prod-timeline,
   .prod-pack-grid {
     grid-template-columns: 1fr;
+  }
+
+  .prod-example-card {
+    flex-basis: 100%;
   }
 
   .prod-feature-grid {
