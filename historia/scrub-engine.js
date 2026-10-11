@@ -65,8 +65,9 @@
        - coalesces seeks (never issues a new currentTime while the decoder is still
          `seeking`) so fast flicks can't pile up and freeze the video.
        - keeps the still as a live poster until the clip actually paints its first frame,
-         and primes each video (muted play→pause) on first touch — this is what stops iOS
-         from showing a blank scene before the first seek.
+         and primes each video (muted play→pause) as soon as it loads, again on every tap
+         while it hasn't painted — this is what stops iOS from showing a blank scene
+         before the first seek.
        - keeps a live <video> only for the scenes around the viewport and releases the rest
          (rebuilt from the cached Blob on the way back): a phone has few hardware decoders,
          and without this the scenes past the first few never paint and stay on their still.
@@ -100,6 +101,8 @@ function mountScrollWorld(container, config) {
   const coarse = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   const smallMQ = window.matchMedia('(max-width: 860px)');
   const isMobile = () => coarse || smallMQ.matches;
+  // iOS WebKit (iPadOS reports itself as a Mac with touch).
+  const IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const SECTIONS = config.sections || [];
   const CONNECTORS = config.connectors || [];
   const CONNECTORS_M = config.connectorsMobile || [];
@@ -274,10 +277,13 @@ function mountScrollWorld(container, config) {
     // Reveal the video (hide the still poster) only once a real frame has painted — on
     // iOS a seeked-but-never-played muted video stays blank, so hiding the still on
     // metadata alone would flash an empty scene. requestVideoFrameCallback fires only
-    // when a frame is actually presented; without it, fall back to `seeked`.
+    // when a frame is actually presented. Backups for phones where that callback never
+    // comes for a paused video: a frame is certainly up once the clip has played (the
+    // priming below), and outside iOS also once a seek has completed.
     const reveal = () => { if (s.video === v) s.el.classList.add('has-clip'); };
     if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(reveal);
-    if (!v.requestVideoFrameCallback || !coarse) v.addEventListener('seeked', reveal, { once: true });
+    v.addEventListener('playing', reveal);
+    if (!IOS) v.addEventListener('seeked', reveal);
     v.addEventListener('loadedmetadata', () => {
       if (s.video !== v) return;
       s.ready = true;
@@ -285,13 +291,13 @@ function mountScrollWorld(container, config) {
       // decoded (the raf loop skips the seek when the target is already 0).
       s.cur = s.target;
       try { v.currentTime = Math.max(0.001, clamp(s.cur, 0, 0.999) * (v.duration || 1)); s.seekAt = performance.now(); } catch (e) {}
+      // Prime on phones right away (iOS may not even fire loadeddata before a play).
+      primeVideo(v);
       read();
     });
     v.addEventListener('loadeddata', () => {
       if (s.video !== v) return;
       s.el.classList.add('is-loaded');
-      try { v.pause(); } catch (e) {}
-      if (userReady) primeVideo(v);
     });
     // A decoder the phone refused: drop the element (the still takes over) and let it be
     // rebuilt later, a couple of times at most.
@@ -387,23 +393,21 @@ function mountScrollWorld(container, config) {
     requestAnimationFrame(raf);
   }
 
-  // iOS needs a user gesture before a muted video will decode/paint reliably. On the
-  // first touch we prime every loaded clip (muted play→pause) so the first seek is
-  // instant instead of showing a blank frame. `userReady` also makes freshly-loaded
-  // clips prime themselves (see attach).
-  let userReady = false;
+  // Phones paint a muted <video> reliably only once it has played, so each clip is primed
+  // (muted play, then pause) as soon as it loads; muted inline playback needs no gesture.
+  // Where even that is blocked (iOS Low Power Mode) a real tap unlocks it: touchend/click
+  // grant user activation (a scroll's touchstart doesn't), so every tap re-primes the
+  // clips still showing their still.
   function primeVideo(v) {
     if (!isMobile() || !v) return;
     try { const p = v.play(); if (p && p.then) p.then(() => { try { v.pause(); } catch (e) {} }).catch(() => {}); }
     catch (e) {}
   }
-  function onFirstGesture() {
-    if (userReady) return;
-    userReady = true;
-    SEGMENTS.forEach(s => primeVideo(s.video));
+  function onGesture() {
+    SEGMENTS.forEach(s => { if (s.video && !s.el.classList.contains('has-clip')) primeVideo(s.video); });
   }
-  window.addEventListener('pointerdown', onFirstGesture, { once: true, passive: true });
-  window.addEventListener('touchstart', onFirstGesture, { once: true, passive: true });
+  window.addEventListener('touchend', onGesture, { passive: true });
+  window.addEventListener('click', onGesture, { passive: true });
 
   // Particles are a per-frame cost we can't afford alongside video scrubbing on a phone.
   seedParticles(particles, reduce || coarse);

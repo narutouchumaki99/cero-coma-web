@@ -64,6 +64,8 @@ Desde el 10-10-2026, `producciones/` es la página del estudio **CeroComa Produc
 - `robots.txt` excluye `/docs/`, `/tests/` y `/README.md`, que aquí ya no existen. Como el despliegue publica la raíz entera, cualquier carpeta de trabajo que se añada será una URL pública.
 - Los renders de la mascota (`assets/media/mascot/ody/ody-<estado>.webp`, consumidos por `about.js`) conservan una denominación que el validador de la otra copia prohíbe en contenido público. Si se renombran, hay que tocar archivos y manifiesto a la vez.
 - Tras un push, algunos edge sirven aún la versión anterior durante unos segundos: reintentar con cache-buster antes de dar algo por roto.
+- **El navegador guarda los `.js` y `.css` 4 horas** (`Cache-Control: max-age=14400` que pone Cloudflare; el HTML no se guarda). Al cambiar uno, sube su `?v=` en todas las páginas que lo cargan (p. ej. `site.js?v=20261011`, `scrub-engine.js?v=…`), o los móviles seguirán con el viejo aunque el HTML sea nuevo.
+- `scrub-engine.js` es el mismo archivo en `historia/`, `faena/recorrido/`, `producciones/la-maqueta/` y `producciones/del-cafeto/`, en las fuentes de `C:\Users\otman\facturacion\demos\` y en la plantilla del skill `web-cinematica-scroll`. Un cambio se copia a todos.
 
 ## Marca
 
