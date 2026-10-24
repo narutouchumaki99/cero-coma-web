@@ -60,15 +60,16 @@
             "description": "FAENA es una herramienta de CeroComa que convierte la carta física de un bar o restaurante en una carta digital editable y la publica con un código QR que no cambia.",
             "featureList": [
               "Lectura de la carta en papel con IA a partir de fotos o PDF, con revisión antes de publicar",
-              "Carta en español, inglés, francés, italiano y alemán con traducción automática; un idioma en Gratis y los cinco en Pro",
+              "Carta en español, inglés, francés, italiano y alemán con traducción automática; español en Gratis y Básico y los cinco idiomas en Pro y Red",
               "Los 14 alérgenos de la normativa europea por plato",
               "Edición de precios, productos y secciones, con platos agotados, ocultos o destacados",
-              "Sección de menú del día con precio",
+              "Menú del día con precio, desde Básico",
+              "Comandas desde la mesa en Pro y Red: el camarero confirma, rechaza o marca como servido cada pedido",
               "Publicación versionada con enlace y código QR permanentes",
               "QR por mesa agrupados en sala, barra y terraza, con impresión y diseño propio",
               "Croquis de mesas con aviso al personal cuando una mesa abre la carta",
               "Estilos, colores y logo propios",
-              "Equipo con roles y permisos",
+              "Equipo con roles y permisos, desde Básico",
               "Carta pública en el navegador del móvil, sin instalar nada"
             ],
             "audience": { "@type": "BusinessAudience", "audienceType": "Bares y restaurantes" },
@@ -83,16 +84,30 @@
               },
               {
                 "@type": "Offer",
-                "name": "Pro",
-                "price": "9",
+                "name": "Básico",
+                "price": "2.99",
                 "priceCurrency": "EUR",
                 "url": "https://faena.cerocomasoluciones.com/precios",
                 "priceSpecification": {
                   "@type": "UnitPriceSpecification",
-                  "price": 9,
+                  "price": 2.99,
                   "priceCurrency": "EUR",
                   "unitText": "MONTH",
-                  "valueAddedTaxIncluded": false
+                  "valueAddedTaxIncluded": true
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Pro",
+                "price": "8.99",
+                "priceCurrency": "EUR",
+                "url": "https://faena.cerocomasoluciones.com/precios",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": 8.99,
+                  "priceCurrency": "EUR",
+                  "unitText": "MONTH",
+                  "valueAddedTaxIncluded": true
                 }
               }
             ],
@@ -142,7 +157,7 @@
                 "name": "¿En qué idiomas la ven mis clientes?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta."
+                  "text": "En español, inglés, francés, italiano y alemán. Gratis y Básico publican la carta en español; Pro y Red, en los cinco idiomas. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta."
                 }
               },
               {
@@ -198,7 +213,7 @@
                 "name": "¿Cuánto tarda en estar publicada?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Si la montamos nosotros, en cero coma. Si la haces tú, al registrarte activamos tu local personalmente por WhatsApp; desde ahí, la carta está publicada en cuanto la revisas y pulsas publicar."
+                  "text": "Si la montamos nosotros, en cero coma. Si la haces tú, te registras, empiezas en Gratis y publicas en cuanto revisas la carta. Puedes probar Básico o Pro 7 días sin tarjeta."
                 }
               },
               {
@@ -206,7 +221,7 @@
                 "name": "¿FAENA toma pedidos o cobra en mesa?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Todavía no. El cliente puede apuntarse lo que quiere en una lista en su móvil para enseñársela al camarero, pero no se envía a cocina. Los pedidos, el botón de llamar al camarero y los pagos están en preparación: los verás más abajo, marcados como pendientes."
+                  "text": "Sí, en Pro y Red: el cliente envía el pedido desde la mesa y el camarero lo confirma, lo rechaza o lo marca como servido. El cobro se hace en el local. En Gratis y Básico, el cliente enseña su lista al camarero."
                 }
               }
             ]
@@ -272,6 +287,7 @@
               <li>QR por mesa y zona</li>
               <li>Agotado al momento</li>
               <li>Menú del día</li>
+              <li>Comandas en Pro y Red</li>
             </ul>
             <p class="product-hero__note">¿Prefieres no tocar nada? <a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">Mándanos la carta por WhatsApp</a> y te la dejamos montada en cero coma.</p>
           </div>
@@ -359,7 +375,7 @@
             <li class="feature-card">
               <p class="feature-card__label">02 / Idiomas</p>
               <h3>En español, inglés, francés, italiano y alemán</h3>
-              <p>Gratis permite publicar la carta en un idioma y Pro en los cinco. Los nombres y descripciones se traducen solos, y el cliente elige el idioma al abrir la carta.</p>
+              <p>Gratis y Básico publican la carta en español; Pro y Red, en los cinco idiomas. Los nombres y descripciones se traducen solos, y el cliente elige el idioma al abrir la carta.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">03 / Alérgenos</p>
@@ -374,7 +390,7 @@
             <li class="feature-card">
               <p class="feature-card__label">05 / Menú del día</p>
               <h3>Una sección con su precio</h3>
-              <p>Creas una sección de menú del día o menú cerrado con el precio en la cabecera y cambias los platos cuando toca.</p>
+              <p>Creas una sección de menú del día o menú cerrado con el precio en la cabecera y cambias los platos cuando toca. Desde Básico.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">06 / QR</p>
@@ -394,7 +410,12 @@
             <li class="feature-card">
               <p class="feature-card__label">09 / Equipo</p>
               <h3>Cada uno con su permiso</h3>
-              <p>Propietario, gerente y personal, con permisos para tocar la carta, el diseño o publicar. Invitas a tu equipo con un enlace.</p>
+              <p>Desde Básico. Propietario, gerente y personal, con permisos para tocar la carta, el diseño o publicar. Invitas a tu equipo con un enlace.</p>
+            </li>
+            <li class="feature-card">
+              <p class="feature-card__label">10 / Comandas</p>
+              <h3>Comandas desde la mesa (Pro y Red)</h3>
+              <p>El cliente envía el pedido desde la mesa y el camarero lo confirma, lo rechaza o lo marca como servido. El cobro se hace en el local.</p>
             </li>
           </ul>
         </div>
@@ -545,7 +566,7 @@
             </details>
             <details>
               <summary>¿En qué idiomas la ven mis clientes?</summary>
-              <p>En español, inglés, francés, italiano y alemán. Gratis permite publicar la carta en un idioma y Pro en los cinco. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
+              <p>En español, inglés, francés, italiano y alemán. Gratis y Básico publican la carta en español; Pro y Red, en los cinco idiomas. Al guardar y publicar, los nombres y descripciones de platos y secciones se traducen automáticamente, y el cliente elige el idioma al abrir la carta.</p>
             </details>
             <details>
               <summary>¿Se ven los alérgenos?</summary>
@@ -573,11 +594,11 @@
             </details>
             <details>
               <summary>¿Cuánto tarda en estar publicada?</summary>
-              <p>Si la montamos nosotros, en cero coma. Si la haces tú, al registrarte activamos tu local personalmente por WhatsApp; desde ahí, la carta está publicada en cuanto la revisas y pulsas publicar.</p>
+              <p>Si la montamos nosotros, en cero coma. Si la haces tú, te registras, empiezas en Gratis y publicas en cuanto revisas la carta. Puedes probar Básico o Pro 7 días sin tarjeta.</p>
             </details>
             <details>
               <summary>¿FAENA toma pedidos o cobra en mesa?</summary>
-              <p>Todavía no. El cliente puede apuntarse lo que quiere en una lista en su móvil para enseñársela al camarero, pero no se envía a cocina. Los pedidos, el botón de llamar al camarero y los pagos están en preparación: los verás <a href="#proximamente">más abajo, marcados como pendientes</a>.</p>
+              <p>Sí, en Pro y Red: el cliente envía el pedido desde la mesa y el camarero lo confirma, lo rechaza o lo marca como servido. El cobro se hace en el local. En Gratis y Básico, el cliente enseña su lista al camarero. Lo que aún está en preparación lo verás <a href="#proximamente">más abajo</a>.</p>
             </details>
           </div>
           <p class="faq__more">Para ir más a fondo: <a href="../como-digitalizar-carta-restaurante/">cómo digitalizar la carta de un restaurante</a>, paso a paso, y <a href="../cambiar-precios-carta-qr/">cómo cambiar los precios de una carta QR sin imprimir otro código</a>, aunque no uses FAENA.</p>
@@ -588,38 +609,22 @@
         <div class="shell">
           <div class="demo-head" data-reveal>
             <p class="eyebrow">Próximamente</p>
-            <h2 id="soon-title">Lo que viene después de la carta.</h2>
-            <p>Hoy FAENA publica y mantiene la carta. Esto es lo que estamos preparando. No está disponible todavía.</p>
+            <h2 id="soon-title">Lo que viene ahora.</h2>
+            <p>Hoy FAENA publica la carta y el menú del día, y en Pro y Red recibe comandas desde la mesa. Esto es lo que estamos preparando. No está disponible todavía.</p>
           </div>
           <ul class="state-list soon-list">
             <li data-state="pending">
               <span class="state-list__mark" aria-hidden="true"></span>
               <div>
-                <h3>Filtros por dieta</h3>
-                <p>El cliente filtra la carta por vegano, sin gluten y otras preferencias, a partir de lo que marques en cada plato.</p>
-                <span class="state-list__status">Muy pronto</span>
-              </div>
-            </li>
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true"></span>
-              <div>
-                <h3>Cocina al día</h3>
-                <p>Lo que se pide llega a cocina con claridad, para menos idas y vueltas.</p>
-                <span class="state-list__status">Pendiente</span>
-              </div>
-            </li>
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true"></span>
-              <div>
                 <h3>Llamar al camarero</h3>
                 <p>El cliente avisa desde la mesa sin levantar la mano a ciegas.</p>
-                <span class="state-list__status">Pendiente</span>
+                <span class="state-list__status">Red · Próximamente</span>
               </div>
             </li>
             <li data-state="pending">
               <span class="state-list__mark" aria-hidden="true"></span>
               <div>
-                <h3>Pagos con tarjeta</h3>
+                <h3>Pagos con tarjeta en mesa</h3>
                 <p>Cobrar en mesa o al irse, sin depender solo de la caja de siempre.</p>
                 <span class="state-list__status">Pendiente</span>
               </div>

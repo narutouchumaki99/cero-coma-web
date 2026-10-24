@@ -13,7 +13,7 @@
       summary: "Un flujo para convertir una carta existente en una versión digital editable, publicable y conectada a un QR permanente.",
       problem: "Publicar y mantener una carta digital suele repartir el trabajo entre archivos, maquetación, enlaces y códigos QR.",
       audience: "Negocios de hostelería que necesitan una carta digital clara y mantenible.",
-      currentState: "Aplicación desplegada y en uso: editor, publicación con QR permanente, equipo con roles e invitaciones por correo. La extracción con proveedor real exige revisión humana antes de tocar la carta.",
+      currentState: "Aplicación desplegada y en uso: editor, publicación con QR permanente, equipo con roles e invitaciones por correo, planes de pago, menú del día y comandas desde la mesa. La extracción con proveedor real exige revisión humana antes de tocar la carta.",
       workingFeatures: Object.freeze([
         "Edición manual de categorías y productos",
         "Publicación versionada con dirección permanente",
