@@ -9,16 +9,17 @@ FAENA es una herramienta de CeroComa que convierte la carta física de un bar o 
 - El negocio sube fotos o un PDF de su carta (también de varias páginas); la IA propone platos, precios y secciones en un borrador que el propietario revisa antes de publicar.
 - Carta en español, inglés, francés, italiano y alemán: Gratis y Básico publican en español; Pro y Red, en los cinco idiomas; los nombres y descripciones se traducen automáticamente y el cliente elige idioma.
 - Los 14 alérgenos de la normativa europea se marcan por plato y se muestran como etiquetas.
-- Desde el panel se cambian precios, fotos, productos y secciones (incluido el menú del día con precio, desde Básico), y se marcan platos como agotados, ocultos o destacados. Hay historial de versiones con restauración.
-- El enlace y el código QR son permanentes: actualizar la carta no obliga a reimprimir el QR. Hay un QR por mesa, agrupado en sala, barra y terraza, con impresión A4 y diseño con logo y colores.
-- Croquis de mesas: el personal recibe un aviso en el móvil cuando una mesa abre la carta.
-- Cinco estilos, colores y logo propios; buscador, categorías, horarios y datos del local en la carta.
+- Desde el panel se cambian precios, fotos, productos y secciones (incluidos los menús del día con días y horas, desde Básico), y se marcan platos como agotados al momento, ocultos o destacados. Hay historial de versiones con restauración.
+- El enlace y el código QR son permanentes: actualizar la carta no obliga a reimprimir el QR. El QR se descarga en PNG o SVG o se imprime en tarjetas A4 con logo y colores.
+- En Red: mesas por zona (sala, barra, terraza) con su QR, croquis de mesas con aviso al personal cuando una mesa abre la carta, y avisar al camarero desde la mesa.
+- Gratis: carta sencilla sin fotos, con tres fondos y color de letra. Desde Básico: fotos de platos, todos los estilos y colores, logo, ficha del local y filtros de dieta. En Pro se puede ocultar la firma de FAENA.
+- Decide en CeroComa: guía para que el cliente elija plato, en Pro y Red.
 - Equipo con roles (propietario, gerente, personal) y permisos, desde Básico.
 - Los clientes abren la carta en el navegador del móvil, sin instalar ninguna aplicación ni registrarse.
-- Dos formas de empezar: el negocio se registra solo, empieza en Gratis y publica en cuanto revisa la carta (puede probar Básico o Pro 7 días sin tarjeta); o CeroComa la deja montada, con los códigos QR, en dos o tres días.
+- Dos formas de empezar: el negocio se registra solo, empieza en Gratis y publica en cuanto revisa la carta (puede probar Básico o Pro 7 días gratis, sin tarjeta, una vez por negocio; al terminar vuelve a Gratis y la carta sigue publicada); o CeroComa la deja montada, con el QR.
 - Comandas desde la mesa en Pro y Red: el cliente envía el pedido y el camarero lo confirma, lo rechaza o lo marca como servido; el cobro se hace en el local. En Gratis y Básico, el cliente enseña su lista al camarero.
-- Todavía no hay botón para llamar al camarero ni pagos con tarjeta en mesa: están en preparación.
-- [Precios de FAENA](https://faena.cerocomasoluciones.com/precios): Gratis 0 €; Básico 2,99 €/mes o 28,70 €/año; Pro 8,99 €/mes o 86,30 €/año, IVA incluido; Red con presupuesto por contacto.
+- Todavía no hay pago con tarjeta en mesa: el cobro de los pedidos se hace en el local.
+- [Precios de FAENA](https://faena.cerocomasoluciones.com/precios): Gratis 0 €; Básico 2,99 €/mes o 28,70 €/año; Pro 8,99 €/mes o 86,30 €/año, IVA incluido; Básico y Pro se pagan con tarjeta mediante Stripe desde Plan; Red con presupuesto por contacto.
 - [Vídeo de presentación](https://cerocomasoluciones.com/assets/media/faena/carti-y-faena.mp4): 2 minutos, explica FAENA con una carta animada.
 
 - [FAENA](https://cerocomasoluciones.com/faena/): qué es, cómo funciona, comparativa con carta en papel y PDF, y preguntas frecuentes.

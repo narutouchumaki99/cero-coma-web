@@ -1088,3 +1088,20 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Planes en /faena: cuatro columnas */
+.value-grid.plans-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 64rem) {
+  .value-grid.plans-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 36rem) {
+  .value-grid.plans-grid {
+    grid-template-columns: 1fr;
+  }
+}

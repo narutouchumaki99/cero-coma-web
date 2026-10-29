@@ -62,14 +62,15 @@
               "Lectura de la carta en papel con IA a partir de fotos o PDF, con revisión antes de publicar",
               "Carta en español, inglés, francés, italiano y alemán con traducción automática; español en Gratis y Básico y los cinco idiomas en Pro y Red",
               "Los 14 alérgenos de la normativa europea por plato",
-              "Edición de precios, productos y secciones, con platos agotados, ocultos o destacados",
-              "Menú del día con precio, desde Básico",
+              "Edición desde el móvil de precios, productos y secciones, con platos agotados al momento, ocultos o destacados",
+              "Menús del día con días y horas, desde Básico",
               "Comandas desde la mesa en Pro y Red: el camarero confirma, rechaza o marca como servido cada pedido",
               "Publicación versionada con enlace y código QR permanentes",
-              "QR por mesa agrupados en sala, barra y terraza, con impresión y diseño propio",
-              "Croquis de mesas con aviso al personal cuando una mesa abre la carta",
-              "Estilos, colores y logo propios",
+              "QR permanente para imprimir, con tu logo y tus colores",
+              "Mesas por zona con su QR, croquis y avisar al camarero, en Red",
+              "Estilos y colores; logo, fotos y ficha del local desde Básico",
               "Equipo con roles y permisos, desde Básico",
+              "Decide en CeroComa, la ayuda para que el cliente elija plato, en Pro y Red",
               "Carta pública en el navegador del móvil, sin instalar nada"
             ],
             "audience": { "@type": "BusinessAudience", "audienceType": "Bares y restaurantes" },
@@ -205,7 +206,7 @@
                 "name": "¿Tengo que montarla yo?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Como prefieras. Puedes hacerlo tú en la app, o mandarnos la carta por WhatsApp y te la entregamos montada, con la aplicación y los códigos QR funcionando."
+                  "text": "Como prefieras. Puedes hacerlo tú en la app, o mandarnos la carta y te la entregamos montada, con la aplicación y el código QR funcionando."
                 }
               },
               {
@@ -213,7 +214,15 @@
                 "name": "¿Cuánto tarda en estar publicada?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Si la montamos nosotros, en cero coma. Si la haces tú, te registras, empiezas en Gratis y publicas en cuanto revisas la carta. Puedes probar Básico o Pro 7 días sin tarjeta."
+                  "text": "Si la montamos nosotros, en cero coma. Si la haces tú, te registras, empiezas en Gratis y publicas en cuanto revisas la carta. Puedes probar Básico o Pro 7 días gratis, sin tarjeta; al terminar, el negocio vuelve a Gratis y la carta sigue publicada."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta y cómo se paga?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gratis cuesta 0 € y no caduca. Básico cuesta 2,99 €/mes o 28,70 €/año y Pro 8,99 €/mes o 86,30 €/año, IVA incluido, y se pagan con tarjeta mediante Stripe desde Plan. Red se presupuesta según el local."
                 }
               },
               {
@@ -276,24 +285,22 @@
             <h1 id="hero-title">Haz una foto a tu carta. Edítala. Publícala.</h1>
             <p class="lead">FAENA es la herramienta de CeroComa para bares y restaurantes: convierte la carta de papel en una carta digital con QR que puedes cambiar cuando quieras. El QR se imprime una vez y no cambia nunca.</p>
             <div class="product-hero__actions">
-              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
-              <a class="button button--quiet" href="recorrido/">Míralo en movimiento</a>
-              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
-              <a class="button button--quiet" href="#como-funciona">Cómo funciona</a>
+              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Crear carta gratis</a>
+              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver una carta de ejemplo</a>
             </div>
             <ul class="feature-pills" aria-label="Lo que incluye FAENA">
               <li>Español · Inglés · Francés · Italiano · Alemán</li>
               <li>14 alérgenos por plato</li>
-              <li>QR por mesa y zona</li>
               <li>Agotado al momento</li>
               <li>Menú del día</li>
+              <li>Decide en CeroComa</li>
               <li>Comandas en Pro y Red</li>
             </ul>
-            <p class="product-hero__note">¿Prefieres no tocar nada? <a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">Mándanos la carta por WhatsApp</a> y te la dejamos montada en cero coma.</p>
+            <p class="product-hero__note">Empiezas gratis, sin tarjeta y sin caducidad. Básico y Pro se prueban 7 días gratis y luego se pagan con tarjeta. <a href="#planes">Ver planes</a></p>
           </div>
           <aside class="product-hero__visual">
             <div class="device-phone">
-              <img src="../assets/media/faena/carta-cliente.webp" alt="Carta pública de FAENA abierta en un móvil, con categorías, buscador y platos con precio" width="780" height="1518" fetchpriority="high">
+              <img src="../assets/media/faena/carta-cliente.webp" alt="Carta de RedBar publicada con FAENA en un móvil: «Decide en CeroComa», filtros, buscador, menú del día y platos con foto y precio" width="780" height="1518" fetchpriority="high">
             </div>
           </aside>
         </div>
@@ -385,27 +392,27 @@
             <li class="feature-card">
               <p class="feature-card__label">04 / Al momento</p>
               <h3>Agotado, oculto o destacado</h3>
-              <p>¿Se acabaron las croquetas? Las marcas como agotadas desde el móvil y publicas. Si te equivocas, el historial de versiones te deja volver atrás.</p>
+              <p>¿Se acabaron las croquetas? Las marcas como agotadas desde el móvil y la carta lo enseña. Si te equivocas al publicar, el historial de versiones te deja volver atrás.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">05 / Menú del día</p>
-              <h3>Una sección con su precio</h3>
-              <p>Creas una sección de menú del día o menú cerrado con el precio en la cabecera y cambias los platos cuando toca. Desde Básico.</p>
+              <h3>Con su precio, sus días y sus horas</h3>
+              <p>Creas el menú del día o un menú cerrado con su precio, eliges qué días y a qué horas se sirve y la carta avisa cuando no está disponible. El cliente elige cada plato. Desde Básico.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">06 / QR</p>
-              <h3>Un QR por mesa, por zonas</h3>
-              <p>Mesas agrupadas en sala, barra y terraza, y un QR general. Descargas en PNG o SVG, o imprimes tarjetas A4 con tu logo y tus colores.</p>
+              <h3>Un QR que no cambia nunca</h3>
+              <p>Descargas el QR en PNG o SVG, o imprimes tarjetas A4 con tu logo y tus colores. En Red, además, cada mesa tiene su QR, agrupado en sala, barra y terraza.</p>
             </li>
             <li class="feature-card">
-              <p class="feature-card__label">07 / Sala</p>
+              <p class="feature-card__label">07 / Sala · Red</p>
               <h3>Sabes qué mesa se ha sentado</h3>
-              <p>Un croquis de mesas muestra cuáles han abierto la carta, y el personal recibe un aviso en el móvil cuando una mesa escanea el QR.</p>
+              <p>En Red, un croquis de mesas muestra cuáles han abierto la carta, el personal recibe un aviso en el móvil cuando una mesa escanea el QR y el cliente puede avisar al camarero desde la mesa.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">08 / Estilo</p>
               <h3>Con la cara de tu local</h3>
-              <p>Cinco estilos, cuatro disposiciones, tus colores y tu logo. La carta tiene buscador, categorías, horarios y los datos del local.</p>
+              <p>Gratis lleva una carta sencilla con tres fondos y tu color de letra. Desde Básico, todos los estilos y colores, fotos de platos, tu logo y la ficha del local con horarios y mapa. En Pro puedes quitar la firma de FAENA.</p>
             </li>
             <li class="feature-card">
               <p class="feature-card__label">09 / Equipo</p>
@@ -415,7 +422,12 @@
             <li class="feature-card">
               <p class="feature-card__label">10 / Comandas</p>
               <h3>Comandas desde la mesa (Pro y Red)</h3>
-              <p>El cliente envía el pedido desde la mesa y el camarero lo confirma, lo rechaza o lo marca como servido. El cobro se hace en el local.</p>
+              <p>El cliente envía el pedido desde la mesa y lo sigue en «Ver pedido». El camarero lo confirma, lo rechaza con un motivo o lo marca como servido. El cobro se hace en el local.</p>
+            </li>
+            <li class="feature-card">
+              <p class="feature-card__label">11 / Decide en CeroComa</p>
+              <h3>Ayuda para elegir plato (Pro y Red)</h3>
+              <p>Una guía de preguntas orienta al cliente hacia platos de tu carta según sus gustos. Desde Básico, además, filtros por dieta.</p>
             </li>
           </ul>
         </div>
@@ -433,9 +445,9 @@
               <article class="example-card example-card--skin">
                 <p class="eyebrow">Carta · cliente</p>
                 <h3>Lo que ve el cliente</h3>
-                <p>Categorías, buscador, «Decide en CeroComa» e información del local. Sin instalar nada.</p>
+                <p>La carta de RedBar hoy: «Decide en CeroComa», filtros, buscador, menú del día y platos con foto. Sin instalar nada.</p>
                 <div class="example-card__frame example-card__frame--shot">
-                  <img src="../assets/media/faena/carta-cliente.webp" alt="Carta pública de FAENA en el móvil: botones «Decide en CeroComa» y buscador, categorías y la sección Ensaladas con precios y botón Añadir" width="780" height="1518" loading="lazy" decoding="async">
+                  <img src="../assets/media/faena/carta-cliente.webp" alt="Carta de RedBar en FAENA: botones «Decide en CeroComa», Filtros y buscador, menú del día y la sección Picoteo con fotos, precios y botón Añadir" width="780" height="1518" loading="lazy" decoding="async">
                 </div>
               </article>
               <article class="example-card example-card--skin" style="--reveal-delay: 80ms">
@@ -447,7 +459,7 @@
                 </div>
               </article>
               <article class="example-card example-card--skin" style="--reveal-delay: 160ms">
-                <p class="eyebrow">Sala · dueño</p>
+                <p class="eyebrow">Sala · dueño · Red</p>
                 <h3>Croquis de mesas</h3>
                 <p>Mesas libres y sentadas por sala, barra y terraza, y cuáles han escaneado el QR.</p>
                 <div class="example-card__frame example-card__frame--shot">
@@ -468,6 +480,39 @@
               <span class="example-live__hint">Abre la carta de prueba de RedBar Pza. España, montada con FAENA. En vivo, no es una captura.</span>
             </p>
           </div>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="planes" aria-labelledby="plans-title">
+        <div class="shell">
+          <div class="demo-head" data-reveal>
+            <p class="eyebrow">Planes</p>
+            <h2 id="plans-title">Empieza gratis. Paga solo si lo necesitas.</h2>
+            <p>IVA incluido. Básico y Pro se prueban 7 días gratis, sin tarjeta y una vez por negocio; al terminar, el negocio vuelve a Gratis y la carta sigue publicada. Si decides pagar, se cobran con tarjeta mediante Stripe y la suscripción se gestiona desde Plan.</p>
+          </div>
+          <ul class="value-grid flow-grid plans-grid">
+            <li class="value-card">
+              <p class="value-card__label">Gratis · 0 €</p>
+              <h3>Tu carta y tu QR</h3>
+              <p>Carta editable sin fotos de platos, con QR permanente, en español. Sin caducidad y sin tarjeta.</p>
+            </li>
+            <li class="value-card">
+              <p class="value-card__label">Básico · 2,99 €/mes</p>
+              <h3>Fotos y tu estilo</h3>
+              <p>Fotos, logo, todos los estilos, alérgenos con iconos, filtros de dieta, menús del día y equipo. O 28,70 €/año.</p>
+            </li>
+            <li class="value-card">
+              <p class="value-card__label">Pro · 8,99 €/mes</p>
+              <h3>Idiomas y comandas</h3>
+              <p>Todo lo de Básico, más los cinco idiomas, Decide en CeroComa y comandas desde la mesa. O 86,30 €/año.</p>
+            </li>
+            <li class="value-card">
+              <p class="value-card__label">Red · Consultar</p>
+              <h3>La sala conectada</h3>
+              <p>Todo lo de Pro, más mesas por zona con su QR y avisar al camarero. Lo ponemos en marcha contigo.</p>
+            </li>
+          </ul>
+          <p class="faq__more"><a href="https://faena.cerocomasoluciones.com/precios" target="_blank" rel="noreferrer">Ver la comparativa completa de planes</a></p>
         </div>
       </section>
 
@@ -590,11 +635,15 @@
             </details>
             <details>
               <summary>¿Tengo que montarla yo?</summary>
-              <p>Como prefieras. Puedes hacerlo tú en la app, o <a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">mandarnos la carta por WhatsApp</a> y te la entregamos montada, con la aplicación y los códigos QR funcionando.</p>
+              <p>Como prefieras. Puedes hacerlo tú en la app, o <a href="https://wa.me/34643403723?text=Hola%2C%20quiero%20que%20me%20mont%C3%A9is%20la%20carta%20en%20FAENA." target="_blank" rel="noreferrer">mandarnos la carta</a> y te la entregamos montada, con la aplicación y el código QR funcionando.</p>
             </details>
             <details>
               <summary>¿Cuánto tarda en estar publicada?</summary>
-              <p>Si la montamos nosotros, en cero coma. Si la haces tú, te registras, empiezas en Gratis y publicas en cuanto revisas la carta. Puedes probar Básico o Pro 7 días sin tarjeta.</p>
+              <p>Si la montamos nosotros, en cero coma. Si la haces tú, te registras, empiezas en Gratis y publicas en cuanto revisas la carta. Puedes probar Básico o Pro 7 días gratis, sin tarjeta; al terminar, el negocio vuelve a Gratis y la carta sigue publicada.</p>
+            </details>
+            <details>
+              <summary>¿Cuánto cuesta y cómo se paga?</summary>
+              <p>Gratis cuesta 0 € y no caduca. Básico cuesta 2,99 €/mes o 28,70 €/año y Pro 8,99 €/mes o 86,30 €/año, IVA incluido, y se pagan con tarjeta mediante Stripe desde Plan. Red se presupuesta según el local. <a href="#planes">Ver planes</a>.</p>
             </details>
             <details>
               <summary>¿FAENA toma pedidos o cobra en mesa?</summary>
@@ -610,17 +659,9 @@
           <div class="demo-head" data-reveal>
             <p class="eyebrow">Próximamente</p>
             <h2 id="soon-title">Lo que viene ahora.</h2>
-            <p>Hoy FAENA publica la carta y el menú del día, y en Pro y Red recibe comandas desde la mesa. Esto es lo que estamos preparando. No está disponible todavía.</p>
+            <p>Hoy FAENA publica la carta y el menú del día, en Pro y Red recibe comandas desde la mesa y en Red el cliente puede avisar al camarero. Esto es lo que estamos preparando. No está disponible todavía.</p>
           </div>
           <ul class="state-list soon-list">
-            <li data-state="pending">
-              <span class="state-list__mark" aria-hidden="true"></span>
-              <div>
-                <h3>Llamar al camarero</h3>
-                <p>El cliente avisa desde la mesa sin levantar la mano a ciegas.</p>
-                <span class="state-list__status">Red · Próximamente</span>
-              </div>
-            </li>
             <li data-state="pending">
               <span class="state-list__mark" aria-hidden="true"></span>
               <div>
@@ -638,10 +679,10 @@
           <div data-reveal>
             <p class="eyebrow">Empezar</p>
             <h2 id="cta-title">Entra en FAENA y monta tu carta.</h2>
-            <p>Si encaja con tu negocio, hablamos. Si quieres probar ya, abre la app. También puedes consultar <a href="https://faena.cerocomasoluciones.com/caracteristicas">todas las funciones</a> y los <a href="https://faena.cerocomasoluciones.com/precios">precios</a>.</p>
+            <p>Crea tu carta gratis y prueba Básico o Pro 7 días sin tarjeta. Si tienes dudas, hablamos. También puedes consultar <a href="https://faena.cerocomasoluciones.com/caracteristicas">todas las funciones</a> y los <a href="https://faena.cerocomasoluciones.com/precios">precios</a>.</p>
             <div class="pilot-note__actions">
-              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Entrar en FAENA</a>
-              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver carta de ejemplo</a>
+              <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Crear carta gratis</a>
+              <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver una carta de ejemplo</a>
               <a class="button button--quiet" href="mailto:cerocomasoluciones@gmail.com">Escribir por correo</a>
               <a class="button button--quiet" href="https://wa.me/34643403723" target="_blank" rel="noreferrer">WhatsApp</a>
             </div>
@@ -651,7 +692,7 @@
     </main>
 
     <div class="sticky-cta" data-sticky-cta hidden>
-      <a class="button button--light" href="https://wa.me/34643403723?text=Hola%2C%20me%20interesa%20FAENA%20para%20mi%20carta." target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+      <a class="button button--light" href="https://faena.cerocomasoluciones.com" target="_blank" rel="noreferrer" data-app-link>Crear carta gratis</a>
       <a class="button button--quiet" href="https://faena.cerocomasoluciones.com/menu/prueba-redbar" target="_blank" rel="noreferrer">Ver ejemplo</a>
     </div>
 
